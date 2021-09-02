@@ -1,0 +1,133 @@
+baseURL = "https://blog.simba-fs.dev/"
+title = "Simba's Blog"
+paginate = 10
+theme = "PaperMod"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+googleAnalytics = ""
+
+[outputs]
+	home = [ "HTML", "RSS", "JSON" ]
+
+[minify]
+	disableXML = true
+	minifyOutput = true
+
+[params]
+	env = "production"
+	title = "Simba's Blog"
+	description = ""
+	keywords = [ "simba-fs", "SimbaFs" ]
+	author = "simba-fs"
+	images = [ "<link or path of image for opengraph, twitter-cards>" ]
+	DateFormat = "2006-January-2"
+	defaultTheme = "auto"
+	disableThemeToggle = false
+	
+	ShowReadingTime = true
+	ShowShareButtons = true
+	ShowPostNavLinks = true
+	ShowBreadCrumbs = true
+	ShowCodeCopyButtons = false
+	disableSpecial1stPost = false
+	disableScrollToTop = false
+	comments = false
+	hidemeta = false
+	hideSummary = false
+	showtoc = true
+	tocopen = false
+
+[params.assets]
+	favicon = "/images/icon/icon.png"
+	favicon16x16 = "/images/icon/icon-16.png"
+	favicon32x32 = "/images/icon/icon-32.png"
+	apple_touch_icon = "/images/icon/icon.png"
+	safari_pinned_tab = "/images/icon/icon.png"
+
+[params.label]
+	text = "Home"
+	icon = "/images/icon/icon.png"
+	iconHeight = 35
+
+[params.profileMode]
+	enabled = false
+	title = "ExampleSite"
+	subtitle = "This is subtitle"
+	imageUrl = "<img location>"
+	imageWidth = 120
+	imageHeight = 120
+	imageTitle = "my image"
+
+[[params.profileMode.buttons]]
+	name = "Posts"
+	url = "posts"
+
+[[params.profileMode.buttons]]
+	name = "Tags"
+	url = "tags"
+
+[params.homeInfoParams]
+	Title = "🖐️ 哈囉！問世界安好"
+	Content = "歡迎來到我的部落格"
+
+[[params.socialIcons]]
+	name = "github"
+	url = "https://github.com/simba-fs"
+
+[[params.socialIcons]]
+	name = "telegram"
+	url = "https://t.me/simbafs"
+
+[params.analytics.google]
+	SiteVerificationTag = ""
+
+[params.analytics.bing]
+	SiteVerificationTag = ""
+
+[params.analytics.yandex]
+	SiteVerificationTag = ""
+
+[params.cover]
+	hidden = true
+	hiddenInList = true
+	hiddenInSingle = true
+
+[params.editPost]
+	URL = ""
+	Text = ""
+	appendFilePath = true
+
+[params.fuseOpts]
+	isCaseSensitive = false
+	shouldSort = true
+	location = 0
+	distance = 1_000
+	threshold = 0.4
+	minMatchCharLength = 0
+	keys = [ "title", "permalink", "summary", "content" ]
+	
+[[menu.main]]
+	identifier = "categories"
+	name = "Categories"
+	url = "/categories/"
+	weight = 10
+
+[[menu.main]]
+	identifier = "tags"
+	name = "Tags"
+	url = "/tags/"
+	weight = 20
+
+[[menu.main]]
+	identifier = "archives"
+	name = "Archives"
+	url = "/archive/"
+	weight = 30
+
+[[menu.main]]
+	identifier = "search"
+	name = "Search"
+	url = "/search/"
+	weight = 40
