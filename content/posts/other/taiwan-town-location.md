@@ -1,6 +1,6 @@
 +++
 title = "taiwan-town-location"
-tags = [ "taiwna", "geolocation" ]
+tags = [ "taiwan", "geolocation" ]
 categories = [ ]
 date = "2021-06-24"
 +++
