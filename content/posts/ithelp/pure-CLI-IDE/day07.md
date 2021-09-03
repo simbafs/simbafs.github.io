@@ -1,5 +1,5 @@
 +++
-title = "整合 tmux 和 zsh"
+title = "Day 07：整合 tmux 和 zsh"
 date = "2021-09-07"
 tags = [
   "cli",

@@ -1,5 +1,5 @@
 +++
-title = "Day 03 轉吧轉吧七彩霓虹燈之 p10k"
+title = "Day 03：轉吧轉吧七彩霓虹燈之 p10k"
 date = "2021-09-03"
 tags = [
   "cli",

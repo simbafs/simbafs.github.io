@@ -1,5 +1,5 @@
 +++
-title = "螢幕切八段！tmux"
+title = "Day 06：螢幕切八段！tmux"
 date = "2021-09-06"
 tags = [
   "cli",

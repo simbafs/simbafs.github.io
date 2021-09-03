@@ -1,5 +1,5 @@
 +++
-title = "tmux plugin"
+title = "Day 09：tmux plugin"
 date = "2021-09-09"
 tags = [
   "cli",

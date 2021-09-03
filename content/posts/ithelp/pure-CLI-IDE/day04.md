@@ -1,5 +1,5 @@
 +++
-title = "金魚記憶力太短暫，交給外掛記吧！autosuggestions"
+title = "Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions"
 date = "2021-09-04"
 tags = [
   "cli",
