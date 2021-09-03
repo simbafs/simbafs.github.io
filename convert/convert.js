@@ -42,7 +42,7 @@ async function readFile(src, target){
 	console.log(`convert ${src} to ${target}`);
 
 	const raw = await fs.readFile(src, { encoding: 'utf8' });
-	const [, rawMata, post] = raw.split('---\n');
+	let [, rawMata, post] = raw.split('---\n');
 	let meta = yaml.parse(rawMata);
 
 	// date
@@ -70,6 +70,7 @@ async function readFile(src, target){
 		meta.categories = [meta.categories];
 	}
 	// meta.categories = meta.categories.join('-');
+
 
 	const tomlMeta = toml.stringify(meta);
 

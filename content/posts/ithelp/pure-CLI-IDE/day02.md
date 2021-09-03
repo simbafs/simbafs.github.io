@@ -1,6 +1,5 @@
 +++
 title = "Day 02 ：zsh 與 shell script"
-categories = [ "ithelp", "pure-CLI-IDE" ]
 date = "2021-09-02"
 tags = [
   "cli",
@@ -10,6 +9,7 @@ tags = [
   "tmux",
   "zsh"
 ]
+categories = [ "ithelp", "pure-CLI-IDE" ]
 +++
 
 > 今天內容不小心寫太長了 ......

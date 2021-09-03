@@ -1,6 +1,5 @@
 +++
 title = "Day 01 前言：這批很純，快進來吧！"
-categories = [ "ithelp", "pure-CLI-IDE" ]
 date = "2021-09-01"
 tags = [
   "cli",
@@ -10,6 +9,8 @@ tags = [
   "tmux",
   "zsh"
 ]
+categories = [ "ithelp", "pure-CLI-IDE" ]
+munu = ["main"]
 +++
 
 # Who Am I
@@ -42,11 +43,9 @@ tags = [
 
 ### 問題
 如果你看到這個
-
 | ❓ > 這是一個問題 |
 | :---              |
 | 這邊是答案        |
-
 這是你在閱讀文章時可能會遇到的問題，解答就在問題下面，如果還有其他問題可以**留言**或是**聯絡我**都可以
 
 ### 提示
@@ -72,7 +71,7 @@ $ ls *.txt
 代表有一個檔案要修改，從 `+` 的那行改成 `-` 的那行，加減號都不用寫進去，檔名會另外說明
 
 # 同步更新
-除了 [IThelp](https://ithelp.ithome.com.tw/users/20130473/ironman/3975)，我也會將這個系列的文章更新在 **[我的 blog](https://blog.simba-fs.dev/categories/ithelp/)** 上
+除了 [IThelp](https://ithelp.ithome.com.tw/users/20130473/ironman/3975)，我也會將這個系列的文章更新在 **[我的 blog](https://blog.simba-fs.dev/categories/ithelp/pure-CLI-IDE)** 上
 
 喔對了，這整個系列我都是在我的純 CLI 環境中寫作的喔！
 
