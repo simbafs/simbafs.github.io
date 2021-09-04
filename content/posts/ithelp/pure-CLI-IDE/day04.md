@@ -1,5 +1,5 @@
 +++
-title = "Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions"
+title = "Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search"
 date = "2021-09-04"
 tags = [
   "cli",
@@ -14,15 +14,17 @@ categories = [ "ithelp", "pure-CLI-IDE" ]
 
 今天的內容會比平常多，但是非常紮實！
 
-有時候我們在 CLI 操作時遇到很多重複的指令，像是 `git add`、`git commit -m 'ba la ba la'` 等等，這些指令可能又長又複雜，一直都是自己打也不是辦法，這時候就該請出 [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 了  
+有時候我們在 CLI 操作時遇到很多**重複**的指令，像是 `git add`、`git commit -m 'ba la ba la'` 等等，這些指令可能又長又複雜，一直都是自己打也不是辦法，這時候就該請出 [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 了  
 
 # 安裝 autosuggestions
 老樣子，安裝外掛只須要修改 `~/.zshrc` 就可以了  
+
 ```diff
 # plugins
 zplug 'romkatv/powerlevel10k', as:theme, depth:1
 + zplug 'zsh-users/zsh-autosuggestions'
 ```
+
 因為 `autosuggestions` 是外掛，不需要特別寫 tag 了  
 
 ## [問題]好像有奇怪的字跑出來？
@@ -36,7 +38,7 @@ zplug 'romkatv/powerlevel10k', as:theme, depth:1
 ### 讓 zplug 先閉嘴
 如果你覺得 Instant Prompt Mode 很重要，需要保留，那你可能會想到這個方法  
 在 `~/.zshrc` 中有一行 `zplug load`，這行會讓 zplug 在 `~/.zshrc` 載入時偵測是否要安裝新外掛，把這行拿掉再重新開啟終端機，以後他就不會自動檢查了  
-這時候如果你要安裝新外掛，一樣是修改 `~/.zshrc` 之後重開終端機，手動下指令 `zplug load`，zplug 就會開始檢查更新。
+這時候如果你要安裝新外掛，一樣是修改 `~/.zshrc` 之後重開終端機，**手動**下指令 `zplug load`，zplug 就會開始檢查更新。
 
 ### 有沒有兼得的方法呢？
 以上兩種方法都是治標不治本，其實 `~/.zshrc` 裡面已經有寫解決辦法了，看看 `~/.zshrc` 最上面的註解，這是設定 p10k 時如果你有開啟 Instant Prompt Mode 他幫你加的
@@ -74,27 +76,40 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ```
 
-# [問題]為什麼按 <kbd>方向鍵上</kbd> 時會出現和現在開頭不同的字
+# [問題]為什麼按 <kbd>方向鍵上</kbd> 時會出現和現在指令開頭不同的字
 假設你現在打過以下指令
 ```
 $ ls /home/purecli
 $ cat ~/.zshrc
 $ ls /
 ```
-這時候你先打 `ls`，想找到之前 `ls` 開頭的指令按，按 <kbd>方向鍵上</kbd> 會出現 `cat ~/.zshrc` 呢？這是因為現在的 <kbd>方向鍵上</kbd> 是 zsh 本身的「上一個指令」，而不是 autosuggestions 的「上一個匹配的選項」    
-只要在 `~/.zshrc` 中任意位置新增以下設定就可以了 
+這時候你先打 `ls`，想找到之前 `ls` 開頭的指令按，按 <kbd>方向鍵上</kbd> 會出現 `cat ~/.zshrc` 呢？這是因為現在的 <kbd>方向鍵上</kbd> 是 zsh 本身的「上一個指令」。  
+這個問題需要裝另一個外掛來解決：[zsh-users/zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)  
+在 `~/.zshrc` 新增一行  
+
+```diff
+# plugins
+zplug 'romkatv/powerlevel10k', as:theme, depth:1
+zplug 'zsh-users/zsh-autosuggestions'
++ zplug 'zsh-users/zsh-history-substring-search'
 ```
+
+然後要綁定按鍵，一樣是放在 `~/.zshrc`，位置隨便
+
+```zsh
 bindkey "$terminfo[kcuu1]" history-substring-search-up 
 bindkey "$terminfo[kcud1]" history-substring-search-down
 ```
 
+**重開終端機**後就可以搜尋同樣開頭的指令紀錄了
+
 # [問題]為什麼開新的終端機 autosuggestions 讀不到以前下過得指令？
-這是因為我們的 `~/.zshrc` 中沒有設定把 history 存下來，所以 autosuggestions 只能拿到目前這個終端機的紀錄，一關掉紀錄就不見了，autosuggestions 自然找不到。  
-要解決也很簡單，讓他把 history 寫進檔案就好了，在 `~/.zshrc` 中任意地方新增這兩行  
-```diff
-+ SAVEHIST=1000
-+ export HISTFILE=~/.zsh_history
-+ setopt share_history
+這是因為我們的 `~/.zshrc` 中沒有設定把 history 存下來，所以 autosuggestions 只能拿到**目前這個終端機**的紀錄，一關掉紀錄就不見了，autosuggestions 自然找不到。  
+要解決也很簡單，讓他把 history **寫進檔案**就好了，在 `~/.zshrc` 中任意地方新增這兩行  
+```zsh
+SAVEHIST=1000
+export HISTFILE=~/.zsh_history
+setopt share_history
 ```
 
 這樣 autosuggestions 就可以讀到以前下過的指指令了
@@ -102,4 +117,4 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # 結尾
 今天介紹了好用的 autosuggestions 和 zplug 與 p10k 設定衝突的解決方法。  
 不的不說 autosuggestions 真是懶人福音，打過的指令不用再打第二次  
-明天再介紹兩個外掛後就 zsh 的部份就差不多完結了，緊接著會進入精彩的 tmux，敬請期待  
+明天再介紹兩個外掛後就 zsh 的部份就差不多完結了，緊接著會進入精彩的 tmux  
