@@ -26,7 +26,7 @@ draft = true
 - [ ] Day 10 ~ 18: nvim
 	- [x] [installation and basic operation](../day10)
 	- [x] [advanced operation（搜尋與取代、批次命令）](../day11)
-	- [ ] [解決顏色衝突](../day12)
+	- [x] [解決顏色衝突](../day12)
 	- [x] [Config](../day13)
 	- [x] [vim-plug](../day14)
 	- [ ] plugins (1) 

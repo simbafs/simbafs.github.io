@@ -86,5 +86,5 @@ NR-16   NR-8    COLOR NAME ~
 | 自訂的游標行                                                                        |
 
 # colorschema
-所謂的 colorschema 其實就是一對的 `hi` 指令寫在一個檔案裡面，然後給他一個名字，vim 內建了很多 colorschema，放在 `$VIMRUNTIME/colors` 目錄下，你可以用命令 `:echo $VIMRUNTIME` 來取得 `1$VIMRUNTIME` 的值，因為系統環境變數可能不會有他。
-你也可以
+所謂的 colorschema 其實就是一堆的 `hi` 指令寫在一個檔案裡面，然後給他一個名字，vim 內建了很多 colorschema，放在 `$VIMRUNTIME/colors` 目錄下，你可以用命令 `:echo $VIMRUNTIME` 來取得 `$VIMRUNTIME` 的值，因為系統環境變數可能不會有他。
+除了去網路上下載別人設計好的 colorschema， 你也可以參考 `$VIMRUNTIME/colors` 下的檔案形式來製作自己的 colorschema，或是搜尋 `vim colorschemes generator` 就可以在網路上找到很多方便你製作 colorschemes 的工具
