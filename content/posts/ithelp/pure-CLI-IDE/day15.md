@@ -12,6 +12,4 @@ tags = [
 categories = [ "ithelp", "pure-CLI-IDE" ]
 +++
 
-itchyny/lightline.vim
-airblade/vim-gitgutter
-scrooloose/nerdtree
+
