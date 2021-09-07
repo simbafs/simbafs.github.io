@@ -29,27 +29,27 @@ draft = true
 	- [x] [解決顏色衝突](../day12)
 	- [x] [Config](../day13)
 	- [x] [vim-plug](../day14)
-	- [ ] plugins (1) 
-		- [ ] itchyny/lightline.vim
-		- [ ] airblade/vim-gitgutter
-		- [ ] scrooloose/nerdtree
-		- [ ] jiangmiao/auto-pairs
-		- [ ] Chiel92/vim-autoformat
-		- [ ] preservim/nerdcommenter
-		- [ ] mbbill/undotree
-		- [ ] majutsushi/tagbar
-		- [ ] Chiel92/vim-autoformat
-		- [ ] suan/vim-instant-markdown
-		- [ ] junegunn/vim-easy-align
-		- [ ] mzlogin/vim-markdown-toc
-		- [ ] ekalinin/Dockerfile.vim
-		- [ ] pangloss/vim-javascript
-		- [ ] isruslan/vim-es6
-		- [ ] maxmellon/vim-jsx-pretty
-		- [ ] HerringtonDarkholme/yats.vim
-		- [ ] ap/vim-css-color
-		- [ ] bfrg/vim-cpp-modern
-		- [ ] cespare/vim-toml
+	- [x] [plugins (1) ](../day15)
+		* itchyny/lightline.vim
+		* airblade/vim-gitgutter
+		* scrooloose/nerdtree
+		* jiangmiao/auto-pairs
+		* Chiel92/vim-autoformat
+		* preservim/nerdcommenter
+		* mbbill/undotree
+		* majutsushi/tagbar
+		* Chiel92/vim-autoformat
+		* suan/vim-*-markdown
+		* junegunn/vim-easy-align
+		* mzlogin/vim-markdown-toc
+		* ekalinin/Dockerfile.vim
+		* pangloss/vim-javascript
+		* isruslan/vim-es6
+		* maxmellon/vim-jsx-pretty
+		* HerringtonDarkholme/yats.vim
+		* ap/vim-css-color
+		* bfrg/vim-cpp-modern
+		* cespare/vim-toml
 	- [ ] emmet-vim
 	- [ ] split window
 - [ ] Day 19 ~ 21: coc.nvim
