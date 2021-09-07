@@ -50,12 +50,15 @@ draft = true
 		- [ ] ap/vim-css-color
 		- [ ] bfrg/vim-cpp-modern
 		- [ ] cespare/vim-toml
-	- [ ] theme
+	- [ ] emmet-vim
+	- [ ] split window
 - [ ] Day 19 ~ 21: coc.nvim
 	- [ ] installation
 	- [ ] plugins
 	- [ ] ? treesitter
 - [ ] Day 22 ~ 26: other tools
+	- [ ] git
+	- [ ] awk
 	- [ ] ssh
 	- [ ] htop
 	- [ ] tree
