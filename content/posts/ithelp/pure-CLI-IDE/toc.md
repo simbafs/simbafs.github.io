@@ -30,27 +30,8 @@ draft = true
 	- [x] [Config](../day13)
 	- [x] [vim-plug](../day14)
 	- [x] [plugins](../day15)
-		* itchyny/lightline.vim
-		* airblade/vim-gitgutter
-		* scrooloose/nerdtree
-		* jiangmiao/auto-pairs
-		* Chiel92/vim-autoformat
-		* preservim/nerdcommenter
-		* mbbill/undotree
-		* majutsushi/tagbar
-		* Chiel92/vim-autoformat
-		* suan/vim-*-markdown
-		* junegunn/vim-easy-align
-		* mzlogin/vim-markdown-toc
-		* ekalinin/Dockerfile.vim
-		* pangloss/vim-javascript
-		* isruslan/vim-es6
-		* maxmellon/vim-jsx-pretty
-		* HerringtonDarkholme/yats.vim
-		* ap/vim-css-color
-		* bfrg/vim-cpp-modern
-		* cespare/vim-toml
-	- [ ] emmet-vim
+	- [x] [emmet-vim(1)](../day16)
+	- [x] [emmet-vim(2)](../day17)
 	- [ ] split window
 - [ ] Day 19 ~ 21: coc.nvim
 	- [ ] installation
