@@ -29,7 +29,7 @@ draft = true
 	- [x] [解決顏色衝突](../day12)
 	- [x] [Config](../day13)
 	- [x] [vim-plug](../day14)
-	- [x] [plugins (1) ](../day15)
+	- [x] [plugins](../day15)
 		* itchyny/lightline.vim
 		* airblade/vim-gitgutter
 		* scrooloose/nerdtree
