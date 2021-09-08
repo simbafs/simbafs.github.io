@@ -1,5 +1,15 @@
 #!/bin/sh
 
+if [[ $1 -eq "--help" ]];then
+	cat << EOF
+Usage: ./deploy.sh
+Deploy hugo server via reync to vps server
+  -h, --help                 print this help message
+
+EOF
+	exit
+fi
+
 USER=simba
 HOST=simba-fs.dev
 DIR=website/blog
