@@ -1,6 +1,6 @@
 +++
 title = "Day 14：vim-plug"
-date = "2021-09-13"
+date = "2021-09-14"
 tags = [
   "cli",
   "terminal",

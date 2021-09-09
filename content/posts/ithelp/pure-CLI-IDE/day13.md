@@ -1,6 +1,6 @@
 +++
 title = "Day 13：vim 設定檔"
-date = "2021-09-12"
+date = "2021-09-13"
 tags = [
   "cli",
   "terminal",

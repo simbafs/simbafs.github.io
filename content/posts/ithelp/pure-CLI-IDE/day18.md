@@ -1,5 +1,5 @@
 +++
-title = "Day 18：切水果囉！vim 切螢幕與分頁"
+title = "Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet"
 date = "2021-09-18"
 tags = [
   "cli",
@@ -12,53 +12,175 @@ tags = [
 categories = [ "ithelp", "pure-CLI-IDE" ]
 +++
 
-# 分割螢幕
-記的 tmux 可以切螢幕嗎？vim 也可以喔！  
+emmet-vim 是 emmet 的 vim 版本（這句好像是廢話  
 
-## 命令
-我們快速用表格帶過命令  
+> 注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
 
-| 快捷鍵                  | 命令             | 效果               |
-| :---:                   | :---             | :---               |
-| <C-w>s                  | :sp[lit] {file}  | 水平分割           |
-| <C-w>v                  | :vs[plit] {file} | 垂直分割           |
-| <c-w>+                  |                  | 把目前視窗放大一點 |
-| <c-w>-                  |                  | 把目前視窗縮小一點 |
-| <c-w>=                  |                  | 等大               |
-| <C-w>c                  | :q               | 關掉目前視窗       |
-| <C-w>o                  |                  | 關掉其他視窗       |
-| <C-w>方向鍵/h/j/k/l/tag |                  | 在視窗間移動       |
+emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子  
 
-如果你在 [day 13](../day13) 有開啟滑鼠模式，那你可以直接用滑鼠拉動邊框調整大小  
+```html
+.tab>(tr#col$>td*3)*4
 
-## vim 分割視窗的優點
-與 tmux 比起來，我更常用 tmux 分割視窗，因為快捷鍵比較直覺好用，但是 vim 有個 tmux 做不到的優點  
-如果你用 tmux 分割視窗並開啟同一個檔案，對於系統來說你其實是開了兩次，兩個的更改互相不相關。  
-但是 vim 不一樣，他是「同一份檔案」，也就是說左邊的改動會立刻同步到右邊  
+會被解析成 
 
-| ![vim split sync](/images/ithelp/pure-CLI-IDE/day18/vim-split-sync.gif) |
-| :---:                                                                   |
-| 如果開啟一個檔案，左邊的更改會立刻同步到右邊                            |
+<div class="tab">
+	<tr id="col1">
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr id="col2">
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr id="col3">
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr id="col4">
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</div>
+```
 
-這個特性有個好處，如果檔案太長，你要主要要編輯了兩個區域沒辦法在同一個螢幕顯示，就可以用 vim 的分割畫面，左邊編輯上面，右邊編輯下面。
+是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！
 
-# 分頁
-比起切割螢幕，我更常用分頁功能。vim 每個分頁都和 tmux 一樣，可以隨便你亂切，不會互相影響。  
+# 安裝
+在 `~/.config/nvim/plugin.vim` 加入一行  
 
-## 快捷鍵
-一樣快速看過命令  
+```diff
++ Plug 'mattn/emmet-vim'
+```
 
-| 快捷鍵 | 命令         | 效果                                                   |
-| :---:  | :---         | :---                                                   |
-|        | :tabe {file} | 開啟新分頁並開啟檔案，如果不指定檔名會開啟一個空白檔案 |
-| gt     |              | 下一個分頁                                             |
-| gT     |              | 上一個分頁                                             |
+然後記得修改後需要打指令 `:so % | PlugInstall` 安裝  
 
-一樣，如果你開啟了滑鼠模式，你可以用滑鼠點擊切換分頁（最上面）
+# 語法介紹
+emmet-vim 預設的快捷鍵是 `<C-y>,` (逗號)，無論是命令模式或是、輸入模式都可以。  
 
-## Nerdtree
-nerdtree 是我面在 [day 15 #現代化-ide-必裝模組](../day15#現代化-ide-必裝模組) 中列出了第三個模組。為什麼提到他呢？因為當你用 nerdtree 瀏覽檔案時，你可以用命令（快捷鍵）`t` 在新分頁中開啟檔案  
+## 產生標籤
+emmet 最基本功能是幫你寫角括號，像是這樣  
+`->` 左邊是 emmet 程式碼，右邊是根據左邊產生出來的 HTML
 
-| ![vim tab](/images/ithelp/pure-CLI-IDE/day18/vim-tab.gif)          |
-| :---:                                                              |
-| 用 nerdtree 在新分頁開心檔案，注意看最上面，深灰色底的是現在的 tab |
+```html
+div 
+
+-> 
+
+<div></div>
+```
+
+## 內容
+在標籤後面加上大括號 `{}`，大括號內的文字就會被放進標籤裡面 
+
+```html
+p{hello world}
+
+->
+
+<p>hello world</p>
+```
+
+## 屬性
+你可以幫標籤加上屬性，在標籤後面加上 `[key=value]` 就可以指定屬性。  
+其中 `id` 和 `class` 因為太常用了，所以有自己專屬的縮寫，在井字號 `#` 後面的是 `id`，在點 `.` 後面的是 `class`  
+而 `div` 這個標籤因為很常用，所以如果直接用井字號或是點可以不用寫 div（第三個範例）  
+
+```html
+h1[hidden="hidden"] -> <h1 hidden="hidden"></h1>
+
+h1.title -> <hi class="title"></hi>
+
+#username -> <div id="username"></div>
+
+button.bg-blue.round#login -> <button id="login" class="bg-blue round"></button>
+```
+
+## 並排
+你可以用加號 `+` 讓兩個標籤並排
+
+```html
+h1+h2
+
+-> 
+
+<h1></h1>
+<h2></h2>
+```
+
+## 巢狀標籤
+大於符號 `>` 代表右側的標籤在左側標籤的裡面，而且你可以一層套一層  
+
+```html
+div>span 
+
+-> 
+
+<div>
+	<span></span>
+</div>
+
+------------
+
+div>spam>h1>a
+
+-> 
+
+<div>
+	<spam>
+		<h1><a href=""></a></h1>
+	</spam>
+</div>
+
+------------
+
+div.main>h1.bg-green.bold>a
+
+->
+
+<div class="main">
+	<h1 class="bg-green bold"><a href=""></a></h1>
+</div>
+```
+
+## 群組
+在建立巢狀標籤時，你也可以用小括號 `()` 來建立群組，打破原本運算子的優先度  
+
+```html
+div>(h1+h2)
+
+-> 
+
+<div>
+	<h1></h1>
+	<h2></h2>
+</div>
+
+```
+
+## 假內容產生
+有一個運算子名稱特別奇怪，他可以幫你產生假內容，還可以加數字指定假內容要有幾個單字
+
+```html
+lorem
+
+->
+
+Sit elit consectetur ullam eius aliquam repellat! Illo quaerat quisquam minima laboriosam fugit sunt Ex voluptas modi laboriosam commodi optio, sapiente. Quasi perferendis aliquam reprehenderit in praesentium Deserunt inventore natus.
+
+------------
+
+p>lorem4
+
+->
+
+<p>
+	Lorem sunt esse odio?
+</p>
+```
+
+# 結尾
+今天的內容差不多就到這裡，但是 emmet 精華的部份還沒出來呢！明天今天的程式碼一行可以產生五六行，加上明天的重複、迭代後四五百行都是小 case（呃，這麼長有點誇張）  
