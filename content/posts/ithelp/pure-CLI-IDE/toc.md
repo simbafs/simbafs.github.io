@@ -33,6 +33,8 @@ draft = true
 	- [x] [emmet-vim(1)](../day16)
 	- [x] [emmet-vim(2)](../day17)
 	- [ ] split window
+	- [ ] clipboard
+	- [ ] move
 - [ ] Day 19 ~ 21: coc.nvim
 	- [ ] installation
 	- [ ] plugins
