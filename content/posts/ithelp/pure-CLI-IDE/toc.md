@@ -35,7 +35,7 @@ draft = true
 	- [x] [emmet-vim(2)](../day19)
 	- [x] [split window and tab](../day20)
 	- [ ] clipboard, session
-	- [ ] move
+	- [ ] move, into insert mode
 - [ ] Day 22 ~ 26: other tools
 	- [ ] git
 	- [ ] awk
