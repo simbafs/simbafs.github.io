@@ -49,4 +49,19 @@ so ~/.config/nvim/coc-config.vim
 coc.nvim 的自動補全選字來源除了目前所有的 buffer（開啟的檔案）之外，還有 coc 擴充。  
 coc 擴充安裝很簡單，在 vim 裡面下指令 `:CocInstall {extension}`，那麼這個擴充的名字該去哪裡找呢？一個是 [coc.nvim 的 GitHub Wiki](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions)，另一個是去 [npm](https://npmjs.org) 搜尋 `coc`，稍微過濾一下大部分都是 coc.nvim 的擴充。  
 
-剛剛講的安裝方法
+剛剛講的安裝方法有一個缺點，就是當你今天要搬電腦時你要全部手動再安裝一次，這時候就有點麻煩了。所以你可以在 `~/.config/nvim/coc-config.vim` 中寫下我們第一個 coc 設定  
+
+```vim
+let g:coc_global_extensions = [
+\ 'coc-extension-1',
+\ 'coc-extension-2'
+\ ]
+```
+
+這個變數儲存的是 coc 擴充的名字（就是你安裝時用的那個），coc 啟動如果沒安裝他就會自己去裝了，所以手動安裝好擴充後記得在這裡寫一下，為以後搬電腦做打算  
+你也可以用 `:CocList extensions` 列出現在安裝的擴充  
+至於要裝什麼擴充，這個就要看你要寫什麼程式語言了，自己去上面介紹的兩個地方找你需要的，我這裡就不多介紹  
+
+# 基本設定
+因為 coc 可能是你在寫程式時最常用的外掛，所以為了避免有快捷鍵衝突，coc 預設不會有任何的按鍵綁定，所以你必須自己寫全部的 keymap，在 [coc.nvim 的 GitHub README.md](https://github.com/neoclide/coc.nvim#example-vim-configuration) 有範例，接下來的設定都是從這裡面挑出來的。  
+以下是我覺得必須的設定，有些在範例上標明「可能」、「某些情況」的設定我不會納進來，當你遇到奇怪問題時再去看看範例和 issue
