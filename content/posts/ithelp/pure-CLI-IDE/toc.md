@@ -29,24 +29,24 @@ draft = true
 	- [x] [Config](../day13)
 	- [x] [vim-plug](../day14)
 	- [x] [plugins](../day15)
-	- [ ] coc.nvim-1
-	- [ ] coc.nvim-2
+	- [x] [coc.nvim-1](../day16)
+	- [ ] [coc.nvim-2](../day17)
 	- [x] [emmet-vim(1)](../day18)
 	- [x] [emmet-vim(2)](../day19)
 	- [x] [split window and tab](../day20)
-	- [ ] clipboard, session
-	- [ ] move, into insert mode
+	- [ ] [clipboard, session](../day21)
+	- [ ] [move, into insert mode](../day22)
 - [ ] Day 22 ~ 26: other tools
-	- [ ] git
-	- [ ] awk
-	- [ ] ssh
-	- [ ] htop
-	- [ ] tree
-	- [ ] axel
-	- [ ] http-prompt
-	- [ ] https://github.com/maaslalani/slides
+	- [ ] [git](../day23)
+	- [ ] [awk](../day24)
+	- [ ] [ssh](../day25)
+	- [ ] [htop](../day27)
+	- [ ] [tree](../day28)
+	- [ ] [axel](../day29)
+	- [ ] [http-prompt](../day30)
+	- [ ] [https://github.com/maaslalani/slides](../day31)
 - [ ] Day 27 ~ 30: coding everywhere
-	- [ ] Android
-	- [ ] VPS (1)
-	- [ ] VPS (2)
-	- [ ] hexo
+	- [ ] [Android](../day32)
+	- [ ] [VPS (1)](../day33)
+	- [ ] [VPS (2)](../day34)
+	- [ ] [hexo](../day35)
