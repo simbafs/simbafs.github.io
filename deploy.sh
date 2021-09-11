@@ -10,6 +10,8 @@ EOF
 }
 
 deploy(){
+	cd $(git rev-parse --show-toplevel)
+
 	USER=simba
 	HOST=simba-fs.dev
 	DIR=website/blog

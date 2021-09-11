@@ -109,3 +109,7 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 ```
+
+# 結尾
+coc.nvim 的設定真的很多，一眼看上去會覺得很煩，但是認真看完設定好後的 vim 真的會讓你過得非常舒服。  
+明天是我今天沒有介紹到的部份，大部份是超難記的快捷鍵。一樣都會有全中文翻譯（但是有些我真的沒用過，只能硬著頭皮翻譯了）  
