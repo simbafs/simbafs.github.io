@@ -1,5 +1,5 @@
 +++
-title = "Day 17"
+title = "Day 17：coc.nvim 設定下集"
 date = "2021-09-17"
 tags = [
   "cli",
