@@ -30,7 +30,7 @@ draft = true
 	- [x] [vim-plug](../day14)
 	- [x] [plugins](../day15)
 	- [x] [coc.nvim-1](../day16)
-	- [ ] [coc.nvim-2](../day17)
+	- [x] [coc.nvim-2](../day17)
 	- [x] [emmet-vim(1)](../day18)
 	- [x] [emmet-vim(2)](../day19)
 	- [x] [split window and tab](../day20)
