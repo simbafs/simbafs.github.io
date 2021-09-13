@@ -12,12 +12,13 @@ tags = [
 categories = [ "ithelp", "pure-CLI-IDE" ]
 +++
 
-vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 `~/.vimrc`，如果是 neovim(nvim)，他會去找 `~/.config/nvim/init.vim`。在接下來的文章中都以 `vimrc` 代指。  
-`vimrc`  內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 `:set nu`，這個命令可以開啟行號顯示，如果要寫在 `vimrc` 裡面，就要寫成 `set nu`。
+vim 在啟動時，都會去**執行你的設定檔**，這個檔案**根據你的 vim 軟體不同而改變**，如果是一般的 vim，那他會去讀 `~/.vimrc`，如果是 neovim(nvim)，他會去找 `~/.config/nvim/init.vim`。在接下來的文章中都以 `vimrc` 代指。  
+`vimrc`  內容是 vimscript，也就是所有的冒號命令**去掉冒號之後的內容**，例如有個命令是 `:set nu`，這個命令可以開啟行號顯示，如果要寫在 `vimrc` 裡面，就要寫成 `set nu`。
 
 # vimrc
-通常我們會在 `vimrc` 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用四年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 `"` 開頭是 vimscript 的註解)  
-```vimscript
+通常我們會在 `vimrc` 中設定關於 vim 的**外觀**、**行為**、**載入外掛**等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 `"` 開頭是 vimscript 的註解)  
+
+```vim
 " 打開語法突顯
 syntax on
 
@@ -30,7 +31,7 @@ syntax on
 
 " 256 色
 set t_Co=256
-" 和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vim
+" 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vim
 set t_ut=
 " 選一個你喜歡的 colorschema
 " available color schema
@@ -106,11 +107,12 @@ hi Ignore ctermbg=black ctermfg=lightblue
 
 ## command
 我們從最簡單的命令別名講起，這個命令可以縮寫成 `com`  
-這個命令可以定義「使用者自訂命令」  
+這個命令可以定義 **「使用者自訂命令」**  
+使用者自訂命令一定要是**大寫**開頭  
 
 ### 列出命令
 `:verbose com [cmd]`
-這個可以列出符合 `[cmd]` 的使用者自訂命令，還有最後定義的位置
+這個可以列出符合 `[cmd]` 的使用者自訂命令，還有**最後定義的位置**  
 
 ### 定義新的使用者自訂命令
 `:commmand {cmd} {rep}`
@@ -125,10 +127,11 @@ au 的使用場景通常是某個類型的語法突顯會出問題、想要根�
 
 ## map
 map 的功能是定義不是冒號開頭的命令（像是 `dd` 這種，在前幾篇文章中稱為快捷鍵），map 又根據作用的模式分為 `nmap`、`vmap`、`imap` 等等非常多種（`:help map` 會列出所有 map ）。其中最常用的是 `map`、`nmap`、`imap`，這三個分別代表在「除了編輯模式中作用」、「命令模式（ n ）作用」、「在編輯模式作用（ i ）」。  
-各種 map 用法都一樣，差別只在作用模式不同
+各種 map **用法都一樣，差別只在作用模式不同**  
 
 ### 列出 map
-```
+
+```vim
 :map
 :nmap
 :imap
@@ -142,6 +145,7 @@ ps: map 給我的感覺有點像「當你按下 {快捷鍵} 時，vim 會自動�
 
 #### 快捷鍵
 快捷鍵可以是不只一個按鍵，可以像是以下幾個範例
+
 ```
 <leader>f
 <C-y>k
@@ -153,9 +157,11 @@ ggk
 
 #### 命令
 這邊的命令因為是廣義的命令，所以如果你想要幫某個快捷鍵加上別名也是可以的  
-```vimscript
+
+```vim
 nmap copy yy
 nmap paste p
 ```
+
 嗯......這可能只在快捷鍵很常出現但是複雜時比較好用  
 扯遠了，回到正題。如果你的命令是冒號命令的話，你必須要加上冒號和 enter，不然你在打完快捷鍵之後還要自己按 enter，所以記的在命令最後面加上 `<CR>` ，這個代表的是 enter 鍵，<Enter> 也可以
