@@ -29,6 +29,31 @@ categories = [ "ithelp", "pure-CLI-IDE" ]
 你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。
 > 在 [https://github.com/marlonrichert/zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete) 有快捷鍵教學
 
+## 設定
+> 這段是我在寫完第一版後新增了，所以在 [純‧ CLI 整合開發環境](https://ithelp.ithome.com.tw/users/20130473/ironman/3975) 是沒有的
+
+為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 `~/.zshrc` 裡面隨便一個地方就可以了
+
+```zsh
+# case sensitive
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# zsh-autocomplete configure
+# Up arrow:
+bindkey '\e[A' up-line-or-search
+bindkey '\eOA' up-line-or-search
+# up-line-or-search:  Open history menu.
+# up-line-or-history: Cycle to previous history line.
+
+# Down arrow:
+bindkey '\e[B' down-line-or-select
+bindkey '\eOB' down-line-or-select
+# down-line-or-select:  Open completion menu.
+# down-line-or-history: Cycle to next history line.
+```
+
+這裡新增了「區分大小寫」和「方向鍵選建議」兩個功能
+
 # zsh-autopair
 這個簡單但是貼心的功能在這個 IDE 中很常見，我們的當然也不能漏掉他  
 一樣修改 `~/.zshrc` 就可以安裝了  
