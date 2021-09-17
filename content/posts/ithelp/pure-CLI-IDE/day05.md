@@ -39,12 +39,6 @@ categories = [ "ithelp", "pure-CLI-IDE" ]
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # zsh-autocomplete configure
-# Up arrow:
-bindkey '\e[A' up-line-or-search
-bindkey '\eOA' up-line-or-search
-# up-line-or-search:  Open history menu.
-# up-line-or-history: Cycle to previous history line.
-
 # Down arrow:
 bindkey '\e[B' down-line-or-select
 bindkey '\eOB' down-line-or-select
