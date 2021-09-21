@@ -45,7 +45,7 @@ ssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socke
 ssh -L <local port>:localhost:<remote port> <user>@<remote> 反向;
 ssh -R <remote port>:localhost:<local port> <user>@<remote> 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"ssh-tunnel","item":"https://blog.simba-fs.dev/posts/linux/ssh-tunnel/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ssh-tunnel","name":"ssh-tunnel","description":"昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel\n簡介 ssh tunnel 分正反向 其實他們的差別只有在方向不一樣 連語法參數都一樣\n正向 tunnel 正向的 tunnel 參數是 -L 語法：\nssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：\nssh -L \u0026lt;local port\u0026gt;:localhost:\u0026lt;remote port\u0026gt; \u0026lt;user\u0026gt;@\u0026lt;remote\u0026gt; 反向;\nssh -R \u0026lt;remote port\u0026gt;:localhost:\u0026lt;local port\u0026gt; \u0026lt;user\u0026gt;@\u0026lt;remote\u0026gt; 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port","keywords":["ssh","linux"],"articleBody":"昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel\n簡介 ssh tunnel 分正反向 其實他們的差別只有在方向不一樣 連語法參數都一樣\n正向 tunnel 正向的 tunnel 參數是 -L 語法：\nssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：\nssh -L :localhost:@ 反向;\nssh -R :localhost:@ 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port\n","wordCount":"78","inLanguage":"zh-tw","datePublished":"2020-02-24T00:00:00Z","dateModified":"2020-02-24T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/linux/ssh-tunnel/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ssh-tunnel","name":"ssh-tunnel","description":"昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel\n簡介 ssh tunnel 分正反向 其實他們的差別只有在方向不一樣 連語法參數都一樣\n正向 tunnel 正向的 tunnel 參數是 -L 語法：\nssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：\nssh -L \u0026lt;local port\u0026gt;:localhost:\u0026lt;remote port\u0026gt; \u0026lt;user\u0026gt;@\u0026lt;remote\u0026gt; 反向;\nssh -R \u0026lt;remote port\u0026gt;:localhost:\u0026lt;local port\u0026gt; \u0026lt;user\u0026gt;@\u0026lt;remote\u0026gt; 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port","keywords":["ssh","linux"],"articleBody":"昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel\n簡介 ssh tunnel 分正反向 其實他們的差別只有在方向不一樣 連語法參數都一樣\n正向 tunnel 正向的 tunnel 參數是 -L 語法：\nssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：\nssh -L :localhost:@ 反向;\nssh -R :localhost:@ 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port\n參考連結 https://johnliu55.tw/ssh-tunnel.html\n","wordCount":"80","inLanguage":"zh-tw","datePublished":"2020-02-24T00:00:00Z","dateModified":"2020-02-24T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/linux/ssh-tunnel/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -114,7 +114,9 @@ ssh-tunnel
 <li>
 <a href=#%e5%8f%8d%e5%90%91-tunnel aria-label="反向 tunnel">反向 tunnel</a></li>
 <li>
-<a href=#%e5%bf%83%e5%be%97 aria-label=心得>心得</a>
+<a href=#%e5%bf%83%e5%be%97 aria-label=心得>心得</a></li>
+<li>
+<a href=#%e5%8f%83%e8%80%83%e9%80%a3%e7%b5%90 aria-label=參考連結>參考連結</a>
 </li>
 </ul>
 </div>
@@ -122,24 +124,24 @@ ssh-tunnel
 </div>
 <div class=post-content><p>昨天架好了 reverse ssh 讓我可以連回學校 server
 今天來研究 ssh tunnel</p>
-<h2 id=簡介>簡介<a hidden class=anchor aria-hidden=true href=#簡介>#</a></h2>
+<h1 id=簡介>簡介<a hidden class=anchor aria-hidden=true href=#簡介>#</a></h1>
 <p>ssh tunnel 分正反向
 其實他們的差別只有在方向不一樣
 連語法參數都一樣</p>
-<h2 id=正向-tunnel>正向 tunnel<a hidden class=anchor aria-hidden=true href=#正向-tunnel>#</a></h2>
+<h1 id=正向-tunnel>正向 tunnel<a hidden class=anchor aria-hidden=true href=#正向-tunnel>#</a></h1>
 <p>正向的 tunnel 參數是 -L
 語法：</p>
 <pre tabindex=0><code>ssh -L [bind_address:]port:host:hostport
 ssh -L [bind_address:]port:remote_socket
 ssh -L local_socket:host:hostport
 ssh -L local_socket:remote_socket
-</code></pre><h2 id=反向-tunnel>反向 tunnel<a hidden class=anchor aria-hidden=true href=#反向-tunnel>#</a></h2>
+</code></pre><h1 id=反向-tunnel>反向 tunnel<a hidden class=anchor aria-hidden=true href=#反向-tunnel>#</a></h1>
 <pre tabindex=0><code>ssh -R [bind_address:]port:host:hostport
 ssh -R [bind_address:]port:local_socket
 ssh -R remote_socket:host:hostport
 ssh -R remote_socket:local_socket
 ssh -R [bind_address:]port
-</code></pre><h2 id=心得>心得<a hidden class=anchor aria-hidden=true href=#心得>#</a></h2>
+</code></pre><h1 id=心得>心得<a hidden class=anchor aria-hidden=true href=#心得>#</a></h1>
 <p>看起來好像很難
 但是其實用下面這個就夠了
 正向：</p>
@@ -149,6 +151,8 @@ ssh -R [bind_address:]port
 </code></pre><p>總而言之就是前面的和選項一樣
 如果是 -L 那前面就是 local port
 如果是 -R 那前面就是 remote port</p>
+<h1 id=參考連結>參考連結<a hidden class=anchor aria-hidden=true href=#參考連結>#</a></h1>
+<p><a href=https://johnliu55.tw/ssh-tunnel.html>https://johnliu55.tw/ssh-tunnel.html</a></p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>

@@ -120,7 +120,7 @@
 正向 tunnel 正向的 tunnel 參數是 -L 語法：
 ssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：
 ssh -L &lt;local port>:localhost:&lt;remote port> &lt;user>@&lt;remote> 反向;
-ssh -R &lt;remote port>:localhost:&lt;local port> &lt;user>@&lt;remote> 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port</p>
+ssh -R &lt;remote port>:localhost:&lt;local port> &lt;user>@&lt;remote> 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port...</p>
 </section>
 <footer class=entry-footer>2020-February-24&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to ssh-tunnel" href=https://blog.simba-fs.dev/posts/linux/ssh-tunnel/></a>
