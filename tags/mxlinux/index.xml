@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>mxlinux on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/tags/mxlinux/</link>
+    <description>Recent content in mxlinux on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 05 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/mxlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mxlinux boot with systemd</title>
+      <link>https://blog.simba-fs.dev/posts/linux/mxlinux-boot-with-systemd/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/mxlinux-boot-with-systemd/</guid>
+      <description>問題 在 mxlinux 裡面，預設的 init 不是 systmed，這導致如果想用 systemctl 的時候就會跳出錯誤說
+System has not been booted with systemd as init system 像是在安裝 mongodb-org 的時候他就要用到 systemctl 然後就會出錯。
+解法 其實 mxlinux 已經幫我們想好解法了，在開機選項時選 Advence &amp;gt; Systemd 就會以 systemd 開機</description>
+    </item>
+    
+    <item>
+      <title>mxlinux-change-workspace</title>
+      <link>https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/</guid>
+      <description>切換工作區 今天想要在 mxlinux 中快速的切換工作區 我看到可以用滑鼠滾輪切換 可是我想要的是鍵盤快捷鍵 上網查了一下 發現可以透過 Ctrl+Alt+up/down/home/end 來切換
+參考資料 https://unix.stackexchange.com/questions/270334/how-to-move-a-window-to-another-workspace-in-xfce</description>
+    </item>
+    
+  </channel>
+</rss>

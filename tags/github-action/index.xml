@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>github action on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/tags/github-action/</link>
+    <description>Recent content in github action on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 16 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/github-action/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Action 自動部署 hexo</title>
+      <link>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
+      <description>前言 本來部署 hexo 都是手動下指令，但是這樣在手機上因為沒辦法裝 hexo ,所以一直不能在手機上寫文章。剛好想到 GitHub Action 可以滿足我的需求，上網查了一下資料發現蠻多人有和我一樣的需求，這次參考的是 owlran 大大的文章。
+ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦。
+ssh-keygen 首先隨便找個資料夾產生一組 ssh key
+ssh-keygen -f deploy-key GitHub 再來要讓 GitHub 知道你的 ssh key（public/secret 都要）
+public key public key 是要放在你的 &amp;lt;username&amp;gt;.github.io 的 repo 下
+ .ggithub.io -&amp;gt; settings -&amp;gt; Deploy keys -&amp;gt; add deploy key
+ 新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
+把 depoly-key.pub 的內容貼上，記得下面的勾勾（Allow write access ）要選起來
+secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大是放在同一個 repo 不同 branch，我是放在兩個不同 repo，其中放部落格檔案的 repo 我設成 private repo（因為我放了一些 gitalk 要用的 clientSecret，這個不能公開）。</description>
+    </item>
+    
+    <item>
+      <title>audo-depoly-by-github-action</title>
+      <link>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</guid>
+      <description>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
+name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest strategy: matrix: node-version: [12.x] steps: - uses: actions/checkout@v1 - name: Use Node.js ${{ matrix.node-version }} uses: actions/setup-node@v1 with: node-version: ${{ matrix.node-version }} - name: Configuration environment env: HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}} run: |mkdir -p ~/.ssh/ echo &amp;#34;$HEXO_DEPLOY_PRI&amp;#34; | tr -d &amp;#39;\r&amp;#39; &amp;gt; ~/.ssh/id_rsa chmod 600 ~/.ssh/id_rsa ssh-keyscan github.com &amp;gt;&amp;gt; ~/.ssh/known_hosts git config --global user.name &amp;#34;simba-fs&amp;#34; git config --global user.</description>
+    </item>
+    
+  </channel>
+</rss>

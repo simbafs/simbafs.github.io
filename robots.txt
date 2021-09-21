@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://blog.simba-fs.dev/sitemap.xml

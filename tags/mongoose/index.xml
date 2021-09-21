@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>mongoose on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/tags/mongoose/</link>
+    <description>Recent content in mongoose on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/mongoose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mongoose Model</title>
+      <link>https://blog.simba-fs.dev/posts/nodejs/mongoose-model/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/nodejs/mongoose-model/</guid>
+      <description>Mongoose Model 環境設定 這是這次實驗用的 code
+const mongoose = require(&amp;#39;mongoose&amp;#39;); mongoose.connect(&amp;#39;mongodb://127.0.0.1:27017&amp;#39;, {useNewUrlParser: true, useUnifiedTopology: true}) .then(() =&amp;gt; console.log(&amp;#39;Connected to DB&amp;#39;)) .catch(e =&amp;gt; console.error(e)); const requiredString = { type: String, required: true } const UserSchema = new mongoose.Schema({ username: requiredString, password: requiredString }); const UserModel = mongoose.model(&amp;#39;User&amp;#39;, UserSchema); mongo db 用 docker 開一個實驗用的 server
+version: &#39;3&#39; services: db: image: &#39;mongo&#39; container_name: &#39;aurl-mongodb&#39; volumes: - ./data/mongo:/data/db - ./data/dump:/dump ports: - &#39;27017:27017&#39; 取得原 schema 在一般操作的時候都是用 UserModel 在操作資料庫，當要取得 schema 的時候當然也是從他裡面找最方便，當然也可以把 schema 特別弄出來，但是有點麻煩，以這次的例子說明，原本的 UserSchema 會存在 UserModel.</description>
+    </item>
+    
+  </channel>
+</rss>

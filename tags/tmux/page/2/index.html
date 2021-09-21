@@ -1,0 +1,267 @@
+<!doctype html><html lang=zh-tw dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>tmux | Simba's Blog</title>
+<meta name=keywords content>
+<meta name=description content>
+<meta name=author content="simba-fs">
+<link rel=canonical href=https://blog.simba-fs.dev/tags/tmux/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
+<link rel=preload href=/images/icon/icon.png as=image>
+<link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
+<link rel=apple-touch-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.1">
+<link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/tags/tmux/index.xml>
+<meta property="og:title" content="tmux">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.simba-fs.dev/tags/tmux/"><meta property="og:image" content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="Simba's Blog">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
+<meta name=twitter:title content="tmux">
+<meta name=twitter:description content>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<noscript>
+<style type=text/css>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://blog.simba-fs.dev/ accesskey=h title="Home (Alt + H)">
+<img src=/images/icon/icon.png alt=logo aria-label=logo height=35>Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/ title="> 純‧ CLI 整合開發環境 <">
+<span>> 純‧ CLI 整合開發環境 &lt;</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/archive/ title=Archives>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>Home</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/tags/>Tags</a></div>
+<h1>tmux</h1>
+</header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 11：批次修改！！</h2>
+</header>
+<section class=entry-content>
+<p>昨天體驗了一些快捷鍵和命令，今天要講的是在 vim 中也很常用的搜尋與取代
+搜尋與取代 vim 的搜尋與取代是由命令 s 達成的，命令格式長這樣
+:[範圍修飾字]s/abcd/efgh/[旗標] 其中 abcd 是 正規表達式（regular expression，縮寫 regex，在中國常寫成「正則」），regex 除了在 vim 可以用之外，幾乎所有程式語言都可以用，還有 grep、sed 等 linux 指令也都是使用 regex，關於 regex 的用法在這裡就不多提了，MDN 上有很完整的解釋
+你應該有注意到上面的命令格式裡面除了正規表達式之外還有「範圍修飾字」和「旗標」，這就是接下來這段的重點啦！
+範圍修飾字 這個東西也不只是搜尋與取代可以用，只要你覺得需要限制某個指令的作用範圍都可以用樣的邏輯接下去
+範圍修飾可寫可不寫，如果不寫的話搜尋與取代就只會在游標在的那一行起作用，加上百分比符號 % 代表作用範圍是整份文件，也可以加上行號代表只作用在某一行，如果是兩個行號中間以逗號隔開，代表是作用在這兩個行號之間
+範圍修飾字範例 範圍選取 剛剛的範例中有出現用行號作範圍選取，其實範圍選取還有一個更簡單的方式 ——「選取模式」。選取模式和編輯模式、命令模式是同等地位的東西，進入選取模式的快捷鍵有下列幾個（一樣要進到命令模式才能進選取模式） 快捷鍵 說明 v 一般選取，以「字」為單位 S-v(大寫 v ) 一般選取，以「行」為單位 C-v 垂直選取，這個比較不常用，但是需要的時候蠻好用的 選取後一樣可以打指令和快捷鍵，但是這些就只會作用在選取的範圍內，常常搭配的有 d（剪下）、y（複製）、:s（搜尋與取代）...</p>
+</section>
+<footer class=entry-footer>2021-September-11&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 11：批次修改！！" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day11/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 10：新手殺，誰來教我離開 vim 阿～～</h2>
+</header>
+<section class=entry-content>
+<p>前面 9 天都在介紹操作環境，今天終於要進到編輯器啦！我選用的編輯器是 nvim，但是如果你要用 vim 8 也是可以，因為這兩者之間幾乎沒什麼差別，只是你要注意這兩者的設定檔位置不同，目錄需要你自己轉換。唯一不同的點大概是 nvim 內建支援用 lua（一種程式語言）寫外掛，vim 8 只能用 vimscript。關於兩者之間的愛恨情仇請參考這裡，他講的非常詳細
+接下來的文章可能會出現 vim、nvim 混用，但是他們都是指 neovim，也就是我們用的這個編輯器，不用特別跑去裝兩套軟體
+安裝 nvim 基本上你的電腦的套件管理器裡面應該都有 nvim 了，但是他的名字可能不是 nvim，例如 apt 就是 neovim，如果你的套件管理器沒有收錄 nvim 或是你不知道該怎麼辦的話，可以看看這個文章 幾乎所有作業系統他都有介紹怎麼安裝了，當然他也有教你如何自己 build。
+操作 vim 的前身—— vi 誕生於幾乎沒有圖形化界面的時候，那時候也沒有滑鼠，所以所有的操作都必須在鍵盤上達成，今天就來認識一些簡單的命令吧！
+離開 vim 為什麼要在還沒進入 vim 之前就教如何離開呢？ 因為幾乎所有初學者都會有這個疑問，要怎麼離開 vim 啦！！ 這邊我提供一個必勝的方法，不論你在 vim 做了什麼操作，ESC狂按個 100 次三到四次，然後輸入 :q!ENTER就會離開了。
+命令模式？編輯模式？ vim 的「模式」也是讓初學者很困擾的東西之一，下面用一張圖來解釋他們的關係
+vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹) 通常 Normal Mode 中文是 「命令模式」 ，顧名思義這個模式下你可以打命令，Insert Mode 的中文是 「編輯模式」 ，在這個模式你可以編輯你的檔案。...</p>
+</section>
+<footer class=entry-footer>2021-September-10&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 10：新手殺，誰來教我離開 vim 阿～～" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day10/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 09：今天又想不出標題了！tmux plugin 和 mouse mode</h2>
+</header>
+<section class=entry-content>
+<p>tmux 本身已經是個非常完善的軟體了，因此我只選了一個外掛，tmux-resurrect 這個外掛讓你可以儲存目前的 tmux 版面配置（分頁、螢幕切割、名稱等等），在下次啟動時復原，這個功能在開發專案要切分編輯、編譯、測試版面時很好用，不需要每次開機都重新切版面
+安裝 我們之前已經安裝過 tmp 了，現在我們只需要在 ~/.tmux.conf 中新增一行
++ set -g @plugin 'tmux-plugins/tmux-resurrect' 接下來執行 tmux source ~/.tmux.conf 載入最新的設定檔，再來用快捷鍵 CTRLa+ i安裝
+使用 切好版面後，按 CTRLa+ s（save）儲存目前狀態，除了版面配置，每個 session 的工作路徑也會儲存，vim 開啟的檔案下次開啟有機會會幫你開，但是可能會遇到暫存檔的問題，所以我建議是儲存狀態時把 vim 關掉
+下次要使用時，用 CTRLa+ r（restore）恢復
+更多外掛 在 https://github.com/tmux-plugins/list 有更多外掛，主要內容包括系統資訊顯示、複製貼上、搜尋，我個人覺得沒有重要到須要特別提出來介紹，就不一一介紹
+更多 tmux 寫完今天的內容後我發現，內容好像有點少，於是就補充了一些 tmux 的東西
+列出所有快捷鍵 tmux 的快捷非常方便，但是有時候真的想不起來某個功能怎麼按，這時候你可以用 tmux list-kyes 或是比較短的 tmux lsk 看看什麼按鍵對應到什麼功能。
+有時候進來看看有什麼方便的快捷鍵自己還不知道也挺好玩的
+滑鼠控制 不知道昨天的各種 tmux 移動、調整大小的快捷鍵有沒有嚇到你。tmux 其實還有提供一個更簡單的操作方式，如果你的終端機有支援滑鼠的話（像是我用的 gnome-terminal 就有提供）你可以在 ~/.tmux.conf 中加上一行
++ set -g mouse on 然後重新開啟 tmux，這時候你就可以用滑鼠換頁、切換分割畫面、調整大小等等操作，在不同的地方按右鍵還會有不同的功能呦！...</p>
+</section>
+<footer class=entry-footer>2021-September-9&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 09：今天又想不出標題了！tmux plugin 和 mouse mode" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day09/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 08：八爪章魚之 tmux 快捷鍵</h2>
+</header>
+<section class=entry-content>
+<p>tmux 有許多的快捷鍵來控制螢幕，不論是分割、移動都可以輕鬆完成
+分割畫面 垂直分割畫面的快捷鍵是 CTRLa+ %，水平分割的快捷鍵是 CTRLa+ |(pipe，shift + enter 上面那個)。按下去畫面就會以中間分開，兩邊都是獨立的，即使一邊在編譯卡住了，另一邊的編輯器還是可以正常操作的 分割畫面，一邊編輯，一邊編譯，另一邊執行 在分割畫面中移動 現在你畫面分割好了，要怎麼移動呢？非常直覺，往上就是上，往右就是右。CTRLa+ 方向鍵你也可以用 CTRLa+ tab按照順序移動，CTRLa+ SHIFTtab反向移動
+記得，按方向鍵時 CTRL要放開，不然就會變接下來要介紹的快捷鍵
+在分割畫面中移動 調整分割大小 有時候我們不一定是要分成一半，例如下面五行，上面滿版。這時候你可以用 CTRLa+ CTRL方向鍵調整大小 調整大小 新增分頁 你有沒有發現終端機最下面那行？那個是 tmux 的分頁，用 CTRLa+ c就可以新增一個分頁，新增順序會從 0 開始找空的補上
+範例和分頁移動一起
+分頁移動 在多個分頁中，你可以用 CTRLa+ CTRLa移動到上一次使用的分頁，或是用 CTRLa+ 數字鍵移動到特定 ID 的分頁。...</p>
+</section>
+<footer class=entry-footer>2021-September-8&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 08：八爪章魚之 tmux 快捷鍵" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day08/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 07：整合 tmux 和 zsh</h2>
+</header>
+<section class=entry-content>
+<p>昨天的結尾提到要整合 tmux 和 zsh 不是在 ~/.zshrc 結尾執行 tmux 這麼簡單，今天就讓我們看看會遇到什麼問題吧！
+直接執行 tmux 在正式開始前，先讓我們看看直接在 ~/.zshrc 後面執行 tmux 會發生什麼錯誤
+直接執行 tmux 嗯，錯誤訊息說要 unset $TMUX 那我們就照作吧！
+加上 unset TMUX，嗯，爆炸了！ 分析問題 可以看到，如果直接執行 tmux 的話總是會跳出一個錯誤 sessions should be nested with care, unset $TMUX to force，這段訊息告訴我們，不能建立巢狀 tmux，除非將 $TMUX 環境變數移除。欸？我們不是只執行一次 tmux 嗎？為什麼會他說我們建立巢狀 tmux？我們來看看登入之後發生了什麼事：
+執行 zsh（因為我們的 default shell 是 zsh） zsh 執行 ~/....</p>
+</section>
+<footer class=entry-footer>2021-September-7&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 07：整合 tmux 和 zsh" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day07/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 06：螢幕切八段！多開神器 tmux</h2>
+</header>
+<section class=entry-content>
+<p>今天起要介紹的是 tmux，這是一個終端機的 session 管理器，什麼是 session 呢？你可以把 session 理解為一個終端機（畫面）和主機 （你的電腦）的連線，tmux 做的事就是把一個終端機切分成多個終端機，白話說就是多開神器啦！這樣你就可以左邊編輯程式、右邊看執行結果（如圖）。而且一切操作都在一個終端機視窗裡面，這意味著即使你在沒有圖形界面的純文字模式（像是 single user mode、ssh 連線）也可以享受如同圖形界面的便利！
+tmux demo 安裝 debian/ubuntu $ apt install tmux macOS $ brew install tmux 其他 or 自己編譯 其他可以參考 https://github.com/tmux/tmux/wiki/Installing 的說明
+config tmux 啟動時會去讀取 ~/.tmux.conf 這個檔案，所以的設定檔都放在這，在這裡，我推薦一個我用很多年的設定檔，點擊這裡下載，或是執行以下命令
+curl https://gist.githubusercontent.com/simba-fs/e06a1763c1967ce3f4b5ef643db5e0b3/raw/2f28c62d01f419a390bfc0e66a974985bacdefa5/.tmux.conf > ~/.tmux.conf 這個檔案是我從網路上找到的，後來有加一些自己的東西，把檔案下載下來並存到 ~/.tmux.conf 裡面，關於每一行的用途都有用註解標示，主要幾個改變有以下幾點：
+把前置按鍵（prefix）從 Ctrlb改成 Ctrla(第 16 ~ 19 行，不喜歡的話可以拿掉)，你也可以改成其他按鍵 底部 status bar 變成彩色，不再是單調的綠色 一些快捷鍵綁定 啟動 暫時我們不加入開啟終端機自動啟動 tmux，手動啟動方式是在終端機執行命令...</p>
+</section>
+<footer class=entry-footer>2021-September-6&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 06：螢幕切八段！多開神器 tmux" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day06/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair</h2>
+</header>
+<section class=entry-content>
+<p>今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias
+zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。
+❓ > autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？ 前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突 安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定
++ zplug 'marlonrichert/zsh-autocomplete' 然後重新開啟終端機並安裝新增的外掛就可以了
+你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。
+在 https://github.com/marlonrichert/zsh-autocomplete 有快捷鍵教學
+設定 這段是我在寫完第一版後新增了，所以在 純‧ CLI 整合開發環境 是沒有的
+為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了
+# case sensitive zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[....</p>
+</section>
+<footer class=entry-footer>2021-September-5&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day05/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search</h2>
+</header>
+<section class=entry-content>
+<p>今天的內容會比平常多，但是非常紮實！
+有時候我們在 CLI 操作時遇到很多重複的指令，像是 git add、git commit -m 'ba la ba la' 等等，這些指令可能又長又複雜，一直都是自己打也不是辦法，這時候就該請出 autosuggestions 了
+安裝 autosuggestions 老樣子，安裝外掛只須要修改 ~/.zshrc 就可以了
+# plugins zplug 'romkatv/powerlevel10k', as:theme, depth:1 + zplug 'zsh-users/zsh-autosuggestions' 因為 autosuggestions 是外掛，不需要特別寫 tag 了
+[問題]好像有奇怪的字跑出來？ 寫好之後重開終端機，按下 enter你可能會發現跳出了一堆東西，這是因為你開啟了 p10k 的 Instant Prompt Mode，這個雖然會讓你的終端機跑起來比較順（官方說的，我感覺不出來），但是在 zsh 載入完成之前就不能有任何字輸出。
+可是你看看，如果我們新增了一個外掛，zplug 會跳出來問我們是否要安裝，這時後 Instant Prompt Mode 就出來抱怨了。
+這個問題的解決方法直覺上有兩個，一是關掉 Instant Prompt Mode，二是讓 zplug 先不要吵
+關掉 Instant Prompt Mode 關掉 Instant Prompt Mode 很簡單，重新設定一次 p10k 就好了，在設定程式問你是否要開啟 p10k 時選擇 (3) Off，這樣下次安裝外掛就不會有奇怪的警告訊息跳出來了。...</p>
+</section>
+<footer class=entry-footer>2021-September-4&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day04/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 03：轉吧轉吧七彩霓虹燈之 p10k</h2>
+</header>
+<section class=entry-content>
+<p>昨天裝好外掛管理器了，接下來我們要用 zplug 來裝一些好玩的外掛囉！
+p10k p10k 是 powerlevel10k 的縮寫，這是一套 zsh 的 prompt 主題，是我用過設定最簡單效果也很好的，重點是不論有沒有裝特殊字型，他都可以用！
+安裝字型（可跳過） p10k 官方推薦 nerd font，這是一個給開發者的字型集，包括各種程式語言、網路服務的 icon 等等。p10k 官方也有提供修改過專門給 p10k 的字型檔連結裡有各種終端機模擬器的字型安裝教學（英文）。
+其實如果你只想要部份 icon，只要把 ttf 檔放在 ~/.fonts 下就可以了，不需要改終端機字型，他找不到時會去抓（我自己試是可以的，系統 ubuntu 20.04、terminal: gnome-terminal ）
+如果你想要在 CLI 有各種 icon 的話你才需要安裝上述字型，如果不需要可以跳到下一小節
+安裝 p10k p10k 說到底只是一個外掛，所以我們可以透過 zplug 安裝，打開 ~/.zshrc，在 # plugins 那行下面加上以下設定
+# plugins + zplug 'romkatv/powerlevel10k', as:theme, depth:1 關於這段是什麼意思呢，zplug 提供了一張精美的圖來幫助我們理解
+首先，以 zplug 開頭，然後接 github 的 username/reponame，再來可以用 tag 做修飾，例如我們安裝 p10k 時就用了 as:theme 和 depth:1 ，兩個 tag 之間以逗號加上一個以上的空白隔開...</p>
+</section>
+<footer class=entry-footer>2021-September-3&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 03：轉吧轉吧七彩霓虹燈之 p10k" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day03/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 02 ：zsh 與 shell script</h2>
+</header>
+<section class=entry-content>
+<p>今天內容不小心寫太長了 ……
+首先，在介紹其他軟體之前，先來看看與 CLI 操作習習相關的「shell」，我選擇的 shell 是 zsh，zsh 在 bash 的基礎上擴充了很多實用的功能，像是支援更好的自動補全，各式各樣的主題等等。
+zsh 安裝 如果你的作業系統是 debian 系列的話，可以直接用 apt 安裝 apt install zsh。其他的 linux 發行版可以到 這個網頁找找你的發行版
+如果是 mac，理論上你的 shell 應該已經是 zsh 了（ mac 的 shell 從 2019 開始預設是 zsh ），如果不是的話你可以用 homebrew 安裝 brew install zsh。
+如果是 windows 的話，建議你開啟 WSL2 或是找一台有 linux/mac 的電腦
+現在我們可以透過這個指令檢查是否安裝成功
+zsh --version 如果沒有錯誤就是安裝成功了
+❓ > 現在用的是什麼 shell？ 你可以使用 echo $SHELL 來看你現在使用的 shell 是那一個 更換 shell 如果你之前的 shell 不是 zsh 那就要更換預設 shell，用以下指令可以更換...</p>
+</section>
+<footer class=entry-footer>2021-September-2&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 02 ：zsh 與 shell script" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day02/></a>
+</article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=prev href=https://blog.simba-fs.dev/tags/tmux/>« </a>
+<a class=next href=https://blog.simba-fs.dev/tags/tmux/page/3/> »</a>
+</nav>
+</footer>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
+<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</button>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

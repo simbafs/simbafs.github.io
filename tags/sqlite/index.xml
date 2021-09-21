@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>sqlite on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/tags/sqlite/</link>
+    <description>Recent content in sqlite on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sqlite</title>
+      <link>https://blog.simba-fs.dev/posts/nodejs/sqlite/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/nodejs/sqlite/</guid>
+      <description>昨天是試著去理解 sqlite3，我發現他的 callback function 真的太煩了 於是我試著去尋找 async 的版本，還真找到了 這個套件把整個 sqlite 包成 async 了</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/categories/</link>
+    <description>Recent content in Categories on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ithelp</title>
+      <link>https://blog.simba-fs.dev/categories/ithelp/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/ithelp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pure-CLI-IDE</title>
+      <link>https://blog.simba-fs.dev/categories/pure-cli-ide/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/pure-cli-ide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://blog.simba-fs.dev/categories/golang/</link>
+      <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.simba-fs.dev/categories/linux/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://blog.simba-fs.dev/categories/server/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://blog.simba-fs.dev/categories/software/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://blog.simba-fs.dev/categories/vim/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kotlin</title>
+      <link>https://blog.simba-fs.dev/categories/kotlin/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>other</title>
+      <link>https://blog.simba-fs.dev/categories/other/</link>
+      <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>https://blog.simba-fs.dev/categories/nodejs/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://blog.simba-fs.dev/categories/docker/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://blog.simba-fs.dev/categories/bash/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hexo</title>
+      <link>https://blog.simba-fs.dev/categories/hexo/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://blog.simba-fs.dev/categories/react/</link>
+      <pubDate>Sun, 12 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>frontend</title>
+      <link>https://blog.simba-fs.dev/categories/frontend/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blessed</title>
+      <link>https://blog.simba-fs.dev/categories/blessed/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/categories/blessed/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

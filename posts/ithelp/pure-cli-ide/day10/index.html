@@ -1,0 +1,366 @@
+<!doctype html><html lang=zh-tw dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Day 10：新手殺，誰來教我離開 vim 阿～～ | Simba's Blog</title>
+<meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
+<meta name=description content="前面 9 天都在介紹操作環境，今天終於要進到編輯器啦！我選用的編輯器是 nvim，但是如果你要用 vim 8 也是可以，因為這兩者之間幾乎沒什麼差別，只是你要注意這兩者的設定檔位置不同，目錄需要你自己轉換。唯一不同的點大概是 nvim 內建支援用 lua（一種程式語言）寫外掛，vim 8 只能用 vimscript。關於兩者之間的愛恨情仇請參考這裡，他講的非常詳細
+ 接下來的文章可能會出現 vim、nvim 混用，但是他們都是指 neovim，也就是我們用的這個編輯器，不用特別跑去裝兩套軟體
+ 安裝 nvim 基本上你的電腦的套件管理器裡面應該都有 nvim 了，但是他的名字可能不是 nvim，例如 apt 就是 neovim，如果你的套件管理器沒有收錄 nvim 或是你不知道該怎麼辦的話，可以看看這個文章 幾乎所有作業系統他都有介紹怎麼安裝了，當然他也有教你如何自己 build。
+操作 vim 的前身—— vi 誕生於幾乎沒有圖形化界面的時候，那時候也沒有滑鼠，所以所有的操作都必須在鍵盤上達成，今天就來認識一些簡單的命令吧！
+離開 vim 為什麼要在還沒進入 vim 之前就教如何離開呢？ 因為幾乎所有初學者都會有這個疑問，要怎麼離開 vim 啦！！ 這邊我提供一個必勝的方法，不論你在 vim 做了什麼操作，ESC狂按個 100 次三到四次，然後輸入 :q!ENTER就會離開了。
+命令模式？編輯模式？ vim 的「模式」也是讓初學者很困擾的東西之一，下面用一張圖來解釋他們的關係
+        vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹)    通常 Normal Mode 中文是 「命令模式」 ，顧名思義這個模式下你可以打命令，Insert Mode 的中文是 「編輯模式」 ，在這個模式你可以編輯你的檔案。">
+<meta name=author content="simba-fs">
+<link rel=canonical href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day10/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
+<link rel=preload href=/images/icon/icon.png as=image>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
+<link rel=apple-touch-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.1">
+<meta property="og:title" content="Day 10：新手殺，誰來教我離開 vim 阿～～">
+<meta property="og:description" content="前面 9 天都在介紹操作環境，今天終於要進到編輯器啦！我選用的編輯器是 nvim，但是如果你要用 vim 8 也是可以，因為這兩者之間幾乎沒什麼差別，只是你要注意這兩者的設定檔位置不同，目錄需要你自己轉換。唯一不同的點大概是 nvim 內建支援用 lua（一種程式語言）寫外掛，vim 8 只能用 vimscript。關於兩者之間的愛恨情仇請參考這裡，他講的非常詳細
+ 接下來的文章可能會出現 vim、nvim 混用，但是他們都是指 neovim，也就是我們用的這個編輯器，不用特別跑去裝兩套軟體
+ 安裝 nvim 基本上你的電腦的套件管理器裡面應該都有 nvim 了，但是他的名字可能不是 nvim，例如 apt 就是 neovim，如果你的套件管理器沒有收錄 nvim 或是你不知道該怎麼辦的話，可以看看這個文章 幾乎所有作業系統他都有介紹怎麼安裝了，當然他也有教你如何自己 build。
+操作 vim 的前身—— vi 誕生於幾乎沒有圖形化界面的時候，那時候也沒有滑鼠，所以所有的操作都必須在鍵盤上達成，今天就來認識一些簡單的命令吧！
+離開 vim 為什麼要在還沒進入 vim 之前就教如何離開呢？ 因為幾乎所有初學者都會有這個疑問，要怎麼離開 vim 啦！！ 這邊我提供一個必勝的方法，不論你在 vim 做了什麼操作，ESC狂按個 100 次三到四次，然後輸入 :q!ENTER就會離開了。
+命令模式？編輯模式？ vim 的「模式」也是讓初學者很困擾的東西之一，下面用一張圖來解釋他們的關係
+        vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹)    通常 Normal Mode 中文是 「命令模式」 ，顧名思義這個模式下你可以打命令，Insert Mode 的中文是 「編輯模式」 ，在這個模式你可以編輯你的檔案。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day10/"><meta property="og:image" content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-09-10T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-09-10T00:00:00+00:00"><meta property="og:site_name" content="Simba's Blog">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
+<meta name=twitter:title content="Day 10：新手殺，誰來教我離開 vim 阿～～">
+<meta name=twitter:description content="前面 9 天都在介紹操作環境，今天終於要進到編輯器啦！我選用的編輯器是 nvim，但是如果你要用 vim 8 也是可以，因為這兩者之間幾乎沒什麼差別，只是你要注意這兩者的設定檔位置不同，目錄需要你自己轉換。唯一不同的點大概是 nvim 內建支援用 lua（一種程式語言）寫外掛，vim 8 只能用 vimscript。關於兩者之間的愛恨情仇請參考這裡，他講的非常詳細
+ 接下來的文章可能會出現 vim、nvim 混用，但是他們都是指 neovim，也就是我們用的這個編輯器，不用特別跑去裝兩套軟體
+ 安裝 nvim 基本上你的電腦的套件管理器裡面應該都有 nvim 了，但是他的名字可能不是 nvim，例如 apt 就是 neovim，如果你的套件管理器沒有收錄 nvim 或是你不知道該怎麼辦的話，可以看看這個文章 幾乎所有作業系統他都有介紹怎麼安裝了，當然他也有教你如何自己 build。
+操作 vim 的前身—— vi 誕生於幾乎沒有圖形化界面的時候，那時候也沒有滑鼠，所以所有的操作都必須在鍵盤上達成，今天就來認識一些簡單的命令吧！
+離開 vim 為什麼要在還沒進入 vim 之前就教如何離開呢？ 因為幾乎所有初學者都會有這個疑問，要怎麼離開 vim 啦！！ 這邊我提供一個必勝的方法，不論你在 vim 做了什麼操作，ESC狂按個 100 次三到四次，然後輸入 :q!ENTER就會離開了。
+命令模式？編輯模式？ vim 的「模式」也是讓初學者很困擾的東西之一，下面用一張圖來解釋他們的關係
+        vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹)    通常 Normal Mode 中文是 「命令模式」 ，顧名思義這個模式下你可以打命令，Insert Mode 的中文是 「編輯模式」 ，在這個模式你可以編輯你的檔案。">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":3,"name":"","item":"https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/"},{"@type":"ListItem","position":4,"name":"Day 10：新手殺，誰來教我離開 vim 阿～～","item":"https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day10/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 10：新手殺，誰來教我離開 vim 阿～～","name":"Day 10：新手殺，誰來教我離開 vim 阿～～","description":"前面 9 天都在介紹操作環境，今天終於要進到編輯器啦！我選用的編輯器是 nvim，但是如果你要用 vim 8 也是可以，因為這兩者之間幾乎沒什麼差別，只是你要注意這兩者的設定檔位置不同，目錄需要你自己轉換。唯一不同的點大概是 nvim 內建支援用 lua（一種程式語言）寫外掛，vim 8 只能用 vimscript。關於兩者之間的愛恨情仇請參考這裡，他講的非常詳細\n 接下來的文章可能會出現 vim、nvim 混用，但是他們都是指 neovim，也就是我們用的這個編輯器，不用特別跑去裝兩套軟體\n 安裝 nvim 基本上你的電腦的套件管理器裡面應該都有 nvim 了，但是他的名字可能不是 nvim，例如 apt 就是 neovim，如果你的套件管理器沒有收錄 nvim 或是你不知道該怎麼辦的話，可以看看這個文章 幾乎所有作業系統他都有介紹怎麼安裝了，當然他也有教你如何自己 build。\n操作 vim 的前身—— vi 誕生於幾乎沒有圖形化界面的時候，那時候也沒有滑鼠，所以所有的操作都必須在鍵盤上達成，今天就來認識一些簡單的命令吧！\n離開 vim 為什麼要在還沒進入 vim 之前就教如何離開呢？ 因為幾乎所有初學者都會有這個疑問，要怎麼離開 vim 啦！！ 這邊我提供一個必勝的方法，不論你在 vim 做了什麼操作，ESC狂按個 100 次三到四次，然後輸入 :q!ENTER就會離開了。\n命令模式？編輯模式？ vim 的「模式」也是讓初學者很困擾的東西之一，下面用一張圖來解釋他們的關係\n        vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹)    通常 Normal Mode 中文是 「命令模式」 ，顧名思義這個模式下你可以打命令，Insert Mode 的中文是 「編輯模式」 ，在這個模式你可以編輯你的檔案。","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"前面 9 天都在介紹操作環境，今天終於要進到編輯器啦！我選用的編輯器是 nvim，但是如果你要用 vim 8 也是可以，因為這兩者之間幾乎沒什麼差別，只是你要注意這兩者的設定檔位置不同，目錄需要你自己轉換。唯一不同的點大概是 nvim 內建支援用 lua（一種程式語言）寫外掛，vim 8 只能用 vimscript。關於兩者之間的愛恨情仇請參考這裡，他講的非常詳細\n 接下來的文章可能會出現 vim、nvim 混用，但是他們都是指 neovim，也就是我們用的這個編輯器，不用特別跑去裝兩套軟體\n 安裝 nvim 基本上你的電腦的套件管理器裡面應該都有 nvim 了，但是他的名字可能不是 nvim，例如 apt 就是 neovim，如果你的套件管理器沒有收錄 nvim 或是你不知道該怎麼辦的話，可以看看這個文章 幾乎所有作業系統他都有介紹怎麼安裝了，當然他也有教你如何自己 build。\n操作 vim 的前身—— vi 誕生於幾乎沒有圖形化界面的時候，那時候也沒有滑鼠，所以所有的操作都必須在鍵盤上達成，今天就來認識一些簡單的命令吧！\n離開 vim 為什麼要在還沒進入 vim 之前就教如何離開呢？ 因為幾乎所有初學者都會有這個疑問，要怎麼離開 vim 啦！！ 這邊我提供一個必勝的方法，不論你在 vim 做了什麼操作，ESC狂按個 100 次三到四次，然後輸入 :q!ENTER就會離開了。\n命令模式？編輯模式？ vim 的「模式」也是讓初學者很困擾的東西之一，下面用一張圖來解釋他們的關係\n        vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹)    通常 Normal Mode 中文是 「命令模式」 ，顧名思義這個模式下你可以打命令，Insert Mode 的中文是 「編輯模式」 ，在這個模式你可以編輯你的檔案。\n 從命令模式切回編輯模式的命令不只 iao這三個，還有很多，但這是最常見的三個，其他的會在之後介紹\n 命令  注意：我的用詞可能和你看到其他文章不太一樣，這裡我的「命令」指的是 vim 中冒號開頭的命令，其他的則被我歸類到「快捷鍵」但是其實對 vim 來說他們都是命令（文件中都是 command ）\n 如果你想打某個 vim 命令，例如說「儲存並離開」，你需要先到 「命令模式」 ，然後按下 :，螢幕下面就會有一行空行，你可以在這裡打命令，也可按上、下瀏覽以前打過的命令。常用的命令有儲存、離開、搜尋與取代、開啟檔案等等，這裡我列出幾個和檔案操作有關的命令\n   命令 說明     :w [filename] 儲存   :q 離開   :q! 強制離開不儲存（如果有更動檔案但只用 :q 的話會跳出錯誤訊息）   :wq 儲存並離開   :e [filename] 開啟某個檔案   :{number} 跳掉第幾行   :! {cmd} 執行 shell 命令    注意第三個和最後一個，雖然都有驚嘆號，但是第三個的驚嘆號在最後面，執行 shell 命令的驚嘆號在最前面。第三個的驚嘆號表示 「強制」 、 「忽略警告」 ，搭配其他命令可以達到以下效果\n   命令 說明     :w [filename] 強制存檔，有時候會遇到檔案在開啟 vim 途中被其他程式修改或是權限問題，用 :w! 可以強制覆蓋   :e [filename] 不管現在這個檔案有沒有修改，直接從硬碟載入另一個檔案    快捷鍵 和 tmux 一樣，vim 也可以把某個按鍵對應到命令，這樣就不用常常打一堆指令了。\n要注意，vim 可以指定快捷鍵生效的模式，所以如果在編輯模式不能用，那可能要切換到指令模式。\n以下的快捷鍵都是在命令模式下用的喔，常用的快捷鍵有\n   快捷鍵 說明     yy 複製一行   dd 剪下一行   x 剪下一個字   p 貼上剪貼簿的內容   v 選取（之後可以複製、剪下）   . 重複執行剛剛執行過的指令   u 回復（ undo ）    重做（ redo，重做 undo 取消的操作，也就是說要先 u 之後才能 r ）   分隔線 接下來的快捷鍵看看就好，你可以用方向鍵解決   h 左移   j 下移   k 上移   l 右移   gg 移至檔案開頭   G 移至檔案結尾   ^ 移至行頭   $ 移至行尾      的意思是 CTRL+r，這是 vim 常見的表示法，以後還會看到\n 結尾 vim 的命令（快捷鍵）其實是個非常高深的學問，我的文章可能沒辦法講的非常詳細，你可以去找其他教學，或是在 vim 中用指令 :help 看官方的教學\n","wordCount":"191","inLanguage":"zh-tw","datePublished":"2021-09-10T00:00:00Z","dateModified":"2021-09-10T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day10/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<noscript>
+<style type=text/css>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://blog.simba-fs.dev/ accesskey=h title="Home (Alt + H)">
+<img src=/images/icon/icon.png alt=logo aria-label=logo height=35>Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/ title="> 純‧ CLI 整合開發環境 <">
+<span>> 純‧ CLI 整合開發環境 &lt;</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/archive/ title=Archives>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>Home</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>Posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/></a></div>
+<h1 class=post-title>
+Day 10：新手殺，誰來教我離開 vim 阿～～
+</h1>
+<div class=post-meta>2021-September-10&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<div class=details>Table of Contents</div>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#%e5%ae%89%e8%a3%9d-nvim aria-label="安裝 nvim">安裝 nvim</a></li>
+<li>
+<a href=#%e6%93%8d%e4%bd%9c aria-label=操作>操作</a><ul>
+<li>
+<a href=#%e9%9b%a2%e9%96%8b-vim aria-label="離開 vim">離開 vim</a></li>
+<li>
+<a href=#%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f%e7%b7%a8%e8%bc%af%e6%a8%a1%e5%bc%8f aria-label=命令模式？編輯模式？>命令模式？編輯模式？</a></li>
+<li>
+<a href=#%e5%91%bd%e4%bb%a4 aria-label=命令>命令</a></li>
+<li>
+<a href=#%e5%bf%ab%e6%8d%b7%e9%8d%b5 aria-label=快捷鍵>快捷鍵</a></li></ul>
+</li>
+<li>
+<a href=#%e7%b5%90%e5%b0%be aria-label=結尾>結尾</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><p>前面 9 天都在介紹操作環境，今天終於要進到<strong>編輯器</strong>啦！我選用的編輯器是 nvim，但是如果你要用 vim 8 也是可以，因為這兩者之間幾乎<strong>沒什麼差別</strong>，只是你要注意這兩者的<strong>設定檔位置</strong>不同，目錄需要你<strong>自己轉換</strong>。唯一不同的點大概是 nvim 內建支援用 <strong>lua</strong>（一種程式語言）寫外掛，vim 8 只能用 <strong>vimscript</strong>。關於兩者之間的愛恨情仇請參考<a href=https://jdhao.github.io/2020/01/12/vim_nvim_history_development/>這裡，他講的非常詳細</a></p>
+<blockquote>
+<p>接下來的文章可能會出現 vim、nvim 混用，但是他們都是指 neovim，也就是我們用的這個編輯器，不用特別跑去裝兩套軟體</p>
+</blockquote>
+<h1 id=安裝-nvim>安裝 nvim<a hidden class=anchor aria-hidden=true href=#安裝-nvim>#</a></h1>
+<p>基本上你的電腦的套件管理器裡面應該都有 nvim 了，但是他的名字可能不是 nvim，例如 apt 就是 <code>neovim</code>，如果你的套件管理器沒有收錄 nvim 或是你不知道該怎麼辦的話，可以看看<a href=https://github.com/neovim/neovim/wiki/Installing-Neovim>這個文章</a> 幾乎<strong>所有作業系統</strong>他都有介紹怎麼安裝了，當然他也有教你如何<strong>自己 build</strong>。</p>
+<h1 id=操作>操作<a hidden class=anchor aria-hidden=true href=#操作>#</a></h1>
+<p>vim 的前身—— vi 誕生於<strong>幾乎沒有圖形化界面</strong>的時候，那時候也沒有滑鼠，所以所有的操作都<strong>必須在鍵盤上達成</strong>，今天就來認識一些簡單的命令吧！</p>
+<h2 id=離開-vim>離開 vim<a hidden class=anchor aria-hidden=true href=#離開-vim>#</a></h2>
+<p>為什麼要在還沒進入 vim 之前就教如何離開呢？ 因為幾乎所有初學者都會有這個疑問，<strong>要怎麼離開 vim 啦！！</strong> 這邊我提供一個必勝的方法，不論你在 vim 做了什麼操作，ESC 狂按個 <del>100 次</del><strong>三到四次</strong>，然後輸入 :q!ENTER 就會離開了。</p>
+<h2 id=命令模式編輯模式>命令模式？編輯模式？<a hidden class=anchor aria-hidden=true href=#命令模式編輯模式>#</a></h2>
+<p>vim 的「模式」也是讓初學者很困擾的東西之一，下面用一張圖來解釋他們的關係</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center><img loading=lazy src=/images/ithelp/pure-CLI-IDE/day10/vim-mode.png alt="vim mode">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>vim 模式切換 (From: <a href=https://gitbook.tw/chapters/command-line/vim-introduction.html>高見龍——超簡明 Vim 操作介紹</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>通常 Normal Mode 中文是 <strong>「命令模式」</strong> ，顧名思義這個模式下你可以<strong>打命令</strong>，Insert Mode 的中文是 <strong>「編輯模式」</strong> ，在這個模式你可以編輯你的檔案。</p>
+<blockquote>
+<p>從命令模式切回編輯模式的命令不只 iao 這三個，還有很多，但這是最常見的三個，其他的會在之後介紹</p>
+</blockquote>
+<h2 id=命令>命令<a hidden class=anchor aria-hidden=true href=#命令>#</a></h2>
+<blockquote>
+<p>注意：我的用詞可能和你看到其他文章不太一樣，這裡我的「命令」指的是 vim 中冒號開頭的命令，其他的則被我歸類到「快捷鍵」但是其實對 vim 來說他們都是命令（文件中都是 command ）</p>
+</blockquote>
+<p>如果你想打某個 vim 命令，例如說「儲存並離開」，你需要先到 <strong>「命令模式」</strong> ，然後按下 :，螢幕下面就會有<strong>一行空行</strong>，你可以<strong>在這裡打命令</strong>，也可按上、下 瀏覽以前打過的命令。常用的命令有儲存、離開、搜尋與取代、開啟檔案等等，這裡我列出幾個和檔案操作有關的命令</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>命令</th>
+<th style=text-align:left>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>:w [filename]</td>
+<td style=text-align:left>儲存</td>
+</tr>
+<tr>
+<td style=text-align:left>:q</td>
+<td style=text-align:left>離開</td>
+</tr>
+<tr>
+<td style=text-align:left>:q!</td>
+<td style=text-align:left>強制離開不儲存（如果有更動檔案但只用 <code>:q</code> 的話會跳出錯誤訊息）</td>
+</tr>
+<tr>
+<td style=text-align:left>:wq</td>
+<td style=text-align:left>儲存並離開</td>
+</tr>
+<tr>
+<td style=text-align:left>:e [filename]</td>
+<td style=text-align:left>開啟某個檔案</td>
+</tr>
+<tr>
+<td style=text-align:left>:{number}</td>
+<td style=text-align:left>跳掉第幾行</td>
+</tr>
+<tr>
+<td style=text-align:left>:! {cmd}</td>
+<td style=text-align:left>執行 shell 命令</td>
+</tr>
+</tbody>
+</table>
+<p>注意第三個和最後一個，雖然都有驚嘆號，但是第三個的驚嘆號在<strong>最後面</strong>，執行 shell 命令的驚嘆號在<strong>最前面</strong>。第三個的驚嘆號表示 <strong>「強制」</strong> 、 <strong>「忽略警告」</strong> ，搭配其他命令可以達到以下效果</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>命令</th>
+<th style=text-align:left>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>:w [filename]</td>
+<td style=text-align:left>強制存檔，有時候會遇到檔案在開啟 vim 途中被其他程式修改或是權限問題，用 <code>:w!</code> 可以強制覆蓋</td>
+</tr>
+<tr>
+<td style=text-align:left>:e [filename]</td>
+<td style=text-align:left>不管現在這個檔案有沒有修改，直接從硬碟載入另一個檔案</td>
+</tr>
+</tbody>
+</table>
+<h2 id=快捷鍵>快捷鍵<a hidden class=anchor aria-hidden=true href=#快捷鍵>#</a></h2>
+<p>和 tmux 一樣，vim 也可以把<strong>某個按鍵對應到命令</strong>，這樣就不用常常打一堆指令了。<br>
+要注意，vim 可以指定快捷鍵生效的模式，所以如果在編輯模式不能用，那可能要切換到指令模式。<br>
+以下的快捷鍵都是在命令模式下用的喔，常用的快捷鍵有</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>快捷鍵</th>
+<th style=text-align:left>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>yy</td>
+<td style=text-align:left>複製一行</td>
+</tr>
+<tr>
+<td style=text-align:left>dd</td>
+<td style=text-align:left>剪下一行</td>
+</tr>
+<tr>
+<td style=text-align:left>x</td>
+<td style=text-align:left>剪下一個字</td>
+</tr>
+<tr>
+<td style=text-align:left>p</td>
+<td style=text-align:left>貼上剪貼簿的內容</td>
+</tr>
+<tr>
+<td style=text-align:left>v</td>
+<td style=text-align:left>選取（之後可以複製、剪下）</td>
+</tr>
+<tr>
+<td style=text-align:left>.</td>
+<td style=text-align:left>重複執行剛剛執行過的指令</td>
+</tr>
+<tr>
+<td style=text-align:left>u</td>
+<td style=text-align:left>回復（ undo ）</td>
+</tr>
+<tr>
+<td style=text-align:left><code>&lt;C-r></code></td>
+<td style=text-align:left>重做（ redo，重做 undo 取消的操作，也就是說要先 u 之後才能 r ）</td>
+</tr>
+<tr>
+<td style=text-align:left>分隔線</td>
+<td style=text-align:left>接下來的快捷鍵看看就好，你可以用方向鍵解決</td>
+</tr>
+<tr>
+<td style=text-align:left>h</td>
+<td style=text-align:left>左移</td>
+</tr>
+<tr>
+<td style=text-align:left>j</td>
+<td style=text-align:left>下移</td>
+</tr>
+<tr>
+<td style=text-align:left>k</td>
+<td style=text-align:left>上移</td>
+</tr>
+<tr>
+<td style=text-align:left>l</td>
+<td style=text-align:left>右移</td>
+</tr>
+<tr>
+<td style=text-align:left>gg</td>
+<td style=text-align:left>移至檔案開頭</td>
+</tr>
+<tr>
+<td style=text-align:left>G</td>
+<td style=text-align:left>移至檔案結尾</td>
+</tr>
+<tr>
+<td style=text-align:left>^</td>
+<td style=text-align:left>移至行頭</td>
+</tr>
+<tr>
+<td style=text-align:left>$</td>
+<td style=text-align:left>移至行尾</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>&lt;C-r></code> 的意思是 CTRL+r，這是 vim 常見的表示法，以後還會看到</p>
+</blockquote>
+<h1 id=結尾>結尾<a hidden class=anchor aria-hidden=true href=#結尾>#</a></h1>
+<p>vim 的命令（快捷鍵）其實是個非常高深的學問，我的文章可能沒辦法講的非常詳細，你可以去找其他教學，或是在 vim 中用指令 <code>:help</code> 看官方的教學</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li>
+<li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li>
+<li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li>
+<li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li>
+<li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li>
+<li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day11/>
+<span class=title>« </span>
+<br>
+<span>Day 11：批次修改！！</span>
+</a>
+<a class=next href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day09/>
+<span class=title> »</span>
+<br>
+<span>Day 09：今天又想不出標題了！tmux plugin 和 mouse mode</span>
+</a>
+</nav>
+<div class=share-buttons>
+<a target=_blank rel="noopener noreferrer" aria-label="share Day 10：新手殺，誰來教我離開 vim 阿～～ on twitter" href="https://twitter.com/intent/tweet/?text=Day%2010%ef%bc%9a%e6%96%b0%e6%89%8b%e6%ae%ba%ef%bc%8c%e8%aa%b0%e4%be%86%e6%95%99%e6%88%91%e9%9b%a2%e9%96%8b%20vim%20%e9%98%bf%ef%bd%9e%ef%bd%9e&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fpure-cli-ide%2fday10%2f&hashtags=cli%2cterminal%2csoftwaredevelopment%2cvim%2ctmux%2czsh"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Day 10：新手殺，誰來教我離開 vim 阿～～ on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fpure-cli-ide%2fday10%2f&title=Day%2010%ef%bc%9a%e6%96%b0%e6%89%8b%e6%ae%ba%ef%bc%8c%e8%aa%b0%e4%be%86%e6%95%99%e6%88%91%e9%9b%a2%e9%96%8b%20vim%20%e9%98%bf%ef%bd%9e%ef%bd%9e&summary=Day%2010%ef%bc%9a%e6%96%b0%e6%89%8b%e6%ae%ba%ef%bc%8c%e8%aa%b0%e4%be%86%e6%95%99%e6%88%91%e9%9b%a2%e9%96%8b%20vim%20%e9%98%bf%ef%bd%9e%ef%bd%9e&source=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fpure-cli-ide%2fday10%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Day 10：新手殺，誰來教我離開 vim 阿～～ on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fpure-cli-ide%2fday10%2f&title=Day%2010%ef%bc%9a%e6%96%b0%e6%89%8b%e6%ae%ba%ef%bc%8c%e8%aa%b0%e4%be%86%e6%95%99%e6%88%91%e9%9b%a2%e9%96%8b%20vim%20%e9%98%bf%ef%bd%9e%ef%bd%9e"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Day 10：新手殺，誰來教我離開 vim 阿～～ on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fpure-cli-ide%2fday10%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Day 10：新手殺，誰來教我離開 vim 阿～～ on whatsapp" href="https://api.whatsapp.com/send?text=Day%2010%ef%bc%9a%e6%96%b0%e6%89%8b%e6%ae%ba%ef%bc%8c%e8%aa%b0%e4%be%86%e6%95%99%e6%88%91%e9%9b%a2%e9%96%8b%20vim%20%e9%98%bf%ef%bd%9e%ef%bd%9e%20-%20https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fpure-cli-ide%2fday10%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Day 10：新手殺，誰來教我離開 vim 阿～～ on telegram" href="https://telegram.me/share/url?text=Day%2010%ef%bc%9a%e6%96%b0%e6%89%8b%e6%ae%ba%ef%bc%8c%e8%aa%b0%e4%be%86%e6%95%99%e6%88%91%e9%9b%a2%e9%96%8b%20vim%20%e9%98%bf%ef%bd%9e%ef%bd%9e&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fpure-cli-ide%2fday10%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
+</a>
+</div>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
+<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</button>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>blessed-contrib on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/tags/blessed-contrib/</link>
+    <description>Recent content in blessed-contrib on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/blessed-contrib/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blessed-contrib-tree</title>
+      <link>https://blog.simba-fs.dev/posts/nodejs/blessed/blessed-contrib-tree/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/nodejs/blessed/blessed-contrib-tree/</guid>
+      <description>Tree 想說先想一個專案來練練手 熟悉一下 blessed 突然看到 blessed-contrib 裡有個元件叫 tree 想說可以做成 JSON viewer 於是就開工了！
+其中最重要的部份就是搞定樹狀結構 因為他有特定的格式和選項 下面是官方的範例
+範例 { extended: true, children: { &amp;#39;Fruit&amp;#39;: { children: { &amp;#39;Banana&amp;#39;: {}, &amp;#39;Apple&amp;#39;: {}, &amp;#39;Cherry&amp;#39;: {}, &amp;#39;Exotics&amp;#39;: { children: { &amp;#39;Mango&amp;#39;: {}, &amp;#39;Papaya&amp;#39;: {}, &amp;#39;Kiwi&amp;#39;: { name: &amp;#39;Kiwi(notthebird!)&amp;#39;, myCustomProperty: &amp;#34;hairyfruit&amp;#34; } } }, &amp;#39;Pear&amp;#39;: {} } }, &amp;#39;Vegetables&amp;#39;: { children: { &amp;#39;Peas&amp;#39;: {}, &amp;#39;Lettuce&amp;#39;: {}, &amp;#39;Pepper&amp;#39;: {} } } } } 每個節點都是物件 他的子節點存在 children 裡 如果是空物件代表這是葉節點 extended 屬性是是否展開，預設 true name 是顯示出來的字，如果要改再設，預設是 index myCustomProperty 直翻是自訂屬性，應該是當 tree.</description>
+    </item>
+    
+  </channel>
+</rss>

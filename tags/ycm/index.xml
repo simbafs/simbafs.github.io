@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>YCM on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/tags/ycm/</link>
+    <description>Recent content in YCM on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/ycm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>YouComopleteMe install</title>
+      <link>https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/</guid>
+      <description>下載 source code  編輯 ~/.vimrc  Plug &amp;#39;Valloric/YouCompleteMe&amp;#39;接著按下 esc:w | so %載入設定 接著 :PlugInstall下載 source code 存檔離開  編譯  執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &amp;lt;你要的選項&amp;gt;  </description>
+    </item>
+    
+  </channel>
+</rss>

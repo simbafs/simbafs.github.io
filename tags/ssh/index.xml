@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ssh on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/tags/ssh/</link>
+    <description>Recent content in ssh on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ssh on gitea with docker</title>
+      <link>https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/</guid>
+      <description>Gitea 是一個開源的 git 伺服器，他的界面幾乎和 GitHub 一模一樣，但是完全開源而且非常輕，甚至一片樹梅派就可以開伺服器了。Gitea 因為是使用 Golang 編寫的，所以提供各種平台的執行檔。我選擇透過 docker 裝 Gitea 伺服器，但是這樣有一個問題，gitea 伺服器開在 container 內，沒辦法使用標準的 22 port，所以 git clone 就必須加上一個醜醜的數字，像是這樣
+git clone git@domain:10022:user/repo.git 這個問題 Gitea 官方已經有提供完整的教學了，但是是英文版，我這篇文章是我讀完消化過後的中文版教學
+容器 ssh 穿透 因為 Gitea 的 ssh 是跑在容器裡，我沒辦法讓他和 host 共用 22 port，所以要透過 host 「轉發」連線。
+1. 建立 git 使用者 先在 host 建立一個名叫 git 的使用者，因為這個帳號會被對應到容器內的 git 使用者，所以要有一樣的 UID, GID
+sudo adduser git grep git /etc/passwd 記好 git 的 UID 和 GID
+git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2.</description>
+    </item>
+    
+    <item>
+      <title>ssh-tunnel</title>
+      <link>https://blog.simba-fs.dev/posts/linux/ssh-tunnel/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/ssh-tunnel/</guid>
+      <description>昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel
+簡介 ssh tunnel 分正反向 其實他們的差別只有在方向不一樣 連語法參數都一樣
+正向 tunnel 正向的 tunnel 參數是 -L 語法：
+ssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：
+ssh -L &amp;lt;local port&amp;gt;:localhost:&amp;lt;remote port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;remote&amp;gt; 反向;
+ssh -R &amp;lt;remote port&amp;gt;:localhost:&amp;lt;local port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;remote&amp;gt; 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port</description>
+    </item>
+    
+    <item>
+      <title>reverse-ssh</title>
+      <link>https://blog.simba-fs.dev/posts/linux/reverse-ssh/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/reverse-ssh/</guid>
+      <description>一直以來連線回社辦的電腦都要走 webtty 再開 tmate 但是今天發現了一個新的方法可以透過反向的 ssh 連回社辦
+reverse ssh 在社辦電腦
+$ ssh -NfR 2222:localhost:22 simba@simba-vps 這可以建立一個連線 這時候到 simba-vps
+$ ssh server@localhost -p 2222 就可以連線回社辦伺服器了
+autossh 但是這樣做 ssh 連線有可能會超時然後斷掉 這時候可以透過 autossh 來幫我們自動建立連線 在社辦電腦
+$ apt install autossh $ autossh -Mf 2222 -NR 1111:localhost:22 simba@simba-vps -p 22 這樣就可以在 vps 上
+$ ssh server@localhost -p 1111 來連回社辦啦！ 最後可以把這堆在 vps 上再做一次就可以在 internet 連回社辦伺服器了
+參考網址 https://stackoverflow.com/questions/15983795/how-do-i-establish-a-bidirectional-ssh-tunnel https://ez3c.tw/2043 https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&amp;amp;topic_id=17538&amp;amp;forum=7 http://blog.adahsu.net/2007/11/ssh-reverse-tunnel.html https://codertw.com/%E4%BC%BA%E6%9C%8D%E5%99%A8/377688/ 這篇講 ssh tunnel 最清楚 https://yu-jack.github.io/2019/01/08/ssh-tunnel/</description>
+    </item>
+    
+  </channel>
+</rss>

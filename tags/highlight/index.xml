@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>highlight on Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/tags/highlight/</link>
+    <description>Recent content in highlight on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/highlight/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hexo-config</title>
+      <link>https://blog.simba-fs.dev/posts/hexo/hexo-config/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/hexo/hexo-config/</guid>
+      <description>各種設定值嘗試 Highlight - # highlight: rainbow + highlight: rainbow var a = 7122; console.log(a); var a = 7122; console.log(a); int a = 7122; cout &amp;lt;&amp;lt; a; </description>
+    </item>
+    
+  </channel>
+</rss>

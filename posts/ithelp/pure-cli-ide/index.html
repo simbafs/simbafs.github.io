@@ -1,0 +1,258 @@
+<!doctype html><html lang=zh-tw dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Simba's Blog</title>
+<meta name=keywords content>
+<meta name=description content="ithelp 鐵人賽系列文請走這 https://ithelp.ithome.com.tw/users/20130473/ironman/3975
+別忘了訂閱並且給我個 Like 喔！<3
+ 我把從第一天到現在每天的 Home 目錄都放上 GitHub 了，README.md 裡面有說明
+ ">
+<meta name=author content="simba-fs">
+<link rel=canonical href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
+<link rel=preload href=/images/icon/icon.png as=image>
+<link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
+<link rel=apple-touch-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.1">
+<link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/index.xml>
+<meta property="og:title" content>
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/"><meta property="og:image" content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="Simba's Blog">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
+<meta name=twitter:title content>
+<meta name=twitter:description content>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"","item":"https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/"}]}</script>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<noscript>
+<style type=text/css>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://blog.simba-fs.dev/ accesskey=h title="Home (Alt + H)">
+<img src=/images/icon/icon.png alt=logo aria-label=logo height=35>Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/ title="> 純‧ CLI 整合開發環境 <">
+<span class=active>> 純‧ CLI 整合開發環境 &lt;</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/archive/ title=Archives>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<div class=post-content><p>ithelp 鐵人賽系列文請走這 <a href=https://ithelp.ithome.com.tw/users/20130473/ironman/3975>https://ithelp.ithome.com.tw/users/20130473/ironman/3975</a><br>
+別忘了訂閱並且給我個 Like 喔！&lt;3</p>
+<blockquote>
+<p>我把從第一天到現在每天的 Home 目錄都放上 <a href=https://github.com/simba-fs/2021-ironman-example>GitHub</a> 了，README.md 裡面有說明</p>
+</blockquote>
+</div>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 21：儲存器與剪貼簿</h2>
+</header>
+<section class=entry-content>
+<p>from: https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/ 這個是一個 梗圖，大意是你寫程式一定會用到 CTRL-C 和 CTRL-V。我們今天就來看看 vim 的剪貼簿吧！
+在用剪貼簿時，複製的來源可能會有很多種，以我們的環境為例，可能會用系統剪貼簿、tmux 和 vim 本身的剪貼簿
+系統剪貼簿 基本上對 vim 來說系統剪貼簿和 tmux 在複製貼上是差不多的，在輸入模式貼上就可以了
+但是要注意多行的程式碼貼上時 vim 會把縮排搞亂，所以你要嘛用 &lt;leader>f 重新整理程式碼，或是用命令 :r!cat，貼上後再按 C-d 貼到程式裡面。
+:r!cat 這個命令在 Day 13 時有把他寫成快捷鍵 &lt;F3> 了，所以你也可以直接按 &lt;F3> 會有一樣的效果
+另外，下面會講到用 vim 命令存取系統剪貼簿
+❓ :r!cat 是什麼意思？ r 這個命令是「載入某個檔案並貼到游標行下面」，用法是 :r {file}。但是我們這裡不用檔名，!cat 在這裡的意思是「shell 命令 cat 的 stdout 這個檔案」，而執行 cat 時需要 stdin，也就是你剛剛貼上程式碼的地方（在 status bar 下面）。這個方法可以繞過自動縮排，就不會出現程式碼貼上被 vim 弄亂的情形了。 從 vim 複製 複製到系統剪貼簿很簡單，在選取時記的按住 &lt;SHIFT> 就行了，但是因為我們有開啟 vim 滑鼠模式，所以 tmux 剪貼簿就不能複製了（滑鼠被 vim 搶走）（關於 tmux 剪貼簿請看 Day 09#複製。...</p>
+</section>
+<footer class=entry-footer>2021-September-21&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 21：儲存器與剪貼簿" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day21/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 20：切水果囉！vim 切螢幕與分頁</h2>
+</header>
+<section class=entry-content>
+<p>分割螢幕 記的 tmux 可以切螢幕嗎？vim 也可以喔！
+命令 我們快速用表格帶過命令
+快捷鍵 命令 效果 s :sp[lit] {file} 水平分割 v :vs[plit] {file} 垂直分割 + 把目前視窗放大一點 - 把目前視窗縮小一點 = 等大 c :q 關掉目前視窗 o 關掉其他視窗 方向鍵/h/j/k/l/tag 在視窗間移動 如果你在 day 13 有開啟滑鼠模式，那你可以直接用滑鼠拉動邊框調整大小
+vim 分割視窗的優點 與 tmux 比起來，我更常用 tmux 分割視窗，因為快捷鍵比較直覺好用，但是 vim 有個 tmux 做不到的優點...</p>
+</section>
+<footer class=entry-footer>2021-September-20&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 20：切水果囉！vim 切螢幕與分頁" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day20/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 19：該是時候升級你的噴射引擎囉！vim-emmet 重複與迭代</h2>
+</header>
+<section class=entry-content>
+<p>重複 如果想讓某個標籤/群組重複，只要用乘號 * 加上數字就可以讓他重複了
+h1.title*5 -> &lt;h1 class="title">&lt;/h1> &lt;h1 class="title">&lt;/h1> &lt;h1 class="title">&lt;/h1> &lt;h1 class="title">&lt;/h1> &lt;h1 class="title">&lt;/h1> ------------ (p.artical+br)*3 -> &lt;p class="artical">&lt;/p> &lt;br> &lt;p class="artical">&lt;/p> &lt;br> &lt;p class="artical">&lt;/p> &lt;br> 迭代 在重複的時候，你可能會有某些地方是要要變化的，例如從 id 從 1 開始遞增，你可以使用錢號 $ 代表要遞增的位數
+如果你不是要從 1 開始迭代，可以使用小老鼠 @ 指定開始的數字
+如果要反著數，用 @- 可以倒數到 0，當然也可以指定倒數到多少
+h1#title$$*12 -> &lt;h1 id="title01">&lt;/h1> &lt;h1 id="title02">&lt;/h1> &lt;h1 id="title03">&lt;/h1> &lt;h1 id="title04">&lt;/h1> &lt;h1 id="title05">&lt;/h1> &lt;h1 id="title06">&lt;/h1> &lt;h1 id="title07">&lt;/h1> &lt;h1 id="title08">&lt;/h1> &lt;h1 id="title09">&lt;/h1> &lt;h1 id="title10">&lt;/h1> &lt;h1 id="title11">&lt;/h1> &lt;h1 id="title12">&lt;/h1> ------------ h1#$@10*3 -> &lt;h1 id="10">&lt;/h1> &lt;h1 id="11">&lt;/h1> &lt;h1 id="12">&lt;/h1> ------------ h1#$@-*3 -> &lt;h1 id="2">&lt;/h1> &lt;h1 id="1">&lt;/h1> &lt;h1 id="0">&lt;/h1> ------------ h1#$@-6*3 -> &lt;h1 id="8">&lt;/h1> &lt;h1 id="7">&lt;/h1> &lt;h1 id="6">&lt;/h1> ------------ h$*6 -> &lt;h1>&lt;/h1> &lt;h2>&lt;/h2> &lt;h3>&lt;/h3> &lt;h4>&lt;/h4> &lt;h5>&lt;/h5> &lt;h6>&lt;/h6> 範本包圍 我不確定這個叫什麼，反正就這樣啦...</p>
+</section>
+<footer class=entry-footer>2021-September-19&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 19：該是時候升級你的噴射引擎囉！vim-emmet 重複與迭代" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day19/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet</h2>
+</header>
+<section class=entry-content>
+<p>emmet-vim 是 emmet 的 vim 版本（這句好像是廢話
+注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
+emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子
+.tab>(tr#col$>td*3)*4 會被解析成 &lt;div class="tab"> &lt;tr id="col1"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col2"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col3"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col4"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;/div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！
+安裝 在 ~/.config/nvim/plugin.vim 加入一行
++ Plug 'mattn/emmet-vim' 然後記得修改後需要打指令 :so % | PlugInstall 安裝
+coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(p>div.title$)，你還是只能按 emmet-vim 的快捷鍵...</p>
+</section>
+<footer class=entry-footer>2021-September-18&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day18/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 17：coc.nvim 設定下集</h2>
+</header>
+<section class=entry-content>
+<p>今天的東西相當多，在 GitHub README Example 中除了昨天介紹過得今天都收錄了，直接進主題吧！
+喔！另外有些東西我真的不知道是什麼我會用原文寫並用中文括號括起來，歡迎知道的朋友留言告訴我
+" 設定文字編碼（我想這個你的 init.vim/.vimrc 都應該有了）set encoding=utf-8" 如果 hidden 沒有設定，「TextEdit」可能會失敗" TextEdit 也許是彈出式輸入框吧？阿災set hidden" 有些伺服器對於備份檔會出錯，請看 issue #649" https://github.com/neoclide/coc.nvim/issues/649set nobackupset nowritebackup" 把下面的命令欄變高，多一點空間set cmdheight=2" 不傳訊息給「|ins-completion-menu|」（這我看不太出來有什麼差set shortmess+=c" 使用 &lt;c-space> 觸發自動完成if has('nvim') inoremap &lt;silent>&lt;expr> &lt;c-space> coc#refresh()else inoremap &lt;silent>&lt;expr> &lt;c-@> coc#refreshendif" 用 `[g` 和 `]g` 跳到診斷的位置（就是程式碼有問題地方" 用命令 `:CocDiagnostics` 在分割視窗列出目前檔案中所有有問題的點nmap &lt;silent> [g &lt;Plug>(coc-diagnostic-prev)nmap &lt;silent> ]g &lt;Plug>(coc-diagnostic-next)" 程式碼轉跳（這個我覺得有點難記，而且這四個實驗出來效果非常像，我的建議是試過後選你覺得順眼的，不要全上nmap &lt;silent> gd &lt;Plug>(coc-definition)nmap &lt;silent> gy &lt;Plug>(coc-type-definition)nmap &lt;silent> gi &lt;Plug>(coc-implementation)nmap &lt;silent> gr &lt;Plug>(coc-references)" 用 K（注意大寫）顯示文件在分割視窗nnoremap &lt;silent> K :call &lt;SID>show_documentation()&lt;CR>function!...</p>
+</section>
+<footer class=entry-footer>2021-September-17&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 17：coc.nvim 設定下集" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day17/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 16：自動補全！coc.nvim</h2>
+</header>
+<section class=entry-content>
+<p>一個好的自動補全工具可以讓你工作效率翻倍，你不用再去查文件了，自動補全不僅可以告訴你這裡有什麼函數可以用，還會告訴你參數的型態、函數功能的說明，可以說是把文件都寫在 vim 裡面了。
+以前我用的自動補全是 You Complete Me(YCM)，現在我選擇使用 coc.nvim 原因是他提供更多的補全來源、外掛和設定，而且可以用 nodejs 自製外掛，據說所有純 JS 寫的 VS code 外掛都可以裝（這個我沒實驗過，只是傳聞）。關於這兩個自動補全外掛的比較礙於篇幅請自行 Google。
+安裝 coc.nvim 和一般的 vim 外掛一樣，都是用 vim-plug 安裝就可以了，在 ~/.config/nvim/plugin.vim 中新增以下設定
+Plug 'neoclide/coc.nvim', {'branch': 'release'}so ~/.config/nvim/coc-config.vim因為 coc 有很多設定，為了避免檔案太雜亂我把 coc 相關的設定移到另一個檔案，就像我們在 前天 做得一樣
+接下來建立 ~/.config/nvim/coc-config.vim，不然等等載入設定檔 vim 會報錯
+:!touch ~/.config/nvim/coc-config.vim :! {cmd} 可以執行外部命令
+接下來存檔安裝
+:w | PlugInstall跑完後，重開 vim，coc 就裝好了
+lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol，簡稱 lsp，中文是「語言伺服器協定」。lsp 做的事是提供自動補全和 go to def，能做到這兩個功能的原因是因為 lsp 懂程式碼，他知道你寫的每個字代表什麼。為什麼 lsp 這麼強呢？因為 lsp 什麼都不懂，他把所有事情丟給 language server 處理，所以只要你有裝 language server，那麼 lsp 什麼語言都懂。...</p>
+</section>
+<footer class=entry-footer>2021-September-16&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 16：自動補全！coc.nvim" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day16/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 15：vim 外掛大雜燴！</h2>
+</header>
+<section class=entry-content>
+<p>看到這裡，你可能還是很疑惑，到底 vim 好用在哪？嘿嘿，那是因為強大的外掛還沒裝啦！網路上會有一些配好一堆外掛的，像是 spaceVim，他們的策略和 vs code 很像，先幫你裝好一對外掛，讓你隨開及用。這樣做好處是初學者比較愛，但是常常會裝了一堆用不到的功能，反而讓載入速度、記憶體用量大增。
+所以我們自己挑我們需要的外掛裝起來，效果完全不會輸 vs code 這些笨重的編輯器！
+今天要介紹很多模組，都是我選出來製作一個現代化 IDE 必備的模組，相當的精華，一起來看看吧！ 記得修改後需要打指令 :so % | PlugInstall
+現代化 IDE 必裝模組 以下的內容直接貼到 ~/.config/nvim/plugin.vim 裡面裝模組的地方就可以了，說明附在裡面了
+注意：我這裡沒有列出 Coc.nvim，因為我把他拉出來到另外一章了
+" 彩色的 status barPlug 'itchyny/lightline.vim'" 有這個設定 lightline 在單個 vim 視窗中才會正常，沒錯！vim 也可以分割視窗，後天會講set laststatus=2" 在行號左側會顯示這行的 git 狀態，新增、刪除、修改，詳細請看 GitHub READMEPlug 'airblade/vim-gitgutter'" 按下 &lt;F5> 可以開啟檔案樹，按 h 有說明，再一下關掉說明Plug 'scrooloose/nerdtree'nmap &lt;F5> :NERDTreeToggle&lt;CR>" Exit Vim if NERDTree is the only window left.autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree....</p>
+</section>
+<footer class=entry-footer>2021-September-15&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 15：vim 外掛大雜燴！" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day15/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 14：vim-plug</h2>
+</header>
+<section class=entry-content>
+<p>前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。
+安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣
+# neovim sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' # vim sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' 挑選你的 vim 版本，執行完就安裝好了！
+安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！
+1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面
+call plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面
+加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行
+Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了...</p>
+</section>
+<footer class=entry-footer>2021-September-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 13：vim 設定檔</h2>
+</header>
+<section class=entry-content>
+<p>vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 ~/.vimrc，如果是 neovim(nvim)，他會去找 ~/.config/nvim/init.vim。在接下來的文章中都以 vimrc 代指。
+vimrc 內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 :set nu，這個命令可以開啟行號顯示，如果要寫在 vimrc 裡面，就要寫成 set nu。
+vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 " 開頭是 vimscript 的註解)
+" 打開語法突顯syntax on" load plguin" install vim-plug:" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'" 這個是明天的東西，先註解掉，才不會出錯" so ~/.config/nvim/plugin.vim" 256 色set t_Co=256" 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=" 選一個你喜歡的 colorschema" available color schema" blue darkblue default delek desert elflord evening industry koehler" morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler" 雜項設定，詳細解說請用 `:help &lt;opeion>`，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline" make lightline work in single screen" https://github....</p>
+</section>
+<footer class=entry-footer>2021-September-13&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 13：vim 設定檔" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day13/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 12：vim 配色方案</h2>
+</header>
+<section class=entry-content>
+<p>俗話說人要衣裝，佛要金裝，我們的 vim 也得要有漂亮的外觀。今天就讓我們來看看如何調教調整 vim 的外觀吧！
+Highlight group highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的一段區塊，可能是一段文字，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以設定樣式，包括前景色、背景色、反白、加底線等等，你可以用 :so $VIMRUNTIME/syntax/hitest.vim 命令查看所有的 hg 名字，他們的樣式也會直接顯示出來。
+如果想看某個 hg 的說明的話（必須是內建的才有），可以用 :help hl-hgName 來查詢說明，例如 CursorLine 就可以用 :help hl-CursorLine 來看說明
+Highlight 用 :highlight 或是縮寫 :hi 可以設定特定 hg 的樣式
+hi hgName arg=value arg=value......hgName 就是你用 :so $VIMRUNTIME/syntax/hitest.vim 查出來的名字，而 arg 常見的有前景色 ctermfg、背景色 ctermbg 和 樣式 cterm
+Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色不同而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色...</p>
+</section>
+<footer class=entry-footer>2021-September-12&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 12：vim 配色方案" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day12/></a>
+</article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=next href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/page/2/> »</a>
+</nav>
+</footer>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
+<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</button>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
