@@ -20,7 +20,7 @@ deploy(){
 	git commit -m '' --allow-empty-message
 	git push
 
-	# hugo && rsync -avz --delete public/ ${USER}@${HOST}:~/${DIR}
+	hugo && rsync -avz --delete public/ ${USER}@${HOST}:~/${DIR}
 
 	exit 0
 }
