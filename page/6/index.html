@@ -78,6 +78,32 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>React update state on props change</h2>
+</header>
+<section class=entry-content>
+<p>問題 今天在研究 React 遇到一個問題 當我從外面更新 props 的時候 component 內的 state 不會更新
+function Input(props){ const [text, setText] = React.useState(props.text); return ( &lt;input type="text" value={text}> ) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
+解法 後來找到解法，加上一個 useEffect 監聽 props.text 然後更新 state 就好了
+function Input(props){ const [text, setText] = React.useState(props.text); React.useEffect(() => { setText(props.text); }, [props.text]); return ( &lt;input type="text" value={text}> ) } 如此一來 state 就會和 props 同步了
+參考資料 https://stackoverflow.com/questions/54865764/react-usestate-does-not-reload-state-from-props https://zh-hant.reactjs.org/docs/hooks-effect.html</p>
+</section>
+<footer class=entry-footer>2020-July-12&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to React update state on props change" href=https://blog.simba-fs.dev/posts/nodejs/react/react-update-state-on-props-change/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>讓 YCM 接受 jsx</h2>
+</header>
+<section class=entry-content>
+<p>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
+Cannot use JSX unless the '--jsx' flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
+{ "compilerOptions": { "target": "es6", "checkJs": true + }, + "compilerOptions": { + "jsx": "react" } } </p>
+</section>
+<footer class=entry-footer>2020-July-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to 讓 YCM 接受 jsx" href=https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>webpack-react</h2>
 </header>
 <section class=entry-content>
@@ -170,26 +196,6 @@ gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p>
 </section>
 <footer class=entry-footer>2020-March-15&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to jquery" href=https://blog.simba-fs.dev/posts/frontend/jquery/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>remind-daniel</h2>
-</header>
-<section class=entry-content>
-<p>今天終於把登入做完了 我覺得最重要的是找好的教學文章、去看沒有人看得懂的程式碼</p>
-</section>
-<footer class=entry-footer>2020-March-15&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to remind-daniel" href=https://blog.simba-fs.dev/posts/nodejs/remind-daniel/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>sqlite</h2>
-</header>
-<section class=entry-content>
-<p>昨天是試著去理解 sqlite3，我發現他的 callback function 真的太煩了 於是我試著去尋找 async 的版本，還真找到了 這個套件把整個 sqlite 包成 async 了</p>
-</section>
-<footer class=entry-footer>2020-March-13&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to sqlite" href=https://blog.simba-fs.dev/posts/nodejs/sqlite/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

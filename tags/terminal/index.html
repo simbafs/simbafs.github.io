@@ -79,6 +79,26 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Day 23</h2>
+</header>
+<section class=entry-content>
+<p></p>
+</section>
+<footer class=entry-footer>2021-September-23&nbsp;·&nbsp;0 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 23" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day23/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Day 22</h2>
+</header>
+<section class=entry-content>
+<p></p>
+</section>
+<footer class=entry-footer>2021-September-22&nbsp;·&nbsp;0 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 22" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day22/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Day 21：儲存器與剪貼簿</h2>
 </header>
 <section class=entry-content>
@@ -197,34 +217,6 @@ Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了...</p>
 </section>
 <footer class=entry-footer>2021-September-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Day 13：vim 設定檔</h2>
-</header>
-<section class=entry-content>
-<p>vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 ~/.vimrc，如果是 neovim(nvim)，他會去找 ~/.config/nvim/init.vim。在接下來的文章中都以 vimrc 代指。
-vimrc 內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 :set nu，這個命令可以開啟行號顯示，如果要寫在 vimrc 裡面，就要寫成 set nu。
-vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 " 開頭是 vimscript 的註解)
-" 打開語法突顯syntax on" load plguin" install vim-plug:" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'" 這個是明天的東西，先註解掉，才不會出錯" so ~/.config/nvim/plugin.vim" 256 色set t_Co=256" 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=" 選一個你喜歡的 colorschema" available color schema" blue darkblue default delek desert elflord evening industry koehler" morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler" 雜項設定，詳細解說請用 `:help &lt;opeion>`，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline" make lightline work in single screen" https://github....</p>
-</section>
-<footer class=entry-footer>2021-September-13&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 13：vim 設定檔" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day13/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Day 12：vim 配色方案</h2>
-</header>
-<section class=entry-content>
-<p>俗話說人要衣裝，佛要金裝，我們的 vim 也得要有漂亮的外觀。今天就讓我們來看看如何調教調整 vim 的外觀吧！
-Highlight group highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的一段區塊，可能是一段文字，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以設定樣式，包括前景色、背景色、反白、加底線等等，你可以用 :so $VIMRUNTIME/syntax/hitest.vim 命令查看所有的 hg 名字，他們的樣式也會直接顯示出來。
-如果想看某個 hg 的說明的話（必須是內建的才有），可以用 :help hl-hgName 來查詢說明，例如 CursorLine 就可以用 :help hl-CursorLine 來看說明
-Highlight 用 :highlight 或是縮寫 :hi 可以設定特定 hg 的樣式
-hi hgName arg=value arg=value......hgName 就是你用 :so $VIMRUNTIME/syntax/hitest.vim 查出來的名字，而 arg 常見的有前景色 ctermfg、背景色 ctermbg 和 樣式 cterm
-Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色不同而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色...</p>
-</section>
-<footer class=entry-footer>2021-September-12&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 12：vim 配色方案" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day12/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -78,6 +78,31 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>bash completion</h2>
+</header>
+<section class=entry-content>
+<p>需求 今天寫了一個 bash script 幫我管理 mongodb docker，在使用的時候一些子命令，像是 up、down、clean。我希望可以讓 bash 當我自動補齊這些選項。
+bash_completion bash_completion 是一個可以幫我們做程式化補齊的工具，像是 git 就有使用到這個工具，在 commit、push 的時候按 tab 都會顯示出當下我們可以用的東西，像是 git push&lt;tab>&lt;tab> 就會自動補齊 origin 而不是給我們看檔案（bash 預設只會補齊檔案和命令）。我們這次只須要用基本的 complete 就可以了
+complete complete 可以幫命令加上簡單的自動完成，其實 bash_completion 也是去呼叫這個命令來達成自動補齊。complete 傻用非常簡單，像下面這樣就可以幫 mongodb 這個命令加上自動補齊
+complete -W "up down clean" mongodb -W 選項代表後面是字詞列表，用 -F 後面可以接一個函數，但是這個我沒研究，也許下一個專案就是研究 complete 也說不定。</p>
+</section>
+<footer class=entry-footer>2020-November-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to bash completion" href=https://blog.simba-fs.dev/posts/linux/bash/bash-completion/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Mongoose Model</h2>
+</header>
+<section class=entry-content>
+<p>Mongoose Model 環境設定 這是這次實驗用的 code
+const mongoose = require('mongoose'); mongoose.connect('mongodb://127.0.0.1:27017', {useNewUrlParser: true, useUnifiedTopology: true}) .then(() => console.log('Connected to DB')) .catch(e => console.error(e)); const requiredString = { type: String, required: true } const UserSchema = new mongoose.Schema({ username: requiredString, password: requiredString }); const UserModel = mongoose.model('User', UserSchema); mongo db 用 docker 開一個實驗用的 server
+version: '3' services: db: image: 'mongo' container_name: 'aurl-mongodb' volumes: - ./data/mongo:/data/db - ./data/dump:/dump ports: - '27017:27017' 取得原 schema 在一般操作的時候都是用 UserModel 在操作資料庫，當要取得 schema 的時候當然也是從他裡面找最方便，當然也可以把 schema 特別弄出來，但是有點麻煩，以這次的例子說明，原本的 UserSchema 會存在 UserModel....</p>
+</section>
+<footer class=entry-footer>2020-November-10&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Mongoose Model" href=https://blog.simba-fs.dev/posts/nodejs/mongoose-model/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>docker 基礎指令</h2>
 </header>
 <section class=entry-content>
@@ -196,32 +221,6 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
 </section>
 <footer class=entry-footer>2020-August-16&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to GitHub Action 自動部署 hexo" href=https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>React update state on props change</h2>
-</header>
-<section class=entry-content>
-<p>問題 今天在研究 React 遇到一個問題 當我從外面更新 props 的時候 component 內的 state 不會更新
-function Input(props){ const [text, setText] = React.useState(props.text); return ( &lt;input type="text" value={text}> ) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
-解法 後來找到解法，加上一個 useEffect 監聽 props.text 然後更新 state 就好了
-function Input(props){ const [text, setText] = React.useState(props.text); React.useEffect(() => { setText(props.text); }, [props.text]); return ( &lt;input type="text" value={text}> ) } 如此一來 state 就會和 props 同步了
-參考資料 https://stackoverflow.com/questions/54865764/react-usestate-does-not-reload-state-from-props https://zh-hant.reactjs.org/docs/hooks-effect.html</p>
-</section>
-<footer class=entry-footer>2020-July-12&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to React update state on props change" href=https://blog.simba-fs.dev/posts/nodejs/react/react-update-state-on-props-change/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>讓 YCM 接受 jsx</h2>
-</header>
-<section class=entry-content>
-<p>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
-Cannot use JSX unless the '--jsx' flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
-{ "compilerOptions": { "target": "es6", "checkJs": true + }, + "compilerOptions": { + "jsx": "react" } } </p>
-</section>
-<footer class=entry-footer>2020-July-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to 讓 YCM 接受 jsx" href=https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
