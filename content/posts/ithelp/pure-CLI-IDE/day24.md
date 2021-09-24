@@ -10,4 +10,5 @@ tags = [
   "zsh"
 ]
 categories = [ "ithelp", "pure-CLI-IDE" ]
+draft = true
 +++
