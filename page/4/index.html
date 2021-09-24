@@ -78,39 +78,6 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
-<h2>firefox touch screen scroll</h2>
-</header>
-<section class=entry-content>
-<p>再換了觸控筆電後，在 firefox 一直有個問題：觸控往下滑會被當成選取，要卷動一定要用右邊的 scroll bar
-解決方案 按照 https://askubuntu.com/questions/853910/ubuntu-16-and-touchscreen-scrolling-in-firefox 的最佳解法，真的加上 MOZ_USE_XINPUT2=1 的環境變數就可以了。
-另外在設定 ~/.local/share/applications/firefox.desktop 的時候要注意有不只一個 Exec，改完如果沒有生效可以重開機看看。</p>
-</section>
-<footer class=entry-footer>2021-May-8&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to firefox touch screen scroll" href=https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>beginning of kotlin</h2>
-</header>
-<section class=entry-content>
-<p>val vs var kotlin JS val const var let a..b kotlin JS a..b Array(b-a+1).fill(0).map(i => i + a) when kotlin fun main (){ val luckyNum = 4 val yourNum = (1..6).random() val result = when(yourNum){ luckyNum -> "You get the lucky num ${luckyNum}" 1 -> "Sorry, you get 1" 2 -> "Sorry, you get 2" 3 -> "Sorry, you get 3" 4 -> "Sorry, you get 4" 5 -> "Sorry, you get 5" 6 -> "Sorry, you get 6" else -> "Sorry, you get a number out of 1....</p>
-</section>
-<footer class=entry-footer>2021-May-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to beginning of kotlin" href=https://blog.simba-fs.dev/posts/kotlin/beginning-of-kotlin/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>college-exam-interview-and-written-test</h2>
-</header>
-<section class=entry-content>
-<p>師大科技系面試 兩關各十分鐘
-第一關： 自我介紹 一分鐘補充說明（有利備審、競賽）解決問題的經驗 自由談話時間 第二關： 自我介紹一分鐘 科技系分幾組？差別在哪？你會選哪組？ 我看你的自傳有寫「專案開發」，有例子嗎？ 如果團隊合作時有人擺爛，你會怎麼做？（20秒） 心得 這個系是團體面試，三個教授對三個考生，輪流回答問題，因為我是那組第一個，所以幾乎都是我先回答，教授沒有問什麼很難得問題，另外系主任看起來人很好。</p>
-</section>
-<footer class=entry-footer>2021-April-18&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to college-exam-interview-and-written-test" href=https://blog.simba-fs.dev/posts/other/college-exam-interview-and-written-test/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
 <h2>logitech-mouse-permission-error</h2>
 </header>
 <section class=entry-content>
@@ -215,6 +182,44 @@ DOCKER_OPTS="--dns 8.8.8.8" systemctl restart docker 然後重新啟動 docker</
 </section>
 <footer class=entry-footer>2020-November-28&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to connect to ethernet in docker container" href=https://blog.simba-fs.dev/posts/linux/docker/connect-to-ethernet-in-docker-container/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>docker commit</h2>
+</header>
+<section class=entry-content>
+<p>前言 上次提到可以用 Dockerfile 建立 docker image，但我們還有令一個方法可以建立 docker image，那就是 docker commit 指令
+和 Dockerfile 差別 docker commit 有點像是手動版的 Dockerfile，在用 Dockerfile 建構 docker image 的時候，docker build 的工作就像是自動根據 Dockerfile 操作 docker commit。 Dockerfile 比較適合用在自動化交付和部屬，例如說你有一份程式碼，要將他包成 Docker 就很適合用 Dockerfile 自動化操作，因為程式碼會改變，但是包裝的流程基本上都是一樣的。 docker commit 適合用在建構環境，因為會有比較麻煩的操作，如果寫成 Dockerfile 會比較麻煩，當然如果可以的話還是寫成 Dockerfile 會比較好，因為更新的時候會比較方便。 在建構 image 的時候要用哪個方法就看個人取捨了。
+docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images，有點類似令存新檔的概念。先來看看參數吧！
+參數 $ docker commit --help Usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] Create a new image from a container's changes Options: -a, --author string Author (e....</p>
+</section>
+<footer class=entry-footer>2020-November-27&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to docker commit" href=https://blog.simba-fs.dev/posts/linux/docker/docker-commit/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>bash number loop</h2>
+</header>
+<section class=entry-content>
+<p>今天在某的地方剛好看到一個 bash 的小技巧，當我們要從 1 數到 100 時，通常會用 seq 指令來做，但是如果我們的需求剛剛好是每次遞增（遞減）1 的話，就可以使用 {start..end} 縮寫，下面兩個範例的效果是一樣的：
+# for 迴圈 + seq 的寫法 for i in $(seq 1 1 100); do echo $i done # 用 {start..end} echo {1..100} 這個技巧也可以用在建立檔案，像這樣：
+touch user{1..100} </p>
+</section>
+<footer class=entry-footer>2020-November-15&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to bash number loop" href=https://blog.simba-fs.dev/posts/linux/bash/bash-number-loop/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>bash completion</h2>
+</header>
+<section class=entry-content>
+<p>需求 今天寫了一個 bash script 幫我管理 mongodb docker，在使用的時候一些子命令，像是 up、down、clean。我希望可以讓 bash 當我自動補齊這些選項。
+bash_completion bash_completion 是一個可以幫我們做程式化補齊的工具，像是 git 就有使用到這個工具，在 commit、push 的時候按 tab 都會顯示出當下我們可以用的東西，像是 git push&lt;tab>&lt;tab> 就會自動補齊 origin 而不是給我們看檔案（bash 預設只會補齊檔案和命令）。我們這次只須要用基本的 complete 就可以了
+complete complete 可以幫命令加上簡單的自動完成，其實 bash_completion 也是去呼叫這個命令來達成自動補齊。complete 傻用非常簡單，像下面這樣就可以幫 mongodb 這個命令加上自動補齊
+complete -W "up down clean" mongodb -W 選項代表後面是字詞列表，用 -F 後面可以接一個函數，但是這個我沒研究，也許下一個專案就是研究 complete 也說不定。</p>
+</section>
+<footer class=entry-footer>2020-November-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to bash completion" href=https://blog.simba-fs.dev/posts/linux/bash/bash-completion/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -9,11 +9,11 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 24 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cli</title>
       <link>https://blog.simba-fs.dev/tags/cli/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/tags/cli/</guid>
       <description></description>
@@ -22,7 +22,7 @@
     <item>
       <title>software development</title>
       <link>https://blog.simba-fs.dev/tags/software-development/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/tags/software-development/</guid>
       <description></description>
@@ -31,7 +31,7 @@
     <item>
       <title>terminal</title>
       <link>https://blog.simba-fs.dev/tags/terminal/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/tags/terminal/</guid>
       <description></description>
@@ -40,7 +40,7 @@
     <item>
       <title>tmux</title>
       <link>https://blog.simba-fs.dev/tags/tmux/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/tags/tmux/</guid>
       <description></description>
@@ -49,7 +49,7 @@
     <item>
       <title>vim</title>
       <link>https://blog.simba-fs.dev/tags/vim/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/tags/vim/</guid>
       <description></description>
@@ -58,7 +58,7 @@
     <item>
       <title>zsh</title>
       <link>https://blog.simba-fs.dev/tags/zsh/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/tags/zsh/</guid>
       <description></description>
