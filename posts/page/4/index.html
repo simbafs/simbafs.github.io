@@ -80,6 +80,18 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>webpack-react</h2>
+</header>
+<section class=entry-content>
+<p>前言 最近開始想學 react 在這之前當然要先把開發環境搞好 其中 react 最重要的就是 webpack 和 babel 了 babel 負責編譯 webpack 負責串街所有工作
+安裝套件 建立一個專案並初始化 mkdir react-test cd react-test npm init -y git init -y 安裝開發用套件 npm i -D \ @babel/core \ @babel/cli \ @babel/preset-env \ @babel/preset-react \ babel-loader \ react \ react-dom \ webpack package.json 加入以下的 script
+{ "dev": "webpack --mode development", "watch": "webpack --mode development --watch", "depoly": "webpack --mode production" } webpack.config.js 建立 webpack.config.js 這是最小的版本了 沒有任何的擴充...</p>
+</section>
+<footer class=entry-footer>2020-June-28&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to webpack-react" href=https://blog.simba-fs.dev/posts/nodejs/react/webpack-react/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>nginx-ui</h2>
 </header>
 <section class=entry-content>
@@ -180,17 +192,6 @@ gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p>
 </section>
 <footer class=entry-footer>2020-March-13&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to sqlite" href=https://blog.simba-fs.dev/posts/nodejs/sqlite/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>isolate</h2>
-</header>
-<section class=entry-content>
-<p>我有一個放了很久的計畫，就是自己寫一個 OJ，因為我覺得現在的那個太難用了。 我很快的建立 repo 但是卻完全沒有進展，我寫了一個 shell script 幫忙編譯執行程式之後我就在也沒有動過他了 我沒有繼續動工的原因是我不知道如何隔離使用者提交的程式碼 我想過 docker 可是據說還是不安全 還有 chroot 但是我不知道有沒有比 docker 安全而且設定好麻煩
-昨天去考 TOI　入營考（當然沒進）的時候，我終於看到大名鼎鼎的 CMS 了！ 出來之後我發現他是用一個叫 isolate 的程式來做沙箱測試 而且這好像是 IOI 自己寫的，應該是蠻安全的（吧？） 今天成功編譯過後把心得寫下來</p>
-</section>
-<footer class=entry-footer>2020-March-9&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to isolate" href=https://blog.simba-fs.dev/posts/linux/isolate/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

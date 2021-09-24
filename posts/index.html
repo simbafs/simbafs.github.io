@@ -80,6 +80,20 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Aconf</h2>
+</header>
+<section class=entry-content>
+<p>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
+而且設定檔還可以有不只一個，他可以把多個設定檔合成，相當方便
+基本使用 定義 struct 首先我們需要一個 struct 來定義我們的設定
+type Config struct { Addr string `default:":3000"` Title string `default:"Aconf Testing"` SysAdmin []string `default:"simba-fs,peter"` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
+loader := aconfig.LoaderFor(&config, aconfig.Config{ // 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 // SkipDefaults: false, // SkipFiles: false, // SkipEnv: false, // SkipFlags: false, EnvPrefix: "APP", FlagPrefix: "app", Files: []string{"~/.config/app.toml", "app.toml"}, FileDecoders: map[string]aconfig.FileDecoder{ ".toml": aconfigtoml.New(), }, }) if err := loader.Load(); err != nil { panic(err) } 這樣你就可以用檔案、環境變數和命令列參數設定了。...</p>
+</section>
+<footer class=entry-footer>2021-September-24&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Aconf" href=https://blog.simba-fs.dev/posts/golang/aconf/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Golang Parse All Files In Directory Into Templates</h2>
 </header>
 <section class=entry-content>
@@ -200,20 +214,6 @@ $ chmod 660 /dev/hidraw2 拔下滑鼠接收器，插上。
 </section>
 <footer class=entry-footer>2021-March-15&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to logitech-mouse-permission-error" href=https://blog.simba-fs.dev/posts/linux/software/logitech-mouse-permission-error/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>libreoffice-code-format-plugin-install</h2>
-</header>
-<section class=entry-content>
-<p>安裝 去 https://extensions.libreoffice.org/en/extensions/show/code-highlighter 下載最新的外掛 把檔名前面的前綴刪掉， 例如：ea4db15f_codehighlighter.oxt -> codehighlighter.oxt
-安裝相依性套件 sudo apt install libreoffice-script-provider-python python3-pip sudo pip3 install pygments 安裝外掛 工具 > 擴充套件管理員 > 加入 > 選擇你的檔案
-使用 插入文字方塊 插入 > 文字方塊
-貼上程式碼 選擇文字方塊，不是文字（按文字方塊的邊邊） format 工具 > highlight code > 選得語言、style
-參考資料 Libreoffice extensions issue</p>
-</section>
-<footer class=entry-footer>2021-March-13&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to libreoffice-code-format-plugin-install" href=https://blog.simba-fs.dev/posts/linux/software/libreoffice-code-format-plugin-install/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

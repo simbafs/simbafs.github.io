@@ -80,6 +80,20 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>docker 基礎指令</h2>
+</header>
+<section class=entry-content>
+<p>Install apt install docker docker.io docker-compose What is docker Docker 是一個容器化的技術，基本上使用的時候可以把他當成虛擬機，雖然他們的使用的技術完全不一樣。對新手來說，在 Docker 裡面有四個重要的名詞：dockerfile, docker image, docker container, docker-compose。
+dockerfile
+純文字檔，定義建立 docker image 的步驟，有點像是一個 bash shell。通常命名成 Dockerfile ，在 build 的時候會預設用這個，也可以用 -f 來指定其他的檔案。 docker image
+這是透過 docker build 編譯出來的東西。可以想成 docker container 的藍圖，在 docker pull 的時候也是下載 docker image 而不是 dockerfile。基本上 image 裡面已經包括了編譯好的執行檔和基本的環境設定，所以在 docker 外面是不用做他設定的，這也是 docker 的魅力所在。 docker container
+每個 docker image 可以產生很多個 container，也就是執行中的程式。在這裡你已經可以用 docker 來建立各種服務了。這裡也可以想像成虛擬機，用 docker exec -it container_name bash 可以進到 container 裡面(如果裡面有 bash 的話) docker-compose...</p>
+</section>
+<footer class=entry-footer>2020-September-10&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to docker 基礎指令" href=https://blog.simba-fs.dev/posts/linux/docker/docker-%E5%9F%BA%E7%A4%8E%E6%8C%87%E4%BB%A4/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>mxlinux boot with systemd</h2>
 </header>
 <section class=entry-content>
@@ -210,18 +224,6 @@ Cannot use JSX unless the '--jsx' flag is provided. (FixIt) 研究之後發現�
 </section>
 <footer class=entry-footer>2020-July-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to 讓 YCM 接受 jsx" href=https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>webpack-react</h2>
-</header>
-<section class=entry-content>
-<p>前言 最近開始想學 react 在這之前當然要先把開發環境搞好 其中 react 最重要的就是 webpack 和 babel 了 babel 負責編譯 webpack 負責串街所有工作
-安裝套件 建立一個專案並初始化 mkdir react-test cd react-test npm init -y git init -y 安裝開發用套件 npm i -D \ @babel/core \ @babel/cli \ @babel/preset-env \ @babel/preset-react \ babel-loader \ react \ react-dom \ webpack package.json 加入以下的 script
-{ "dev": "webpack --mode development", "watch": "webpack --mode development --watch", "depoly": "webpack --mode production" } webpack.config.js 建立 webpack.config.js 這是最小的版本了 沒有任何的擴充...</p>
-</section>
-<footer class=entry-footer>2020-June-28&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to webpack-react" href=https://blog.simba-fs.dev/posts/nodejs/react/webpack-react/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

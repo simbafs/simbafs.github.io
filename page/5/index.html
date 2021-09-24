@@ -78,6 +78,31 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>docker commit</h2>
+</header>
+<section class=entry-content>
+<p>前言 上次提到可以用 Dockerfile 建立 docker image，但我們還有令一個方法可以建立 docker image，那就是 docker commit 指令
+和 Dockerfile 差別 docker commit 有點像是手動版的 Dockerfile，在用 Dockerfile 建構 docker image 的時候，docker build 的工作就像是自動根據 Dockerfile 操作 docker commit。 Dockerfile 比較適合用在自動化交付和部屬，例如說你有一份程式碼，要將他包成 Docker 就很適合用 Dockerfile 自動化操作，因為程式碼會改變，但是包裝的流程基本上都是一樣的。 docker commit 適合用在建構環境，因為會有比較麻煩的操作，如果寫成 Dockerfile 會比較麻煩，當然如果可以的話還是寫成 Dockerfile 會比較好，因為更新的時候會比較方便。 在建構 image 的時候要用哪個方法就看個人取捨了。
+docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images，有點類似令存新檔的概念。先來看看參數吧！
+參數 $ docker commit --help Usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] Create a new image from a container's changes Options: -a, --author string Author (e....</p>
+</section>
+<footer class=entry-footer>2020-November-27&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to docker commit" href=https://blog.simba-fs.dev/posts/linux/docker/docker-commit/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>bash number loop</h2>
+</header>
+<section class=entry-content>
+<p>今天在某的地方剛好看到一個 bash 的小技巧，當我們要從 1 數到 100 時，通常會用 seq 指令來做，但是如果我們的需求剛剛好是每次遞增（遞減）1 的話，就可以使用 {start..end} 縮寫，下面兩個範例的效果是一樣的：
+# for 迴圈 + seq 的寫法 for i in $(seq 1 1 100); do echo $i done # 用 {start..end} echo {1..100} 這個技巧也可以用在建立檔案，像這樣：
+touch user{1..100} </p>
+</section>
+<footer class=entry-footer>2020-November-15&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to bash number loop" href=https://blog.simba-fs.dev/posts/linux/bash/bash-number-loop/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>bash completion</h2>
 </header>
 <section class=entry-content>
@@ -186,41 +211,6 @@ route.get('/', (req, res, next) => { return res.send('Hello world'); }); 但是�
 </section>
 <footer class=entry-footer>2020-August-19&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to express 重複 send" href=https://blog.simba-fs.dev/posts/nodejs/express-%E9%87%8D%E8%A4%87-send/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>加入 google search 和 sitemap</h2>
-</header>
-<section class=entry-content>
-<p>前置設定 npm 安裝 hexo-generator-sitemap npm i -S hexo-generator-sitemap 設定插件 將以下內容加到 _config.yml
-注意空白
-# sitemap sitemap: path: sitemap.xml 驗證網域 如果你的 hexo 是架在自己的網域可以跳過這步
-因為我的 hexo 是 託管在 GitHub page，在 Google Search Console 驗證的時候沒辦法用網域，所以要放一個特別的檔案到我們的網站根目錄
-首先到 Google Search Console 新增一個網域 選擇右邊，輸入你的網址 下載提供的 html 並放到 source/ 資料夾 忽略 接下來會遇到 hexo 在生成的時候把這個 html 也放到模板裡面，所以我們要把他加入忽略清單裡面
-在 _config.yml 裡面找到 skip_render
-把直接檔名寫在後面或是用清單都可以 注意空白
-# 直接寫 skip_render: 'googlebabababababa.html' # 或是用清單 skip_render: - 'googlebabababababa....</p>
-</section>
-<footer class=entry-footer>2020-August-19&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to 加入 google search 和 sitemap" href=https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>GitHub Action 自動部署 hexo</h2>
-</header>
-<section class=entry-content>
-<p>前言 本來部署 hexo 都是手動下指令，但是這樣在手機上因為沒辦法裝 hexo ,所以一直不能在手機上寫文章。剛好想到 GitHub Action 可以滿足我的需求，上網查了一下資料發現蠻多人有和我一樣的需求，這次參考的是 owlran 大大的文章。
-ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦。
-ssh-keygen 首先隨便找個資料夾產生一組 ssh key
-ssh-keygen -f deploy-key GitHub 再來要讓 GitHub 知道你的 ssh key（public/secret 都要）
-public key public key 是要放在你的 &lt;username>.github.io 的 repo 下
-.ggithub.io -> settings -> Deploy keys -> add deploy key
-新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
-把 depoly-key.pub 的內容貼上，記得下面的勾勾（Allow write access ）要選起來
-secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大是放在同一個 repo 不同 branch，我是放在兩個不同 repo，其中放部落格檔案的 repo 我設成 private repo（因為我放了一些 gitalk 要用的 clientSecret，這個不能公開）。...</p>
-</section>
-<footer class=entry-footer>2020-August-16&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to GitHub Action 自動部署 hexo" href=https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

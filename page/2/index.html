@@ -78,6 +78,38 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Day 15：vim 外掛大雜燴！</h2>
+</header>
+<section class=entry-content>
+<p>看到這裡，你可能還是很疑惑，到底 vim 好用在哪？嘿嘿，那是因為強大的外掛還沒裝啦！網路上會有一些配好一堆外掛的，像是 spaceVim，他們的策略和 vs code 很像，先幫你裝好一對外掛，讓你隨開及用。這樣做好處是初學者比較愛，但是常常會裝了一堆用不到的功能，反而讓載入速度、記憶體用量大增。
+所以我們自己挑我們需要的外掛裝起來，效果完全不會輸 vs code 這些笨重的編輯器！
+今天要介紹很多模組，都是我選出來製作一個現代化 IDE 必備的模組，相當的精華，一起來看看吧！ 記得修改後需要打指令 :so % | PlugInstall
+現代化 IDE 必裝模組 以下的內容直接貼到 ~/.config/nvim/plugin.vim 裡面裝模組的地方就可以了，說明附在裡面了
+注意：我這裡沒有列出 Coc.nvim，因為我把他拉出來到另外一章了
+" 彩色的 status barPlug 'itchyny/lightline.vim'" 有這個設定 lightline 在單個 vim 視窗中才會正常，沒錯！vim 也可以分割視窗，後天會講set laststatus=2" 在行號左側會顯示這行的 git 狀態，新增、刪除、修改，詳細請看 GitHub READMEPlug 'airblade/vim-gitgutter'" 按下 &lt;F5> 可以開啟檔案樹，按 h 有說明，再一下關掉說明Plug 'scrooloose/nerdtree'nmap &lt;F5> :NERDTreeToggle&lt;CR>" Exit Vim if NERDTree is the only window left.autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree....</p>
+</section>
+<footer class=entry-footer>2021-September-15&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 15：vim 外掛大雜燴！" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day15/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 14：vim-plug</h2>
+</header>
+<section class=entry-content>
+<p>前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。
+安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣
+# neovim sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' # vim sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' 挑選你的 vim 版本，執行完就安裝好了！
+安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！
+1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面
+call plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面
+加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行
+Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了...</p>
+</section>
+<footer class=entry-footer>2021-September-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Day 13：vim 設定檔</h2>
 </header>
 <section class=entry-content>
@@ -198,41 +230,6 @@ curl https://gist.githubusercontent.com/simba-fs/e06a1763c1967ce3f4b5ef643db5e0b
 </section>
 <footer class=entry-footer>2021-September-6&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Day 06：螢幕切八段！多開神器 tmux" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day06/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair</h2>
-</header>
-<section class=entry-content>
-<p>今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias
-zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。
-❓ > autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？ 前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突 安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定
-+ zplug 'marlonrichert/zsh-autocomplete' 然後重新開啟終端機並安裝新增的外掛就可以了
-你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。
-在 https://github.com/marlonrichert/zsh-autocomplete 有快捷鍵教學
-設定 這段是我在寫完第一版後新增了，所以在 純‧ CLI 整合開發環境 是沒有的
-為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了
-# case sensitive zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[....</p>
-</section>
-<footer class=entry-footer>2021-September-5&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day05/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search</h2>
-</header>
-<section class=entry-content>
-<p>今天的內容會比平常多，但是非常紮實！
-有時候我們在 CLI 操作時遇到很多重複的指令，像是 git add、git commit -m 'ba la ba la' 等等，這些指令可能又長又複雜，一直都是自己打也不是辦法，這時候就該請出 autosuggestions 了
-安裝 autosuggestions 老樣子，安裝外掛只須要修改 ~/.zshrc 就可以了
-# plugins zplug 'romkatv/powerlevel10k', as:theme, depth:1 + zplug 'zsh-users/zsh-autosuggestions' 因為 autosuggestions 是外掛，不需要特別寫 tag 了
-[問題]好像有奇怪的字跑出來？ 寫好之後重開終端機，按下 enter你可能會發現跳出了一堆東西，這是因為你開啟了 p10k 的 Instant Prompt Mode，這個雖然會讓你的終端機跑起來比較順（官方說的，我感覺不出來），但是在 zsh 載入完成之前就不能有任何字輸出。
-可是你看看，如果我們新增了一個外掛，zplug 會跳出來問我們是否要安裝，這時後 Instant Prompt Mode 就出來抱怨了。
-這個問題的解決方法直覺上有兩個，一是關掉 Instant Prompt Mode，二是讓 zplug 先不要吵
-關掉 Instant Prompt Mode 關掉 Instant Prompt Mode 很簡單，重新設定一次 p10k 就好了，在設定程式問你是否要開啟 p10k 時選擇 (3) Off，這樣下次安裝外掛就不會有奇怪的警告訊息跳出來了。...</p>
-</section>
-<footer class=entry-footer>2021-September-4&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day04/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

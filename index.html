@@ -94,6 +94,30 @@
 </article>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Aconf</h2>
+</header>
+<section class=entry-content>
+<p>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
+而且設定檔還可以有不只一個，他可以把多個設定檔合成，相當方便
+基本使用 定義 struct 首先我們需要一個 struct 來定義我們的設定
+type Config struct { Addr string `default:":3000"` Title string `default:"Aconf Testing"` SysAdmin []string `default:"simba-fs,peter"` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
+loader := aconfig.LoaderFor(&config, aconfig.Config{ // 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 // SkipDefaults: false, // SkipFiles: false, // SkipEnv: false, // SkipFlags: false, EnvPrefix: "APP", FlagPrefix: "app", Files: []string{"~/.config/app.toml", "app.toml"}, FileDecoders: map[string]aconfig.FileDecoder{ ".toml": aconfigtoml.New(), }, }) if err := loader.Load(); err != nil { panic(err) } 這樣你就可以用檔案、環境變數和命令列參數設定了。...</p>
+</section>
+<footer class=entry-footer>2021-September-24&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Aconf" href=https://blog.simba-fs.dev/posts/golang/aconf/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 24</h2>
+</header>
+<section class=entry-content>
+<p></p>
+</section>
+<footer class=entry-footer>2021-September-24&nbsp;·&nbsp;0 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 24" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day24/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Day 23</h2>
 </header>
 <section class=entry-content>
@@ -200,38 +224,6 @@ lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol
 </section>
 <footer class=entry-footer>2021-September-16&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Day 16：自動補全！coc.nvim" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day16/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Day 15：vim 外掛大雜燴！</h2>
-</header>
-<section class=entry-content>
-<p>看到這裡，你可能還是很疑惑，到底 vim 好用在哪？嘿嘿，那是因為強大的外掛還沒裝啦！網路上會有一些配好一堆外掛的，像是 spaceVim，他們的策略和 vs code 很像，先幫你裝好一對外掛，讓你隨開及用。這樣做好處是初學者比較愛，但是常常會裝了一堆用不到的功能，反而讓載入速度、記憶體用量大增。
-所以我們自己挑我們需要的外掛裝起來，效果完全不會輸 vs code 這些笨重的編輯器！
-今天要介紹很多模組，都是我選出來製作一個現代化 IDE 必備的模組，相當的精華，一起來看看吧！ 記得修改後需要打指令 :so % | PlugInstall
-現代化 IDE 必裝模組 以下的內容直接貼到 ~/.config/nvim/plugin.vim 裡面裝模組的地方就可以了，說明附在裡面了
-注意：我這裡沒有列出 Coc.nvim，因為我把他拉出來到另外一章了
-" 彩色的 status barPlug 'itchyny/lightline.vim'" 有這個設定 lightline 在單個 vim 視窗中才會正常，沒錯！vim 也可以分割視窗，後天會講set laststatus=2" 在行號左側會顯示這行的 git 狀態，新增、刪除、修改，詳細請看 GitHub READMEPlug 'airblade/vim-gitgutter'" 按下 &lt;F5> 可以開啟檔案樹，按 h 有說明，再一下關掉說明Plug 'scrooloose/nerdtree'nmap &lt;F5> :NERDTreeToggle&lt;CR>" Exit Vim if NERDTree is the only window left.autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree....</p>
-</section>
-<footer class=entry-footer>2021-September-15&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 15：vim 外掛大雜燴！" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day15/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Day 14：vim-plug</h2>
-</header>
-<section class=entry-content>
-<p>前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。
-安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣
-# neovim sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' # vim sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' 挑選你的 vim 版本，執行完就安裝好了！
-安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！
-1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面
-call plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面
-加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行
-Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了...</p>
-</section>
-<footer class=entry-footer>2021-September-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -9,7 +9,20 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 30 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 08:46:37 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aconf</title>
+      <link>https://blog.simba-fs.dev/posts/golang/aconf/</link>
+      <pubDate>Fri, 24 Sep 2021 08:46:37 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/golang/aconf/</guid>
+      <description>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
+而且設定檔還可以有不只一個，他可以把多個設定檔合成，相當方便
+基本使用 定義 struct 首先我們需要一個 struct 來定義我們的設定
+type Config struct { Addr string `default:&amp;#34;:3000&amp;#34;` Title string `default:&amp;#34;Aconf Testing&amp;#34;` SysAdmin []string `default:&amp;#34;simba-fs,peter&amp;#34;` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
+loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ // 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 	// SkipDefaults: false, 	// SkipFiles: false, 	// SkipEnv: false, 	// SkipFlags: false, 	EnvPrefix: &amp;#34;APP&amp;#34;, FlagPrefix: &amp;#34;app&amp;#34;, Files: []string{&amp;#34;~/.config/app.toml&amp;#34;, &amp;#34;app.toml&amp;#34;}, FileDecoders: map[string]aconfig.FileDecoder{ &amp;#34;.toml&amp;#34;: aconfigtoml.New(), }, }) if err := loader.Load(); err != nil { panic(err) } 這樣你就可以用檔案、環境變數和命令列參數設定了。</description>
+    </item>
+    
     <item>
       <title>Golang Parse All Files In Directory Into Templates</title>
       <link>https://blog.simba-fs.dev/posts/golang/golang-parse-all-files-in-directory-into-templates/</link>

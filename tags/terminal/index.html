@@ -79,6 +79,16 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Day 24</h2>
+</header>
+<section class=entry-content>
+<p></p>
+</section>
+<footer class=entry-footer>2021-September-24&nbsp;·&nbsp;0 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 24" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day24/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Day 23</h2>
 </header>
 <section class=entry-content>
@@ -200,23 +210,6 @@ lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol
 </section>
 <footer class=entry-footer>2021-September-15&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Day 15：vim 外掛大雜燴！" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day15/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Day 14：vim-plug</h2>
-</header>
-<section class=entry-content>
-<p>前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。
-安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣
-# neovim sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' # vim sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' 挑選你的 vim 版本，執行完就安裝好了！
-安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！
-1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面
-call plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面
-加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行
-Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了...</p>
-</section>
-<footer class=entry-footer>2021-September-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
