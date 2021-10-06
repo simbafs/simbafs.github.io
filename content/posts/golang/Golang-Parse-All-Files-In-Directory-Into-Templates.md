@@ -96,6 +96,13 @@ func main(){
 # 關於 Template 奇怪的坑
 如果仔細看你會發現 `html/template` 套件有提供一個函數 `ParseFS` 函數，可以直接傳 `FS` 物件進去（如 #No-Recursive 的用法），但是因為 `ParseFS` 在判定 template name 時是用檔名而不是路徑，所以不同資料夾下如果都有檔名一樣的模板，只有最後一個會生效。所以這個只適用沒有子目錄的情形，擴充性不足有點可惜。因此在 #Recursive 中我使用 `Assets.ReadFile` 把檔案讀進來，再以字串傳進 Parse 就是為了避免這個 bug
 
+# 關於 Golang 1.17 的坑
+## 空格
+升到 Golang 1.17 之後，原本可以用 `// go:embed filename` 引入，現在一定要用 `//go:embed filename`，斜線和 `go` 中間不能有空白。
+
+## 不能用「.」開頭
+我不確定這是不是 1.17 的改變，我忘記以前 1.16.5 有沒有試過這個，`filename` 不能是「.」開頭，也就是說不能寫 `../filename`，所以要引入的檔案或目錄一定要放在 `go run .` 或 `go build` 執行的目錄下
+
 # 參考資料
 [https://pkg.go.dev/embed](https://pkg.go.dev/embed)  
 [https://pkg.go.dev/io/fs](https://pkg.go.dev/io/fs)  
