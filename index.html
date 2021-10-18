@@ -94,6 +94,16 @@
 </article>
 <article class=post-entry>
 <header class=entry-header>
+<h2>ExecCmd</h2>
+</header>
+<section class=entry-content>
+<p>Golang 執行外部命令 package main import ( "fmt" "os/exec" ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command("wc") stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, "fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk") output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } </p>
+</section>
+<footer class=entry-footer>2021-October-19&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to ExecCmd" href=https://blog.simba-fs.dev/posts/golang/exec-cmd/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Aconf</h2>
 </header>
 <section class=entry-content>
@@ -226,19 +236,6 @@ Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了...</p>
 </section>
 <footer class=entry-footer>2021-September-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Day 13：vim 設定檔</h2>
-</header>
-<section class=entry-content>
-<p>vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 ~/.vimrc，如果是 neovim(nvim)，他會去找 ~/.config/nvim/init.vim。在接下來的文章中都以 vimrc 代指。
-vimrc 內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 :set nu，這個命令可以開啟行號顯示，如果要寫在 vimrc 裡面，就要寫成 set nu。
-vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 " 開頭是 vimscript 的註解)
-" 打開語法突顯syntax on" load plguin" install vim-plug:" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'" 這個是明天的東西，先註解掉，才不會出錯" so ~/.config/nvim/plugin.vim" 256 色set t_Co=256" 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=" 選一個你喜歡的 colorschema" available color schema" blue darkblue default delek desert elflord evening industry koehler" morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler" 雜項設定，詳細解說請用 `:help &lt;opeion>`，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline" make lightline work in single screen" https://github....</p>
-</section>
-<footer class=entry-footer>2021-September-13&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 13：vim 設定檔" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day13/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

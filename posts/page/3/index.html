@@ -80,6 +80,18 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Mongoose Model</h2>
+</header>
+<section class=entry-content>
+<p>Mongoose Model 環境設定 這是這次實驗用的 code
+const mongoose = require('mongoose'); mongoose.connect('mongodb://127.0.0.1:27017', {useNewUrlParser: true, useUnifiedTopology: true}) .then(() => console.log('Connected to DB')) .catch(e => console.error(e)); const requiredString = { type: String, required: true } const UserSchema = new mongoose.Schema({ username: requiredString, password: requiredString }); const UserModel = mongoose.model('User', UserSchema); mongo db 用 docker 開一個實驗用的 server
+version: '3' services: db: image: 'mongo' container_name: 'aurl-mongodb' volumes: - ./data/mongo:/data/db - ./data/dump:/dump ports: - '27017:27017' 取得原 schema 在一般操作的時候都是用 UserModel 在操作資料庫，當要取得 schema 的時候當然也是從他裡面找最方便，當然也可以把 schema 特別弄出來，但是有點麻煩，以這次的例子說明，原本的 UserSchema 會存在 UserModel....</p>
+</section>
+<footer class=entry-footer>2020-November-10&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Mongoose Model" href=https://blog.simba-fs.dev/posts/nodejs/mongoose-model/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>docker 基礎指令</h2>
 </header>
 <section class=entry-content>
@@ -212,18 +224,6 @@ function Input(props){ const [text, setText] = React.useState(props.text); React
 </section>
 <footer class=entry-footer>2020-July-12&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to React update state on props change" href=https://blog.simba-fs.dev/posts/nodejs/react/react-update-state-on-props-change/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>讓 YCM 接受 jsx</h2>
-</header>
-<section class=entry-content>
-<p>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
-Cannot use JSX unless the '--jsx' flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
-{ "compilerOptions": { "target": "es6", "checkJs": true + }, + "compilerOptions": { + "jsx": "react" } } </p>
-</section>
-<footer class=entry-footer>2020-July-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to 讓 YCM 接受 jsx" href=https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

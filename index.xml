@@ -9,7 +9,16 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 24 Sep 2021 08:46:37 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Oct 2021 00:06:19 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ExecCmd</title>
+      <link>https://blog.simba-fs.dev/posts/golang/exec-cmd/</link>
+      <pubDate>Tue, 19 Oct 2021 00:06:19 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/golang/exec-cmd/</guid>
+      <description>Golang 執行外部命令 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;os/exec&amp;#34; ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command(&amp;#34;wc&amp;#34;) stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, &amp;#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&amp;#34;) output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } </description>
+    </item>
+    
     <item>
       <title>Aconf</title>
       <link>https://blog.simba-fs.dev/posts/golang/aconf/</link>

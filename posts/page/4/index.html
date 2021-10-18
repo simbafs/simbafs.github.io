@@ -80,6 +80,18 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>讓 YCM 接受 jsx</h2>
+</header>
+<section class=entry-content>
+<p>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
+Cannot use JSX unless the '--jsx' flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
+{ "compilerOptions": { "target": "es6", "checkJs": true + }, + "compilerOptions": { + "jsx": "react" } } </p>
+</section>
+<footer class=entry-footer>2020-July-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to 讓 YCM 接受 jsx" href=https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>webpack-react</h2>
 </header>
 <section class=entry-content>
@@ -182,16 +194,6 @@ gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p>
 </section>
 <footer class=entry-footer>2020-March-15&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to remind-daniel" href=https://blog.simba-fs.dev/posts/nodejs/remind-daniel/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>sqlite</h2>
-</header>
-<section class=entry-content>
-<p>昨天是試著去理解 sqlite3，我發現他的 callback function 真的太煩了 於是我試著去尋找 async 的版本，還真找到了 這個套件把整個 sqlite 包成 async 了</p>
-</section>
-<footer class=entry-footer>2020-March-13&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to sqlite" href=https://blog.simba-fs.dev/posts/nodejs/sqlite/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
