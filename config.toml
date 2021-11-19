@@ -110,12 +110,6 @@ defaultContentLanguage = 'zh-tw'
 	keys = [ "title", "permalink", "summary", "content" ]
 	
 [[menu.main]]
-	identifier = "純‧ CLI 整合開發環境"
-	name = "> 純‧ CLI 整合開發環境 <"
-	url = "/posts/ithelp/pure-cli-ide/"
-	weight = 5
-
-[[menu.main]]
 	identifier = "categories"
 	name = "Categories"
 	url = "/categories/"
