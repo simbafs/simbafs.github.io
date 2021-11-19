@@ -22,7 +22,7 @@ function Input(props){ const [text, setText] = React.useState(props.text); React
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.89.4">
 <meta property="og:title" content="React update state on props change">
 <meta property="og:description" content="問題 今天在研究 React 遇到一個問題 當我從外面更新 props 的時候 component 內的 state 不會更新
 function Input(props){ const [text, setText] = React.useState(props.text); return ( <input type=&#34;text&#34; value={text}> ) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
@@ -61,11 +61,6 @@ function Input(props){ const [text, setText] = React.useState(props.text); React
 </span>
 </div>
 <ul id=menu>
-<li>
-<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/ title="> 純‧ CLI 整合開發環境 <">
-<span>> 純‧ CLI 整合開發環境 &lt;</span>
-</a>
-</li>
 <li>
 <a href=https://blog.simba-fs.dev/categories/ title=Categories>
 <span>Categories</span>

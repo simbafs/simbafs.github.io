@@ -19,7 +19,7 @@ name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest s
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.89.4">
 <meta property="og:title" content="audo-depoly-by-github-action">
 <meta property="og:description" content="自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
 name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest strategy: matrix: node-version: [12.x] steps: - uses: actions/checkout@v1 - name: Use Node.js ${{ matrix.node-version }} uses: actions/setup-node@v1 with: node-version: ${{ matrix.node-version }} - name: Configuration environment env: HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}} run: |mkdir -p ~/.ssh/ echo &#34;$HEXO_DEPLOY_PRI&#34; | tr -d '\r' > ~/.ssh/id_rsa chmod 600 ~/.ssh/id_rsa ssh-keyscan github.com >> ~/.ssh/known_hosts git config --global user.name &#34;simba-fs&#34; git config --global user.">
@@ -52,11 +52,6 @@ name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest s
 </span>
 </div>
 <ul id=menu>
-<li>
-<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/ title="> 純‧ CLI 整合開發環境 <">
-<span>> 純‧ CLI 整合開發環境 &lt;</span>
-</a>
-</li>
 <li>
 <a href=https://blog.simba-fs.dev/categories/ title=Categories>
 <span>Categories</span>

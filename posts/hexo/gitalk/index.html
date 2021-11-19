@@ -18,7 +18,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.89.4">
 <meta property="og:title" content="gitalk">
 <meta property="og:description" content="啟用 gitalk 留言  到這個網址填資料 加入下面的片段到_config.yml  disqus: enabled: false gitalk: enabled: true owner: <username> repo: <username>.github.io admin: ['<username>'] clientID: <clientID> clientSecret: <clientSecret> 加入下面的片段到themes/cactus/layout/_partial/comments.ejs  <% if(page.comments && theme.gitalk.enabled){ %> <link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&#34;> <script src=&#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&#34;></script> <script src=&#34;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&#34;></script> <div id=&#34;gitalk-container&#34;></div> <script type=&#34;text/javascript&#34;> var gitalk = new Gitalk({ clientID: '<%= theme.gitalk.clientID %>', clientSecret: '<%= theme.gitalk.clientSecret %>', id: md5(window.location.pathname), repo: '<%= theme.gitalk.repo %>', owner: '<%= theme.gitalk.owner %>', admin: '<%= theme.gitalk.admin %>', distractionFreeMode: '<%= theme.">
 <meta property="og:type" content="article">
@@ -49,11 +49,6 @@
 </span>
 </div>
 <ul id=menu>
-<li>
-<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/ title="> 純‧ CLI 整合開發環境 <">
-<span>> 純‧ CLI 整合開發環境 &lt;</span>
-</a>
-</li>
 <li>
 <a href=https://blog.simba-fs.dev/categories/ title=Categories>
 <span>Categories</span>

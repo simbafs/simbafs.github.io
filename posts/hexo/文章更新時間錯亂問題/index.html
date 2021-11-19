@@ -23,7 +23,7 @@ source/_posts/hexo-installation.md:3:date: 2020-02-10 17:26:45 source/_posts/ble
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.89.4">
 <meta property="og:title" content="文章更新時間錯亂問題">
 <meta property="og:description" content="問題 在設定完 GitHub Action 之後，我發現我的文章的更新時間都錯了，會全部變成當天日期。但是本地生成的就沒有這個問題，經過一番盤查和猜測後，我發現問題是因為 git 不會把 modified date 紀錄，因為每台電腦的時區都是不一樣的，紀錄起來沒有意義。但是我們需要這項 meta data，所以我們就要自己想法紀錄
 解法 v1.0 首先，因為每一篇文章 hexo 都會紀錄建立時間，所以我們可以直接把他抓出來，然後把檔案的更新時間設成這個時間就可以啦！
@@ -64,11 +64,6 @@ source/_posts/hexo-installation.md:3:date: 2020-02-10 17:26:45 source/_posts/ble
 </span>
 </div>
 <ul id=menu>
-<li>
-<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/ title="> 純‧ CLI 整合開發環境 <">
-<span>> 純‧ CLI 整合開發環境 &lt;</span>
-</a>
-</li>
 <li>
 <a href=https://blog.simba-fs.dev/categories/ title=Categories>
 <span>Categories</span>

@@ -21,7 +21,7 @@ apt install gnupg2 wget https://github.com/docker/docker-credential-helpers/rele
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.89.4">
 <meta property="og:title" content="docker login error">
 <meta property="og:description" content="錯誤說明 昨天我在 terminal 登入 docker 的時候發現不知道為什麼不能登入，我先透過網頁登入確認過密碼沒有問題，也不是打錯字的關係，但還是不能當入。總是會有類似以下的錯誤訊息。
 Error saving credentials: error storing credentials - err: exit status 1, out: `exit status 1: gpg: simbafs: 已跳過: 沒有公鑰 gpg: [stdin]: encryption failed: 沒有公鑰 Password encryption aborted.` 解決方法 經過搜尋之後，我按照 https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388634452 的方法成功登入了，但是在這之前要先安裝 gpg 和 pass
@@ -58,11 +58,6 @@ apt install gnupg2 wget https://github.com/docker/docker-credential-helpers/rele
 </span>
 </div>
 <ul id=menu>
-<li>
-<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/ title="> 純‧ CLI 整合開發環境 <">
-<span>> 純‧ CLI 整合開發環境 &lt;</span>
-</a>
-</li>
 <li>
 <a href=https://blog.simba-fs.dev/categories/ title=Categories>
 <span>Categories</span>
