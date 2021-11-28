@@ -24,7 +24,7 @@ Tmeplate No Recursive 最簡單的方法，你可以直接使用
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="Golang Parse All Files In Directory Into Templates">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Golang Parse All Files In Directory Into Templates">
 <meta property="og:description" content="在用 gin 寫伺服器的時候，我發現模板並不會被 go build 打包進執行檔裡面，所以在執行的時候就找不到檔案，當然這個問題可以用字串的形式直接把模板放進 golang 原始碼裡面，但是這樣程式碼一複雜就會不好用，這時候就可以用 golang 的 embed 函式庫把檔案「嵌入」到原始碼裡面。但是問題又來了，嵌入了之後要怎麼把字串變成模板物件呢？
 Embed  embed 套件是 1.16 新出的功能，所以如果想用的話記得要更新 go 到 1.16 以上
  embed 嵌入檔案的方式是透過特殊格式的註解宣告，直接看官方範例：
@@ -97,7 +97,7 @@ Golang Parse All Files In Directory Into Templates
 <div class=post-meta>2021-July-30&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

@@ -20,7 +20,7 @@ name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest s
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="audo-depoly-by-github-action">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="audo-depoly-by-github-action">
 <meta property="og:description" content="自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
 name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest strategy: matrix: node-version: [12.x] steps: - uses: actions/checkout@v1 - name: Use Node.js ${{ matrix.node-version }} uses: actions/setup-node@v1 with: node-version: ${{ matrix.node-version }} - name: Configuration environment env: HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}} run: |mkdir -p ~/.ssh/ echo &#34;$HEXO_DEPLOY_PRI&#34; | tr -d '\r' > ~/.ssh/id_rsa chmod 600 ~/.ssh/id_rsa ssh-keyscan github.com >> ~/.ssh/known_hosts git config --global user.name &#34;simba-fs&#34; git config --global user.">
 <meta property="og:type" content="article">
@@ -85,7 +85,7 @@ audo-depoly-by-github-action
 <div class=post-meta>2020-February-11&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

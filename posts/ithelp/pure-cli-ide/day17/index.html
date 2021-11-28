@@ -21,7 +21,7 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="Day 17：coc.nvim 設定下集">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Day 17：coc.nvim 設定下集">
 <meta property="og:description" content="今天的東西相當多，在 GitHub README Example 中除了昨天介紹過得今天都收錄了，直接進主題吧！
 喔！另外有些東西我真的不知道是什麼我會用原文寫並用中文括號括起來，歡迎知道的朋友留言告訴我
 &#34; 設定文字編碼（我想這個你的 init.vim/.vimrc 都應該有了）set encoding=utf-8&#34; 如果 hidden 沒有設定，「TextEdit」可能會失敗&#34; TextEdit 也許是彈出式輸入框吧？阿災set hidden&#34; 有些伺服器對於備份檔會出錯，請看 issue #649&#34; https://github.com/neoclide/coc.nvim/issues/649set nobackupset nowritebackup&#34; 把下面的命令欄變高，多一點空間set cmdheight=2&#34; 不傳訊息給「|ins-completion-menu|」（這我看不太出來有什麼差set shortmess+=c&#34; 使用 <c-space> 觸發自動完成if has('nvim') inoremap <silent><expr> <c-space> coc#refresh()else inoremap <silent><expr> <c-@> coc#refreshendif&#34; 用 `[g` 和 `]g` 跳到診斷的位置（就是程式碼有問題地方&#34; 用命令 `:CocDiagnostics` 在分割視窗列出目前檔案中所有有問題的點nmap <silent> [g <Plug>(coc-diagnostic-prev)nmap <silent> ]g <Plug>(coc-diagnostic-next)&#34; 程式碼轉跳（這個我覺得有點難記，而且這四個實驗出來效果非常像，我的建議是試過後選你覺得順眼的，不要全上nmap <silent> gd <Plug>(coc-definition)nmap <silent> gy <Plug>(coc-type-definition)nmap <silent> gi <Plug>(coc-implementation)nmap <silent> gr <Plug>(coc-references)&#34; 用 K（注意大寫）顯示文件在分割視窗nnoremap <silent> K :call <SID>show_documentation()<CR>function!">
@@ -88,7 +88,7 @@ Day 17：coc.nvim 設定下集
 <div class=post-meta>2021-September-17&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

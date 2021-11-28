@@ -22,7 +22,7 @@ apt install gnupg2 wget https://github.com/docker/docker-credential-helpers/rele
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="docker login error">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="docker login error">
 <meta property="og:description" content="錯誤說明 昨天我在 terminal 登入 docker 的時候發現不知道為什麼不能登入，我先透過網頁登入確認過密碼沒有問題，也不是打錯字的關係，但還是不能當入。總是會有類似以下的錯誤訊息。
 Error saving credentials: error storing credentials - err: exit status 1, out: `exit status 1: gpg: simbafs: 已跳過: 沒有公鑰 gpg: [stdin]: encryption failed: 沒有公鑰 Password encryption aborted.` 解決方法 經過搜尋之後，我按照 https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388634452 的方法成功登入了，但是在這之前要先安裝 gpg 和 pass
 apt install gnupg2 pass 接下來是我用的指令
@@ -91,7 +91,7 @@ docker login error
 <div class=post-meta>2020-December-5&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

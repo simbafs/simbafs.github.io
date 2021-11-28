@@ -20,7 +20,7 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="blessed切換畫面">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="blessed切換畫面">
 <meta property="og:description" content="今天完成了新版本的 treetify 看這 同時我設計好了右邊的 edit 但是我的問題是他要根據情況不同切換不同的頁面 來看看我的一些想法：
  從 screen.children[2] 把他會掉，可是會出錯不行 有一個元件 Carousel 好像可以但是他其實是用方向鍵控制所以也不行 終於我想了一個方法，接下來來介紹 這是測試程式碼  const blessed = require('blessed'); const contrib = require('blessed-contrib'); const screen = blessed.screen({ title: 'JSON viewer', debug: true }); const grid = new contrib.grid({ rows: 1, cols: 2, screen: screen }); const tree = grid.set(0, 0, 1, 1, blessed.box, { border: {type: 'line'}, content: 'Tree', label: 'Tree' }); const edit = grid.set(0, 1, 1, 1, blessed.">
 <meta property="og:type" content="article">

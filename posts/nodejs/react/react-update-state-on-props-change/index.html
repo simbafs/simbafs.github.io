@@ -23,7 +23,7 @@ function Input(props){ const [text, setText] = React.useState(props.text); React
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="React update state on props change">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="React update state on props change">
 <meta property="og:description" content="問題 今天在研究 React 遇到一個問題 當我從外面更新 props 的時候 component 內的 state 不會更新
 function Input(props){ const [text, setText] = React.useState(props.text); return ( <input type=&#34;text&#34; value={text}> ) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
 解法 後來找到解法，加上一個 useEffect 監聽 props.text 然後更新 state 就好了
@@ -94,7 +94,7 @@ React update state on props change
 <div class=post-meta>2020-July-12&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

@@ -22,7 +22,7 @@ const fs = require('fs'); const express = require('express'); const app = expres
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="unix-socket">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="unix-socket">
 <meta property="og:description" content="今天心血來潮在看 unix socket 突然想到 node 可不可以把 服務監聽在一個 socket file 這樣在設定的時候就不用記哪個服務是幾 port
 node 部份 監聽在 unix socket 查完資料後發現其實只要把原本填 port 的地方改成 socket file 的路徑就好了 像這樣
 const express = require('express'); const app = express(); app.get('/', (req, res) => { res.send('Hello World\n'); }); app.listen('/tmp/express.sock'); 刪除 socket file 因為每次的 listen 都會新增一個 socket file 相當於佔用一個 port 如果不刪除的話就相當於 port 被佔用了 會噴錯 所以每次程式結束的時候要把這個 socket file 刪掉 然後在 /tmp 下的檔案會在開機後自動刪掉 所以如果部屬後發什麼問題重開機就對了！ 修改完的 code 長這樣
@@ -91,7 +91,7 @@ unix-socket
 <div class=post-meta>2020-February-23&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

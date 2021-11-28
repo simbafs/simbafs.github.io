@@ -29,7 +29,7 @@ https://www.npmjs.com/package/rooty
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="node require from project root">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="node require from project root">
 <meta property="og:description" content="問題 在寫一個專案的時候，有時候會有一些小程式重複在不同的檔案裡用到，這時候我們會把他打包成模組放在 lib/。但是如果資料夾結構有點點複雜的時候， require() 的路徑就會很複雜：
 . ├── index.js ├── lib │ └── random.js └── routes └── page └── signup └── index.js 在 index.js 裡面如果要引入 random.js 就會變成這樣
 const random = require('../../lib/random.js'); 爛解法 如果我們想要直接用 require('lib/random') 的話做簡單的方式是上傳 npm，但是這樣稍嫌麻煩，而且別的專案不一定用的到。每一次修改都要上傳 npm 很不方便。
@@ -112,7 +112,7 @@ node require from project root
 <div class=post-meta>2020-September-2&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

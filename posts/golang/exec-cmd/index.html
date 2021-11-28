@@ -19,7 +19,7 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="ExecCmd">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="ExecCmd">
 <meta property="og:description" content="Golang 執行外部命令 package main import ( &#34;fmt&#34; &#34;os/exec&#34; ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command(&#34;wc&#34;) stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, &#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&#34;) output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://blog.simba-fs.dev/posts/golang/exec-cmd/"><meta property="og:image" content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts">
@@ -82,7 +82,7 @@ ExecCmd
 <div class=post-meta>2021-October-19&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

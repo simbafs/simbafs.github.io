@@ -21,7 +21,7 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="blessed-landmine">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="blessed-landmine">
 <meta property="og:description" content="這是一篇我在用 blessed 時踩的一些雷 會持續的更新
 1. 記得 render 今天在寫 API 時踩到兩次 更新了資料卻沒有 render 例如 textarea.setValue() 這個函式設定完之後他畫面不會更新 要自己 render
 2. textarea.setValue() 只接受字串當參數 我個人覺得 blessed 缺少一個像是 jquery 的函式庫 沒有一個很好的 API 包裝 例如說這個函式 textarea.setValue() 就只吃字串 因為他用了 String.prototype.replace 這個函數 而且他沒有一個很好的防呆機制例如參數型別檢查 幸好是他的程式碼沒有做 uglify 還算簡單易懂 而且 node 的錯誤訊息的 stack 可以引導到真正出錯的地方">
@@ -88,7 +88,7 @@ blessed-landmine
 <div class=post-meta>2020-February-26&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
-<details>
+<details open>
 <summary accesskey=c title="(Alt + C)">
 <div class=details>Table of Contents</div>
 </summary>

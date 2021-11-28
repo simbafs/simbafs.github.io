@@ -21,7 +21,7 @@ Cannot use JSX unless the '--jsx' flag is provided. (FixIt) 研究之後發現�
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
-<meta property="og:title" content="讓 YCM 接受 jsx">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="讓 YCM 接受 jsx">
 <meta property="og:description" content="最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
 Cannot use JSX unless the '--jsx' flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
 { &#34;compilerOptions&#34;: { &#34;target&#34;: &#34;es6&#34;, &#34;checkJs&#34;: true + }, + &#34;compilerOptions&#34;: { + &#34;jsx&#34;: &#34;react&#34;  } } ">
