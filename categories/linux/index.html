@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content="simba-fs">
 <link rel=canonical href=https://blog.simba-fs.dev/categories/linux/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
@@ -19,6 +19,10 @@
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/categories/linux/index.xml>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="linux">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
@@ -30,10 +34,6 @@
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<noscript>
-<style type=text/css>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -69,12 +69,13 @@
 </nav>
 </header>
 <main class=main>
-<header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>Home</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/categories/>Categories</a></div>
+<header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/categories/>Categories</a></div>
 <h1>linux</h1>
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>ssh on gitea with docker</h2>
+<h2>ssh on gitea with docker
+</h2>
 </header>
 <section class=entry-content>
 <p>Gitea 是一個開源的 git 伺服器，他的界面幾乎和 GitHub 一模一樣，但是完全開源而且非常輕，甚至一片樹梅派就可以開伺服器了。Gitea 因為是使用 Golang 編寫的，所以提供各種平台的執行檔。我選擇透過 docker 裝 Gitea 伺服器，但是這樣有一個問題，gitea 伺服器開在 container 內，沒辦法使用標準的 22 port，所以 git clone 就必須加上一個醜醜的數字，像是這樣
@@ -84,12 +85,13 @@ git clone git@domain:10022:user/repo.git 這個問題 Gitea 官方已經有提�
 sudo adduser git grep git /etc/passwd 記好 git 的 UID 和 GID
 git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2....</p>
 </section>
-<footer class=entry-footer>2021-July-13&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-07-13 00:00:00 +0000 UTC">2021-July-13</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to ssh on gitea with docker" href=https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Cast Phone Screen to Computer</h2>
+<h2>Cast Phone Screen to Computer
+</h2>
 </header>
 <section class=entry-content>
 <p>有沒有一種經驗是某的應用程式手機板操作勉強算順暢，但是一電腦上就炸開，反應慢到靠北、界面又很難用（沒錯 messenger 我正在看著你）。這個時候相信你會和我一樣想把手機畫面投影到電腦上的一個視窗裡面，最好可以互動、可以打字。有人第一個想法是在手機開 VNC 伺服器，但是這個方法有點麻煩，這篇文章介紹的是目前我覺得最佳解決方案。
@@ -103,35 +105,38 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
 加上 -f 可以開啟全螢幕
 參連連結 https://github.com/Genymobile/scrcpy https://developer.android.com/studio/debug/dev-options https://gist.github.com/simba-fs/9132289f63368ad325d6a2ef62be7a20</p>
 </section>
-<footer class=entry-footer>2021-June-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-06-14 00:00:00 +0000 UTC">2021-June-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Cast Phone Screen to Computer" href=https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>mxlinux boot with systemd</h2>
+<h2>mxlinux boot with systemd
+</h2>
 </header>
 <section class=entry-content>
 <p>問題 在 mxlinux 裡面，預設的 init 不是 systmed，這導致如果想用 systemctl 的時候就會跳出錯誤說
 System has not been booted with systemd as init system 像是在安裝 mongodb-org 的時候他就要用到 systemctl 然後就會出錯。
 解法 其實 mxlinux 已經幫我們想好解法了，在開機選項時選 Advence > Systemd 就會以 systemd 開機</p>
 </section>
-<footer class=entry-footer>2020-September-5&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-09-05 00:00:00 +0000 UTC">2020-September-5</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to mxlinux boot with systemd" href=https://blog.simba-fs.dev/posts/linux/mxlinux-boot-with-systemd/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>mxlinux-change-workspace</h2>
+<h2>mxlinux-change-workspace
+</h2>
 </header>
 <section class=entry-content>
 <p>切換工作區 今天想要在 mxlinux 中快速的切換工作區 我看到可以用滑鼠滾輪切換 可是我想要的是鍵盤快捷鍵 上網查了一下 發現可以透過 Ctrl+Alt+up/down/home/end 來切換
 參考資料 https://unix.stackexchange.com/questions/270334/how-to-move-a-window-to-another-workspace-in-xfce</p>
 </section>
-<footer class=entry-footer>2020-May-8&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-05-08 00:00:00 +0000 UTC">2020-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to mxlinux-change-workspace" href=https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>gpg</h2>
+<h2>gpg
+</h2>
 </header>
 <section class=entry-content>
 <p>今天心血來潮想設定 GPG，網路上查了一個教學，無疑的又遇到一個坑
@@ -141,34 +146,37 @@ gpg --list-keys 找到那串很長的文字，那就是 ID，複製起來，他�
 JFDKSA8FEWHE29HFVC92UHFPA93WOHFVDOPA39U2 再來用兩個指令就可以刪除了，注意一定要先刪私鑰。
 gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p>
 </section>
-<footer class=entry-footer>2020-March-28&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to gpg" href=https://blog.simba-fs.dev/posts/linux/gpg/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>isolate</h2>
+<h2>isolate
+</h2>
 </header>
 <section class=entry-content>
 <p>我有一個放了很久的計畫，就是自己寫一個 OJ，因為我覺得現在的那個太難用了。 我很快的建立 repo 但是卻完全沒有進展，我寫了一個 shell script 幫忙編譯執行程式之後我就在也沒有動過他了 我沒有繼續動工的原因是我不知道如何隔離使用者提交的程式碼 我想過 docker 可是據說還是不安全 還有 chroot 但是我不知道有沒有比 docker 安全而且設定好麻煩
 昨天去考 TOI　入營考（當然沒進）的時候，我終於看到大名鼎鼎的 CMS 了！ 出來之後我發現他是用一個叫 isolate 的程式來做沙箱測試 而且這好像是 IOI 自己寫的，應該是蠻安全的（吧？） 今天成功編譯過後把心得寫下來</p>
 </section>
-<footer class=entry-footer>2020-March-9&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-03-09 00:00:00 +0000 UTC">2020-March-9</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to isolate" href=https://blog.simba-fs.dev/posts/linux/isolate/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>youtube-dl</h2>
+<h2>youtube-dl
+</h2>
 </header>
 <section class=entry-content>
 <p>最近在下載 youtube 音樂，每次下載都要把檔案重新改名，很麻煩。所以就想要寫一個 shell script 來幫我解決。 首先改名字我相信 youtube-dl 一定有提供這個選項，於是開始查文件。 看到 -o ，接下來講遇到的坑
 -o 坑 -o 後面接的是一個 template string ，不是檔名，而且就算指定副檔名是 .mp3 了還是要寫成 %(ext)s</p>
 </section>
-<footer class=entry-footer>2020-March-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-03-04 00:00:00 +0000 UTC">2020-March-4</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to youtube-dl" href=https://blog.simba-fs.dev/posts/linux/youtube-dl/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>ssh-tunnel</h2>
+<h2>ssh-tunnel
+</h2>
 </header>
 <section class=entry-content>
 <p>昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel
@@ -178,12 +186,13 @@ ssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socke
 ssh -L &lt;local port>:localhost:&lt;remote port> &lt;user>@&lt;remote> 反向;
 ssh -R &lt;remote port>:localhost:&lt;local port> &lt;user>@&lt;remote> 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port...</p>
 </section>
-<footer class=entry-footer>2020-February-24&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-02-24 00:00:00 +0000 UTC">2020-February-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to ssh-tunnel" href=https://blog.simba-fs.dev/posts/linux/ssh-tunnel/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>reverse-ssh</h2>
+<h2>reverse-ssh
+</h2>
 </header>
 <section class=entry-content>
 <p>一直以來連線回社辦的電腦都要走 webtty 再開 tmate 但是今天發現了一個新的方法可以透過反向的 ssh 連回社辦
@@ -201,24 +210,25 @@ https://codertw.com/%E4%BC%BA%E6%9C%8D%E5%99%A8/377688/
 這篇講 ssh tunnel 最清楚
 https://yu-jack.github.io/2019/01/08/ssh-tunnel/</p>
 </section>
-<footer class=entry-footer>2020-February-23&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-02-23 00:00:00 +0000 UTC">2020-February-23</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to reverse-ssh" href=https://blog.simba-fs.dev/posts/linux/reverse-ssh/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>server-tool</h2>
+<h2>server-tool
+</h2>
 </header>
 <section class=entry-content>
 <p>用 bash 寫 log 分析工具 因為我們的 server 不知道是為什麼一直受到 DDoS 攻擊
 我想知道是什麼時段容易受到攻擊和每次多久、來自那個 ip
 於是我花了一點時間寫了幾個簡單的 script</p>
 </section>
-<footer class=entry-footer>2020-February-16&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-02-16 00:00:00 +0000 UTC">2020-February-16</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to server-tool" href=https://blog.simba-fs.dev/posts/linux/server/server-tool/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=next href=https://blog.simba-fs.dev/categories/linux/page/2/> »</a>
+<a class=next href=https://blog.simba-fs.dev/categories/linux/page/2/>下一篇 »</a>
 </nav>
 </footer>
 </main>
@@ -230,11 +240,9 @@ Powered by
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
 </footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
-<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</button>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
 </body>

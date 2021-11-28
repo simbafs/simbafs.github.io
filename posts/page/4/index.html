@@ -8,7 +8,7 @@
 <meta name=description content="Posts - Simba's Blog">
 <meta name=author content="simba-fs">
 <link rel=canonical href=https://blog.simba-fs.dev/posts/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
@@ -19,6 +19,10 @@
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/posts/index.xml>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Posts">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
@@ -31,10 +35,6 @@
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<noscript>
-<style type=text/css>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -70,70 +70,76 @@
 </nav>
 </header>
 <main class=main>
-<header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>Home</a></div>
+<header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a></div>
 <h1>Posts</h1>
 </header>
 <article class=post-entry>
 <header class=entry-header>
-<h2>讓 YCM 接受 jsx</h2>
+<h2>讓 YCM 接受 jsx
+</h2>
 </header>
 <section class=entry-content>
 <p>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
 Cannot use JSX unless the '--jsx' flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
 { "compilerOptions": { "target": "es6", "checkJs": true + }, + "compilerOptions": { + "jsx": "react" } } </p>
 </section>
-<footer class=entry-footer>2020-July-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-07-04 00:00:00 +0000 UTC">2020-July-4</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to 讓 YCM 接受 jsx" href=https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>webpack-react</h2>
+<h2>webpack-react
+</h2>
 </header>
 <section class=entry-content>
 <p>前言 最近開始想學 react 在這之前當然要先把開發環境搞好 其中 react 最重要的就是 webpack 和 babel 了 babel 負責編譯 webpack 負責串街所有工作
 安裝套件 建立一個專案並初始化 mkdir react-test cd react-test npm init -y git init -y 安裝開發用套件 npm i -D \ @babel/core \ @babel/cli \ @babel/preset-env \ @babel/preset-react \ babel-loader \ react \ react-dom \ webpack package.json 加入以下的 script
 { "dev": "webpack --mode development", "watch": "webpack --mode development --watch", "depoly": "webpack --mode production" } webpack.config.js 建立 webpack.config.js 這是最小的版本了 沒有任何的擴充...</p>
 </section>
-<footer class=entry-footer>2020-June-28&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-06-28 00:00:00 +0000 UTC">2020-June-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to webpack-react" href=https://blog.simba-fs.dev/posts/nodejs/react/webpack-react/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>nginx-ui</h2>
+<h2>nginx-ui
+</h2>
 </header>
 <section class=entry-content>
 <p>前幾天發現一個專案 nginx ui 他是一個可以讓你在網頁上更改 nginx config 的專案 安裝：
 docker pull schenkd/nginx-ui 啟動；
 docker run -p 8080:8080 -v /etc/nginx:/etc/nginx schenkd/nginx-ui 然後打開瀏覽器 http://localhost:8080 就可以看到管理頁面了 很陽春，就是不用 ssh 進 server，沒什麼特點 我應該是不會用這套</p>
 </section>
-<footer class=entry-footer>2020-June-23&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-06-23 00:00:00 +0000 UTC">2020-June-23</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to nginx-ui" href=https://blog.simba-fs.dev/posts/linux/server/nginx-ui/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>HTML form button</h2>
+<h2>HTML form button
+</h2>
 </header>
 <section class=entry-content>
 <p>HTML 的 form 裡的按鈕預設是 submit 所以要加上 type="button" 它才不會太心急送出表單
 按鈕的 css 「按下」 selector 好像可已用 :active、:focus 但是我兩個失敗了</p>
 </section>
-<footer class=entry-footer>2020-June-1&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-06-01 00:00:00 +0000 UTC">2020-June-1</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to HTML form button" href=https://blog.simba-fs.dev/posts/frontend/html-form-button/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>mxlinux-change-workspace</h2>
+<h2>mxlinux-change-workspace
+</h2>
 </header>
 <section class=entry-content>
 <p>切換工作區 今天想要在 mxlinux 中快速的切換工作區 我看到可以用滑鼠滾輪切換 可是我想要的是鍵盤快捷鍵 上網查了一下 發現可以透過 Ctrl+Alt+up/down/home/end 來切換
 參考資料 https://unix.stackexchange.com/questions/270334/how-to-move-a-window-to-another-workspace-in-xfce</p>
 </section>
-<footer class=entry-footer>2020-May-8&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-05-08 00:00:00 +0000 UTC">2020-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to mxlinux-change-workspace" href=https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>gpg</h2>
+<h2>gpg
+</h2>
 </header>
 <section class=entry-content>
 <p>今天心血來潮想設定 GPG，網路上查了一個教學，無疑的又遇到一個坑
@@ -143,57 +149,61 @@ gpg --list-keys 找到那串很長的文字，那就是 ID，複製起來，他�
 JFDKSA8FEWHE29HFVC92UHFPA93WOHFVDOPA39U2 再來用兩個指令就可以刪除了，注意一定要先刪私鑰。
 gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p>
 </section>
-<footer class=entry-footer>2020-March-28&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to gpg" href=https://blog.simba-fs.dev/posts/linux/gpg/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>meta-tag</h2>
+<h2>meta-tag
+</h2>
 </header>
 <section class=entry-content>
 <p>今天為了幫 Let’s Remind Daniel 做 SEO 在 免費資源網路社群 找到了一個工具可以直接生成 還有一個可以測試的工具
 連結 生成 測試</p>
 </section>
-<footer class=entry-footer>2020-March-28&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to meta-tag" href=https://blog.simba-fs.dev/posts/frontend/meta-tag/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>firefox-event-listener-breakpoint</h2>
+<h2>firefox-event-listener-breakpoint
+</h2>
 </header>
 <section class=entry-content>
 <p>問題 最近在用 jquery 但是不知道為什麼每次 debugger 都會跳出一個通知 很煩
 解決 後來尋線發現原來是 firefox 好心的 debugger 在 DOM 發生改變的時候通知我 在 裡面 Debugger 頁籤左下有個拉頁叫「Event Listener Breakpoints」 把裡面的東西都點掉就好了 就是那個 DOM Mutation 心得 我原本還以為是 jquery 的問題 原來是好心的 firefox 啊</p>
 </section>
-<footer class=entry-footer>2020-March-25&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-03-25 00:00:00 +0000 UTC">2020-March-25</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to firefox-event-listener-breakpoint" href=https://blog.simba-fs.dev/posts/frontend/firefox-event-listener-breakpoint/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>jquery</h2>
+<h2>jquery
+</h2>
 </header>
 <section class=entry-content>
 <p>今天寫 jquery 遇到了一些坑
 1. submit .submit() 是要加在 form 上而不是 submit button 上
 2. this 在 jquery 裡有時後會用到 handler 正常情況下可以用 arrow function 但是如果用到 this 就不能用 arrow function 了 （這不只是 jquery, JS 都是這樣）</p>
 </section>
-<footer class=entry-footer>2020-March-15&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-03-15 00:00:00 +0000 UTC">2020-March-15</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to jquery" href=https://blog.simba-fs.dev/posts/frontend/jquery/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>remind-daniel</h2>
+<h2>remind-daniel
+</h2>
 </header>
 <section class=entry-content>
 <p>今天終於把登入做完了 我覺得最重要的是找好的教學文章、去看沒有人看得懂的程式碼</p>
 </section>
-<footer class=entry-footer>2020-March-15&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2020-03-15 00:00:00 +0000 UTC">2020-March-15</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to remind-daniel" href=https://blog.simba-fs.dev/posts/nodejs/remind-daniel/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=prev href=https://blog.simba-fs.dev/posts/page/3/>« </a>
-<a class=next href=https://blog.simba-fs.dev/posts/page/5/> »</a>
+<a class=prev href=https://blog.simba-fs.dev/posts/page/3/>« 上一篇</a>
+<a class=next href=https://blog.simba-fs.dev/posts/page/5/>下一篇 »</a>
 </nav>
 </footer>
 </main>
@@ -205,11 +215,9 @@ Powered by
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
 </footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
-<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</button>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
 </body>

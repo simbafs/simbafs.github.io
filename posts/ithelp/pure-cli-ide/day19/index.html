@@ -12,7 +12,7 @@ h1.title*5 -> <h1 class=&#34;title&#34;></h1> <h1 class=&#34;title&#34;></h1> <h
 h1#title$$*12 -> <h1 id=&#34;title01&#34;></h1> <h1 id=&#34;title02&#34;></h1> <h1 id=&#34;title03&#34;></h1> <h1 id=&#34;title04&#34;></h1> <h1 id=&#34;title05&#34;></h1> <h1 id=&#34;title06&#34;></h1> <h1 id=&#34;title07&#34;></h1> <h1 id=&#34;title08&#34;></h1> <h1 id=&#34;title09&#34;></h1> <h1 id=&#34;title10&#34;></h1> <h1 id=&#34;title11&#34;></h1> <h1 id=&#34;title12&#34;></h1> ------------ h1#$@10*3 -> <h1 id=&#34;10&#34;></h1> <h1 id=&#34;11&#34;></h1> <h1 id=&#34;12&#34;></h1> ------------ h1#$@-*3 -> <h1 id=&#34;2&#34;></h1> <h1 id=&#34;1&#34;></h1> <h1 id=&#34;0&#34;></h1> ------------ h1#$@-6*3 -> <h1 id=&#34;8&#34;></h1> <h1 id=&#34;7&#34;></h1> <h1 id=&#34;6&#34;></h1> ------------ h$*6 -> <h1></h1> <h2></h2> <h3></h3> <h4></h4> <h5></h5> <h6></h6> 範本包圍  我不確定這個叫什麼，反正就這樣啦">
 <meta name=author content="simba-fs">
 <link rel=canonical href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day19/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
@@ -23,6 +23,10 @@ h1#title$$*12 -> <h1 id=&#34;title01&#34;></h1> <h1 id=&#34;title02&#34;></h1> <
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Day 19：該是時候升級你的噴射引擎囉！vim-emmet 重複與迭代">
 <meta property="og:description" content="重複 如果想讓某個標籤/群組重複，只要用乘號 * 加上數字就可以讓他重複了
 h1.title*5 -> <h1 class=&#34;title&#34;></h1> <h1 class=&#34;title&#34;></h1> <h1 class=&#34;title&#34;></h1> <h1 class=&#34;title&#34;></h1> <h1 class=&#34;title&#34;></h1> ------------ (p.artical+br)*3 -> <p class=&#34;artical&#34;></p> <br> <p class=&#34;artical&#34;></p> <br> <p class=&#34;artical&#34;></p> <br> 迭代 在重複的時候，你可能會有某些地方是要要變化的，例如從 id 從 1 開始遞增，你可以使用錢號 $ 代表要遞增的位數
@@ -46,10 +50,6 @@ h1#title$$*12 -> <h1 id=&#34;title01&#34;></h1> <h1 id=&#34;title02&#34;></h1> <
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<noscript>
-<style type=text/css>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -87,16 +87,16 @@ h1#title$$*12 -> <h1 id=&#34;title01&#34;></h1> <h1 id=&#34;title02&#34;></h1> <
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>Home</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>Posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/></a></div>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>Posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/></a></div>
 <h1 class=post-title>
 Day 19：該是時候升級你的噴射引擎囉！vim-emmet 重複與迭代
 </h1>
-<div class=post-meta>2021-September-19&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs
+<div class=post-meta><span title="2021-09-19 00:00:00 +0000 UTC">2021-September-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs
 </div>
 </header> <div class=toc>
 <details open>
 <summary accesskey=c title="(Alt + C)">
-<div class=details>Table of Contents</div>
+<span class=details>目錄</span>
 </summary>
 <div class=inner><ul><ul>
 <li>
@@ -244,12 +244,12 @@ Dog
 </ul>
 <nav class=paginav>
 <a class=prev href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day20/>
-<span class=title>« </span>
+<span class=title>« 上一篇</span>
 <br>
 <span>Day 20：切水果囉！vim 切螢幕與分頁</span>
 </a>
 <a class=next href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day18/>
-<span class=title> »</span>
+<span class=title>下一篇 »</span>
 <br>
 <span>Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet</span>
 </a>
@@ -279,11 +279,9 @@ Powered by
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
 </footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
-<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</button>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
 </body>

@@ -8,7 +8,7 @@
 <meta name=description content="Posts - Simba's Blog">
 <meta name=author content="simba-fs">
 <link rel=canonical href=https://blog.simba-fs.dev/posts/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
@@ -19,6 +19,10 @@
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.4">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/posts/index.xml>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Posts">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
@@ -31,10 +35,6 @@
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<noscript>
-<style type=text/css>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -70,22 +70,24 @@
 </nav>
 </header>
 <main class=main>
-<header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>Home</a></div>
+<header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a></div>
 <h1>Posts</h1>
 </header>
 <article class=post-entry>
 <header class=entry-header>
-<h2>ExecCmd</h2>
+<h2>ExecCmd
+</h2>
 </header>
 <section class=entry-content>
 <p>Golang 執行外部命令 package main import ( "fmt" "os/exec" ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command("wc") stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, "fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk") output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } </p>
 </section>
-<footer class=entry-footer>2021-October-19&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-10-19 00:06:19 +0800 +0800">2021-October-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to ExecCmd" href=https://blog.simba-fs.dev/posts/golang/exec-cmd/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Aconf</h2>
+<h2>Aconf
+</h2>
 </header>
 <section class=entry-content>
 <p>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
@@ -94,12 +96,13 @@
 type Config struct { Addr string `default:":3000"` Title string `default:"Aconf Testing"` SysAdmin []string `default:"simba-fs,peter"` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
 loader := aconfig.LoaderFor(&config, aconfig.Config{ // 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 // SkipDefaults: false, // SkipFiles: false, // SkipEnv: false, // SkipFlags: false, EnvPrefix: "APP", FlagPrefix: "app", Files: []string{"~/.config/app.toml", "app.toml"}, FileDecoders: map[string]aconfig.FileDecoder{ ".toml": aconfigtoml.New(), }, }) if err := loader.Load(); err != nil { panic(err) } 這樣你就可以用檔案、環境變數和命令列參數設定了。...</p>
 </section>
-<footer class=entry-footer>2021-September-24&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-09-24 08:46:37 +0800 +0800">2021-September-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Aconf" href=https://blog.simba-fs.dev/posts/golang/aconf/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Golang Parse All Files In Directory Into Templates</h2>
+<h2>Golang Parse All Files In Directory Into Templates
+</h2>
 </header>
 <section class=entry-content>
 <p>在用 gin 寫伺服器的時候，我發現模板並不會被 go build 打包進執行檔裡面，所以在執行的時候就找不到檔案，當然這個問題可以用字串的形式直接把模板放進 golang 原始碼裡面，但是這樣程式碼一複雜就會不好用，這時候就可以用 golang 的 embed 函式庫把檔案「嵌入」到原始碼裡面。但是問題又來了，嵌入了之後要怎麼把字串變成模板物件呢？
@@ -109,12 +112,13 @@ package main import ( "embed" ) //go:embed hello.txt var s string //go:embed hel
 Tmeplate No Recursive 最簡單的方法，你可以直接使用
 // go:embed view/* var f embed....</p>
 </section>
-<footer class=entry-footer>2021-July-30&nbsp;·&nbsp;2 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-07-30 00:00:00 +0000 UTC">2021-July-30</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Golang Parse All Files In Directory Into Templates" href=https://blog.simba-fs.dev/posts/golang/golang-parse-all-files-in-directory-into-templates/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>ssh on gitea with docker</h2>
+<h2>ssh on gitea with docker
+</h2>
 </header>
 <section class=entry-content>
 <p>Gitea 是一個開源的 git 伺服器，他的界面幾乎和 GitHub 一模一樣，但是完全開源而且非常輕，甚至一片樹梅派就可以開伺服器了。Gitea 因為是使用 Golang 編寫的，所以提供各種平台的執行檔。我選擇透過 docker 裝 Gitea 伺服器，但是這樣有一個問題，gitea 伺服器開在 container 內，沒辦法使用標準的 22 port，所以 git clone 就必須加上一個醜醜的數字，像是這樣
@@ -124,12 +128,13 @@ git clone git@domain:10022:user/repo.git 這個問題 Gitea 官方已經有提�
 sudo adduser git grep git /etc/passwd 記好 git 的 UID 和 GID
 git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2....</p>
 </section>
-<footer class=entry-footer>2021-July-13&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-07-13 00:00:00 +0000 UTC">2021-July-13</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to ssh on gitea with docker" href=https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>taiwan-town-location</h2>
+<h2>taiwan-town-location
+</h2>
 </header>
 <section class=entry-content>
 <p>這是一個給經緯度吐地址的 api，甚至路段都會出來，搭配 web geolocation api 蠻不錯的，精確度不錯。可以不知道有沒有 rate limited 的問題，目前看起來連 token 都不用。
@@ -137,12 +142,13 @@ git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2....</p>
 用法 https://api.nlsc.gov.tw/other/TownVillagePointQuery/經度/緯度
 舉例： request GET https://api.nlsc.gov.tw/other/TownVillagePointQuery/121.46278679999999/25.0169826 response &lt;townVillageItem> &lt;ctyCode>F&lt;/ctyCode> &lt;ctyName>新北市&lt;/ctyName> &lt;townCode>F14&lt;/townCode> &lt;townName>板橋區&lt;/townName> &lt;officeCode>FA&lt;/officeCode> &lt;officeName>板橋&lt;/officeName> &lt;sectCode>0008&lt;/sectCode> &lt;sectName>民權段&lt;/sectName> &lt;villageCode>65000010020&lt;/villageCode> &lt;villageName>漢生里&lt;/villageName> &lt;/townVillageItem> 參考資料 https://data.gov.tw/dataset/101898</p>
 </section>
-<footer class=entry-footer>2021-June-24&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-06-24 00:00:00 +0000 UTC">2021-June-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to taiwan-town-location" href=https://blog.simba-fs.dev/posts/other/taiwan-town-location/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Cast Phone Screen to Computer</h2>
+<h2>Cast Phone Screen to Computer
+</h2>
 </header>
 <section class=entry-content>
 <p>有沒有一種經驗是某的應用程式手機板操作勉強算順暢，但是一電腦上就炸開，反應慢到靠北、界面又很難用（沒錯 messenger 我正在看著你）。這個時候相信你會和我一樣想把手機畫面投影到電腦上的一個視窗裡面，最好可以互動、可以打字。有人第一個想法是在手機開 VNC 伺服器，但是這個方法有點麻煩，這篇文章介紹的是目前我覺得最佳解決方案。
@@ -156,55 +162,59 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
 加上 -f 可以開啟全螢幕
 參連連結 https://github.com/Genymobile/scrcpy https://developer.android.com/studio/debug/dev-options https://gist.github.com/simba-fs/9132289f63368ad325d6a2ef62be7a20</p>
 </section>
-<footer class=entry-footer>2021-June-14&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-06-14 00:00:00 +0000 UTC">2021-June-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Cast Phone Screen to Computer" href=https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>YouComopleteMe install</h2>
+<h2>YouComopleteMe install
+</h2>
 </header>
 <section class=entry-content>
 <p>下載 source code 編輯 ~/.vimrc Plug 'Valloric/YouCompleteMe'接著按下 esc:w | so %載入設定 接著 :PlugInstall下載 source code 存檔離開 編譯 執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &lt;你要的選項> </p>
 </section>
-<footer class=entry-footer>2021-May-17&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-05-17 00:00:00 +0000 UTC">2021-May-17</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to YouComopleteMe install" href=https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>firefox touch screen scroll</h2>
+<h2>firefox touch screen scroll
+</h2>
 </header>
 <section class=entry-content>
 <p>再換了觸控筆電後，在 firefox 一直有個問題：觸控往下滑會被當成選取，要卷動一定要用右邊的 scroll bar
 解決方案 按照 https://askubuntu.com/questions/853910/ubuntu-16-and-touchscreen-scrolling-in-firefox 的最佳解法，真的加上 MOZ_USE_XINPUT2=1 的環境變數就可以了。
 另外在設定 ~/.local/share/applications/firefox.desktop 的時候要注意有不只一個 Exec，改完如果沒有生效可以重開機看看。</p>
 </section>
-<footer class=entry-footer>2021-May-8&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-05-08 00:00:00 +0000 UTC">2021-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to firefox touch screen scroll" href=https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>beginning of kotlin</h2>
+<h2>beginning of kotlin
+</h2>
 </header>
 <section class=entry-content>
 <p>val vs var kotlin JS val const var let a..b kotlin JS a..b Array(b-a+1).fill(0).map(i => i + a) when kotlin fun main (){ val luckyNum = 4 val yourNum = (1..6).random() val result = when(yourNum){ luckyNum -> "You get the lucky num ${luckyNum}" 1 -> "Sorry, you get 1" 2 -> "Sorry, you get 2" 3 -> "Sorry, you get 3" 4 -> "Sorry, you get 4" 5 -> "Sorry, you get 5" 6 -> "Sorry, you get 6" else -> "Sorry, you get a number out of 1....</p>
 </section>
-<footer class=entry-footer>2021-May-4&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-05-04 00:00:00 +0000 UTC">2021-May-4</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to beginning of kotlin" href=https://blog.simba-fs.dev/posts/kotlin/beginning-of-kotlin/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>college-exam-interview-and-written-test</h2>
+<h2>college-exam-interview-and-written-test
+</h2>
 </header>
 <section class=entry-content>
 <p>師大科技系面試 兩關各十分鐘
 第一關： 自我介紹 一分鐘補充說明（有利備審、競賽）解決問題的經驗 自由談話時間 第二關： 自我介紹一分鐘 科技系分幾組？差別在哪？你會選哪組？ 我看你的自傳有寫「專案開發」，有例子嗎？ 如果團隊合作時有人擺爛，你會怎麼做？（20秒） 心得 這個系是團體面試，三個教授對三個考生，輪流回答問題，因為我是那組第一個，所以幾乎都是我先回答，教授沒有問什麼很難得問題，另外系主任看起來人很好。</p>
 </section>
-<footer class=entry-footer>2021-April-18&nbsp;·&nbsp;1 min&nbsp;·&nbsp;simba-fs</footer>
+<footer class=entry-footer><span title="2021-04-18 00:00:00 +0000 UTC">2021-April-18</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to college-exam-interview-and-written-test" href=https://blog.simba-fs.dev/posts/other/college-exam-interview-and-written-test/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=next href=https://blog.simba-fs.dev/posts/page/2/> »</a>
+<a class=next href=https://blog.simba-fs.dev/posts/page/2/>下一篇 »</a>
 </nav>
 </footer>
 </main>
@@ -216,11 +226,9 @@ Powered by
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
 </footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
-<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</button>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
 </body>
