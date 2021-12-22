@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.91.0">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,24 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search
+</h2>
+</header>
+<section class=entry-content>
+<p>今天的內容會比平常多，但是非常紮實！
+有時候我們在 CLI 操作時遇到很多重複的指令，像是 git add、git commit -m 'ba la ba la' 等等，這些指令可能又長又複雜，一直都是自己打也不是辦法，這時候就該請出 autosuggestions 了
+安裝 autosuggestions 老樣子，安裝外掛只須要修改 ~/.zshrc 就可以了
+# plugins zplug 'romkatv/powerlevel10k', as:theme, depth:1 + zplug 'zsh-users/zsh-autosuggestions' 因為 autosuggestions 是外掛，不需要特別寫 tag 了
+[問題]好像有奇怪的字跑出來？ 寫好之後重開終端機，按下 enter你可能會發現跳出了一堆東西，這是因為你開啟了 p10k 的 Instant Prompt Mode，這個雖然會讓你的終端機跑起來比較順（官方說的，我感覺不出來），但是在 zsh 載入完成之前就不能有任何字輸出。
+可是你看看，如果我們新增了一個外掛，zplug 會跳出來問我們是否要安裝，這時後 Instant Prompt Mode 就出來抱怨了。
+這個問題的解決方法直覺上有兩個，一是關掉 Instant Prompt Mode，二是讓 zplug 先不要吵
+關掉 Instant Prompt Mode 關掉 Instant Prompt Mode 很簡單，重新設定一次 p10k 就好了，在設定程式問你是否要開啟 p10k 時選擇 (3) Off，這樣下次安裝外掛就不會有奇怪的警告訊息跳出來了。...</p>
+</section>
+<footer class=entry-footer><span title="2021-09-04 00:00:00 +0000 UTC">2021-September-4</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day04/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>Day 03：轉吧轉吧七彩霓虹燈之 p10k
@@ -212,17 +230,6 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
 </section>
 <footer class=entry-footer><span title="2021-05-08 00:00:00 +0000 UTC">2021-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to firefox touch screen scroll" href=https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>beginning of kotlin
-</h2>
-</header>
-<section class=entry-content>
-<p>val vs var kotlin JS val const var let a..b kotlin JS a..b Array(b-a+1).fill(0).map(i => i + a) when kotlin fun main (){ val luckyNum = 4 val yourNum = (1..6).random() val result = when(yourNum){ luckyNum -> "You get the lucky num ${luckyNum}" 1 -> "Sorry, you get 1" 2 -> "Sorry, you get 2" 3 -> "Sorry, you get 3" 4 -> "Sorry, you get 4" 5 -> "Sorry, you get 5" 6 -> "Sorry, you get 6" else -> "Sorry, you get a number out of 1....</p>
-</section>
-<footer class=entry-footer><span title="2021-05-04 00:00:00 +0000 UTC">2021-May-4</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to beginning of kotlin" href=https://blog.simba-fs.dev/posts/kotlin/beginning-of-kotlin/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

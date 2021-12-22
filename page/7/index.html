@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.91.0">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,19 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>jquery
+</h2>
+</header>
+<section class=entry-content>
+<p>今天寫 jquery 遇到了一些坑
+1. submit .submit() 是要加在 form 上而不是 submit button 上
+2. this 在 jquery 裡有時後會用到 handler 正常情況下可以用 arrow function 但是如果用到 this 就不能用 arrow function 了 （這不只是 jquery, JS 都是這樣）</p>
+</section>
+<footer class=entry-footer><span title="2020-03-15 00:00:00 +0000 UTC">2020-March-15</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to jquery" href=https://blog.simba-fs.dev/posts/frontend/jquery/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>remind-daniel
@@ -195,19 +208,6 @@ const fs = require('fs'); const express = require('express'); const app = expres
 </section>
 <footer class=entry-footer><span title="2020-02-20 00:00:00 +0000 UTC">2020-February-20</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to blessed切換畫面" href=https://blog.simba-fs.dev/posts/nodejs/blessed/blessed%E5%88%87%E6%8F%9B%E7%95%AB%E9%9D%A2/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>blessed-contrib-tree
-</h2>
-</header>
-<section class=entry-content>
-<p>Tree 想說先想一個專案來練練手 熟悉一下 blessed 突然看到 blessed-contrib 裡有個元件叫 tree 想說可以做成 JSON viewer 於是就開工了！
-其中最重要的部份就是搞定樹狀結構 因為他有特定的格式和選項 下面是官方的範例
-範例 { extended: true, children: { 'Fruit': { children: { 'Banana': {}, 'Apple': {}, 'Cherry': {}, 'Exotics': { children: { 'Mango': {}, 'Papaya': {}, 'Kiwi': { name: 'Kiwi(notthebird!)', myCustomProperty: "hairyfruit" } } }, 'Pear': {} } }, 'Vegetables': { children: { 'Peas': {}, 'Lettuce': {}, 'Pepper': {} } } } } 每個節點都是物件 他的子節點存在 children 裡 如果是空物件代表這是葉節點 extended 屬性是是否展開，預設 true name 是顯示出來的字，如果要改再設，預設是 index myCustomProperty 直翻是自訂屬性，應該是當 tree....</p>
-</section>
-<footer class=entry-footer><span title="2020-02-18 00:00:00 +0000 UTC">2020-February-18</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to blessed-contrib-tree" href=https://blog.simba-fs.dev/posts/nodejs/blessed/blessed-contrib-tree/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

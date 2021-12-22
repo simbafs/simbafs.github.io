@@ -9,7 +9,23 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 Oct 2021 00:06:19 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Dec 2021 23:18:41 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LaTeX Starter</title>
+      <link>https://blog.simba-fs.dev/posts/other/latex-starter/</link>
+      <pubDate>Wed, 22 Dec 2021 23:18:41 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/other/latex-starter/</guid>
+      <description>LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構&amp;hellip;&amp;hellip;
+        credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。
+幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定
+（.ttf 可以指向你自己喜歡的中文字型檔）
+\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]} \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &amp;#34;zh&amp;#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
+巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \（反斜線），巨集可以自己定義，也可以用 \usepackage{} 載入別人寫好的
+overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。
+表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）</description>
+    </item>
+    
     <item>
       <title>ExecCmd</title>
       <link>https://blog.simba-fs.dev/posts/golang/exec-cmd/</link>

@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.91.0">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/posts/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
@@ -73,6 +73,24 @@
 <header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a></div>
 <h1>Posts</h1>
 </header>
+<article class=post-entry>
+<header class=entry-header>
+<h2>LaTeX Starter
+</h2>
+</header>
+<section class=entry-content>
+<p>LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構……
+credit:https://zh.wikipedia.org/wiki/LaTeX 在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。
+幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定
+（.ttf 可以指向你自己喜歡的中文字型檔）
+\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]} \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale "zh" 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用 （兩個空白），在 LaTeX 是 \\（兩個反斜線）
+巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \（反斜線），巨集可以自己定義，也可以用 \usepackage{} 載入別人寫好的
+overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。
+表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）...</p>
+</section>
+<footer class=entry-footer><span title="2021-12-22 23:18:41 +0800 +0800">2021-December-22</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to LaTeX Starter" href=https://blog.simba-fs.dev/posts/other/latex-starter/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>ExecCmd
@@ -199,18 +217,6 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
 </section>
 <footer class=entry-footer><span title="2021-05-04 00:00:00 +0000 UTC">2021-May-4</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to beginning of kotlin" href=https://blog.simba-fs.dev/posts/kotlin/beginning-of-kotlin/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>college-exam-interview-and-written-test
-</h2>
-</header>
-<section class=entry-content>
-<p>師大科技系面試 兩關各十分鐘
-第一關： 自我介紹 一分鐘補充說明（有利備審、競賽）解決問題的經驗 自由談話時間 第二關： 自我介紹一分鐘 科技系分幾組？差別在哪？你會選哪組？ 我看你的自傳有寫「專案開發」，有例子嗎？ 如果團隊合作時有人擺爛，你會怎麼做？（20秒） 心得 這個系是團體面試，三個教授對三個考生，輪流回答問題，因為我是那組第一個，所以幾乎都是我先回答，教授沒有問什麼很難得問題，另外系主任看起來人很好。</p>
-</section>
-<footer class=entry-footer><span title="2021-04-18 00:00:00 +0000 UTC">2021-April-18</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to college-exam-interview-and-written-test" href=https://blog.simba-fs.dev/posts/other/college-exam-interview-and-written-test/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

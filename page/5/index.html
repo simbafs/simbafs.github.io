@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.91.0">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,19 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>bash number loop
+</h2>
+</header>
+<section class=entry-content>
+<p>今天在某的地方剛好看到一個 bash 的小技巧，當我們要從 1 數到 100 時，通常會用 seq 指令來做，但是如果我們的需求剛剛好是每次遞增（遞減）1 的話，就可以使用 {start..end} 縮寫，下面兩個範例的效果是一樣的：
+# for 迴圈 + seq 的寫法 for i in $(seq 1 1 100); do echo $i done # 用 {start..end} echo {1..100} 這個技巧也可以用在建立檔案，像這樣：
+touch user{1..100} </p>
+</section>
+<footer class=entry-footer><span title="2020-11-15 00:00:00 +0000 UTC">2020-November-15</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to bash number loop" href=https://blog.simba-fs.dev/posts/linux/bash/bash-number-loop/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>bash completion
@@ -207,25 +220,6 @@ route.get('/', (req, res, next) => { return res.send('Hello world'); }); 但是�
 </section>
 <footer class=entry-footer><span title="2020-08-19 00:00:00 +0000 UTC">2020-August-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to 加入 google search 和 sitemap" href=https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>GitHub Action 自動部署 hexo
-</h2>
-</header>
-<section class=entry-content>
-<p>前言 本來部署 hexo 都是手動下指令，但是這樣在手機上因為沒辦法裝 hexo ,所以一直不能在手機上寫文章。剛好想到 GitHub Action 可以滿足我的需求，上網查了一下資料發現蠻多人有和我一樣的需求，這次參考的是 owlran 大大的文章。
-ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦。
-ssh-keygen 首先隨便找個資料夾產生一組 ssh key
-ssh-keygen -f deploy-key GitHub 再來要讓 GitHub 知道你的 ssh key（public/secret 都要）
-public key public key 是要放在你的 &lt;username>.github.io 的 repo 下
-.ggithub.io -> settings -> Deploy keys -> add deploy key
-新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
-把 depoly-key.pub 的內容貼上，記得下面的勾勾（Allow write access ）要選起來
-secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大是放在同一個 repo 不同 branch，我是放在兩個不同 repo，其中放部落格檔案的 repo 我設成 private repo（因為我放了一些 gitalk 要用的 clientSecret，這個不能公開）。...</p>
-</section>
-<footer class=entry-footer><span title="2020-08-16 00:00:00 +0000 UTC">2020-August-16</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to GitHub Action 自動部署 hexo" href=https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

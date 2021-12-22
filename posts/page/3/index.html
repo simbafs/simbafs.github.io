@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.91.0">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/posts/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
@@ -73,6 +73,20 @@
 <header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a></div>
 <h1>Posts</h1>
 </header>
+<article class=post-entry>
+<header class=entry-header>
+<h2>bash completion
+</h2>
+</header>
+<section class=entry-content>
+<p>需求 今天寫了一個 bash script 幫我管理 mongodb docker，在使用的時候一些子命令，像是 up、down、clean。我希望可以讓 bash 當我自動補齊這些選項。
+bash_completion bash_completion 是一個可以幫我們做程式化補齊的工具，像是 git 就有使用到這個工具，在 commit、push 的時候按 tab 都會顯示出當下我們可以用的東西，像是 git push&lt;tab>&lt;tab> 就會自動補齊 origin 而不是給我們看檔案（bash 預設只會補齊檔案和命令）。我們這次只須要用基本的 complete 就可以了
+complete complete 可以幫命令加上簡單的自動完成，其實 bash_completion 也是去呼叫這個命令來達成自動補齊。complete 傻用非常簡單，像下面這樣就可以幫 mongodb 這個命令加上自動補齊
+complete -W "up down clean" mongodb -W 選項代表後面是字詞列表，用 -F 後面可以接一個函數，但是這個我沒研究，也許下一個專案就是研究 complete 也說不定。</p>
+</section>
+<footer class=entry-footer><span title="2020-11-14 00:00:00 +0000 UTC">2020-November-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to bash completion" href=https://blog.simba-fs.dev/posts/linux/bash/bash-completion/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>Mongoose Model
@@ -214,21 +228,6 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
 </section>
 <footer class=entry-footer><span title="2020-08-16 00:00:00 +0000 UTC">2020-August-16</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to GitHub Action 自動部署 hexo" href=https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>React update state on props change
-</h2>
-</header>
-<section class=entry-content>
-<p>問題 今天在研究 React 遇到一個問題 當我從外面更新 props 的時候 component 內的 state 不會更新
-function Input(props){ const [text, setText] = React.useState(props.text); return ( &lt;input type="text" value={text}> ) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
-解法 後來找到解法，加上一個 useEffect 監聽 props.text 然後更新 state 就好了
-function Input(props){ const [text, setText] = React.useState(props.text); React.useEffect(() => { setText(props.text); }, [props.text]); return ( &lt;input type="text" value={text}> ) } 如此一來 state 就會和 props 同步了
-參考資料 https://stackoverflow.com/questions/54865764/react-usestate-does-not-reload-state-from-props https://zh-hant.reactjs.org/docs/hooks-effect.html</p>
-</section>
-<footer class=entry-footer><span title="2020-07-12 00:00:00 +0000 UTC">2020-July-12</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to React update state on props change" href=https://blog.simba-fs.dev/posts/nodejs/react/react-update-state-on-props-change/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
