@@ -15,5 +15,5 @@ deploy:
 list:
 	tree -I '*.md' content/posts
 
-dev:
+server:
 	hugo server -D
