@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.0">
+<meta name=generator content="Hugo 0.91.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/tags/zsh/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
@@ -87,7 +87,7 @@
 ❓ :r!cat 是什麼意思？ r 這個命令是「載入某個檔案並貼到游標行下面」，用法是 :r {file}。但是我們這裡不用檔名，!cat 在這裡的意思是「shell 命令 cat 的 stdout 這個檔案」，而執行 cat 時需要 stdin，也就是你剛剛貼上程式碼的地方（在 status bar 下面）。這個方法可以繞過自動縮排，就不會出現程式碼貼上被 vim 弄亂的情形了。 從 vim 複製 複製到系統剪貼簿很簡單，在選取時記的按住 &lt;SHIFT> 就行了，但是因為我們有開啟 vim 滑鼠模式，所以 tmux 剪貼簿就不能複製了（滑鼠被 vim 搶走）（關於 tmux 剪貼簿請看 Day 09#複製。...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-21 00:00:00 +0000 UTC">2021-September-21</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 21：儲存器與剪貼簿" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day21/></a>
+<a class=entry-link aria-label="post link to Day 21：儲存器與剪貼簿" href=https://blog.simba-fs.dev/posts/ithelp/day21/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -101,7 +101,7 @@
 vim 分割視窗的優點 與 tmux 比起來，我更常用 tmux 分割視窗，因為快捷鍵比較直覺好用，但是 vim 有個 tmux 做不到的優點...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-20 00:00:00 +0000 UTC">2021-September-20</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 20：切水果囉！vim 切螢幕與分頁" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day20/></a>
+<a class=entry-link aria-label="post link to Day 20：切水果囉！vim 切螢幕與分頁" href=https://blog.simba-fs.dev/posts/ithelp/day20/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -116,7 +116,7 @@ h1.title*5 -> &lt;h1 class="title">&lt;/h1> &lt;h1 class="title">&lt;/h1> &lt;h1
 h1#title$$*12 -> &lt;h1 id="title01">&lt;/h1> &lt;h1 id="title02">&lt;/h1> &lt;h1 id="title03">&lt;/h1> &lt;h1 id="title04">&lt;/h1> &lt;h1 id="title05">&lt;/h1> &lt;h1 id="title06">&lt;/h1> &lt;h1 id="title07">&lt;/h1> &lt;h1 id="title08">&lt;/h1> &lt;h1 id="title09">&lt;/h1> &lt;h1 id="title10">&lt;/h1> &lt;h1 id="title11">&lt;/h1> &lt;h1 id="title12">&lt;/h1> ------------ h1#$@10*3 -> &lt;h1 id="10">&lt;/h1> &lt;h1 id="11">&lt;/h1> &lt;h1 id="12">&lt;/h1> ------------ h1#$@-*3 -> &lt;h1 id="2">&lt;/h1> &lt;h1 id="1">&lt;/h1> &lt;h1 id="0">&lt;/h1> ------------ h1#$@-6*3 -> &lt;h1 id="8">&lt;/h1> &lt;h1 id="7">&lt;/h1> &lt;h1 id="6">&lt;/h1> ------------ h$*6 -> &lt;h1>&lt;/h1> &lt;h2>&lt;/h2> &lt;h3>&lt;/h3> &lt;h4>&lt;/h4> &lt;h5>&lt;/h5> &lt;h6>&lt;/h6> 範本包圍 我不確定這個叫什麼，反正就這樣啦...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-19 00:00:00 +0000 UTC">2021-September-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 19：該是時候升級你的噴射引擎囉！vim-emmet 重複與迭代" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day19/></a>
+<a class=entry-link aria-label="post link to Day 19：該是時候升級你的噴射引擎囉！vim-emmet 重複與迭代" href=https://blog.simba-fs.dev/posts/ithelp/day19/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -133,7 +133,7 @@ emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規�
 coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(p>div.title$)，你還是只能按 emmet-vim 的快捷鍵...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-18 00:00:00 +0000 UTC">2021-September-18</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day18/></a>
+<a class=entry-link aria-label="post link to Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet" href=https://blog.simba-fs.dev/posts/ithelp/day18/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -146,7 +146,7 @@ coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 
 " 設定文字編碼（我想這個你的 init.vim/.vimrc 都應該有了）set encoding=utf-8" 如果 hidden 沒有設定，「TextEdit」可能會失敗" TextEdit 也許是彈出式輸入框吧？阿災set hidden" 有些伺服器對於備份檔會出錯，請看 issue #649" https://github.com/neoclide/coc.nvim/issues/649set nobackupset nowritebackup" 把下面的命令欄變高，多一點空間set cmdheight=2" 不傳訊息給「|ins-completion-menu|」（這我看不太出來有什麼差set shortmess+=c" 使用 &lt;c-space> 觸發自動完成if has('nvim') inoremap &lt;silent>&lt;expr> &lt;c-space> coc#refresh()else inoremap &lt;silent>&lt;expr> &lt;c-@> coc#refreshendif" 用 `[g` 和 `]g` 跳到診斷的位置（就是程式碼有問題地方" 用命令 `:CocDiagnostics` 在分割視窗列出目前檔案中所有有問題的點nmap &lt;silent> [g &lt;Plug>(coc-diagnostic-prev)nmap &lt;silent> ]g &lt;Plug>(coc-diagnostic-next)" 程式碼轉跳（這個我覺得有點難記，而且這四個實驗出來效果非常像，我的建議是試過後選你覺得順眼的，不要全上nmap &lt;silent> gd &lt;Plug>(coc-definition)nmap &lt;silent> gy &lt;Plug>(coc-type-definition)nmap &lt;silent> gi &lt;Plug>(coc-implementation)nmap &lt;silent> gr &lt;Plug>(coc-references)" 用 K（注意大寫）顯示文件在分割視窗nnoremap &lt;silent> K :call &lt;SID>show_documentation()&lt;CR>function!...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-17 00:00:00 +0000 UTC">2021-September-17</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 17：coc.nvim 設定下集" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day17/></a>
+<a class=entry-link aria-label="post link to Day 17：coc.nvim 設定下集" href=https://blog.simba-fs.dev/posts/ithelp/day17/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -165,7 +165,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}so ~/.config/nvim/coc-config.vim�
 lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol，簡稱 lsp，中文是「語言伺服器協定」。lsp 做的事是提供自動補全和 go to def，能做到這兩個功能的原因是因為 lsp 懂程式碼，他知道你寫的每個字代表什麼。為什麼 lsp 這麼強呢？因為 lsp 什麼都不懂，他把所有事情丟給 language server 處理，所以只要你有裝 language server，那麼 lsp 什麼語言都懂。...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-16 00:00:00 +0000 UTC">2021-September-16</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 16：自動補全！coc.nvim" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day16/></a>
+<a class=entry-link aria-label="post link to Day 16：自動補全！coc.nvim" href=https://blog.simba-fs.dev/posts/ithelp/day16/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -181,7 +181,7 @@ lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol
 " 彩色的 status barPlug 'itchyny/lightline.vim'" 有這個設定 lightline 在單個 vim 視窗中才會正常，沒錯！vim 也可以分割視窗，後天會講set laststatus=2" 在行號左側會顯示這行的 git 狀態，新增、刪除、修改，詳細請看 GitHub READMEPlug 'airblade/vim-gitgutter'" 按下 &lt;F5> 可以開啟檔案樹，按 h 有說明，再一下關掉說明Plug 'scrooloose/nerdtree'nmap &lt;F5> :NERDTreeToggle&lt;CR>" Exit Vim if NERDTree is the only window left.autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree....</p>
 </section>
 <footer class=entry-footer><span title="2021-09-15 00:00:00 +0000 UTC">2021-September-15</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 15：vim 外掛大雜燴！" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day15/></a>
+<a class=entry-link aria-label="post link to Day 15：vim 外掛大雜燴！" href=https://blog.simba-fs.dev/posts/ithelp/day15/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -199,7 +199,7 @@ call plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝�
 Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-14 00:00:00 +0000 UTC">2021-September-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/></a>
+<a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/day14/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -213,7 +213,7 @@ vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入�
 " 打開語法突顯syntax on" load plguin" install vim-plug:" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'" 這個是明天的東西，先註解掉，才不會出錯" so ~/.config/nvim/plugin.vim" 256 色set t_Co=256" 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=" 選一個你喜歡的 colorschema" available color schema" blue darkblue default delek desert elflord evening industry koehler" morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler" 雜項設定，詳細解說請用 `:help &lt;opeion>`，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline" make lightline work in single screen" https://github....</p>
 </section>
 <footer class=entry-footer><span title="2021-09-13 00:00:00 +0000 UTC">2021-September-13</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 13：vim 設定檔" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day13/></a>
+<a class=entry-link aria-label="post link to Day 13：vim 設定檔" href=https://blog.simba-fs.dev/posts/ithelp/day13/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -229,7 +229,7 @@ hi hgName arg=value arg=value......hgName 就是你用 :so $VIMRUNTIME/syntax/hi
 Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色不同而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-12 00:00:00 +0000 UTC">2021-September-12</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 12：vim 配色方案" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day12/></a>
+<a class=entry-link aria-label="post link to Day 12：vim 配色方案" href=https://blog.simba-fs.dev/posts/ithelp/day12/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.simba-fs.dev/posts/</loc>
+    <lastmod>2021-12-22T23:18:41+08:00</lastmod>
+    <priority>0</priority>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/other/</loc>
+    <lastmod>2021-12-22T23:18:41+08:00</lastmod>
+    <priority>0</priority>
+  </url><url>
     <loc>https://blog.simba-fs.dev/categories/</loc>
     <lastmod>2021-12-22T23:18:41+08:00</lastmod>
   </url><url>
@@ -11,11 +19,12 @@
     <loc>https://blog.simba-fs.dev/categories/other/</loc>
     <lastmod>2021-12-22T23:18:41+08:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/</loc>
-    <lastmod>2021-12-22T23:18:41+08:00</lastmod>
-  </url><url>
     <loc>https://blog.simba-fs.dev/</loc>
     <lastmod>2021-12-22T23:18:41+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/golang/</loc>
+    <lastmod>2021-10-19T00:06:19+08:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/golang/exec-cmd/</loc>
     <lastmod>2021-10-19T00:06:19+08:00</lastmod>
@@ -23,10 +32,14 @@
     <loc>https://blog.simba-fs.dev/posts/golang/aconf/</loc>
     <lastmod>2021-09-24T08:46:37+08:00</lastmod>
   </url><url>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url><url>
     <loc>https://blog.simba-fs.dev/tags/cli/</loc>
     <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day21/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day21/</loc>
     <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/categories/ithelp/</loc>
@@ -53,64 +66,64 @@
     <loc>https://blog.simba-fs.dev/tags/zsh/</loc>
     <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day20/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day20/</loc>
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day19/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day19/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day18/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day18/</loc>
     <lastmod>2021-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day17/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day17/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day16/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day16/</loc>
     <lastmod>2021-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day15/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day15/</loc>
     <lastmod>2021-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day14/</loc>
     <lastmod>2021-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day13/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day13/</loc>
     <lastmod>2021-09-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day12/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day12/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day11/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day11/</loc>
     <lastmod>2021-09-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day10/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day10/</loc>
     <lastmod>2021-09-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day09/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day09/</loc>
     <lastmod>2021-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day08/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day08/</loc>
     <lastmod>2021-09-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day07/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day07/</loc>
     <lastmod>2021-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day06/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day06/</loc>
     <lastmod>2021-09-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day05/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day05/</loc>
     <lastmod>2021-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day04/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day04/</loc>
     <lastmod>2021-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day03/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day03/</loc>
     <lastmod>2021-09-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day02/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day02/</loc>
     <lastmod>2021-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day01/</loc>
+    <loc>https://blog.simba-fs.dev/posts/ithelp/day01/</loc>
     <lastmod>2021-09-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/embed/</loc>
@@ -130,6 +143,14 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/template/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/</loc>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/server/</loc>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/git/</loc>
     <lastmod>2021-07-13T00:00:00+00:00</lastmod>
@@ -161,6 +182,10 @@
     <loc>https://blog.simba-fs.dev/posts/other/taiwan-town-location/</loc>
     <lastmod>2021-06-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/software/</loc>
+    <lastmod>2021-06-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url><url>
     <loc>https://blog.simba-fs.dev/tags/adb/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -181,6 +206,10 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/wireless/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/vim/</loc>
+    <lastmod>2021-05-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/complete/</loc>
     <lastmod>2021-05-17T00:00:00+00:00</lastmod>
@@ -208,6 +237,10 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/ubuntu/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/kotlin/</loc>
+    <lastmod>2021-05-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/kotlin/beginning-of-kotlin/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
@@ -238,6 +271,10 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/software/libreoffice-code-format-plugin-install/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/</loc>
+    <lastmod>2021-02-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/api/</loc>
     <lastmod>2021-02-28T00:00:00+00:00</lastmod>
@@ -281,6 +318,10 @@
     <loc>https://blog.simba-fs.dev/posts/nodejs/hcaptcha/</loc>
     <lastmod>2021-01-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/docker/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url><url>
     <loc>https://blog.simba-fs.dev/tags/docker/</loc>
     <lastmod>2020-12-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -295,6 +336,10 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/docker/docker-commit/</loc>
     <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/bash/</loc>
+    <lastmod>2020-11-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/bash/</loc>
     <lastmod>2020-11-15T00:00:00+00:00</lastmod>
@@ -341,6 +386,10 @@
     <loc>https://blog.simba-fs.dev/posts/linux/vim/vim-auto-comment-plugin/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.simba-fs.dev/posts/hexo/</loc>
+    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url><url>
     <loc>https://blog.simba-fs.dev/tags/hexo/</loc>
     <lastmod>2020-08-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -364,6 +413,10 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</loc>
     <lastmod>2020-08-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/react/</loc>
+    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/react/</loc>
     <lastmod>2020-07-12T00:00:00+00:00</lastmod>
@@ -397,6 +450,10 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/server/nginx-ui/</loc>
     <lastmod>2020-06-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/frontend/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/categories/frontend/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
@@ -457,6 +514,10 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/youtube-dl/</loc>
     <lastmod>2020-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/blessed/</loc>
+    <lastmod>2020-02-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/blessed/</loc>
     <lastmod>2020-02-26T00:00:00+00:00</lastmod>
@@ -538,8 +599,6 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/hexo/hexo-installation/</loc>
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/</loc>
   </url><url>
     <loc>https://blog.simba-fs.dev/archive/</loc>
   </url><url>

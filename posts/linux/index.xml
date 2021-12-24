@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/posts/linux/</link>
+    <description>Recent content on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mxlinux boot with systemd</title>
+      <link>https://blog.simba-fs.dev/posts/linux/mxlinux-boot-with-systemd/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/mxlinux-boot-with-systemd/</guid>
+      <description>問題 在 mxlinux 裡面，預設的 init 不是 systmed，這導致如果想用 systemctl 的時候就會跳出錯誤說
+System has not been booted with systemd as init system 像是在安裝 mongodb-org 的時候他就要用到 systemctl 然後就會出錯。
+解法 其實 mxlinux 已經幫我們想好解法了，在開機選項時選 Advence &amp;gt; Systemd 就會以 systemd 開機</description>
+    </item>
+    
+    <item>
+      <title>mxlinux-change-workspace</title>
+      <link>https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/</guid>
+      <description>切換工作區 今天想要在 mxlinux 中快速的切換工作區 我看到可以用滑鼠滾輪切換 可是我想要的是鍵盤快捷鍵 上網查了一下 發現可以透過 Ctrl+Alt+up/down/home/end 來切換
+參考資料 https://unix.stackexchange.com/questions/270334/how-to-move-a-window-to-another-workspace-in-xfce</description>
+    </item>
+    
+    <item>
+      <title>gpg</title>
+      <link>https://blog.simba-fs.dev/posts/linux/gpg/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/gpg/</guid>
+      <description>今天心血來潮想設定 GPG，網路上查了一個教學，無疑的又遇到一個坑
+坑 &amp;amp; 解法 我按照他的作法弄完後就是沒辦法 commit 他說 GPG 無法簽章 後來我發現是我的 name 填錯（應該啦，我猜的） 總而言之就重新產生 GPG key 就好了 name 和 git 設定的一樣
+指令 $ gpg --full-gen-key $ gpg --list-secret-keys $ gpg --armor --export &amp;lt;secret key&amp;gt; 刪除金鑰 在刪除的時候分成兩步驟，刪除私鑰、刪除公鑰。在刪除之前要先知道要刪除的金鑰的 ID
+gpg --list-keys 找到那串很長的文字，那就是 ID，複製起來，他起來也許會像這樣
+JFDKSA8FEWHE29HFVC92UHFPA93WOHFVDOPA39U2 再來用兩個指令就可以刪除了，注意一定要先刪私鑰。
+gpg --delete-secret-key &amp;lt;ID&amp;gt; gpg --delete-key &amp;lt;ID&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>isolate</title>
+      <link>https://blog.simba-fs.dev/posts/linux/isolate/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/isolate/</guid>
+      <description>我有一個放了很久的計畫，就是自己寫一個 OJ，因為我覺得現在的那個太難用了。 我很快的建立 repo 但是卻完全沒有進展，我寫了一個 shell script 幫忙編譯執行程式之後我就在也沒有動過他了 我沒有繼續動工的原因是我不知道如何隔離使用者提交的程式碼 我想過 docker 可是據說還是不安全 還有 chroot 但是我不知道有沒有比 docker 安全而且設定好麻煩
+昨天去考 TOI　入營考（當然沒進）的時候，我終於看到大名鼎鼎的 CMS 了！ 出來之後我發現他是用一個叫 isolate 的程式來做沙箱測試 而且這好像是 IOI 自己寫的，應該是蠻安全的（吧？） 今天成功編譯過後把心得寫下來</description>
+    </item>
+    
+    <item>
+      <title>youtube-dl</title>
+      <link>https://blog.simba-fs.dev/posts/linux/youtube-dl/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/youtube-dl/</guid>
+      <description>最近在下載 youtube 音樂，每次下載都要把檔案重新改名，很麻煩。所以就想要寫一個 shell script 來幫我解決。 首先改名字我相信 youtube-dl 一定有提供這個選項，於是開始查文件。 看到 -o ，接下來講遇到的坑
+-o 坑 -o 後面接的是一個 template string ，不是檔名，而且就算指定副檔名是 .mp3 了還是要寫成 %(ext)s</description>
+    </item>
+    
+    <item>
+      <title>ssh-tunnel</title>
+      <link>https://blog.simba-fs.dev/posts/linux/ssh-tunnel/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/ssh-tunnel/</guid>
+      <description>昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel
+簡介 ssh tunnel 分正反向 其實他們的差別只有在方向不一樣 連語法參數都一樣
+正向 tunnel 正向的 tunnel 參數是 -L 語法：
+ssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：
+ssh -L &amp;lt;local port&amp;gt;:localhost:&amp;lt;remote port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;remote&amp;gt; 反向;
+ssh -R &amp;lt;remote port&amp;gt;:localhost:&amp;lt;local port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;remote&amp;gt; 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port</description>
+    </item>
+    
+    <item>
+      <title>reverse-ssh</title>
+      <link>https://blog.simba-fs.dev/posts/linux/reverse-ssh/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/reverse-ssh/</guid>
+      <description>一直以來連線回社辦的電腦都要走 webtty 再開 tmate 但是今天發現了一個新的方法可以透過反向的 ssh 連回社辦
+reverse ssh 在社辦電腦
+$ ssh -NfR 2222:localhost:22 simba@simba-vps 這可以建立一個連線 這時候到 simba-vps
+$ ssh server@localhost -p 2222 就可以連線回社辦伺服器了
+autossh 但是這樣做 ssh 連線有可能會超時然後斷掉 這時候可以透過 autossh 來幫我們自動建立連線 在社辦電腦
+$ apt install autossh $ autossh -Mf 2222 -NR 1111:localhost:22 simba@simba-vps -p 22 這樣就可以在 vps 上
+$ ssh server@localhost -p 1111 來連回社辦啦！ 最後可以把這堆在 vps 上再做一次就可以在 internet 連回社辦伺服器了
+參考網址 https://stackoverflow.com/questions/15983795/how-do-i-establish-a-bidirectional-ssh-tunnel
+https://ez3c.tw/2043
+https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&amp;amp;topic_id=17538&amp;amp;forum=7
+http://blog.adahsu.net/2007/11/ssh-reverse-tunnel.html
+https://codertw.com/%E4%BC%BA%E6%9C%8D%E5%99%A8/377688/
+這篇講 ssh tunnel 最清楚
+https://yu-jack.github.io/2019/01/08/ssh-tunnel/</description>
+    </item>
+    
+  </channel>
+</rss>

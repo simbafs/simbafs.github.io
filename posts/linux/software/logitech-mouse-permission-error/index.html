@@ -26,7 +26,7 @@ $ chmod 660 /dev/hidraw2 拔下滑鼠接收器，插上。
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.0">
+<meta name=generator content="Hugo 0.91.1">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -57,7 +57,7 @@ $ chmod 660 /dev/hidraw2 拔下滑鼠接收器，插上。
 我猜這個方法會失敗應該是因為他在我改之前就已經先跳錯誤了，等我改完它右沒有偵測，我就得把它拔下來在插上去，我又會看到錯誤訊息&mldr;&mldr; (looping
 於是我上網找答案
 網路上的解 我 Google ubuntu logitech permission error 第一個就是我要的！">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"logitech-mouse-permission-error","item":"https://blog.simba-fs.dev/posts/linux/software/logitech-mouse-permission-error/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"","item":"https://blog.simba-fs.dev/posts/linux/"},{"@type":"ListItem","position":3,"name":"","item":"https://blog.simba-fs.dev/posts/linux/software/"},{"@type":"ListItem","position":4,"name":"logitech-mouse-permission-error","item":"https://blog.simba-fs.dev/posts/linux/software/logitech-mouse-permission-error/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"logitech-mouse-permission-error","name":"logitech-mouse-permission-error","description":"前言 我的無線華和滑鼠和鍵盤都是羅技的，在我的 Ubuntu 筆電上一直都沒有問題。有一次我想改我的鍵盤被配置，但是因為 logitech unifying 沒有 Linux 版，所以我另一個軟體叫 solaar，功能是差不多的。 當我裝好軟體以後，鍵盤滑鼠操作都沒問題，只有插上滑鼠的接收器以後都對跳出一個 permission error 的錯誤視窗。雖然在 solaar 裡面就無法看到我的滑鼠就是了，但是完全不影響使用，所以我就擺在那邊放它爛，反正就是多按一個叉叉。\n嘗試自己解 今天閒閒沒事做剛好來看看這個怎麼解。我一開始想說，把他的 permission 改成和鍵盤一樣就啦！於是我進行了下面的操作\n$ ls /dev/hidraw* 拔下鍵盤的接收器，發現他是 /dev/hidraw4 和 /dev/hidraw5，再插上去。拔下滑鼠接收器，發現他是 /dev/hidraw2。\n並找到鍵盤的權限是 rw-rw----，滑鼠是 rw-------。\n$ chmod 660 /dev/hidraw2 拔下滑鼠接收器，插上。\n沒用。\n我猜這個方法會失敗應該是因為他在我改之前就已經先跳錯誤了，等我改完它右沒有偵測，我就得把它拔下來在插上去，我又會看到錯誤訊息\u0026hellip;\u0026hellip; (looping\n於是我上網找答案\n網路上的解 我 Google ubuntu logitech permission error 第一個就是我要的！","keywords":["ubuntu","logitech"],"articleBody":"前言 我的無線華和滑鼠和鍵盤都是羅技的，在我的 Ubuntu 筆電上一直都沒有問題。有一次我想改我的鍵盤被配置，但是因為 logitech unifying 沒有 Linux 版，所以我另一個軟體叫 solaar，功能是差不多的。 當我裝好軟體以後，鍵盤滑鼠操作都沒問題，只有插上滑鼠的接收器以後都對跳出一個 permission error 的錯誤視窗。雖然在 solaar 裡面就無法看到我的滑鼠就是了，但是完全不影響使用，所以我就擺在那邊放它爛，反正就是多按一個叉叉。\n嘗試自己解 今天閒閒沒事做剛好來看看這個怎麼解。我一開始想說，把他的 permission 改成和鍵盤一樣就啦！於是我進行了下面的操作\n$ ls /dev/hidraw* 拔下鍵盤的接收器，發現他是 /dev/hidraw4 和 /dev/hidraw5，再插上去。拔下滑鼠接收器，發現他是 /dev/hidraw2。\n並找到鍵盤的權限是 rw-rw----，滑鼠是 rw-------。\n$ chmod 660 /dev/hidraw2 拔下滑鼠接收器，插上。\n沒用。\n我猜這個方法會失敗應該是因為他在我改之前就已經先跳錯誤了，等我改完它右沒有偵測，我就得把它拔下來在插上去，我又會看到錯誤訊息…… (looping\n於是我上網找答案\n網路上的解 我 Google ubuntu logitech permission error 第一個就是我要的！\n","wordCount":"48","inLanguage":"zh-tw","datePublished":"2021-03-15T00:00:00Z","dateModified":"2021-03-15T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/linux/software/logitech-mouse-permission-error/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
 </head>
 <body id=top>
@@ -99,7 +99,7 @@ $ chmod 660 /dev/hidraw2 拔下滑鼠接收器，插上。
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>Posts</a></div>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/></a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/linux/></a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/linux/software/></a></div>
 <h1 class=post-title>
 logitech-mouse-permission-error
 </h1>

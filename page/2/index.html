@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.0">
+<meta name=generator content="Hugo 0.91.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -87,7 +87,7 @@ call plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝�
 Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-14 00:00:00 +0000 UTC">2021-September-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day14/></a>
+<a class=entry-link aria-label="post link to Day 14：vim-plug" href=https://blog.simba-fs.dev/posts/ithelp/day14/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -101,7 +101,7 @@ vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入�
 " 打開語法突顯syntax on" load plguin" install vim-plug:" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'" 這個是明天的東西，先註解掉，才不會出錯" so ~/.config/nvim/plugin.vim" 256 色set t_Co=256" 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=" 選一個你喜歡的 colorschema" available color schema" blue darkblue default delek desert elflord evening industry koehler" morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler" 雜項設定，詳細解說請用 `:help &lt;opeion>`，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline" make lightline work in single screen" https://github....</p>
 </section>
 <footer class=entry-footer><span title="2021-09-13 00:00:00 +0000 UTC">2021-September-13</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 13：vim 設定檔" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day13/></a>
+<a class=entry-link aria-label="post link to Day 13：vim 設定檔" href=https://blog.simba-fs.dev/posts/ithelp/day13/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -117,7 +117,7 @@ hi hgName arg=value arg=value......hgName 就是你用 :so $VIMRUNTIME/syntax/hi
 Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色不同而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-12 00:00:00 +0000 UTC">2021-September-12</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 12：vim 配色方案" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day12/></a>
+<a class=entry-link aria-label="post link to Day 12：vim 配色方案" href=https://blog.simba-fs.dev/posts/ithelp/day12/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -134,7 +134,7 @@ Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色
 範圍修飾字範例 範圍選取 剛剛的範例中有出現用行號作範圍選取，其實範圍選取還有一個更簡單的方式 ——「選取模式」。選取模式和編輯模式、命令模式是同等地位的東西，進入選取模式的快捷鍵有下列幾個（一樣要進到命令模式才能進選取模式） 快捷鍵 說明 v 一般選取，以「字」為單位 S-v(大寫 v ) 一般選取，以「行」為單位 C-v 垂直選取，這個比較不常用，但是需要的時候蠻好用的 選取後一樣可以打指令和快捷鍵，但是這些就只會作用在選取的範圍內，常常搭配的有 d（剪下）、y（複製）、:s（搜尋與取代）...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-11 00:00:00 +0000 UTC">2021-September-11</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 11：批次修改！！" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day11/></a>
+<a class=entry-link aria-label="post link to Day 11：批次修改！！" href=https://blog.simba-fs.dev/posts/ithelp/day11/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -151,7 +151,7 @@ Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色
 vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹) 通常 Normal Mode 中文是 「命令模式」 ，顧名思義這個模式下你可以打命令，Insert Mode 的中文是 「編輯模式」 ，在這個模式你可以編輯你的檔案。...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-10 00:00:00 +0000 UTC">2021-September-10</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 10：新手殺，誰來教我離開 vim 阿～～" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day10/></a>
+<a class=entry-link aria-label="post link to Day 10：新手殺，誰來教我離開 vim 阿～～" href=https://blog.simba-fs.dev/posts/ithelp/day10/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -172,7 +172,7 @@ vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹) 通常 Normal
 + set -g mouse on 然後重新開啟 tmux，這時候你就可以用滑鼠換頁、切換分割畫面、調整大小等等操作，在不同的地方按右鍵還會有不同的功能呦！...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-09 00:00:00 +0000 UTC">2021-September-9</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 09：今天又想不出標題了！tmux plugin 和 mouse mode" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day09/></a>
+<a class=entry-link aria-label="post link to Day 09：今天又想不出標題了！tmux plugin 和 mouse mode" href=https://blog.simba-fs.dev/posts/ithelp/day09/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -188,7 +188,7 @@ vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹) 通常 Normal
 分頁移動 在多個分頁中，你可以用 CTRLa+ CTRLa移動到上一次使用的分頁，或是用 CTRLa+ 數字鍵移動到特定 ID 的分頁。...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-08 00:00:00 +0000 UTC">2021-September-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 08：八爪章魚之 tmux 快捷鍵" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day08/></a>
+<a class=entry-link aria-label="post link to Day 08：八爪章魚之 tmux 快捷鍵" href=https://blog.simba-fs.dev/posts/ithelp/day08/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -203,7 +203,7 @@ vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹) 通常 Normal
 執行 zsh（因為我們的 default shell 是 zsh） zsh 執行 ~/....</p>
 </section>
 <footer class=entry-footer><span title="2021-09-07 00:00:00 +0000 UTC">2021-September-7</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 07：整合 tmux 和 zsh" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day07/></a>
+<a class=entry-link aria-label="post link to Day 07：整合 tmux 和 zsh" href=https://blog.simba-fs.dev/posts/ithelp/day07/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -218,7 +218,7 @@ curl https://gist.githubusercontent.com/simba-fs/e06a1763c1967ce3f4b5ef643db5e0b
 把前置按鍵（prefix）從 Ctrlb改成 Ctrla(第 16 ~ 19 行，不喜歡的話可以拿掉)，你也可以改成其他按鍵 底部 status bar 變成彩色，不再是單調的綠色 一些快捷鍵綁定 啟動 暫時我們不加入開啟終端機自動啟動 tmux，手動啟動方式是在終端機執行命令...</p>
 </section>
 <footer class=entry-footer><span title="2021-09-06 00:00:00 +0000 UTC">2021-September-6</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 06：螢幕切八段！多開神器 tmux" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day06/></a>
+<a class=entry-link aria-label="post link to Day 06：螢幕切八段！多開神器 tmux" href=https://blog.simba-fs.dev/posts/ithelp/day06/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -237,7 +237,7 @@ zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔�
 # case sensitive zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[....</p>
 </section>
 <footer class=entry-footer><span title="2021-09-05 00:00:00 +0000 UTC">2021-September-5</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair" href=https://blog.simba-fs.dev/posts/ithelp/pure-cli-ide/day05/></a>
+<a class=entry-link aria-label="post link to Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair" href=https://blog.simba-fs.dev/posts/ithelp/day05/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

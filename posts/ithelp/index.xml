@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Simba&#39;s Blog</title>
+    <link>https://blog.simba-fs.dev/posts/ithelp/</link>
+    <description>Recent content on Simba&#39;s Blog</description>
+    <image>
+      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/ithelp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 21：儲存器與剪貼簿</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day21/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day21/</guid>
+      <description>from: https://stackoverflow.blog/2021/04/19/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/    這個是一個 梗圖，大意是你寫程式一定會用到 CTRL-C 和 CTRL-V。我們今天就來看看 vim 的剪貼簿吧！
+在用剪貼簿時，複製的來源可能會有很多種，以我們的環境為例，可能會用系統剪貼簿、tmux 和 vim 本身的剪貼簿
+系統剪貼簿 基本上對 vim 來說系統剪貼簿和 tmux 在複製貼上是差不多的，在輸入模式貼上就可以了
+但是要注意多行的程式碼貼上時 vim 會把縮排搞亂，所以你要嘛用 &amp;lt;leader&amp;gt;f 重新整理程式碼，或是用命令 :r!cat，貼上後再按 C-d 貼到程式裡面。
+:r!cat 這個命令在 Day 13 時有把他寫成快捷鍵 &amp;lt;F3&amp;gt; 了，所以你也可以直接按 &amp;lt;F3&amp;gt;  會有一樣的效果
+另外，下面會講到用 vim 命令存取系統剪貼簿
+   ❓ :r!cat 是什麼意思？     r 這個命令是「載入某個檔案並貼到游標行下面」，用法是 :r {file}。但是我們這裡不用檔名，!cat 在這裡的意思是「shell 命令 cat 的 stdout 這個檔案」，而執行 cat 時需要 stdin，也就是你剛剛貼上程式碼的地方（在 status bar 下面）。這個方法可以繞過自動縮排，就不會出現程式碼貼上被 vim 弄亂的情形了。    從 vim 複製 複製到系統剪貼簿很簡單，在選取時記的按住 &amp;lt;SHIFT&amp;gt; 就行了，但是因為我們有開啟 vim 滑鼠模式，所以 tmux 剪貼簿就不能複製了（滑鼠被 vim 搶走）（關於 tmux 剪貼簿請看 Day 09#複製。</description>
+    </item>
+    
+    <item>
+      <title>Day 20：切水果囉！vim 切螢幕與分頁</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day20/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day20/</guid>
+      <description>分割螢幕 記的 tmux 可以切螢幕嗎？vim 也可以喔！
+命令 我們快速用表格帶過命令
+   快捷鍵 命令 效果     s :sp[lit] {file} 水平分割   v :vs[plit] {file} 垂直分割   +  把目前視窗放大一點   -  把目前視窗縮小一點   =  等大   c :q 關掉目前視窗   o  關掉其他視窗   方向鍵/h/j/k/l/tag  在視窗間移動    如果你在 day 13 有開啟滑鼠模式，那你可以直接用滑鼠拉動邊框調整大小
+vim 分割視窗的優點 與 tmux 比起來，我更常用 tmux 分割視窗，因為快捷鍵比較直覺好用，但是 vim 有個 tmux 做不到的優點</description>
+    </item>
+    
+    <item>
+      <title>Day 19：該是時候升級你的噴射引擎囉！vim-emmet 重複與迭代</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day19/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day19/</guid>
+      <description>重複 如果想讓某個標籤/群組重複，只要用乘號 * 加上數字就可以讓他重複了
+h1.title*5 -&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ (p.artical+br)*3 -&amp;gt; &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; 迭代 在重複的時候，你可能會有某些地方是要要變化的，例如從 id 從 1 開始遞增，你可以使用錢號 $ 代表要遞增的位數
+如果你不是要從 1 開始迭代，可以使用小老鼠 @ 指定開始的數字
+如果要反著數，用 @- 可以倒數到 0，當然也可以指定倒數到多少
+h1#title$$*12 -&amp;gt; &amp;lt;h1 id=&amp;#34;title01&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title02&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title03&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title04&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title05&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title06&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title07&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title08&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title09&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title10&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title11&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title12&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ h1#$@10*3 -&amp;gt; &amp;lt;h1 id=&amp;#34;10&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;11&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;12&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ h1#$@-*3 -&amp;gt; &amp;lt;h1 id=&amp;#34;2&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;1&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;0&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ h1#$@-6*3 -&amp;gt; &amp;lt;h1 id=&amp;#34;8&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;7&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;6&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ h$*6 -&amp;gt; &amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;&amp;lt;/h2&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;h4&amp;gt;&amp;lt;/h4&amp;gt; &amp;lt;h5&amp;gt;&amp;lt;/h5&amp;gt; &amp;lt;h6&amp;gt;&amp;lt;/h6&amp;gt; 範本包圍  我不確定這個叫什麼，反正就這樣啦</description>
+    </item>
+    
+    <item>
+      <title>Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day18/</link>
+      <pubDate>Sat, 18 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day18/</guid>
+      <description>emmet-vim 是 emmet 的 vim 版本（這句好像是廢話
+ 注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
+ emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子
+.tab&amp;gt;(tr#col$&amp;gt;td*3)*4 會被解析成 &amp;lt;div class=&amp;#34;tab&amp;#34;&amp;gt; &amp;lt;tr id=&amp;#34;col1&amp;#34;&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr id=&amp;#34;col2&amp;#34;&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr id=&amp;#34;col3&amp;#34;&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr id=&amp;#34;col4&amp;#34;&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/div&amp;gt; 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！
+安裝 在 ~/.config/nvim/plugin.vim 加入一行
++ Plug &amp;#39;mattn/emmet-vim&amp;#39; 然後記得修改後需要打指令 :so % | PlugInstall 安裝
+coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(p&amp;gt;div.title$)，你還是只能按 emmet-vim 的快捷鍵</description>
+    </item>
+    
+    <item>
+      <title>Day 17：coc.nvim 設定下集</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day17/</link>
+      <pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day17/</guid>
+      <description>今天的東西相當多，在 GitHub README Example 中除了昨天介紹過得今天都收錄了，直接進主題吧！
+喔！另外有些東西我真的不知道是什麼我會用原文寫並用中文括號括起來，歡迎知道的朋友留言告訴我
+&amp;#34; 設定文字編碼（我想這個你的 init.vim/.vimrc 都應該有了）set encoding=utf-8&amp;#34; 如果 hidden 沒有設定，「TextEdit」可能會失敗&amp;#34; TextEdit 也許是彈出式輸入框吧？阿災set hidden&amp;#34; 有些伺服器對於備份檔會出錯，請看 issue #649&amp;#34; https://github.com/neoclide/coc.nvim/issues/649set nobackupset nowritebackup&amp;#34; 把下面的命令欄變高，多一點空間set cmdheight=2&amp;#34; 不傳訊息給「|ins-completion-menu|」（這我看不太出來有什麼差set shortmess+=c&amp;#34; 使用 &amp;lt;c-space&amp;gt; 觸發自動完成if has(&amp;#39;nvim&amp;#39;) inoremap &amp;lt;silent&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;c-space&amp;gt; coc#refresh()else inoremap &amp;lt;silent&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;c-@&amp;gt; coc#refreshendif&amp;#34; 用 `[g` 和 `]g` 跳到診斷的位置（就是程式碼有問題地方&amp;#34; 用命令 `:CocDiagnostics` 在分割視窗列出目前檔案中所有有問題的點nmap &amp;lt;silent&amp;gt; [g &amp;lt;Plug&amp;gt;(coc-diagnostic-prev)nmap &amp;lt;silent&amp;gt; ]g &amp;lt;Plug&amp;gt;(coc-diagnostic-next)&amp;#34; 程式碼轉跳（這個我覺得有點難記，而且這四個實驗出來效果非常像，我的建議是試過後選你覺得順眼的，不要全上nmap &amp;lt;silent&amp;gt; gd &amp;lt;Plug&amp;gt;(coc-definition)nmap &amp;lt;silent&amp;gt; gy &amp;lt;Plug&amp;gt;(coc-type-definition)nmap &amp;lt;silent&amp;gt; gi &amp;lt;Plug&amp;gt;(coc-implementation)nmap &amp;lt;silent&amp;gt; gr &amp;lt;Plug&amp;gt;(coc-references)&amp;#34; 用 K（注意大寫）顯示文件在分割視窗nnoremap &amp;lt;silent&amp;gt; K :call &amp;lt;SID&amp;gt;show_documentation()&amp;lt;CR&amp;gt;function!</description>
+    </item>
+    
+    <item>
+      <title>Day 16：自動補全！coc.nvim</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day16/</link>
+      <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day16/</guid>
+      <description>一個好的自動補全工具可以讓你工作效率翻倍，你不用再去查文件了，自動補全不僅可以告訴你這裡有什麼函數可以用，還會告訴你參數的型態、函數功能的說明，可以說是把文件都寫在 vim 裡面了。
+以前我用的自動補全是 You Complete Me(YCM)，現在我選擇使用 coc.nvim 原因是他提供更多的補全來源、外掛和設定，而且可以用 nodejs 自製外掛，據說所有純 JS 寫的 VS code 外掛都可以裝（這個我沒實驗過，只是傳聞）。關於這兩個自動補全外掛的比較礙於篇幅請自行 Google。
+安裝 coc.nvim 和一般的 vim 外掛一樣，都是用 vim-plug 安裝就可以了，在 ~/.config/nvim/plugin.vim 中新增以下設定
+Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;branch&amp;#39;: &amp;#39;release&amp;#39;}so ~/.config/nvim/coc-config.vim因為 coc 有很多設定，為了避免檔案太雜亂我把 coc 相關的設定移到另一個檔案，就像我們在 前天 做得一樣
+接下來建立 ~/.config/nvim/coc-config.vim，不然等等載入設定檔 vim 會報錯
+:!touch ~/.config/nvim/coc-config.vim :! {cmd} 可以執行外部命令
+ 接下來存檔安裝
+:w | PlugInstall跑完後，重開 vim，coc 就裝好了
+lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol，簡稱 lsp，中文是「語言伺服器協定」。lsp 做的事是提供自動補全和 go to def，能做到這兩個功能的原因是因為 lsp 懂程式碼，他知道你寫的每個字代表什麼。為什麼 lsp 這麼強呢？因為 lsp 什麼都不懂，他把所有事情丟給 language server 處理，所以只要你有裝 language server，那麼 lsp 什麼語言都懂。</description>
+    </item>
+    
+    <item>
+      <title>Day 15：vim 外掛大雜燴！</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day15/</link>
+      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day15/</guid>
+      <description>看到這裡，你可能還是很疑惑，到底 vim 好用在哪？嘿嘿，那是因為強大的外掛還沒裝啦！網路上會有一些配好一堆外掛的，像是 spaceVim，他們的策略和 vs code 很像，先幫你裝好一對外掛，讓你隨開及用。這樣做好處是初學者比較愛，但是常常會裝了一堆用不到的功能，反而讓載入速度、記憶體用量大增。
+所以我們自己挑我們需要的外掛裝起來，效果完全不會輸 vs code 這些笨重的編輯器！
+今天要介紹很多模組，都是我選出來製作一個現代化 IDE 必備的模組，相當的精華，一起來看看吧！ 記得修改後需要打指令 :so % | PlugInstall
+現代化 IDE 必裝模組 以下的內容直接貼到 ~/.config/nvim/plugin.vim 裡面裝模組的地方就可以了，說明附在裡面了
+注意：我這裡沒有列出 Coc.nvim，因為我把他拉出來到另外一章了
+&amp;#34; 彩色的 status barPlug &amp;#39;itchyny/lightline.vim&amp;#39;&amp;#34; 有這個設定 lightline 在單個 vim 視窗中才會正常，沒錯！vim 也可以分割視窗，後天會講set laststatus=2&amp;#34; 在行號左側會顯示這行的 git 狀態，新增、刪除、修改，詳細請看 GitHub READMEPlug &amp;#39;airblade/vim-gitgutter&amp;#39;&amp;#34; 按下 &amp;lt;F5&amp;gt; 可以開啟檔案樹，按 h 有說明，再一下關掉說明Plug &amp;#39;scrooloose/nerdtree&amp;#39;nmap &amp;lt;F5&amp;gt; :NERDTreeToggle&amp;lt;CR&amp;gt;&amp;#34; Exit Vim if NERDTree is the only window left.autocmd BufEnter * if tabpagenr(&amp;#39;$&amp;#39;) == 1 &amp;amp;&amp;amp; winnr(&amp;#39;$&amp;#39;) == 1 &amp;amp;&amp;amp; exists(&amp;#39;b:NERDTree&amp;#39;) &amp;amp;&amp;amp; b:NERDTree.</description>
+    </item>
+    
+    <item>
+      <title>Day 14：vim-plug</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day14/</link>
+      <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day14/</guid>
+      <description>前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。
+安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣
+# neovim sh -c &amp;#39;curl -fLo &amp;#34;${XDG_DATA_HOME:-$HOME/.local/share}&amp;#34;/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&amp;#39; # vim sh -c &amp;#39;curl -fLo &amp;#34;${XDG_DATA_HOME:-$HOME/.local/share}&amp;#34;/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&amp;#39; 挑選你的 vim 版本，執行完就安裝好了！
+安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！
+1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面
+call plug#begin(&#39;~/.vim/plugged&#39;) call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面
+加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行
+Plug &#39;preservim/nerdcommenter&#39; 然後存檔，這樣就算設定好了</description>
+    </item>
+    
+    <item>
+      <title>Day 13：vim 設定檔</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day13/</link>
+      <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day13/</guid>
+      <description>vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 ~/.vimrc，如果是 neovim(nvim)，他會去找 ~/.config/nvim/init.vim。在接下來的文章中都以 vimrc 代指。
+vimrc 內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 :set nu，這個命令可以開啟行號顯示，如果要寫在 vimrc 裡面，就要寫成 set nu。
+vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 &amp;quot; 開頭是 vimscript 的註解)
+&amp;#34; 打開語法突顯syntax on&amp;#34; load plguin&amp;#34; install vim-plug:&amp;#34; sh -c &amp;#39;curl -fLo &amp;#34;${XDG_DATA_HOME:-$HOME/.local/share}&amp;#34;/nvim/site/autoload/plug.vim --create-dirs \&amp;#34; https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&amp;#39;&amp;#34; 這個是明天的東西，先註解掉，才不會出錯&amp;#34; so ~/.config/nvim/plugin.vim&amp;#34; 256 色set t_Co=256&amp;#34; 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=&amp;#34; 選一個你喜歡的 colorschema&amp;#34; available color schema&amp;#34; blue darkblue default delek desert elflord evening industry koehler&amp;#34; morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler&amp;#34; 雜項設定，詳細解說請用 `:help &amp;lt;opeion&amp;gt;`，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline&amp;#34; make lightline work in single screen&amp;#34; https://github.</description>
+    </item>
+    
+    <item>
+      <title>Day 12：vim 配色方案</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day12/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day12/</guid>
+      <description>俗話說人要衣裝，佛要金裝，我們的 vim 也得要有漂亮的外觀。今天就讓我們來看看如何調教調整 vim 的外觀吧！
+Highlight group highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的一段區塊，可能是一段文字，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以設定樣式，包括前景色、背景色、反白、加底線等等，你可以用 :so $VIMRUNTIME/syntax/hitest.vim 命令查看所有的 hg 名字，他們的樣式也會直接顯示出來。
+如果想看某個 hg 的說明的話（必須是內建的才有），可以用 :help hl-hgName 來查詢說明，例如 CursorLine 就可以用 :help hl-CursorLine 來看說明
+Highlight 用 :highlight 或是縮寫 :hi 可以設定特定 hg 的樣式
+hi hgName arg=value arg=value......hgName 就是你用 :so $VIMRUNTIME/syntax/hitest.vim 查出來的名字，而 arg 常見的有前景色 ctermfg、背景色 ctermbg 和 樣式 cterm
+Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色不同而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色</description>
+    </item>
+    
+    <item>
+      <title>Day 11：批次修改！！</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day11/</link>
+      <pubDate>Sat, 11 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day11/</guid>
+      <description>昨天體驗了一些快捷鍵和命令，今天要講的是在 vim 中也很常用的搜尋與取代
+搜尋與取代 vim 的搜尋與取代是由命令 s 達成的，命令格式長這樣
+:[範圍修飾字]s/abcd/efgh/[旗標] 其中 abcd 是 正規表達式（regular expression，縮寫 regex，在中國常寫成「正則」），regex 除了在 vim 可以用之外，幾乎所有程式語言都可以用，還有 grep、sed 等 linux 指令也都是使用 regex，關於 regex 的用法在這裡就不多提了，MDN 上有很完整的解釋
+你應該有注意到上面的命令格式裡面除了正規表達式之外還有「範圍修飾字」和「旗標」，這就是接下來這段的重點啦！
+範圍修飾字 這個東西也不只是搜尋與取代可以用，只要你覺得需要限制某個指令的作用範圍都可以用樣的邏輯接下去
+範圍修飾可寫可不寫，如果不寫的話搜尋與取代就只會在游標在的那一行起作用，加上百分比符號 % 代表作用範圍是整份文件，也可以加上行號代表只作用在某一行，如果是兩個行號中間以逗號隔開，代表是作用在這兩個行號之間
+        範圍修飾字範例    範圍選取 剛剛的範例中有出現用行號作範圍選取，其實範圍選取還有一個更簡單的方式 ——「選取模式」。選取模式和編輯模式、命令模式是同等地位的東西，進入選取模式的快捷鍵有下列幾個（一樣要進到命令模式才能進選取模式）    快捷鍵 說明     v 一般選取，以「字」為單位   S-v(大寫 v ) 一般選取，以「行」為單位   C-v 垂直選取，這個比較不常用，但是需要的時候蠻好用的    選取後一樣可以打指令和快捷鍵，但是這些就只會作用在選取的範圍內，常常搭配的有 d（剪下）、y（複製）、:s（搜尋與取代）</description>
+    </item>
+    
+    <item>
+      <title>Day 10：新手殺，誰來教我離開 vim 阿～～</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day10/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day10/</guid>
+      <description>前面 9 天都在介紹操作環境，今天終於要進到編輯器啦！我選用的編輯器是 nvim，但是如果你要用 vim 8 也是可以，因為這兩者之間幾乎沒什麼差別，只是你要注意這兩者的設定檔位置不同，目錄需要你自己轉換。唯一不同的點大概是 nvim 內建支援用 lua（一種程式語言）寫外掛，vim 8 只能用 vimscript。關於兩者之間的愛恨情仇請參考這裡，他講的非常詳細
+ 接下來的文章可能會出現 vim、nvim 混用，但是他們都是指 neovim，也就是我們用的這個編輯器，不用特別跑去裝兩套軟體
+ 安裝 nvim 基本上你的電腦的套件管理器裡面應該都有 nvim 了，但是他的名字可能不是 nvim，例如 apt 就是 neovim，如果你的套件管理器沒有收錄 nvim 或是你不知道該怎麼辦的話，可以看看這個文章 幾乎所有作業系統他都有介紹怎麼安裝了，當然他也有教你如何自己 build。
+操作 vim 的前身—— vi 誕生於幾乎沒有圖形化界面的時候，那時候也沒有滑鼠，所以所有的操作都必須在鍵盤上達成，今天就來認識一些簡單的命令吧！
+離開 vim 為什麼要在還沒進入 vim 之前就教如何離開呢？ 因為幾乎所有初學者都會有這個疑問，要怎麼離開 vim 啦！！ 這邊我提供一個必勝的方法，不論你在 vim 做了什麼操作，ESC狂按個 100 次三到四次，然後輸入 :q!ENTER就會離開了。
+命令模式？編輯模式？ vim 的「模式」也是讓初學者很困擾的東西之一，下面用一張圖來解釋他們的關係
+        vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹)    通常 Normal Mode 中文是 「命令模式」 ，顧名思義這個模式下你可以打命令，Insert Mode 的中文是 「編輯模式」 ，在這個模式你可以編輯你的檔案。</description>
+    </item>
+    
+    <item>
+      <title>Day 09：今天又想不出標題了！tmux plugin 和 mouse mode</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day09/</link>
+      <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day09/</guid>
+      <description>tmux 本身已經是個非常完善的軟體了，因此我只選了一個外掛，tmux-resurrect 這個外掛讓你可以儲存目前的 tmux 版面配置（分頁、螢幕切割、名稱等等），在下次啟動時復原，這個功能在開發專案要切分編輯、編譯、測試版面時很好用，不需要每次開機都重新切版面
+安裝 我們之前已經安裝過 tmp 了，現在我們只需要在 ~/.tmux.conf 中新增一行
++ set -g @plugin &amp;#39;tmux-plugins/tmux-resurrect&amp;#39; 接下來執行 tmux source ~/.tmux.conf 載入最新的設定檔，再來用快捷鍵 CTRLa+ i安裝
+使用 切好版面後，按 CTRLa+ s（save）儲存目前狀態，除了版面配置，每個 session 的工作路徑也會儲存，vim 開啟的檔案下次開啟有機會會幫你開，但是可能會遇到暫存檔的問題，所以我建議是儲存狀態時把 vim 關掉
+下次要使用時，用 CTRLa+ r（restore）恢復
+更多外掛 在 https://github.com/tmux-plugins/list 有更多外掛，主要內容包括系統資訊顯示、複製貼上、搜尋，我個人覺得沒有重要到須要特別提出來介紹，就不一一介紹
+ 更多 tmux 寫完今天的內容後我發現，內容好像有點少，於是就補充了一些 tmux 的東西
+列出所有快捷鍵 tmux 的快捷非常方便，但是有時候真的想不起來某個功能怎麼按，這時候你可以用 tmux list-kyes 或是比較短的 tmux lsk 看看什麼按鍵對應到什麼功能。
+有時候進來看看有什麼方便的快捷鍵自己還不知道也挺好玩的
+滑鼠控制 不知道昨天的各種 tmux 移動、調整大小的快捷鍵有沒有嚇到你。tmux 其實還有提供一個更簡單的操作方式，如果你的終端機有支援滑鼠的話（像是我用的 gnome-terminal 就有提供）你可以在 ~/.tmux.conf 中加上一行
++ set -g mouse on 然後重新開啟 tmux，這時候你就可以用滑鼠換頁、切換分割畫面、調整大小等等操作，在不同的地方按右鍵還會有不同的功能呦！</description>
+    </item>
+    
+    <item>
+      <title>Day 08：八爪章魚之 tmux 快捷鍵</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day08/</link>
+      <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day08/</guid>
+      <description>tmux 有許多的快捷鍵來控制螢幕，不論是分割、移動都可以輕鬆完成
+分割畫面 垂直分割畫面的快捷鍵是 CTRLa+ %，水平分割的快捷鍵是 CTRLa+ |(pipe，shift + enter 上面那個)。按下去畫面就會以中間分開，兩邊都是獨立的，即使一邊在編譯卡住了，另一邊的編輯器還是可以正常操作的         分割畫面，一邊編輯，一邊編譯，另一邊執行    在分割畫面中移動 現在你畫面分割好了，要怎麼移動呢？非常直覺，往上就是上，往右就是右。CTRLa+ 方向鍵你也可以用 CTRLa+ tab按照順序移動，CTRLa+ SHIFTtab反向移動
+記得，按方向鍵時 CTRL要放開，不然就會變接下來要介紹的快捷鍵
+        在分割畫面中移動    調整分割大小 有時候我們不一定是要分成一半，例如下面五行，上面滿版。這時候你可以用 CTRLa+ CTRL方向鍵調整大小         調整大小    新增分頁 你有沒有發現終端機最下面那行？那個是 tmux 的分頁，用 CTRLa+ c就可以新增一個分頁，新增順序會從 0 開始找空的補上
+範例和分頁移動一起
+分頁移動 在多個分頁中，你可以用 CTRLa+ CTRLa移動到上一次使用的分頁，或是用 CTRLa+ 數字鍵移動到特定 ID 的分頁。</description>
+    </item>
+    
+    <item>
+      <title>Day 07：整合 tmux 和 zsh</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day07/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day07/</guid>
+      <description>昨天的結尾提到要整合 tmux 和 zsh 不是在 ~/.zshrc 結尾執行 tmux 這麼簡單，今天就讓我們看看會遇到什麼問題吧！
+直接執行 tmux 在正式開始前，先讓我們看看直接在 ~/.zshrc 後面執行 tmux 會發生什麼錯誤
+        直接執行 tmux    嗯，錯誤訊息說要 unset $TMUX 那我們就照作吧！
+        加上 unset TMUX，嗯，爆炸了！    分析問題 可以看到，如果直接執行 tmux 的話總是會跳出一個錯誤 sessions should be nested with care, unset $TMUX to force，這段訊息告訴我們，不能建立巢狀 tmux，除非將 $TMUX 環境變數移除。欸？我們不是只執行一次 tmux 嗎？為什麼會他說我們建立巢狀 tmux？我們來看看登入之後發生了什麼事：
+ 執行 zsh（因為我們的 default shell 是 zsh） zsh 執行 ~/.</description>
+    </item>
+    
+    <item>
+      <title>Day 06：螢幕切八段！多開神器 tmux</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day06/</link>
+      <pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day06/</guid>
+      <description>今天起要介紹的是 tmux，這是一個終端機的 session 管理器，什麼是 session 呢？你可以把 session 理解為一個終端機（畫面）和主機 （你的電腦）的連線，tmux 做的事就是把一個終端機切分成多個終端機，白話說就是多開神器啦！這樣你就可以左邊編輯程式、右邊看執行結果（如圖）。而且一切操作都在一個終端機視窗裡面，這意味著即使你在沒有圖形界面的純文字模式（像是 single user mode、ssh 連線）也可以享受如同圖形界面的便利！
+        tmux demo    安裝 debian/ubuntu $ apt install tmux macOS $ brew install tmux 其他 or 自己編譯 其他可以參考 https://github.com/tmux/tmux/wiki/Installing 的說明
+config tmux 啟動時會去讀取 ~/.tmux.conf 這個檔案，所以的設定檔都放在這，在這裡，我推薦一個我用很多年的設定檔，點擊這裡下載，或是執行以下命令
+curl https://gist.githubusercontent.com/simba-fs/e06a1763c1967ce3f4b5ef643db5e0b3/raw/2f28c62d01f419a390bfc0e66a974985bacdefa5/.tmux.conf &amp;gt; ~/.tmux.conf 這個檔案是我從網路上找到的，後來有加一些自己的東西，把檔案下載下來並存到 ~/.tmux.conf 裡面，關於每一行的用途都有用註解標示，主要幾個改變有以下幾點：
+ 把前置按鍵（prefix）從 Ctrlb改成 Ctrla(第 16 ~ 19 行，不喜歡的話可以拿掉)，你也可以改成其他按鍵 底部 status bar 變成彩色，不再是單調的綠色 一些快捷鍵綁定  啟動 暫時我們不加入開啟終端機自動啟動 tmux，手動啟動方式是在終端機執行命令</description>
+    </item>
+    
+    <item>
+      <title>Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day05/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day05/</guid>
+      <description>今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias
+zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。
+   ❓ &amp;gt; autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？     前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突    安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定
++ zplug &amp;#39;marlonrichert/zsh-autocomplete&amp;#39; 然後重新開啟終端機並安裝新增的外掛就可以了
+你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。
+ 在 https://github.com/marlonrichert/zsh-autocomplete 有快捷鍵教學
+ 設定  這段是我在寫完第一版後新增了，所以在 純‧ CLI 整合開發環境 是沒有的
+ 為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了
+# case sensitive zstyle &amp;#39;:completion:*&amp;#39; matcher-list &amp;#39;&amp;#39; &amp;#39;m:{a-zA-Z}={A-Za-z}&amp;#39; &amp;#39;r:|[.</description>
+    </item>
+    
+    <item>
+      <title>Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day04/</link>
+      <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day04/</guid>
+      <description>今天的內容會比平常多，但是非常紮實！
+有時候我們在 CLI 操作時遇到很多重複的指令，像是 git add、git commit -m &#39;ba la ba la&#39; 等等，這些指令可能又長又複雜，一直都是自己打也不是辦法，這時候就該請出 autosuggestions 了
+安裝 autosuggestions 老樣子，安裝外掛只須要修改 ~/.zshrc 就可以了
+# plugins zplug &amp;#39;romkatv/powerlevel10k&amp;#39;, as:theme, depth:1 + zplug &amp;#39;zsh-users/zsh-autosuggestions&amp;#39; 因為 autosuggestions 是外掛，不需要特別寫 tag 了
+[問題]好像有奇怪的字跑出來？ 寫好之後重開終端機，按下 enter你可能會發現跳出了一堆東西，這是因為你開啟了 p10k 的 Instant Prompt Mode，這個雖然會讓你的終端機跑起來比較順（官方說的，我感覺不出來），但是在 zsh 載入完成之前就不能有任何字輸出。
+可是你看看，如果我們新增了一個外掛，zplug 會跳出來問我們是否要安裝，這時後 Instant Prompt Mode 就出來抱怨了。
+這個問題的解決方法直覺上有兩個，一是關掉 Instant Prompt Mode，二是讓 zplug 先不要吵
+關掉 Instant Prompt Mode 關掉 Instant Prompt Mode 很簡單，重新設定一次 p10k 就好了，在設定程式問你是否要開啟 p10k 時選擇 (3) Off，這樣下次安裝外掛就不會有奇怪的警告訊息跳出來了。</description>
+    </item>
+    
+    <item>
+      <title>Day 03：轉吧轉吧七彩霓虹燈之 p10k</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day03/</link>
+      <pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day03/</guid>
+      <description>昨天裝好外掛管理器了，接下來我們要用 zplug 來裝一些好玩的外掛囉！
+p10k p10k 是 powerlevel10k 的縮寫，這是一套 zsh 的 prompt 主題，是我用過設定最簡單效果也很好的，重點是不論有沒有裝特殊字型，他都可以用！
+安裝字型（可跳過） p10k 官方推薦 nerd font，這是一個給開發者的字型集，包括各種程式語言、網路服務的 icon 等等。p10k 官方也有提供修改過專門給 p10k 的字型檔連結裡有各種終端機模擬器的字型安裝教學（英文）。
+其實如果你只想要部份 icon，只要把 ttf 檔放在 ~/.fonts 下就可以了，不需要改終端機字型，他找不到時會去抓（我自己試是可以的，系統 ubuntu 20.04、terminal: gnome-terminal ）
+如果你想要在 CLI 有各種 icon 的話你才需要安裝上述字型，如果不需要可以跳到下一小節
+安裝 p10k p10k 說到底只是一個外掛，所以我們可以透過 zplug 安裝，打開 ~/.zshrc，在 # plugins 那行下面加上以下設定
+# plugins + zplug &amp;#39;romkatv/powerlevel10k&amp;#39;, as:theme, depth:1 關於這段是什麼意思呢，zplug 提供了一張精美的圖來幫助我們理解
+首先，以 zplug 開頭，然後接 github 的 username/reponame，再來可以用 tag 做修飾，例如我們安裝 p10k 時就用了 as:theme 和 depth:1 ，兩個 tag 之間以逗號加上一個以上的空白隔開</description>
+    </item>
+    
+    <item>
+      <title>Day 02 ：zsh 與 shell script</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day02/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day02/</guid>
+      <description>今天內容不小心寫太長了 &amp;hellip;&amp;hellip;
+ 首先，在介紹其他軟體之前，先來看看與 CLI 操作習習相關的「shell」，我選擇的 shell 是 zsh，zsh 在 bash 的基礎上擴充了很多實用的功能，像是支援更好的自動補全，各式各樣的主題等等。
+zsh 安裝 如果你的作業系統是 debian 系列的話，可以直接用 apt 安裝 apt install zsh。其他的 linux 發行版可以到 這個網頁找找你的發行版
+如果是 mac，理論上你的 shell 應該已經是 zsh 了（ mac 的 shell 從 2019 開始預設是 zsh ），如果不是的話你可以用 homebrew 安裝 brew install zsh。
+如果是 windows 的話，建議你開啟 WSL2 或是找一台有 linux/mac 的電腦
+現在我們可以透過這個指令檢查是否安裝成功
+zsh --version 如果沒有錯誤就是安裝成功了
+   ❓ &amp;gt; 現在用的是什麼 shell？     你可以使用 echo $SHELL 來看你現在使用的 shell 是那一個    更換 shell 如果你之前的 shell 不是 zsh 那就要更換預設 shell，用以下指令可以更換</description>
+    </item>
+    
+    <item>
+      <title>Day 01：前言，這批很純，快進來吧！</title>
+      <link>https://blog.simba-fs.dev/posts/ithelp/day01/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/ithelp/day01/</guid>
+      <description>Who Am I 我今年升大一，在此生最長的假期中寫寫文章打發時間。平常喜歡寫寫程式，研究新技術。是個 CLI 忠實擁護者，電腦通常只開瀏覽器和 terminal，terminal 就是我的開發環境。
+慣用網名是 simba-fs、simbafs 或 SimbaFs。
+略懂 nodejs 和一點網頁技術，這一個月開始研究 Golang
+關於這個系列 為什麼寫這個系列 現代化 IDE 提供的各種功能給我們很好的開發體驗，尤其是當程式碼數量逐漸增加時，IDE 可以提供像是自動補全、型態提示等等。當 lsp(language server protocol) 開始流行之後，甚至不太需要查文件就能知道一個未知函數的用法。但是在這一切的方便的背後是犧牲有限的電腦資源換來的。這個時候資源需求少、發展越來越完善的的純文字界面就是解決這個問題的最佳方法了！不僅不會減少該有的語法突顯、自動補全，甚至可以借助 ssh 的力量，在任何裝置上開發（只要支援 ssh 都可以）。但是可惜的是網路上這方面的資源都很零散，於是我想說趁這次參賽將我所學整理起來。這個系列會帶領讀者一步一步建立一個好用、方便的 CLI 開發環境，如果有時間會講一下如何在任何裝置上開發（當然螢幕太小不適合啦）。
+        五種文字編輯器開啟一個約 60 byte 的文字檔所消耗的記憶體（KB)   From https://medium.com/commitlog/why-i-still-use-vim-67afd76b4db6    這個系列在講什麼 以下是預計的寫作進度，中途可能會更改，我也會每天在這裡更新連結
+ Day 01: 簡介 Day 02 ~ 05: zsh Day 06 ~ 09: tmux Day 10 ~ 21: nvim Day 22 ~ 26: other tools Day 29 ~ 30: coding everywhere  仙貝先備（軟體） 最重要的，一個支援至少 8 色的、你用的順手的終端機模擬器，最好是可以自行安裝字體的。</description>
+    </item>
+    
+  </channel>
+</rss>

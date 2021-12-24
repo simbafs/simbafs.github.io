@@ -3,9 +3,9 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Posts | Simba's Blog</title>
+<title>Simba's Blog</title>
 <meta name=keywords content>
-<meta name=description content="Posts - Simba's Blog">
+<meta name=description content=" - Simba's Blog">
 <meta name=author content="simba-fs">
 <link rel=canonical href=https://blog.simba-fs.dev/posts/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
@@ -17,21 +17,21 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.0">
+<meta name=generator content="Hugo 0.91.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/posts/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Posts">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content>
 <meta property="og:description" content>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://blog.simba-fs.dev/posts/"><meta property="og:image" content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="Simba's Blog">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
-<meta name=twitter:title content="Posts">
+<meta name=twitter:title content>
 <meta name=twitter:description content>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.simba-fs.dev/posts/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"","item":"https://blog.simba-fs.dev/posts/"}]}</script>
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -70,159 +70,97 @@
 </nav>
 </header>
 <main class=main>
-<header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a></div>
-<h1>Posts</h1>
-</header>
 <article class=post-entry>
 <header class=entry-header>
-<h2>LaTeX Starter
+<h2>
 </h2>
 </header>
 <section class=entry-content>
-<p>LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構……
-credit:https://zh.wikipedia.org/wiki/LaTeX 在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。
-幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定
-（.ttf 可以指向你自己喜歡的中文字型檔）
-\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]} \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale "zh" 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用 （兩個空白），在 LaTeX 是 \\（兩個反斜線）
-巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \（反斜線），巨集可以自己定義，也可以用 \usepackage{} 載入別人寫好的
-overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。
-表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）...</p>
+<p>other </p>
 </section>
 <footer class=entry-footer><span title="2021-12-22 23:18:41 +0800 +0800">2021-December-22</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to LaTeX Starter" href=https://blog.simba-fs.dev/posts/other/latex-starter/></a>
+<a class=entry-link aria-label="post link to " href=https://blog.simba-fs.dev/posts/other/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>ExecCmd
+<h2>
 </h2>
 </header>
 <section class=entry-content>
-<p>Golang 執行外部命令 package main import ( "fmt" "os/exec" ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command("wc") stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, "fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk") output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } </p>
+<p>golang </p>
 </section>
 <footer class=entry-footer><span title="2021-10-19 00:06:19 +0800 +0800">2021-October-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to ExecCmd" href=https://blog.simba-fs.dev/posts/golang/exec-cmd/></a>
+<a class=entry-link aria-label="post link to " href=https://blog.simba-fs.dev/posts/golang/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Aconf
+<h2>
 </h2>
 </header>
 <section class=entry-content>
-<p>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
-而且設定檔還可以有不只一個，他可以把多個設定檔合成，相當方便
-基本使用 定義 struct 首先我們需要一個 struct 來定義我們的設定
-type Config struct { Addr string `default:":3000"` Title string `default:"Aconf Testing"` SysAdmin []string `default:"simba-fs,peter"` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
-loader := aconfig.LoaderFor(&config, aconfig.Config{ // 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 // SkipDefaults: false, // SkipFiles: false, // SkipEnv: false, // SkipFlags: false, EnvPrefix: "APP", FlagPrefix: "app", Files: []string{"~/.config/app.toml", "app.toml"}, FileDecoders: map[string]aconfig.FileDecoder{ ".toml": aconfigtoml.New(), }, }) if err := loader.Load(); err != nil { panic(err) } 這樣你就可以用檔案、環境變數和命令列參數設定了。...</p>
+<p>Ithelp 2021 鐵人賽 ithelp 鐵人賽系列文請走這 https://ithelp.ithome.com.tw/users/20130473/ironman/3975
+別忘了訂閱並且給我個 Like 喔！&lt;3
+我把從第一天到現在每天的 Home 目錄都放上 GitHub 了，README.md 裡面有說明
+</p>
 </section>
-<footer class=entry-footer><span title="2021-09-24 08:46:37 +0800 +0800">2021-September-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Aconf" href=https://blog.simba-fs.dev/posts/golang/aconf/></a>
+<footer class=entry-footer><span title="2021-09-21 00:00:00 +0000 UTC">2021-September-21</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to " href=https://blog.simba-fs.dev/posts/ithelp/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Golang Parse All Files In Directory Into Templates
+<h2>
 </h2>
 </header>
 <section class=entry-content>
-<p>在用 gin 寫伺服器的時候，我發現模板並不會被 go build 打包進執行檔裡面，所以在執行的時候就找不到檔案，當然這個問題可以用字串的形式直接把模板放進 golang 原始碼裡面，但是這樣程式碼一複雜就會不好用，這時候就可以用 golang 的 embed 函式庫把檔案「嵌入」到原始碼裡面。但是問題又來了，嵌入了之後要怎麼把字串變成模板物件呢？
-Embed embed 套件是 1.16 新出的功能，所以如果想用的話記得要更新 go 到 1.16 以上
-embed 嵌入檔案的方式是透過特殊格式的註解宣告，直接看官方範例：
-package main import ( "embed" ) //go:embed hello.txt var s string //go:embed hello.txt var b []byte //go:embed hello.txt var f embed.FS func main() { print(s) print(string(b)) data, _ := f.ReadFile("hello.txt") print(string(data)) } 可以看到，embed 可以把檔案讀成三種格式 string、[]byte、embed.FS，前兩者只能讀「一個」檔案，如果你只用這兩個的話引入時要用 _ "embed"。embed.FS 除了可以嵌入多個檔案之外，因為實做了 fs.FS 所以可以使用當作一個檔案系統操作。
-Tmeplate No Recursive 最簡單的方法，你可以直接使用
-// go:embed view/* var f embed....</p>
-</section>
-<footer class=entry-footer><span title="2021-07-30 00:00:00 +0000 UTC">2021-July-30</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Golang Parse All Files In Directory Into Templates" href=https://blog.simba-fs.dev/posts/golang/golang-parse-all-files-in-directory-into-templates/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>ssh on gitea with docker
-</h2>
-</header>
-<section class=entry-content>
-<p>Gitea 是一個開源的 git 伺服器，他的界面幾乎和 GitHub 一模一樣，但是完全開源而且非常輕，甚至一片樹梅派就可以開伺服器了。Gitea 因為是使用 Golang 編寫的，所以提供各種平台的執行檔。我選擇透過 docker 裝 Gitea 伺服器，但是這樣有一個問題，gitea 伺服器開在 container 內，沒辦法使用標準的 22 port，所以 git clone 就必須加上一個醜醜的數字，像是這樣
-git clone git@domain:10022:user/repo.git 這個問題 Gitea 官方已經有提供完整的教學了，但是是英文版，我這篇文章是我讀完消化過後的中文版教學
-容器 ssh 穿透 因為 Gitea 的 ssh 是跑在容器裡，我沒辦法讓他和 host 共用 22 port，所以要透過 host 「轉發」連線。
-1. 建立 git 使用者 先在 host 建立一個名叫 git 的使用者，因為這個帳號會被對應到容器內的 git 使用者，所以要有一樣的 UID, GID
-sudo adduser git grep git /etc/passwd 記好 git 的 UID 和 GID
-git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2....</p>
+<p>linux </p>
 </section>
 <footer class=entry-footer><span title="2021-07-13 00:00:00 +0000 UTC">2021-July-13</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to ssh on gitea with docker" href=https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/></a>
+<a class=entry-link aria-label="post link to " href=https://blog.simba-fs.dev/posts/linux/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>taiwan-town-location
+<h2>
 </h2>
 </header>
 <section class=entry-content>
-<p>這是一個給經緯度吐地址的 api，甚至路段都會出來，搭配 web geolocation api 蠻不錯的，精確度不錯。可以不知道有沒有 rate limited 的問題，目前看起來連 token 都不用。
-網址 https://api.nlsc.gov.tw/other/TownVillagePointQuery/
-用法 https://api.nlsc.gov.tw/other/TownVillagePointQuery/經度/緯度
-舉例： request GET https://api.nlsc.gov.tw/other/TownVillagePointQuery/121.46278679999999/25.0169826 response &lt;townVillageItem> &lt;ctyCode>F&lt;/ctyCode> &lt;ctyName>新北市&lt;/ctyName> &lt;townCode>F14&lt;/townCode> &lt;townName>板橋區&lt;/townName> &lt;officeCode>FA&lt;/officeCode> &lt;officeName>板橋&lt;/officeName> &lt;sectCode>0008&lt;/sectCode> &lt;sectName>民權段&lt;/sectName> &lt;villageCode>65000010020&lt;/villageCode> &lt;villageName>漢生里&lt;/villageName> &lt;/townVillageItem> 參考資料 https://data.gov.tw/dataset/101898</p>
-</section>
-<footer class=entry-footer><span title="2021-06-24 00:00:00 +0000 UTC">2021-June-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to taiwan-town-location" href=https://blog.simba-fs.dev/posts/other/taiwan-town-location/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Cast Phone Screen to Computer
-</h2>
-</header>
-<section class=entry-content>
-<p>有沒有一種經驗是某的應用程式手機板操作勉強算順暢，但是一電腦上就炸開，反應慢到靠北、界面又很難用（沒錯 messenger 我正在看著你）。這個時候相信你會和我一樣想把手機畫面投影到電腦上的一個視窗裡面，最好可以互動、可以打字。有人第一個想法是在手機開 VNC 伺服器，但是這個方法有點麻煩，這篇文章介紹的是目前我覺得最佳解決方案。
-SCRCPY 這個軟體支援有線（ USB debug ）、無線（ WIFI ）的連接，還支援螢幕錄影和傳檔案。最重要的是，開在電腦上的視窗可以調整大小，不需要侷限在一個小小的視窗內，你最大可以放大到全螢幕！在某種意義上你獲得了一台和電腦一樣大的手機。
-Installation 安裝流程意外的簡單，只需要用 apt 就可以安裝了，或是你可以自己 build，稍微看了一下 說明 ，看起來不困難，但是既然 apt 就可以安裝了我們就省一點時間
-$ sudo apt install scrcpy USB debug 首先無論是有線無線都要先打開手機的 USB debug 選項，在開發人員選項裡面，詳細步驟請看 官方文件。
-USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面非常簡單，只有兩個步驟：
-插上 USB 並且無論跳出什麼都按「同意」「OK」 打開終端機，執行 scrcpy 然後就會有一個視窗跳出來，你現在就可以在電腦上滑手機了！ Wireless 無線的話比較麻煩，首先是必須要可以連線，看是在同一個區域網路或是 VPN、ssh tunnel 都可以。再來是因為連線設定頗麻煩，所以我把相關的步驟寫成一個 script，下載後給予執行權限就可以執行了（當然要安裝 scrcpy ）。有線的方式一樣很簡單，不用加任何選項就可以連接了。
-如果要啟用無線，只需要加上 -w 選項（用預設的 ip 192.168.43.1)
-如果 ip 不是預設的話，可以加上 -i IP 來指定其他的 ip
-加上 -f 可以開啟全螢幕
-參連連結 https://github.com/Genymobile/scrcpy https://developer.android.com/studio/debug/dev-options https://gist.github.com/simba-fs/9132289f63368ad325d6a2ef62be7a20</p>
-</section>
-<footer class=entry-footer><span title="2021-06-14 00:00:00 +0000 UTC">2021-June-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Cast Phone Screen to Computer" href=https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>YouComopleteMe install
-</h2>
-</header>
-<section class=entry-content>
-<p>下載 source code 編輯 ~/.vimrc Plug 'Valloric/YouCompleteMe'接著按下 esc:w | so %載入設定 接著 :PlugInstall下載 source code 存檔離開 編譯 執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &lt;你要的選項> </p>
-</section>
-<footer class=entry-footer><span title="2021-05-17 00:00:00 +0000 UTC">2021-May-17</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to YouComopleteMe install" href=https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>firefox touch screen scroll
-</h2>
-</header>
-<section class=entry-content>
-<p>再換了觸控筆電後，在 firefox 一直有個問題：觸控往下滑會被當成選取，要卷動一定要用右邊的 scroll bar
-解決方案 按照 https://askubuntu.com/questions/853910/ubuntu-16-and-touchscreen-scrolling-in-firefox 的最佳解法，真的加上 MOZ_USE_XINPUT2=1 的環境變數就可以了。
-另外在設定 ~/.local/share/applications/firefox.desktop 的時候要注意有不只一個 Exec，改完如果沒有生效可以重開機看看。</p>
-</section>
-<footer class=entry-footer><span title="2021-05-08 00:00:00 +0000 UTC">2021-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to firefox touch screen scroll" href=https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>beginning of kotlin
-</h2>
-</header>
-<section class=entry-content>
-<p>val vs var kotlin JS val const var let a..b kotlin JS a..b Array(b-a+1).fill(0).map(i => i + a) when kotlin fun main (){ val luckyNum = 4 val yourNum = (1..6).random() val result = when(yourNum){ luckyNum -> "You get the lucky num ${luckyNum}" 1 -> "Sorry, you get 1" 2 -> "Sorry, you get 2" 3 -> "Sorry, you get 3" 4 -> "Sorry, you get 4" 5 -> "Sorry, you get 5" 6 -> "Sorry, you get 6" else -> "Sorry, you get a number out of 1....</p>
+<p>kotlin </p>
 </section>
 <footer class=entry-footer><span title="2021-05-04 00:00:00 +0000 UTC">2021-May-4</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to beginning of kotlin" href=https://blog.simba-fs.dev/posts/kotlin/beginning-of-kotlin/></a>
+<a class=entry-link aria-label="post link to " href=https://blog.simba-fs.dev/posts/kotlin/></a>
 </article>
-<footer class=page-footer>
-<nav class=pagination>
-<a class=next href=https://blog.simba-fs.dev/posts/page/2/>下一篇 »</a>
-</nav>
-</footer>
+<article class=post-entry>
+<header class=entry-header>
+<h2>
+</h2>
+</header>
+<section class=entry-content>
+<p>nodejs </p>
+</section>
+<footer class=entry-footer><span title="2021-02-28 00:00:00 +0000 UTC">2021-February-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to " href=https://blog.simba-fs.dev/posts/nodejs/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>
+</h2>
+</header>
+<section class=entry-content>
+<p>hexo </p>
+</section>
+<footer class=entry-footer><span title="2020-08-20 00:00:00 +0000 UTC">2020-August-20</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to " href=https://blog.simba-fs.dev/posts/hexo/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>
+</h2>
+</header>
+<section class=entry-content>
+<p>frontend </p>
+</section>
+<footer class=entry-footer><span title="2020-06-01 00:00:00 +0000 UTC">2020-June-1</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to " href=https://blog.simba-fs.dev/posts/frontend/></a>
+</article>
 </main>
 <footer class=footer>
 <span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
