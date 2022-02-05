@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,19 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>firefox touch screen scroll
+</h2>
+</header>
+<section class=entry-content>
+<p>再換了觸控筆電後，在 firefox 一直有個問題：觸控往下滑會被當成選取，要卷動一定要用右邊的 scroll bar
+解決方案 按照 https://askubuntu.com/questions/853910/ubuntu-16-and-touchscreen-scrolling-in-firefox 的最佳解法，真的加上 MOZ_USE_XINPUT2=1 的環境變數就可以了。
+另外在設定 ~/.local/share/applications/firefox.desktop 的時候要注意有不只一個 Exec，改完如果沒有生效可以重開機看看。</p>
+</section>
+<footer class=entry-footer><span title="2021-05-08 00:00:00 +0000 UTC">2021-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to firefox touch screen scroll" href=https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>beginning of kotlin
@@ -208,20 +221,6 @@ DOCKER_OPTS="--dns 8.8.8.8" systemctl restart docker 然後重新啟動 docker</
 <footer class=entry-footer><span title="2020-11-28 00:00:00 +0000 UTC">2020-November-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to connect to ethernet in docker container" href=https://blog.simba-fs.dev/posts/linux/docker/connect-to-ethernet-in-docker-container/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>docker commit
-</h2>
-</header>
-<section class=entry-content>
-<p>前言 上次提到可以用 Dockerfile 建立 docker image，但我們還有令一個方法可以建立 docker image，那就是 docker commit 指令
-和 Dockerfile 差別 docker commit 有點像是手動版的 Dockerfile，在用 Dockerfile 建構 docker image 的時候，docker build 的工作就像是自動根據 Dockerfile 操作 docker commit。 Dockerfile 比較適合用在自動化交付和部屬，例如說你有一份程式碼，要將他包成 Docker 就很適合用 Dockerfile 自動化操作，因為程式碼會改變，但是包裝的流程基本上都是一樣的。 docker commit 適合用在建構環境，因為會有比較麻煩的操作，如果寫成 Dockerfile 會比較麻煩，當然如果可以的話還是寫成 Dockerfile 會比較好，因為更新的時候會比較方便。 在建構 image 的時候要用哪個方法就看個人取捨了。
-docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images，有點類似令存新檔的概念。先來看看參數吧！
-參數 $ docker commit --help Usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] Create a new image from a container's changes Options: -a, --author string Author (e....</p>
-</section>
-<footer class=entry-footer><span title="2020-11-27 00:00:00 +0000 UTC">2020-November-27</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to docker commit" href=https://blog.simba-fs.dev/posts/linux/docker/docker-commit/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/3/>« 上一篇</a>
@@ -230,7 +229,7 @@ docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

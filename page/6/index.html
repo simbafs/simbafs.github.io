@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,24 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>加入 google search 和 sitemap
+</h2>
+</header>
+<section class=entry-content>
+<p>前置設定 npm 安裝 hexo-generator-sitemap npm i -S hexo-generator-sitemap 設定插件 將以下內容加到 _config.yml
+注意空白
+# sitemap sitemap: path: sitemap.xml 驗證網域 如果你的 hexo 是架在自己的網域可以跳過這步
+因為我的 hexo 是 託管在 GitHub page，在 Google Search Console 驗證的時候沒辦法用網域，所以要放一個特別的檔案到我們的網站根目錄
+首先到 Google Search Console 新增一個網域 選擇右邊，輸入你的網址 下載提供的 html 並放到 source/ 資料夾 忽略 接下來會遇到 hexo 在生成的時候把這個 html 也放到模板裡面，所以我們要把他加入忽略清單裡面
+在 _config.yml 裡面找到 skip_render
+把直接檔名寫在後面或是用清單都可以 注意空白
+# 直接寫 skip_render: 'googlebabababababa.html' # 或是用清單 skip_render: - 'googlebabababababa....</p>
+</section>
+<footer class=entry-footer><span title="2020-08-19 00:00:00 +0000 UTC">2020-August-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to 加入 google search 和 sitemap" href=https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>GitHub Action 自動部署 hexo
@@ -196,18 +214,6 @@ gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p>
 <footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to meta-tag" href=https://blog.simba-fs.dev/posts/frontend/meta-tag/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>firefox-event-listener-breakpoint
-</h2>
-</header>
-<section class=entry-content>
-<p>問題 最近在用 jquery 但是不知道為什麼每次 debugger 都會跳出一個通知 很煩
-解決 後來尋線發現原來是 firefox 好心的 debugger 在 DOM 發生改變的時候通知我 在 裡面 Debugger 頁籤左下有個拉頁叫「Event Listener Breakpoints」 把裡面的東西都點掉就好了 就是那個 DOM Mutation 心得 我原本還以為是 jquery 的問題 原來是好心的 firefox 啊</p>
-</section>
-<footer class=entry-footer><span title="2020-03-25 00:00:00 +0000 UTC">2020-March-25</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to firefox-event-listener-breakpoint" href=https://blog.simba-fs.dev/posts/frontend/firefox-event-listener-breakpoint/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/5/>« 上一篇</a>
@@ -216,7 +222,7 @@ gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p>
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

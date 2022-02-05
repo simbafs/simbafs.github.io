@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,25 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair
+</h2>
+</header>
+<section class=entry-content>
+<p>今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias
+zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。
+❓ > autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？ 前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突 安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定
++ zplug 'marlonrichert/zsh-autocomplete' 然後重新開啟終端機並安裝新增的外掛就可以了
+你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。
+在 https://github.com/marlonrichert/zsh-autocomplete 有快捷鍵教學
+設定 這段是我在寫完第一版後新增了，所以在 純‧ CLI 整合開發環境 是沒有的
+為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了
+# case sensitive zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[....</p>
+</section>
+<footer class=entry-footer><span title="2021-09-05 00:00:00 +0000 UTC">2021-September-5</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair" href=https://blog.simba-fs.dev/posts/ithelp/day05/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search
@@ -218,19 +237,6 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
 <footer class=entry-footer><span title="2021-05-17 00:00:00 +0000 UTC">2021-May-17</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to YouComopleteMe install" href=https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>firefox touch screen scroll
-</h2>
-</header>
-<section class=entry-content>
-<p>再換了觸控筆電後，在 firefox 一直有個問題：觸控往下滑會被當成選取，要卷動一定要用右邊的 scroll bar
-解決方案 按照 https://askubuntu.com/questions/853910/ubuntu-16-and-touchscreen-scrolling-in-firefox 的最佳解法，真的加上 MOZ_USE_XINPUT2=1 的環境變數就可以了。
-另外在設定 ~/.local/share/applications/firefox.desktop 的時候要注意有不只一個 Exec，改完如果沒有生效可以重開機看看。</p>
-</section>
-<footer class=entry-footer><span title="2021-05-08 00:00:00 +0000 UTC">2021-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to firefox touch screen scroll" href=https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/2/>« 上一篇</a>
@@ -239,7 +245,7 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

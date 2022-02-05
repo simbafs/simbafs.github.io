@@ -9,7 +9,18 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Feb 2022 16:59:44 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React 解決中文輸入法</title>
+      <link>https://blog.simba-fs.dev/posts/frontend/react-composition/</link>
+      <pubDate>Sat, 05 Feb 2022 16:59:44 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/frontend/react-composition/</guid>
+      <description>今天在開發晶晶體產生器的時候，發現中文輸入總是有問題，這時候我想起以前看過 Hackmd 官方的一篇 blog，提到中文輸入法如果有問題，可能和組字事件有關。於是就開始研究。首先我將以下設定加入 textarea 裡觀察組字事件的行為
+onCompositionStart={(e) =&amp;gt; console.log(&amp;#39;compositionStart&amp;#39;, e.data)} onCompositionEnd={(e) =&amp;gt; console.log(&amp;#39;compositionEnd&amp;#39;, e.data)} onCompositionUpdate={(e) =&amp;gt; console.log(&amp;#39;compositionUpdate&amp;#39;, e.data)} 當我打「今天我想要吃蛋餅」的時候，console 長這樣
+compositionStart &amp;lt;empty string&amp;gt; compositionUpdate ㄐ compositionUpdate ㄐㄧ compositionUpdate ㄐㄧㄣ compositionUpdate 今 compositionUpdate 今ㄊ compositionUpdate 今ㄊㄧ compositionUpdate 今ㄊㄧㄢ compositionUpdate 今天 compositionUpdate 今天ㄨ compositionUpdate 今天ㄨㄛ compositionUpdate 今天ㄒㄨㄛ compositionUpdate 今天ㄒㄨ compositionUpdate 今天ㄒ compositionUpdate 今天 compositionUpdate 今天ㄨ compositionUpdate 今天ㄨㄛ compositionUpdate 今天我 compositionUpdate 今天我ㄒ compositionUpdate 今天我ㄒㄧ compositionUpdate 今天我ㄒㄧㄤ compositionUpdate 今天我想 compositionUpdate 今天我想ㄧ compositionUpdate 今天我想ㄧㄠ compositionUpdate 今天我想要 compositionUpdate 今天我想要ㄔ compositionUpdate 今天我想要吃 compositionUpdate 今天我想要吃ㄉ compositionUpdate 今天我想要吃ㄉㄢ compositionUpdate 今天我想要吃但 compositionUpdate 今天我想要吃但ㄅ compositionUpdate 今天我想要吃但ㄅㄧ compositionUpdate 今天我想要吃但ㄅㄧㄥ compositionUpdate 今天我想要吃蛋餅 compositionUpdate &amp;lt;empty string&amp;gt; compositionEnd &amp;lt;empty string&amp;gt; 根據實驗結果，我猜我們可以用 onCompositionUpdate 事件來修正，於是現在 textarea 變成這樣</description>
+    </item>
+    
     <item>
       <title>HTML form button</title>
       <link>https://blog.simba-fs.dev/posts/frontend/html-form-button/</link>

@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -88,6 +88,19 @@
 </a>
 </div>
 </footer>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>React 解決中文輸入法
+</h2>
+</header>
+<section class=entry-content>
+<p>今天在開發晶晶體產生器的時候，發現中文輸入總是有問題，這時候我想起以前看過 Hackmd 官方的一篇 blog，提到中文輸入法如果有問題，可能和組字事件有關。於是就開始研究。首先我將以下設定加入 textarea 裡觀察組字事件的行為
+onCompositionStart={(e) => console.log('compositionStart', e.data)} onCompositionEnd={(e) => console.log('compositionEnd', e.data)} onCompositionUpdate={(e) => console.log('compositionUpdate', e.data)} 當我打「今天我想要吃蛋餅」的時候，console 長這樣
+compositionStart &lt;empty string> compositionUpdate ㄐ compositionUpdate ㄐㄧ compositionUpdate ㄐㄧㄣ compositionUpdate 今 compositionUpdate 今ㄊ compositionUpdate 今ㄊㄧ compositionUpdate 今ㄊㄧㄢ compositionUpdate 今天 compositionUpdate 今天ㄨ compositionUpdate 今天ㄨㄛ compositionUpdate 今天ㄒㄨㄛ compositionUpdate 今天ㄒㄨ compositionUpdate 今天ㄒ compositionUpdate 今天 compositionUpdate 今天ㄨ compositionUpdate 今天ㄨㄛ compositionUpdate 今天我 compositionUpdate 今天我ㄒ compositionUpdate 今天我ㄒㄧ compositionUpdate 今天我ㄒㄧㄤ compositionUpdate 今天我想 compositionUpdate 今天我想ㄧ compositionUpdate 今天我想ㄧㄠ compositionUpdate 今天我想要 compositionUpdate 今天我想要ㄔ compositionUpdate 今天我想要吃 compositionUpdate 今天我想要吃ㄉ compositionUpdate 今天我想要吃ㄉㄢ compositionUpdate 今天我想要吃但 compositionUpdate 今天我想要吃但ㄅ compositionUpdate 今天我想要吃但ㄅㄧ compositionUpdate 今天我想要吃但ㄅㄧㄥ compositionUpdate 今天我想要吃蛋餅 compositionUpdate &lt;empty string> compositionEnd &lt;empty string> 根據實驗結果，我猜我們可以用 onCompositionUpdate 事件來修正，於是現在 textarea 變成這樣...</p>
+</section>
+<footer class=entry-footer><span title="2022-02-05 16:59:44 +0800 +0800">2022-February-5</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to React 解決中文輸入法" href=https://blog.simba-fs.dev/posts/frontend/react-composition/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -228,22 +241,6 @@ lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol
 <footer class=entry-footer><span title="2021-09-16 00:00:00 +0000 UTC">2021-September-16</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Day 16：自動補全！coc.nvim" href=https://blog.simba-fs.dev/posts/ithelp/day16/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Day 15：vim 外掛大雜燴！
-</h2>
-</header>
-<section class=entry-content>
-<p>看到這裡，你可能還是很疑惑，到底 vim 好用在哪？嘿嘿，那是因為強大的外掛還沒裝啦！網路上會有一些配好一堆外掛的，像是 spaceVim，他們的策略和 vs code 很像，先幫你裝好一對外掛，讓你隨開及用。這樣做好處是初學者比較愛，但是常常會裝了一堆用不到的功能，反而讓載入速度、記憶體用量大增。
-所以我們自己挑我們需要的外掛裝起來，效果完全不會輸 vs code 這些笨重的編輯器！
-今天要介紹很多模組，都是我選出來製作一個現代化 IDE 必備的模組，相當的精華，一起來看看吧！ 記得修改後需要打指令 :so % | PlugInstall
-現代化 IDE 必裝模組 以下的內容直接貼到 ~/.config/nvim/plugin.vim 裡面裝模組的地方就可以了，說明附在裡面了
-注意：我這裡沒有列出 Coc.nvim，因為我把他拉出來到另外一章了
-" 彩色的 status barPlug 'itchyny/lightline.vim'" 有這個設定 lightline 在單個 vim 視窗中才會正常，沒錯！vim 也可以分割視窗，後天會講set laststatus=2" 在行號左側會顯示這行的 git 狀態，新增、刪除、修改，詳細請看 GitHub READMEPlug 'airblade/vim-gitgutter'" 按下 &lt;F5> 可以開啟檔案樹，按 h 有說明，再一下關掉說明Plug 'scrooloose/nerdtree'nmap &lt;F5> :NERDTreeToggle&lt;CR>" Exit Vim if NERDTree is the only window left.autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree....</p>
-</section>
-<footer class=entry-footer><span title="2021-09-15 00:00:00 +0000 UTC">2021-September-15</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 15：vim 外掛大雜燴！" href=https://blog.simba-fs.dev/posts/ithelp/day15/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=next href=https://blog.simba-fs.dev/page/2/>下一篇 »</a>
@@ -251,7 +248,7 @@ lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

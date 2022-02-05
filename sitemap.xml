@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.simba-fs.dev/posts/frontend/</loc>
+    <lastmod>2022-02-05T16:59:44+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/</loc>
+    <lastmod>2022-02-05T16:59:44+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/frontend/react-composition/</loc>
+    <lastmod>2022-02-05T16:59:44+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/</loc>
+    <lastmod>2022-02-05T16:59:44+08:00</lastmod>
+  </url><url>
     <loc>https://blog.simba-fs.dev/categories/</loc>
     <lastmod>2021-12-22T23:18:41+08:00</lastmod>
   </url><url>
@@ -12,12 +24,6 @@
     <lastmod>2021-12-22T23:18:41+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/other/</loc>
-    <lastmod>2021-12-22T23:18:41+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/</loc>
-    <lastmod>2021-12-22T23:18:41+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/</loc>
     <lastmod>2021-12-22T23:18:41+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/golang/exec-cmd/</loc>
@@ -438,9 +444,6 @@
     <lastmod>2020-06-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/categories/frontend/</loc>
-    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/frontend/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/html/</loc>

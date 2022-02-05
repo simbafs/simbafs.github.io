@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,18 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>firefox-event-listener-breakpoint
+</h2>
+</header>
+<section class=entry-content>
+<p>問題 最近在用 jquery 但是不知道為什麼每次 debugger 都會跳出一個通知 很煩
+解決 後來尋線發現原來是 firefox 好心的 debugger 在 DOM 發生改變的時候通知我 在 裡面 Debugger 頁籤左下有個拉頁叫「Event Listener Breakpoints」 把裡面的東西都點掉就好了 就是那個 DOM Mutation 心得 我原本還以為是 jquery 的問題 原來是好心的 firefox 啊</p>
+</section>
+<footer class=entry-footer><span title="2020-03-25 00:00:00 +0000 UTC">2020-March-25</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to firefox-event-listener-breakpoint" href=https://blog.simba-fs.dev/posts/frontend/firefox-event-listener-breakpoint/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>jquery
@@ -197,18 +209,6 @@ const fs = require('fs'); const express = require('express'); const app = expres
 <footer class=entry-footer><span title="2020-02-23 00:00:00 +0000 UTC">2020-February-23</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to unix-socket" href=https://blog.simba-fs.dev/posts/nodejs/unix-socket/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>blessed切換畫面
-</h2>
-</header>
-<section class=entry-content>
-<p>今天完成了新版本的 treetify 看這 同時我設計好了右邊的 edit 但是我的問題是他要根據情況不同切換不同的頁面 來看看我的一些想法：
-從 screen.children[2] 把他會掉，可是會出錯不行 有一個元件 Carousel 好像可以但是他其實是用方向鍵控制所以也不行 終於我想了一個方法，接下來來介紹 這是測試程式碼 const blessed = require('blessed'); const contrib = require('blessed-contrib'); const screen = blessed.screen({ title: 'JSON viewer', debug: true }); const grid = new contrib.grid({ rows: 1, cols: 2, screen: screen }); const tree = grid.set(0, 0, 1, 1, blessed.box, { border: {type: 'line'}, content: 'Tree', label: 'Tree' }); const edit = grid.set(0, 1, 1, 1, blessed....</p>
-</section>
-<footer class=entry-footer><span title="2020-02-20 00:00:00 +0000 UTC">2020-February-20</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to blessed切換畫面" href=https://blog.simba-fs.dev/posts/nodejs/blessed/blessed%E5%88%87%E6%8F%9B%E7%95%AB%E9%9D%A2/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/6/>« 上一篇</a>
@@ -217,7 +217,7 @@ const fs = require('fs'); const express = require('express'); const app = expres
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,20 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>docker commit
+</h2>
+</header>
+<section class=entry-content>
+<p>前言 上次提到可以用 Dockerfile 建立 docker image，但我們還有令一個方法可以建立 docker image，那就是 docker commit 指令
+和 Dockerfile 差別 docker commit 有點像是手動版的 Dockerfile，在用 Dockerfile 建構 docker image 的時候，docker build 的工作就像是自動根據 Dockerfile 操作 docker commit。 Dockerfile 比較適合用在自動化交付和部屬，例如說你有一份程式碼，要將他包成 Docker 就很適合用 Dockerfile 自動化操作，因為程式碼會改變，但是包裝的流程基本上都是一樣的。 docker commit 適合用在建構環境，因為會有比較麻煩的操作，如果寫成 Dockerfile 會比較麻煩，當然如果可以的話還是寫成 Dockerfile 會比較好，因為更新的時候會比較方便。 在建構 image 的時候要用哪個方法就看個人取捨了。
+docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images，有點類似令存新檔的概念。先來看看參數吧！
+參數 $ docker commit --help Usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] Create a new image from a container's changes Options: -a, --author string Author (e....</p>
+</section>
+<footer class=entry-footer><span title="2020-11-27 00:00:00 +0000 UTC">2020-November-27</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to docker commit" href=https://blog.simba-fs.dev/posts/linux/docker/docker-commit/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>bash number loop
@@ -203,24 +217,6 @@ route.get('/', (req, res, next) => { return res.send('Hello world'); }); 但是�
 <footer class=entry-footer><span title="2020-08-19 00:00:00 +0000 UTC">2020-August-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to express 重複 send" href=https://blog.simba-fs.dev/posts/nodejs/express-%E9%87%8D%E8%A4%87-send/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>加入 google search 和 sitemap
-</h2>
-</header>
-<section class=entry-content>
-<p>前置設定 npm 安裝 hexo-generator-sitemap npm i -S hexo-generator-sitemap 設定插件 將以下內容加到 _config.yml
-注意空白
-# sitemap sitemap: path: sitemap.xml 驗證網域 如果你的 hexo 是架在自己的網域可以跳過這步
-因為我的 hexo 是 託管在 GitHub page，在 Google Search Console 驗證的時候沒辦法用網域，所以要放一個特別的檔案到我們的網站根目錄
-首先到 Google Search Console 新增一個網域 選擇右邊，輸入你的網址 下載提供的 html 並放到 source/ 資料夾 忽略 接下來會遇到 hexo 在生成的時候把這個 html 也放到模板裡面，所以我們要把他加入忽略清單裡面
-在 _config.yml 裡面找到 skip_render
-把直接檔名寫在後面或是用清單都可以 注意空白
-# 直接寫 skip_render: 'googlebabababababa.html' # 或是用清單 skip_render: - 'googlebabababababa....</p>
-</section>
-<footer class=entry-footer><span title="2020-08-19 00:00:00 +0000 UTC">2020-August-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to 加入 google search 和 sitemap" href=https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/4/>« 上一篇</a>
@@ -229,7 +225,7 @@ route.get('/', (req, res, next) => { return res.send('Hello world'); }); 但是�
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
+<span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
