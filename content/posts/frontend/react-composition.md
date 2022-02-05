@@ -63,7 +63,6 @@ compositionEnd <empty string>
 	onChange={(e) => setInput(() => e.target.value)}
 	onCompositionUpdate={(e) => setInput(() => e.data)}
 	onContextMenu={handleContext}
-	// onKeyDown={handleKeyDown}
 />
 ```
 
