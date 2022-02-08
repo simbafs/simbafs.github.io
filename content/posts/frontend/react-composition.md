@@ -67,3 +67,20 @@ compositionEnd <empty string>
 ```
 
 如此一來就解決中文輸入的問題了！但是目前這個版本只能解決「一次」的中文輸入，也就是說如果中斷的話，之前的將會被清空。這個問題可以修改 `onCompositionUpdate` 的處理函式解決（有待研究）
+
+--- 
+
+> Update: 2022/02/08
+
+目前部份解決接續輸入的問題，但是只能從最後面繼續，不能從中間插入。目前的 `textarea` 長這樣
+
+```jsx
+<textarea
+	className={style.input}
+	value={t}
+	onChange={e => setInput(() => e.target.value)}
+	onCompositionUpdate={e => setInput(() => previousInput + e.data)}
+	onCompositionStart={() => setPreviousInput(() => input)}
+	onContextMenu={handleContext}
+/>
+```
