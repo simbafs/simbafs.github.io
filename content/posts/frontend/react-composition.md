@@ -75,6 +75,8 @@ compositionEnd <empty string>
 目前部份解決接續輸入的問題，但是只能從最後面繼續，不能從中間插入。目前的 `textarea` 長這樣
 
 ```jsx
+const [previousInput, setPreviousInput] = useState('');
+
 <textarea
 	className={style.input}
 	value={t}
