@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,25 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Day 16：自動補全！coc.nvim
+</h2>
+</header>
+<section class=entry-content>
+<p>一個好的自動補全工具可以讓你工作效率翻倍，你不用再去查文件了，自動補全不僅可以告訴你這裡有什麼函數可以用，還會告訴你參數的型態、函數功能的說明，可以說是把文件都寫在 vim 裡面了。
+以前我用的自動補全是 You Complete Me(YCM)，現在我選擇使用 coc.nvim 原因是他提供更多的補全來源、外掛和設定，而且可以用 nodejs 自製外掛，據說所有純 JS 寫的 VS code 外掛都可以裝（這個我沒實驗過，只是傳聞）。關於這兩個自動補全外掛的比較礙於篇幅請自行 Google。
+安裝 coc.nvim 和一般的 vim 外掛一樣，都是用 vim-plug 安裝就可以了，在 ~/.config/nvim/plugin.vim 中新增以下設定
+Plug 'neoclide/coc.nvim', {'branch': 'release'}so ~/.config/nvim/coc-config.vim因為 coc 有很多設定，為了避免檔案太雜亂我把 coc 相關的設定移到另一個檔案，就像我們在 前天 做得一樣
+接下來建立 ~/.config/nvim/coc-config.vim，不然等等載入設定檔 vim 會報錯
+:!touch ~/.config/nvim/coc-config.vim :! {cmd} 可以執行外部命令
+接下來存檔安裝
+:w | PlugInstall跑完後，重開 vim，coc 就裝好了
+lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol，簡稱 lsp，中文是「語言伺服器協定」。lsp 做的事是提供自動補全和 go to def，能做到這兩個功能的原因是因為 lsp 懂程式碼，他知道你寫的每個字代表什麼。為什麼 lsp 這麼強呢？因為 lsp 什麼都不懂，他把所有事情丟給 language server 處理，所以只要你有裝 language server，那麼 lsp 什麼語言都懂。...</p>
+</section>
+<footer class=entry-footer><span title="2021-09-16 00:00:00 +0000 UTC">2021-September-16</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Day 16：自動補全！coc.nvim" href=https://blog.simba-fs.dev/posts/ithelp/day16/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>Day 15：vim 外掛大雜燴！
@@ -220,21 +239,6 @@ vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹) 通常 Normal
 </section>
 <footer class=entry-footer><span title="2021-09-07 00:00:00 +0000 UTC">2021-September-7</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Day 07：整合 tmux 和 zsh" href=https://blog.simba-fs.dev/posts/ithelp/day07/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Day 06：螢幕切八段！多開神器 tmux
-</h2>
-</header>
-<section class=entry-content>
-<p>今天起要介紹的是 tmux，這是一個終端機的 session 管理器，什麼是 session 呢？你可以把 session 理解為一個終端機（畫面）和主機 （你的電腦）的連線，tmux 做的事就是把一個終端機切分成多個終端機，白話說就是多開神器啦！這樣你就可以左邊編輯程式、右邊看執行結果（如圖）。而且一切操作都在一個終端機視窗裡面，這意味著即使你在沒有圖形界面的純文字模式（像是 single user mode、ssh 連線）也可以享受如同圖形界面的便利！
-tmux demo 安裝 debian/ubuntu $ apt install tmux macOS $ brew install tmux 其他 or 自己編譯 其他可以參考 https://github.com/tmux/tmux/wiki/Installing 的說明
-config tmux 啟動時會去讀取 ~/.tmux.conf 這個檔案，所以的設定檔都放在這，在這裡，我推薦一個我用很多年的設定檔，點擊這裡下載，或是執行以下命令
-curl https://gist.githubusercontent.com/simba-fs/e06a1763c1967ce3f4b5ef643db5e0b3/raw/2f28c62d01f419a390bfc0e66a974985bacdefa5/.tmux.conf > ~/.tmux.conf 這個檔案是我從網路上找到的，後來有加一些自己的東西，把檔案下載下來並存到 ~/.tmux.conf 裡面，關於每一行的用途都有用註解標示，主要幾個改變有以下幾點：
-把前置按鍵（prefix）從 Ctrlb改成 Ctrla(第 16 ~ 19 行，不喜歡的話可以拿掉)，你也可以改成其他按鍵 底部 status bar 變成彩色，不再是單調的綠色 一些快捷鍵綁定 啟動 暫時我們不加入開啟終端機自動啟動 tmux，手動啟動方式是在終端機執行命令...</p>
-</section>
-<footer class=entry-footer><span title="2021-09-06 00:00:00 +0000 UTC">2021-September-6</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 06：螢幕切八段！多開神器 tmux" href=https://blog.simba-fs.dev/posts/ithelp/day06/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

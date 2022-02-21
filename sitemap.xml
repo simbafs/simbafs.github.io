@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.simba-fs.dev/posts/golang/</loc>
+    <lastmod>2022-02-21T18:54:55+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/golang/plguin/</loc>
+    <lastmod>2022-02-21T18:54:55+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/</loc>
+    <lastmod>2022-02-21T18:54:55+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/</loc>
+    <lastmod>2022-02-21T18:54:55+08:00</lastmod>
+  </url><url>
     <loc>https://blog.simba-fs.dev/posts/frontend/</loc>
     <lastmod>2022-02-05T16:59:44+08:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/</loc>
-    <lastmod>2022-02-05T16:59:44+08:00</lastmod>
-  </url><url>
     <loc>https://blog.simba-fs.dev/posts/frontend/react-composition/</loc>
-    <lastmod>2022-02-05T16:59:44+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/</loc>
     <lastmod>2022-02-05T16:59:44+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/categories/</loc>
@@ -27,9 +33,6 @@
     <lastmod>2021-12-22T23:18:41+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/golang/exec-cmd/</loc>
-    <lastmod>2021-10-19T00:06:19+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/golang/</loc>
     <lastmod>2021-10-19T00:06:19+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/golang/aconf/</loc>

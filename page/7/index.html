@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,18 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>meta-tag
+</h2>
+</header>
+<section class=entry-content>
+<p>今天為了幫 Let’s Remind Daniel 做 SEO 在 免費資源網路社群 找到了一個工具可以直接生成 還有一個可以測試的工具
+連結 生成 測試</p>
+</section>
+<footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to meta-tag" href=https://blog.simba-fs.dev/posts/frontend/meta-tag/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>firefox-event-listener-breakpoint
@@ -194,20 +206,6 @@ https://yu-jack.github.io/2019/01/08/ssh-tunnel/</p>
 </section>
 <footer class=entry-footer><span title="2020-02-23 00:00:00 +0000 UTC">2020-February-23</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to reverse-ssh" href=https://blog.simba-fs.dev/posts/linux/reverse-ssh/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>unix-socket
-</h2>
-</header>
-<section class=entry-content>
-<p>今天心血來潮在看 unix socket 突然想到 node 可不可以把 服務監聽在一個 socket file 這樣在設定的時候就不用記哪個服務是幾 port
-node 部份 監聽在 unix socket 查完資料後發現其實只要把原本填 port 的地方改成 socket file 的路徑就好了 像這樣
-const express = require('express'); const app = express(); app.get('/', (req, res) => { res.send('Hello World\n'); }); app.listen('/tmp/express.sock'); 刪除 socket file 因為每次的 listen 都會新增一個 socket file 相當於佔用一個 port 如果不刪除的話就相當於 port 被佔用了 會噴錯 所以每次程式結束的時候要把這個 socket file 刪掉 然後在 /tmp 下的檔案會在開機後自動刪掉 所以如果部屬後發什麼問題重開機就對了！ 修改完的 code 長這樣
-const fs = require('fs'); const express = require('express'); const app = express(); app....</p>
-</section>
-<footer class=entry-footer><span title="2020-02-23 00:00:00 +0000 UTC">2020-February-23</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to unix-socket" href=https://blog.simba-fs.dev/posts/nodejs/unix-socket/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

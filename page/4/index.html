@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,17 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>YouComopleteMe install
+</h2>
+</header>
+<section class=entry-content>
+<p>下載 source code 編輯 ~/.vimrc Plug 'Valloric/YouCompleteMe'接著按下 esc:w | so %載入設定 接著 :PlugInstall下載 source code 存檔離開 編譯 執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &lt;你要的選項> </p>
+</section>
+<footer class=entry-footer><span title="2021-05-17 00:00:00 +0000 UTC">2021-May-17</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to YouComopleteMe install" href=https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>firefox touch screen scroll
@@ -208,18 +219,6 @@ apt install gnupg2 wget https://github.com/docker/docker-credential-helpers/rele
 </section>
 <footer class=entry-footer><span title="2020-12-05 00:00:00 +0000 UTC">2020-December-5</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to docker login error" href=https://blog.simba-fs.dev/posts/linux/docker/docker-login-error/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>connect to ethernet in docker container
-</h2>
-</header>
-<section class=entry-content>
-<p>如何在 docker container 裡連接 ethernet 今天突然有個需求是在一個已經開啟的 container 弄東西，需要網路，但是不知道為什麼一直不上，後來發現是 docker 沒有設定 DNS 的問題，只要在外面輸入兩行指令就可以了
-DOCKER_OPTS="--dns 8.8.8.8" systemctl restart docker 然後重新啟動 docker</p>
-</section>
-<footer class=entry-footer><span title="2020-11-28 00:00:00 +0000 UTC">2020-November-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to connect to ethernet in docker container" href=https://blog.simba-fs.dev/posts/linux/docker/connect-to-ethernet-in-docker-container/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

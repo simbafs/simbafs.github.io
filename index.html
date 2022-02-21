@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -88,6 +88,25 @@
 </a>
 </div>
 </footer>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Golang Plguin
+</h2>
+</header>
+<section class=entry-content>
+<p>Go 動態載入程式 Go 是一個編譯式的語言，也就是說他不像 JS 那樣可以動態執行程式碼。像是 Hexo 和 Hugo，前者因為是 JS 寫的，因此支援非常豐富的外掛，但後者因為是 Go 寫的，因此在不使用其他直譯式程式語言的情況下，很難製作外掛。
+另一個 Go 寫的軟體 ponzu 則是在加入一段程式碼後，重新編譯自己。這麼做解決了外掛的問題，而且又不會失去 Go 的快速，但是就必須保留整個主程式的原始碼，而且也不那麼的「動態」
+ponzu 這個軟體兩年沒人維護了，很多東西都怪怪的，超級難編譯
+Plugin in Go 在 1.8 版的時候，Go 推出了 Plguin 套件，可以將外掛和主程式分開編譯，如果外掛有更動，不需要重新編譯主程式；主程式也可以動態載入外掛。
+外掛 如果要將一個 package 編譯成外掛，首先他的 package 必須是 main，但是裡面的函式 main、init 都不會被執行，只有大寫開頭的變數、型態、函式會被暴露給主程式。
+編譯外掛時，需要加上 -buildmode=plguin，這樣 go build 就會將原始碼編譯成 .so（share object）檔，這樣就可以被主程式呼叫。
+主程式 主程式要載入外掛前，需要引用 plugin 套件
+import "plugin" 用 func Open(path string) (*Plugin, error) 可以載入一個編譯過的外掛，如果重複呼叫這個函式，除了第二次外都會回傳第一次載入的結果，也就是說假如你在很多個 gorutine 中載入同一個外掛，go 會保證他是「安全」的。注意看，path 是個字串，因此你可以動態產生外掛的路徑，不需要寫死。
+載入完了之後，用 func (p *Plugin) Lookup(symName string) (Symbol, error) 可以取得外掛暴露出來的變數、函式，因為 symName 是字串，因此這裡也可以動態選擇要的變數。現在你有一個型態是 Symbol 的變數了，其實這個 Symbol 就是 interface{} 所以不管要做什麼事，你都要先用 symbol....</p>
+</section>
+<footer class=entry-footer><span title="2022-02-21 18:54:55 +0800 +0800">2022-February-21</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to Golang Plguin" href=https://blog.simba-fs.dev/posts/golang/plguin/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -221,25 +240,6 @@ coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 
 </section>
 <footer class=entry-footer><span title="2021-09-17 00:00:00 +0000 UTC">2021-September-17</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to Day 17：coc.nvim 設定下集" href=https://blog.simba-fs.dev/posts/ithelp/day17/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Day 16：自動補全！coc.nvim
-</h2>
-</header>
-<section class=entry-content>
-<p>一個好的自動補全工具可以讓你工作效率翻倍，你不用再去查文件了，自動補全不僅可以告訴你這裡有什麼函數可以用，還會告訴你參數的型態、函數功能的說明，可以說是把文件都寫在 vim 裡面了。
-以前我用的自動補全是 You Complete Me(YCM)，現在我選擇使用 coc.nvim 原因是他提供更多的補全來源、外掛和設定，而且可以用 nodejs 自製外掛，據說所有純 JS 寫的 VS code 外掛都可以裝（這個我沒實驗過，只是傳聞）。關於這兩個自動補全外掛的比較礙於篇幅請自行 Google。
-安裝 coc.nvim 和一般的 vim 外掛一樣，都是用 vim-plug 安裝就可以了，在 ~/.config/nvim/plugin.vim 中新增以下設定
-Plug 'neoclide/coc.nvim', {'branch': 'release'}so ~/.config/nvim/coc-config.vim因為 coc 有很多設定，為了避免檔案太雜亂我把 coc 相關的設定移到另一個檔案，就像我們在 前天 做得一樣
-接下來建立 ~/.config/nvim/coc-config.vim，不然等等載入設定檔 vim 會報錯
-:!touch ~/.config/nvim/coc-config.vim :! {cmd} 可以執行外部命令
-接下來存檔安裝
-:w | PlugInstall跑完後，重開 vim，coc 就裝好了
-lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol，簡稱 lsp，中文是「語言伺服器協定」。lsp 做的事是提供自動補全和 go to def，能做到這兩個功能的原因是因為 lsp 懂程式碼，他知道你寫的每個字代表什麼。為什麼 lsp 這麼強呢？因為 lsp 什麼都不懂，他把所有事情丟給 language server 處理，所以只要你有裝 language server，那麼 lsp 什麼語言都懂。...</p>
-</section>
-<footer class=entry-footer><span title="2021-09-16 00:00:00 +0000 UTC">2021-September-16</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to Day 16：自動補全！coc.nvim" href=https://blog.simba-fs.dev/posts/ithelp/day16/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

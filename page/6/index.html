@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -71,6 +71,19 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>express 重複 send
+</h2>
+</header>
+<section class=entry-content>
+<p>問題 在 express route 裡面，我通常會在 res.send() 之類的函式前面都會加一個 return 防止因為程式邏輯漏洞造成重複送出然後噴 error。像是這樣
+route.get('/', (req, res, next) => { return res.send('Hello world'); }); 但是如果我們用到 Promise 的時候 return 並不會跳出整個 route，所以我們需要另一個方法，我的想法是一個變數儲存是否送出，然後在每次送出前都判斷，送出候更改變數值
++--------------------------+ | is sent( flag === false) | +-+------------------------+ |no | +-+----+ | send | +-+----+ | +-+-----------+ | change flag | +-------------+ route.get('/', (req, res, next) => { let flag = false; doSomePromise() .then(() => { // do something if(!flag){ res.send('Hello world'); flag = true; } }) }) 這樣就不會噴一堆 error 啦！...</p>
+</section>
+<footer class=entry-footer><span title="2020-08-19 00:00:00 +0000 UTC">2020-August-19</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
+<a class=entry-link aria-label="post link to express 重複 send" href=https://blog.simba-fs.dev/posts/nodejs/express-%E9%87%8D%E8%A4%87-send/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>加入 google search 和 sitemap
@@ -201,18 +214,6 @@ gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p>
 </section>
 <footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
 <a class=entry-link aria-label="post link to gpg" href=https://blog.simba-fs.dev/posts/linux/gpg/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>meta-tag
-</h2>
-</header>
-<section class=entry-content>
-<p>今天為了幫 Let’s Remind Daniel 做 SEO 在 免費資源網路社群 找到了一個工具可以直接生成 還有一個可以測試的工具
-連結 生成 測試</p>
-</section>
-<footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer>
-<a class=entry-link aria-label="post link to meta-tag" href=https://blog.simba-fs.dev/posts/frontend/meta-tag/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
