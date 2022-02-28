@@ -1075,6 +1075,15 @@ $ git checkout -b hexo $ git add . $ git commit -m init $ git push -u origin hex
     </item>
     
     
+    <item>
+      <title>Resource</title>
+      <link>https://blog.simba-fs.dev/resource/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/resource/</guid>
+      <description>resource</description>
+    </item>
+    
     
   </channel>
 </rss>
