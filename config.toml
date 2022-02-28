@@ -18,8 +18,8 @@ defaultContentLanguage = 'zh-tw'
 
 [params]
 	env = "production"
-	title = "Simba's Blog"
-	description = ""
+	title = "Simba 的喵窩"
+	description = "雜七雜八的東西"
 	keywords = [ "simba-fs", "SimbaFs" ]
 	author = "simba-fs"
 	images = [ "<link or path of image for opengraph, twitter-cards>" ]
@@ -116,7 +116,7 @@ defaultContentLanguage = 'zh-tw'
 [[menu.main]]
 	identifier = "categories"
 	name = "Categories"
-	url = "/categories/"
+	url = "/posts/"
 	weight = 10
 
 [[menu.main]]
@@ -132,7 +132,13 @@ defaultContentLanguage = 'zh-tw'
 	weight = 30
 
 [[menu.main]]
+	identifier = "resource"
+	name = "Resource"
+	url = "/resource/"
+	weight = 40
+
+[[menu.main]]
 	identifier = "search"
 	name = "Search"
 	url = "/search/"
-	weight = 40
+	weight = 50
