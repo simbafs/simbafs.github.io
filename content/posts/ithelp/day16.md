@@ -23,7 +23,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 so ~/.config/nvim/coc-config.vim
 ```
 
-因為 coc 有很多設定，為了避免檔案太雜亂我把 coc 相關的設定移到另一個檔案，就像我們在 [前天](http://localhost:1313/posts/ithelp/pure-cli-ide/day14/#%E5%88%87%E5%88%86-vimrc)  做得一樣  
+因為 coc 有很多設定，為了避免檔案太雜亂我把 coc 相關的設定移到另一個檔案，就像我們在 [前天](../day14/#%E5%88%87%E5%88%86-vimrc)  做得一樣  
 接下來建立 `~/.config/nvim/coc-config.vim`，不然等等載入設定檔 vim 會報錯  
 
 ```vim
