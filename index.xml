@@ -48,7 +48,7 @@ compositionStart &amp;lt;empty string&amp;gt; compositionUpdate ㄐ compositionU
         credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。
 幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定
 （.ttf 可以指向你自己喜歡的中文字型檔）
-\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]} \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &amp;#34;zh&amp;#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
+\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]}  \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &amp;#34;zh&amp;#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
 巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \（反斜線），巨集可以自己定義，也可以用 \usepackage{} 載入別人寫好的
 overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。
 表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）</description>
@@ -60,7 +60,7 @@ overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有�
       <pubDate>Tue, 19 Oct 2021 00:06:19 +0800</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/golang/exec-cmd/</guid>
-      <description>Golang 執行外部命令 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;os/exec&amp;#34; ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command(&amp;#34;wc&amp;#34;) stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, &amp;#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&amp;#34;) output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } </description>
+      <description>Golang 執行外部命令 package main  import ( 	&amp;#34;fmt&amp;#34; 	&amp;#34;os/exec&amp;#34; )  func checkErr(err error) { 	if err != nil { 	panic(err) 	} }  func main() { 	pw := exec.Command(&amp;#34;wc&amp;#34;)  	stdin, err := pw.StdinPipe() 	checkErr(err)  	fmt.Fprintln(stdin, &amp;#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&amp;#34;)  	output, err := pw.Output() 	checkErr(err)  	fmt.Println(string(output)) } </description>
     </item>
     
     <item>
@@ -72,8 +72,8 @@ overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有�
       <description>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
 而且設定檔還可以有不只一個，他可以把多個設定檔合成，相當方便
 基本使用 定義 struct 首先我們需要一個 struct 來定義我們的設定
-type Config struct { Addr string `default:&amp;#34;:3000&amp;#34;` Title string `default:&amp;#34;Aconf Testing&amp;#34;` SysAdmin []string `default:&amp;#34;simba-fs,peter&amp;#34;` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
-loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ // 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 	// SkipDefaults: false, 	// SkipFiles: false, 	// SkipEnv: false, 	// SkipFlags: false, 	EnvPrefix: &amp;#34;APP&amp;#34;, FlagPrefix: &amp;#34;app&amp;#34;, Files: []string{&amp;#34;~/.config/app.toml&amp;#34;, &amp;#34;app.toml&amp;#34;}, FileDecoders: map[string]aconfig.FileDecoder{ &amp;#34;.toml&amp;#34;: aconfigtoml.New(), }, }) if err := loader.Load(); err != nil { panic(err) } 這樣你就可以用檔案、環境變數和命令列參數設定了。</description>
+type Config struct { 	Addr string `default:&amp;#34;:3000&amp;#34;` 	Title string `default:&amp;#34;Aconf Testing&amp;#34;` 	SysAdmin []string `default:&amp;#34;simba-fs,peter&amp;#34;` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
+loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ 	// 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 	// SkipDefaults: false, 	// SkipFiles: false, 	// SkipEnv: false, 	// SkipFlags: false, 	EnvPrefix: &amp;#34;APP&amp;#34;, 	FlagPrefix: &amp;#34;app&amp;#34;, 	Files: []string{&amp;#34;~/.config/app.toml&amp;#34;, &amp;#34;app.toml&amp;#34;}, 	FileDecoders: map[string]aconfig.FileDecoder{ 	&amp;#34;.toml&amp;#34;: aconfigtoml.New(), 	}, })  if err := loader.</description>
     </item>
     
     <item>
@@ -110,10 +110,10 @@ vim 分割視窗的優點 與 tmux 比起來，我更常用 tmux 分割視窗，
       
       <guid>https://blog.simba-fs.dev/posts/ithelp/day19/</guid>
       <description>重複 如果想讓某個標籤/群組重複，只要用乘號 * 加上數字就可以讓他重複了
-h1.title*5 -&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ (p.artical+br)*3 -&amp;gt; &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; 迭代 在重複的時候，你可能會有某些地方是要要變化的，例如從 id 從 1 開始遞增，你可以使用錢號 $ 代表要遞增的位數
+h1.title*5  -&amp;gt;  &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 class=&amp;#34;title&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt;  ------------  (p.artical+br)*3  -&amp;gt;  &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; &amp;lt;p class=&amp;#34;artical&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt; 迭代 在重複的時候，你可能會有某些地方是要要變化的，例如從 id 從 1 開始遞增，你可以使用錢號 $ 代表要遞增的位數
 如果你不是要從 1 開始迭代，可以使用小老鼠 @ 指定開始的數字
 如果要反著數，用 @- 可以倒數到 0，當然也可以指定倒數到多少
-h1#title$$*12 -&amp;gt; &amp;lt;h1 id=&amp;#34;title01&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title02&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title03&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title04&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title05&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title06&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title07&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title08&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title09&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title10&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title11&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title12&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ h1#$@10*3 -&amp;gt; &amp;lt;h1 id=&amp;#34;10&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;11&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;12&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ h1#$@-*3 -&amp;gt; &amp;lt;h1 id=&amp;#34;2&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;1&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;0&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ h1#$@-6*3 -&amp;gt; &amp;lt;h1 id=&amp;#34;8&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;7&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;6&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; ------------ h$*6 -&amp;gt; &amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;&amp;lt;/h2&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;h4&amp;gt;&amp;lt;/h4&amp;gt; &amp;lt;h5&amp;gt;&amp;lt;/h5&amp;gt; &amp;lt;h6&amp;gt;&amp;lt;/h6&amp;gt; 範本包圍  我不確定這個叫什麼，反正就這樣啦</description>
+h1#title$$*12  -&amp;gt;  &amp;lt;h1 id=&amp;#34;title01&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title02&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title03&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title04&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title05&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title06&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title07&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title08&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title09&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title10&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title11&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;title12&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt;  ------------  h1#$@10*3  -&amp;gt;  &amp;lt;h1 id=&amp;#34;10&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;11&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;12&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt;  ------------  h1#$@-*3  -&amp;gt;  &amp;lt;h1 id=&amp;#34;2&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;1&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;0&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt;  ------------  h1#$@-6*3  -&amp;gt;  &amp;lt;h1 id=&amp;#34;8&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;7&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h1 id=&amp;#34;6&amp;#34;&amp;gt;&amp;lt;/h1&amp;gt;  ------------  h$*6  -&amp;gt;  &amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;&amp;lt;/h2&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;h4&amp;gt;&amp;lt;/h4&amp;gt; &amp;lt;h5&amp;gt;&amp;lt;/h5&amp;gt; &amp;lt;h6&amp;gt;&amp;lt;/h6&amp;gt; 範本包圍  我不確定這個叫什麼，反正就這樣啦</description>
     </item>
     
     <item>
@@ -125,10 +125,7 @@ h1#title$$*12 -&amp;gt; &amp;lt;h1 id=&amp;#34;title01&amp;#34;&amp;gt;&amp;lt;/
       <description>emmet-vim 是 emmet 的 vim 版本（這句好像是廢話
  注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
  emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子
-.tab&amp;gt;(tr#col$&amp;gt;td*3)*4 會被解析成 &amp;lt;div class=&amp;#34;tab&amp;#34;&amp;gt; &amp;lt;tr id=&amp;#34;col1&amp;#34;&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr id=&amp;#34;col2&amp;#34;&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr id=&amp;#34;col3&amp;#34;&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr id=&amp;#34;col4&amp;#34;&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/div&amp;gt; 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！
-安裝 在 ~/.config/nvim/plugin.vim 加入一行
-+ Plug &amp;#39;mattn/emmet-vim&amp;#39; 然後記得修改後需要打指令 :so % | PlugInstall 安裝
-coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(p&amp;gt;div.title$)，你還是只能按 emmet-vim 的快捷鍵</description>
+.tab&amp;gt;(tr#col$&amp;gt;td*3)*4  會被解析成  &amp;lt;div class=&amp;#34;tab&amp;#34;&amp;gt; 	&amp;lt;tr id=&amp;#34;col1&amp;#34;&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;/tr&amp;gt; 	&amp;lt;tr id=&amp;#34;col2&amp;#34;&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;/tr&amp;gt; 	&amp;lt;tr id=&amp;#34;col3&amp;#34;&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;/tr&amp;gt; 	&amp;lt;tr id=&amp;#34;col4&amp;#34;&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt; 	&amp;lt;/tr&amp;gt; &amp;lt;/div&amp;gt; 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！</description>
     </item>
     
     <item>
@@ -184,9 +181,9 @@ lsp 語言伺服器協定 在講 coc 之前必須先講 Language Server Protocol
 # neovim sh -c &amp;#39;curl -fLo &amp;#34;${XDG_DATA_HOME:-$HOME/.local/share}&amp;#34;/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&amp;#39; # vim sh -c &amp;#39;curl -fLo &amp;#34;${XDG_DATA_HOME:-$HOME/.local/share}&amp;#34;/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&amp;#39; 挑選你的 vim 版本，執行完就安裝好了！
 安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！
 1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面
-call plug#begin(&#39;~/.vim/plugged&#39;) call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面
+call plug#begin(&amp;#39;~/.vim/plugged&amp;#39;) call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面
 加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行
-Plug &#39;preservim/nerdcommenter&#39; 然後存檔，這樣就算設定好了</description>
+Plug &amp;#39;preservim/nerdcommenter&amp;#39; 然後存檔，這樣就算設定好了</description>
     </item>
     
     <item>
@@ -392,9 +389,7 @@ zsh --version 如果沒有錯誤就是安裝成功了
       <description>在用 gin 寫伺服器的時候，我發現模板並不會被 go build 打包進執行檔裡面，所以在執行的時候就找不到檔案，當然這個問題可以用字串的形式直接把模板放進 golang 原始碼裡面，但是這樣程式碼一複雜就會不好用，這時候就可以用 golang 的 embed 函式庫把檔案「嵌入」到原始碼裡面。但是問題又來了，嵌入了之後要怎麼把字串變成模板物件呢？
 Embed  embed 套件是 1.16 新出的功能，所以如果想用的話記得要更新 go 到 1.16 以上
  embed 嵌入檔案的方式是透過特殊格式的註解宣告，直接看官方範例：
-package main import ( &amp;#34;embed&amp;#34; ) //go:embed hello.txt var s string //go:embed hello.txt var b []byte //go:embed hello.txt var f embed.FS func main() { print(s) print(string(b)) data, _ := f.ReadFile(&amp;#34;hello.txt&amp;#34;) print(string(data)) } 可以看到，embed 可以把檔案讀成三種格式 string、[]byte、embed.FS，前兩者只能讀「一個」檔案，如果你只用這兩個的話引入時要用 _ &amp;quot;embed&amp;quot;。embed.FS 除了可以嵌入多個檔案之外，因為實做了 fs.FS 所以可以使用當作一個檔案系統操作。
-Tmeplate No Recursive 最簡單的方法，你可以直接使用
-// go:embed view/* var f embed.</description>
+package main  import ( 	&amp;#34;embed&amp;#34; )  //go:embed hello.txt var s string  //go:embed hello.txt var b []byte  //go:embed hello.txt var f embed.FS  func main() { 	print(s) 	print(string(b)) 	data, _ := f.ReadFile(&amp;#34;hello.txt&amp;#34;) 	print(string(data)) } 可以看到，embed 可以把檔案讀成三種格式 string、[]byte、embed.FS，前兩者只能讀「一個」檔案，如果你只用這兩個的話引入時要用 _ &amp;quot;embed&amp;quot;。embed.</description>
     </item>
     
     <item>
@@ -420,7 +415,7 @@ git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2.</descri
       <description>這是一個給經緯度吐地址的 api，甚至路段都會出來，搭配 web geolocation api 蠻不錯的，精確度不錯。可以不知道有沒有 rate limited 的問題，目前看起來連 token 都不用。
 網址 https://api.nlsc.gov.tw/other/TownVillagePointQuery/
 用法 https://api.nlsc.gov.tw/other/TownVillagePointQuery/經度/緯度
-舉例： request GET https://api.nlsc.gov.tw/other/TownVillagePointQuery/121.46278679999999/25.0169826 response &amp;lt;townVillageItem&amp;gt; &amp;lt;ctyCode&amp;gt;F&amp;lt;/ctyCode&amp;gt; &amp;lt;ctyName&amp;gt;新北市&amp;lt;/ctyName&amp;gt; &amp;lt;townCode&amp;gt;F14&amp;lt;/townCode&amp;gt; &amp;lt;townName&amp;gt;板橋區&amp;lt;/townName&amp;gt; &amp;lt;officeCode&amp;gt;FA&amp;lt;/officeCode&amp;gt; &amp;lt;officeName&amp;gt;板橋&amp;lt;/officeName&amp;gt; &amp;lt;sectCode&amp;gt;0008&amp;lt;/sectCode&amp;gt; &amp;lt;sectName&amp;gt;民權段&amp;lt;/sectName&amp;gt; &amp;lt;villageCode&amp;gt;65000010020&amp;lt;/villageCode&amp;gt; &amp;lt;villageName&amp;gt;漢生里&amp;lt;/villageName&amp;gt; &amp;lt;/townVillageItem&amp;gt; 參考資料 https://data.gov.tw/dataset/101898</description>
+舉例： request GET https://api.nlsc.gov.tw/other/TownVillagePointQuery/121.46278679999999/25.0169826 response &amp;lt;townVillageItem&amp;gt; 	&amp;lt;ctyCode&amp;gt;F&amp;lt;/ctyCode&amp;gt; 	&amp;lt;ctyName&amp;gt;新北市&amp;lt;/ctyName&amp;gt; 	&amp;lt;townCode&amp;gt;F14&amp;lt;/townCode&amp;gt; 	&amp;lt;townName&amp;gt;板橋區&amp;lt;/townName&amp;gt; 	&amp;lt;officeCode&amp;gt;FA&amp;lt;/officeCode&amp;gt; 	&amp;lt;officeName&amp;gt;板橋&amp;lt;/officeName&amp;gt; 	&amp;lt;sectCode&amp;gt;0008&amp;lt;/sectCode&amp;gt; 	&amp;lt;sectName&amp;gt;民權段&amp;lt;/sectName&amp;gt; 	&amp;lt;villageCode&amp;gt;65000010020&amp;lt;/villageCode&amp;gt; 	&amp;lt;villageName&amp;gt;漢生里&amp;lt;/villageName&amp;gt; &amp;lt;/townVillageItem&amp;gt; 參考資料 https://data.gov.tw/dataset/101898</description>
     </item>
     
     <item>
@@ -467,7 +462,7 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
       <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/kotlin/beginning-of-kotlin/</guid>
-      <description>val vs var    kotlin JS     val const   var let    a..b    kotlin JS     a..b Array(b-a+1).fill(0).map(i =&amp;gt; i + a)    when kotlin fun main (){ val luckyNum = 4 val yourNum = (1..6).random() val result = when(yourNum){ luckyNum -&amp;gt; &amp;#34;You get the lucky num ${luckyNum}&amp;#34; 1 -&amp;gt; &amp;#34;Sorry, you get 1&amp;#34; 2 -&amp;gt; &amp;#34;Sorry, you get 2&amp;#34; 3 -&amp;gt; &amp;#34;Sorry, you get 3&amp;#34; 4 -&amp;gt; &amp;#34;Sorry, you get 4&amp;#34; 5 -&amp;gt; &amp;#34;Sorry, you get 5&amp;#34; 6 -&amp;gt; &amp;#34;Sorry, you get 6&amp;#34; else -&amp;gt; &amp;#34;Sorry, you get a number out of 1.</description>
+      <description>val vs var    kotlin JS     val const   var let    a..b    kotlin JS     a..b Array(b-a+1).fill(0).map(i =&amp;gt; i + a)    when kotlin fun main (){ 	val luckyNum = 4 	val yourNum = (1..6).random() 	val result = when(yourNum){ 	luckyNum -&amp;gt; &amp;#34;You get the lucky num ${luckyNum}&amp;#34; 	1 -&amp;gt; &amp;#34;Sorry, you get 1&amp;#34; 	2 -&amp;gt; &amp;#34;Sorry, you get 2&amp;#34; 	3 -&amp;gt; &amp;#34;Sorry, you get 3&amp;#34; 	4 -&amp;gt; &amp;#34;Sorry, you get 4&amp;#34; 	5 -&amp;gt; &amp;#34;Sorry, you get 5&amp;#34; 	6 -&amp;gt; &amp;#34;Sorry, you get 6&amp;#34; 	else -&amp;gt; &amp;#34;Sorry, you get a number out of 1.</description>
     </item>
     
     <item>
@@ -537,11 +532,10 @@ $ npx create-strapi-app my-project --quickstart; cd my-project</description>
       <description>node.js VM 模組 VM 是 node.js 的核心模組，提供安全的環境 (沙箱) 來測試不信任的程式碼。
 基本概念 在 VM 模組裡面，有兩個基本的物件，script 和 context。script 是經過「編譯」程式，context 是給在沙箱裡面的程式碼的全域物件 (global) 。沙箱中的程式只能存取透過 context 指定的物件。
 建立 script VM 模組提供 Script 建構子，可以透過他來建立 Script 物件。
-const vm = require(&amp;#39;vm&amp;#39;); const script = new vm.Script(&amp;#39;i++&amp;#39;); 也可以用 vm.createScript
-const vm = require(&amp;#39;vm&amp;#39;); const script = vm.createScript(&amp;#39;i++&amp;#39;);  vm.Script
+const vm = require(&amp;#39;vm&amp;#39;);  const script = new vm.Script(&amp;#39;i++&amp;#39;); 也可以用 vm.createScript
+const vm = require(&amp;#39;vm&amp;#39;);  const script = vm.createScript(&amp;#39;i++&amp;#39;);  vm.Script
 vm.createScript 在 nodejs docs 上我沒有找到，但是我在自己的電腦上 (node v14.15.0) 測試是可以用的
- 建立 context vm 模組沒有提供建立 context 的建構子，我們只能透過 vm.createContext 來建立 context。
-注意 vm.createContext 不是 pure function，除了會回傳 context 以外，還會把傳入的物件變成 context，兩者傳入 vm.</description>
+ 建立 context vm 模組沒有提供建立 context 的建構子，我們只能透過 vm.createContext 來建立 context。</description>
     </item>
     
     <item>
@@ -589,7 +583,7 @@ DOCKER_OPTS=&amp;#34;--dns 8.8.8.8&amp;#34; systemctl restart docker 然後重�
       <description>前言 上次提到可以用 Dockerfile 建立 docker image，但我們還有令一個方法可以建立 docker image，那就是 docker commit 指令
 和 Dockerfile 差別 docker commit 有點像是手動版的 Dockerfile，在用 Dockerfile 建構 docker image 的時候，docker build 的工作就像是自動根據 Dockerfile 操作 docker commit。 Dockerfile 比較適合用在自動化交付和部屬，例如說你有一份程式碼，要將他包成 Docker 就很適合用 Dockerfile 自動化操作，因為程式碼會改變，但是包裝的流程基本上都是一樣的。 docker commit 適合用在建構環境，因為會有比較麻煩的操作，如果寫成 Dockerfile 會比較麻煩，當然如果可以的話還是寫成 Dockerfile 會比較好，因為更新的時候會比較方便。 在建構 image 的時候要用哪個方法就看個人取捨了。
 docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images，有點類似令存新檔的概念。先來看看參數吧！
-參數 $ docker commit --help Usage:	docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] Create a new image from a container&amp;#39;s changes Options: -a, --author string Author (e.</description>
+參數 $ docker commit --help Usage:	docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]  Create a new image from a container&amp;#39;s changes  Options:  -a, --author string Author (e.</description>
     </item>
     
     <item>
@@ -599,7 +593,7 @@ docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images
       
       <guid>https://blog.simba-fs.dev/posts/linux/bash/bash-number-loop/</guid>
       <description>今天在某的地方剛好看到一個 bash 的小技巧，當我們要從 1 數到 100 時，通常會用 seq 指令來做，但是如果我們的需求剛剛好是每次遞增（遞減）1 的話，就可以使用 {start..end} 縮寫，下面兩個範例的效果是一樣的：
-# for 迴圈 + seq 的寫法 for i in $(seq 1 1 100); do echo $i done # 用 {start..end} echo {1..100} 這個技巧也可以用在建立檔案，像這樣：
+# for 迴圈 + seq 的寫法 for i in $(seq 1 1 100); do 	echo $i done # 用 {start..end} echo {1..100} 這個技巧也可以用在建立檔案，像這樣：
 touch user{1..100} </description>
     </item>
     
@@ -622,8 +616,8 @@ complete -W &amp;#34;up down clean&amp;#34; mongodb -W 選項代表後面是字�
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/mongoose-model/</guid>
       <description>Mongoose Model 環境設定 這是這次實驗用的 code
-const mongoose = require(&amp;#39;mongoose&amp;#39;); mongoose.connect(&amp;#39;mongodb://127.0.0.1:27017&amp;#39;, {useNewUrlParser: true, useUnifiedTopology: true}) .then(() =&amp;gt; console.log(&amp;#39;Connected to DB&amp;#39;)) .catch(e =&amp;gt; console.error(e)); const requiredString = { type: String, required: true } const UserSchema = new mongoose.Schema({ username: requiredString, password: requiredString }); const UserModel = mongoose.model(&amp;#39;User&amp;#39;, UserSchema); mongo db 用 docker 開一個實驗用的 server
-version: &#39;3&#39; services: db: image: &#39;mongo&#39; container_name: &#39;aurl-mongodb&#39; volumes: - ./data/mongo:/data/db - ./data/dump:/dump ports: - &#39;27017:27017&#39; 取得原 schema 在一般操作的時候都是用 UserModel 在操作資料庫，當要取得 schema 的時候當然也是從他裡面找最方便，當然也可以把 schema 特別弄出來，但是有點麻煩，以這次的例子說明，原本的 UserSchema 會存在 UserModel.</description>
+const mongoose = require(&amp;#39;mongoose&amp;#39;); mongoose.connect(&amp;#39;mongodb://127.0.0.1:27017&amp;#39;, {useNewUrlParser: true, useUnifiedTopology: true}) 	.then(() =&amp;gt; console.log(&amp;#39;Connected to DB&amp;#39;)) 	.catch(e =&amp;gt; console.error(e));  const requiredString = { 	type: String, 	required: true } const UserSchema = new mongoose.Schema({ 	username: requiredString, 	password: requiredString });  const UserModel = mongoose.model(&amp;#39;User&amp;#39;, UserSchema); mongo db 用 docker 開一個實驗用的 server
+version: &amp;#39;3&amp;#39; services: db: image: &amp;#39;mongo&amp;#39; container_name: &amp;#39;aurl-mongodb&amp;#39; volumes: - .</description>
     </item>
     
     <item>
@@ -691,7 +685,7 @@ cA 跳到行尾並在行尾加上註解</description>
 解法 v1.0 首先，因為每一篇文章 hexo 都會紀錄建立時間，所以我們可以直接把他抓出來，然後把檔案的更新時間設成這個時間就可以啦！
 更改檔案的 modified time 這個功能只要用我們最熟悉的 touch 就可以做到了。一般我們使用 touch 的時候會把 modified time 改成當下時間，那要改任意時間只要加上 -t 選項就可以啦
 -t STAMP use [[CC]YY]MMDDhhmm[.ss] instead of current time 假設我們有個檔案 tmp ，我想把他的日期改成 1999/3/23 12:32:33 ，那我可以這樣下指令
-ted timeouch -t&#39;19993231232.33&#39; tmp 抓出檔名、日期 # git create time grep -rnw source/_posts -e &amp;#39;date&amp;#39; output:（這裡的 date: 後面我多加了一個空白，原因後面會說）
+ted timeouch -t&amp;#39;19993231232.33&amp;#39; tmp 抓出檔名、日期 # git create time grep -rnw source/_posts -e &amp;#39;date&amp;#39; output:（這裡的 date: 後面我多加了一個空白，原因後面會說）
 source/_posts/hexo-installation.md:3:date: 2020-02-10 17:26:45 source/_posts/blessed.md:3:date: 2020-02-17 23:24:10 source/_posts/bash.md:3:date: 2020-02-16 22:15:10 source/_posts/hexo-cli-extras.</description>
     </item>
     
@@ -702,8 +696,8 @@ source/_posts/hexo-installation.md:3:date: 2020-02-10 17:26:45 source/_posts/ble
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/express-%E9%87%8D%E8%A4%87-send/</guid>
       <description>問題 在 express route 裡面，我通常會在 res.send() 之類的函式前面都會加一個 return 防止因為程式邏輯漏洞造成重複送出然後噴 error。像是這樣
-route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; { return res.send(&amp;#39;Hello world&amp;#39;); }); 但是如果我們用到 Promise 的時候 return 並不會跳出整個 route，所以我們需要另一個方法，我的想法是一個變數儲存是否送出，然後在每次送出前都判斷，送出候更改變數值
-+--------------------------+ | is sent( flag === false) | +-+------------------------+ |no | +-+----+ | send | +-+----+ | +-+-----------+ | change flag | +-------------+ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; { let flag = false; doSomePromise() .then(() =&amp;gt; { // do something  if(!flag){ res.send(&amp;#39;Hello world&amp;#39;); flag = true; } }) }) 這樣就不會噴一堆 error 啦！</description>
+route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; {  return res.send(&amp;#39;Hello world&amp;#39;); }); 但是如果我們用到 Promise 的時候 return 並不會跳出整個 route，所以我們需要另一個方法，我的想法是一個變數儲存是否送出，然後在每次送出前都判斷，送出候更改變數值
++--------------------------+ | is sent( flag === false) | +-+------------------------+ |no | +-+----+ | send | +-+----+ | +-+-----------+ | change flag | +-------------+ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; {  let flag = false;  doSomePromise()  .then(() =&amp;gt; {  // do something  if(!</description>
     </item>
     
     <item>
@@ -714,12 +708,12 @@ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; { return res.send(&amp
       <guid>https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</guid>
       <description>前置設定 npm 安裝 hexo-generator-sitemap npm i -S hexo-generator-sitemap 設定插件 將以下內容加到 _config.yml
  注意空白
- # sitemap sitemap: path: sitemap.xml 驗證網域 如果你的 hexo 是架在自己的網域可以跳過這步
+ # sitemap sitemap:  path: sitemap.xml 驗證網域 如果你的 hexo 是架在自己的網域可以跳過這步
 因為我的 hexo 是 託管在 GitHub page，在 Google Search Console 驗證的時候沒辦法用網域，所以要放一個特別的檔案到我們的網站根目錄
  首先到 Google Search Console 新增一個網域 選擇右邊，輸入你的網址  下載提供的 html 並放到 source/ 資料夾  忽略 接下來會遇到 hexo 在生成的時候把這個 html 也放到模板裡面，所以我們要把他加入忽略清單裡面
 在 _config.yml 裡面找到 skip_render
 把直接檔名寫在後面或是用清單都可以   注意空白
- # 直接寫 skip_render: &amp;#39;googlebabababababa.html&amp;#39; # 或是用清單 skip_render: - &amp;#39;googlebabababababa.</description>
+ # 直接寫 skip_render: &amp;#39;googlebabababababa.html&amp;#39; # 或是用清單 skip_render:  - &amp;#39;googlebabababababa.</description>
     </item>
     
     <item>
@@ -746,10 +740,9 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/react/react-update-state-on-props-change/</guid>
       <description>問題 今天在研究 React 遇到一個問題 當我從外面更新 props 的時候 component 內的 state 不會更新
-function Input(props){ const [text, setText] = React.useState(props.text); return ( &amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; ) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
+function Input(props){ 	const [text, setText] = React.useState(props.text);  	return ( 	&amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; 	) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
 解法 後來找到解法，加上一個 useEffect 監聽 props.text 然後更新 state 就好了
-function Input(props){ const [text, setText] = React.useState(props.text); React.useEffect(() =&amp;gt; { setText(props.text); }, [props.text]); return ( &amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; ) } 如此一來 state 就會和 props 同步了
-參考資料 https://stackoverflow.com/questions/54865764/react-usestate-does-not-reload-state-from-props https://zh-hant.reactjs.org/docs/hooks-effect.html</description>
+function Input(props){ 	const [text, setText] = React.useState(props.text); 	React.useEffect(() =&amp;gt; { 	setText(props.text); 	}, [props.text]); 	return ( 	&amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; 	) } 如此一來 state 就會和 props 同步了</description>
     </item>
     
     <item>
@@ -759,8 +752,8 @@ function Input(props){ const [text, setText] = React.useState(props.text); React
       
       <guid>https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/</guid>
       <description>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
-Cannot use JSX unless the &#39;--jsx&#39; flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
-{ &amp;#34;compilerOptions&amp;#34;: { &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;checkJs&amp;#34;: true + }, + &amp;#34;compilerOptions&amp;#34;: { + &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;  } } </description>
+Cannot use JSX unless the &amp;#39;--jsx&amp;#39; flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
+{  &amp;#34;compilerOptions&amp;#34;: {  &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;,  &amp;#34;checkJs&amp;#34;: true + }, + &amp;#34;compilerOptions&amp;#34;: { + &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;  } } </description>
     </item>
     
     <item>
@@ -771,7 +764,7 @@ Cannot use JSX unless the &#39;--jsx&#39; flag is provided. (FixIt) 研究之後
       <guid>https://blog.simba-fs.dev/posts/nodejs/react/webpack-react/</guid>
       <description>前言 最近開始想學 react 在這之前當然要先把開發環境搞好 其中 react 最重要的就是 webpack 和 babel 了 babel 負責編譯 webpack 負責串街所有工作
 安裝套件 建立一個專案並初始化 mkdir react-test cd react-test npm init -y git init -y 安裝開發用套件 npm i -D \ @babel/core \ @babel/cli \ @babel/preset-env \ @babel/preset-react \ babel-loader \ react \ react-dom \ webpack package.json 加入以下的 script
-{ &amp;#34;dev&amp;#34;: &amp;#34;webpack --mode development&amp;#34;, &amp;#34;watch&amp;#34;: &amp;#34;webpack --mode development --watch&amp;#34;, &amp;#34;depoly&amp;#34;: &amp;#34;webpack --mode production&amp;#34; } webpack.config.js 建立 webpack.config.js 這是最小的版本了 沒有任何的擴充</description>
+{ 	&amp;#34;dev&amp;#34;: &amp;#34;webpack --mode development&amp;#34;, 	&amp;#34;watch&amp;#34;: &amp;#34;webpack --mode development --watch&amp;#34;, 	&amp;#34;depoly&amp;#34;: &amp;#34;webpack --mode production&amp;#34; } webpack.config.js 建立 webpack.</description>
     </item>
     
     <item>
@@ -943,8 +936,8 @@ https://yu-jack.github.io/2019/01/08/ssh-tunnel/</description>
       <guid>https://blog.simba-fs.dev/posts/nodejs/unix-socket/</guid>
       <description>今天心血來潮在看 unix socket 突然想到 node 可不可以把 服務監聽在一個 socket file 這樣在設定的時候就不用記哪個服務是幾 port
 node 部份 監聽在 unix socket 查完資料後發現其實只要把原本填 port 的地方改成 socket file 的路徑就好了 像這樣
-const express = require(&amp;#39;express&amp;#39;); const app = express(); app.get(&amp;#39;/&amp;#39;, (req, res) =&amp;gt; { res.send(&amp;#39;Hello World\n&amp;#39;); }); app.listen(&amp;#39;/tmp/express.sock&amp;#39;); 刪除 socket file 因為每次的 listen 都會新增一個 socket file 相當於佔用一個 port 如果不刪除的話就相當於 port 被佔用了 會噴錯 所以每次程式結束的時候要把這個 socket file 刪掉 然後在 /tmp 下的檔案會在開機後自動刪掉 所以如果部屬後發什麼問題重開機就對了！ 修改完的 code 長這樣
-const fs = require(&amp;#39;fs&amp;#39;); const express = require(&amp;#39;express&amp;#39;); const app = express(); app.</description>
+const express = require(&amp;#39;express&amp;#39;); const app = express();  app.get(&amp;#39;/&amp;#39;, (req, res) =&amp;gt; {  res.send(&amp;#39;Hello World\n&amp;#39;); });  app.listen(&amp;#39;/tmp/express.sock&amp;#39;); 刪除 socket file 因為每次的 listen 都會新增一個 socket file 相當於佔用一個 port 如果不刪除的話就相當於 port 被佔用了 會噴錯 所以每次程式結束的時候要把這個 socket file 刪掉 然後在 /tmp 下的檔案會在開機後自動刪掉 所以如果部屬後發什麼問題重開機就對了！ 修改完的 code 長這樣
+const fs = require(&amp;#39;fs&amp;#39;); const express = require(&amp;#39;express&amp;#39;); const app = express();  app.</description>
     </item>
     
     <item>
@@ -954,7 +947,7 @@ const fs = require(&amp;#39;fs&amp;#39;); const express = require(&amp;#39;expre
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/blessed/blessed%E5%88%87%E6%8F%9B%E7%95%AB%E9%9D%A2/</guid>
       <description>今天完成了新版本的 treetify 看這 同時我設計好了右邊的 edit 但是我的問題是他要根據情況不同切換不同的頁面 來看看我的一些想法：
- 從 screen.children[2] 把他會掉，可是會出錯不行 有一個元件 Carousel 好像可以但是他其實是用方向鍵控制所以也不行 終於我想了一個方法，接下來來介紹 這是測試程式碼  const blessed = require(&amp;#39;blessed&amp;#39;); const contrib = require(&amp;#39;blessed-contrib&amp;#39;); const screen = blessed.screen({ title: &amp;#39;JSON viewer&amp;#39;, debug: true }); const grid = new contrib.grid({ rows: 1, cols: 2, screen: screen }); const tree = grid.set(0, 0, 1, 1, blessed.box, { border: {type: &amp;#39;line&amp;#39;}, content: &amp;#39;Tree&amp;#39;, label: &amp;#39;Tree&amp;#39; }); const edit = grid.set(0, 1, 1, 1, blessed.</description>
+ 從 screen.children[2] 把他會掉，可是會出錯不行 有一個元件 Carousel 好像可以但是他其實是用方向鍵控制所以也不行 終於我想了一個方法，接下來來介紹 這是測試程式碼  const blessed = require(&amp;#39;blessed&amp;#39;); const contrib = require(&amp;#39;blessed-contrib&amp;#39;);  const screen = blessed.screen({  title: &amp;#39;JSON viewer&amp;#39;,  debug: true }); const grid = new contrib.grid({  rows: 1,  cols: 2,  screen: screen });  const tree = grid.set(0, 0, 1, 1, blessed.box, {  border: {type: &amp;#39;line&amp;#39;},  content: &amp;#39;Tree&amp;#39;,  label: &amp;#39;Tree&amp;#39; });  const edit = grid.</description>
     </item>
     
     <item>
@@ -965,7 +958,7 @@ const fs = require(&amp;#39;fs&amp;#39;); const express = require(&amp;#39;expre
       <guid>https://blog.simba-fs.dev/posts/nodejs/blessed/blessed-contrib-tree/</guid>
       <description>Tree 想說先想一個專案來練練手 熟悉一下 blessed 突然看到 blessed-contrib 裡有個元件叫 tree 想說可以做成 JSON viewer 於是就開工了！
 其中最重要的部份就是搞定樹狀結構 因為他有特定的格式和選項 下面是官方的範例
-範例 { extended: true, children: { &amp;#39;Fruit&amp;#39;: { children: { &amp;#39;Banana&amp;#39;: {}, &amp;#39;Apple&amp;#39;: {}, &amp;#39;Cherry&amp;#39;: {}, &amp;#39;Exotics&amp;#39;: { children: { &amp;#39;Mango&amp;#39;: {}, &amp;#39;Papaya&amp;#39;: {}, &amp;#39;Kiwi&amp;#39;: { name: &amp;#39;Kiwi(notthebird!)&amp;#39;, myCustomProperty: &amp;#34;hairyfruit&amp;#34; } } }, &amp;#39;Pear&amp;#39;: {} } }, &amp;#39;Vegetables&amp;#39;: { children: { &amp;#39;Peas&amp;#39;: {}, &amp;#39;Lettuce&amp;#39;: {}, &amp;#39;Pepper&amp;#39;: {} } } } } 每個節點都是物件 他的子節點存在 children 裡 如果是空物件代表這是葉節點 extended 屬性是是否展開，預設 true name 是顯示出來的字，如果要改再設，預設是 index myCustomProperty 直翻是自訂屬性，應該是當 tree.</description>
+範例 {  extended: true,  children: {  &amp;#39;Fruit&amp;#39;: {  children: {  &amp;#39;Banana&amp;#39;: {},  &amp;#39;Apple&amp;#39;: {},  &amp;#39;Cherry&amp;#39;: {},  &amp;#39;Exotics&amp;#39;: {  children: {  &amp;#39;Mango&amp;#39;: {},  &amp;#39;Papaya&amp;#39;: {},  &amp;#39;Kiwi&amp;#39;: {  name: &amp;#39;Kiwi(notthebird!)&amp;#39;,  myCustomProperty: &amp;#34;hairyfruit&amp;#34;  }  }  },  &amp;#39;Pear&amp;#39;: {}  }  },  &amp;#39;Vegetables&amp;#39;: {  children: {  &amp;#39;Peas&amp;#39;: {},  &amp;#39;Lettuce&amp;#39;: {},  &amp;#39;Pepper&amp;#39;: {}  }  }  } } 每個節點都是物件 他的子節點存在 children 裡 如果是空物件代表這是葉節點 extended 屬性是是否展開，預設 true name 是顯示出來的字，如果要改再設，預設是 index myCustomProperty 直翻是自訂屬性，應該是當 tree.</description>
     </item>
     
     <item>
@@ -975,7 +968,7 @@ const fs = require(&amp;#39;fs&amp;#39;); const express = require(&amp;#39;expre
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/blessed/blessed/</guid>
       <description>某天我有一個問題 gtop 的圖畫界面是怎麼做的，我知道他是用 node 寫的，對他別有興趣 我上 github 看他的 package.json 發現他的 depandence 只有三個
-... &amp;#34;dependencies&amp;#34;: { &amp;#34;blessed&amp;#34;: &amp;#34;^0.1.81&amp;#34;, &amp;#34;blessed-contrib&amp;#34;: &amp;#34;^4.8.16&amp;#34;, &amp;#34;systeminformation&amp;#34;: &amp;#34;^4.14.4&amp;#34; }, ... 其中 systeminformation 很顯然是取得系統資訊 那 GUI 的 library 應該就是 blessed 和 blessed-contrib 了 去 blessed 的 github 看看 沒想到這是一個超強大的函式庫 可是網路上的教學卻很少 只好自己看 docs 啦
+... 	&amp;#34;dependencies&amp;#34;: { 	&amp;#34;blessed&amp;#34;: &amp;#34;^0.1.81&amp;#34;, 	&amp;#34;blessed-contrib&amp;#34;: &amp;#34;^4.8.16&amp;#34;, 	&amp;#34;systeminformation&amp;#34;: &amp;#34;^4.14.4&amp;#34; 	}, ... 其中 systeminformation 很顯然是取得系統資訊 那 GUI 的 library 應該就是 blessed 和 blessed-contrib 了 去 blessed 的 github 看看 沒想到這是一個超強大的函式庫 可是網路上的教學卻很少 只好自己看 docs 啦
 接下來是我測試的一些程式碼和截圖</description>
     </item>
     
@@ -1030,7 +1023,7 @@ const fs = require(&amp;#39;fs&amp;#39;); const express = require(&amp;#39;expre
       
       <guid>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</guid>
       <description>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
-name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest strategy: matrix: node-version: [12.x] steps: - uses: actions/checkout@v1 - name: Use Node.js ${{ matrix.node-version }} uses: actions/setup-node@v1 with: node-version: ${{ matrix.node-version }} - name: Configuration environment env: HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}} run: |mkdir -p ~/.ssh/ echo &amp;#34;$HEXO_DEPLOY_PRI&amp;#34; | tr -d &amp;#39;\r&amp;#39; &amp;gt; ~/.ssh/id_rsa chmod 600 ~/.ssh/id_rsa ssh-keyscan github.com &amp;gt;&amp;gt; ~/.ssh/known_hosts git config --global user.name &amp;#34;simba-fs&amp;#34; git config --global user.</description>
+name: HEXO CI  on:  push:  branches:  - master  jobs:  build:  runs-on: ubuntu-latest  strategy:  matrix:  node-version: [12.x]   steps:  - uses: actions/checkout@v1   - name: Use Node.js ${{ matrix.node-version }}  uses: actions/setup-node@v1  with:  node-version: ${{ matrix.node-version }}   - name: Configuration environment  env:  HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}  run: |mkdir -p ~/.</description>
     </item>
     
     <item>
@@ -1039,7 +1032,7 @@ name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest s
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/hexo/gitalk/</guid>
-      <description>啟用 gitalk 留言  到這個網址填資料 加入下面的片段到_config.yml  disqus: enabled: false gitalk: enabled: true owner: &amp;lt;username&amp;gt; repo: &amp;lt;username&amp;gt;.github.io admin: [&#39;&amp;lt;username&amp;gt;&#39;] clientID: &amp;lt;clientID&amp;gt; clientSecret: &amp;lt;clientSecret&amp;gt; 加入下面的片段到themes/cactus/layout/_partial/comments.ejs  &amp;lt;% if(page.comments &amp;amp;&amp;amp; theme.gitalk.enabled){ %&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;quot;gitalk-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; var gitalk = new Gitalk({ clientID: &#39;&amp;lt;%= theme.gitalk.clientID %&amp;gt;&#39;, clientSecret: &#39;&amp;lt;%= theme.gitalk.clientSecret %&amp;gt;&#39;, id: md5(window.location.pathname), repo: &#39;&amp;lt;%= theme.gitalk.repo %&amp;gt;&#39;, owner: &#39;&amp;lt;%= theme.gitalk.owner %&amp;gt;&#39;, admin: &#39;&amp;lt;%= theme.gitalk.admin %&amp;gt;&#39;, distractionFreeMode: &#39;&amp;lt;%= theme.</description>
+      <description>啟用 gitalk 留言  到這個網址填資料 加入下面的片段到_config.yml  disqus: enabled: false gitalk: enabled: true owner: &amp;lt;username&amp;gt; repo: &amp;lt;username&amp;gt;.github.io admin: [&amp;#39;&amp;lt;username&amp;gt;&amp;#39;] clientID: &amp;lt;clientID&amp;gt; clientSecret: &amp;lt;clientSecret&amp;gt; 加入下面的片段到themes/cactus/layout/_partial/comments.ejs  &amp;lt;% if(page.comments &amp;amp;&amp;amp; theme.gitalk.enabled){ %&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;gitalk-container&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; var gitalk = new Gitalk({ clientID: &amp;#39;&amp;lt;%= theme.gitalk.clientID %&amp;gt;&amp;#39;, clientSecret: &amp;#39;&amp;lt;%= theme.gitalk.clientSecret %&amp;gt;&amp;#39;, id: md5(window.location.pathname), repo: &amp;#39;&amp;lt;%= theme.gitalk.repo %&amp;gt;&amp;#39;, owner: &amp;#39;&amp;lt;%= theme.gitalk.owner %&amp;gt;&amp;#39;, admin: &amp;#39;&amp;lt;%= theme.gitalk.admin %&amp;gt;&amp;#39;, distractionFreeMode: &amp;#39;&amp;lt;%= theme.</description>
     </item>
     
     <item>

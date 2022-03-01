@@ -3,13 +3,12 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>LaTeX Starter | Simba's Blog</title>
-<meta name=keywords content>
+<title>LaTeX Starter | Simba's Blog</title><meta name=keywords content>
 <meta name=description content="LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構&mldr;&mldr;
         credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。
 幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定
 （.ttf 可以指向你自己喜歡的中文字型檔）
-\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]} \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &#34;zh&#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
+\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]}  \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &#34;zh&#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
 巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \（反斜線），巨集可以自己定義，也可以用 \usepackage{} 載入別人寫好的
 overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。
 表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）">
@@ -17,7 +16,7 @@ overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有�
 <link rel=canonical href=https://blog.simba-fs.dev/posts/other/latex-starter/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
@@ -25,17 +24,14 @@ overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有�
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.0">
 <noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="LaTeX Starter">
+<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-175823992-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="LaTeX Starter">
 <meta property="og:description" content="LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構&mldr;&mldr;
         credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。
 幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定
 （.ttf 可以指向你自己喜歡的中文字型檔）
-\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]} \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &#34;zh&#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
+\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]}  \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &#34;zh&#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
 巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \（反斜線），巨集可以自己定義，也可以用 \usepackage{} 載入別人寫好的
 overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。
 表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）">
@@ -50,15 +46,14 @@ overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有�
         credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。
 幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定
 （.ttf 可以指向你自己喜歡的中文字型檔）
-\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]} \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &#34;zh&#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
+\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \newCJKfontfamily\Kai{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\Hei{[jf-openhuninn-1.1.ttf]} \newCJKfontfamily\NewMing{[jf-openhuninn-1.1.ttf]}  \usepackage{fontspec} \setmainfont{[jf-openhuninn-1.1.ttf]} \setmonofont{[jf-openhuninn-1.1.ttf]} \XeTeXlinebreaklocale &#34;zh&#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\（兩個反斜線）
 巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \（反斜線），巨集可以自己定義，也可以用 \usepackage{} 載入別人寫好的
 overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。
 表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"other","item":"https://blog.simba-fs.dev/posts/other/"},{"@type":"ListItem","position":3,"name":"LaTeX Starter","item":"https://blog.simba-fs.dev/posts/other/latex-starter/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"LaTeX Starter","name":"LaTeX Starter","description":"LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構\u0026hellip;\u0026hellip;\n        credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。\n幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定\n（.ttf 可以指向你自己喜歡的中文字型檔）\n\\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \\newCJKfontfamily\\Kai{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\Hei{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\NewMing{[jf-openhuninn-1.1.ttf]} \\usepackage{fontspec} \\setmainfont{[jf-openhuninn-1.1.ttf]} \\setmonofont{[jf-openhuninn-1.1.ttf]} \\XeTeXlinebreaklocale \u0026#34;zh\u0026#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\\\（兩個反斜線）\n巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \\（反斜線），巨集可以自己定義，也可以用 \\usepackage{} 載入別人寫好的\noverleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。\n表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）","keywords":[],"articleBody":"LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構……\n        credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。\n幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定\n（.ttf 可以指向你自己喜歡的中文字型檔）\n\\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \\newCJKfontfamily\\Kai{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\Hei{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\NewMing{[jf-openhuninn-1.1.ttf]} \\usepackage{fontspec} \\setmainfont{[jf-openhuninn-1.1.ttf]} \\setmonofont{[jf-openhuninn-1.1.ttf]} \\XeTeXlinebreaklocale \"zh\" 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\\\（兩個反斜線）\n巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \\（反斜線），巨集可以自己定義，也可以用 \\usepackage{} 載入別人寫好的\noverleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。\n表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）\n格線 直線 如果直線你需要兩條，在 \\begin{tabular}{|L|L|} 這裡多加幾條 | 就可以了。直線如果遇到跨列的格子會自動跳過，所以你不需要處理\n橫線 只需要用 \\hline 就可以畫一條橫線。\n但是因為橫線遇到跨行的格子不會自動跳過，所以需要特殊處理。可以用 hhline 這個 package，用法很簡單，\\hhline{|~|-|=|}。\n~ 是不劃線，- 是畫一條線，=是畫兩條線，而這裡的 | 是在畫兩條線時要畫線中間的直線（你畫兩條線時試試看就知道了）\n數學表格 做報告的時候一定會遇到表格裡有數學符號，如果你懶得前後都加 $ 的話，可以用以下的方式\n\\newcolumntype{L}{{$}l$}} % math-mode version of \"l\" column type  \\begin{tabular}{|L|L|} \\pi \u0026 \\tau \\end{tabular} 其他 其他零碎的使用方法建議參考 Saintan的LaTeX小教室，裡面寫的非常詳細\n符號表 在 LaTeX 打數學式的時候，一定會遇到一些莫名其妙的符號，可以參考下面兩個網站，可以依序找，第二個因為東西太多了所以會比較難找一點\nhttps://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols\nhttps://www.caam.rice.edu/~heinken/latex/symbols.pdf\n我的 LaTeX 範本 這是我寫物理實驗結報的範本\n\\documentclass[12pt,a4paper]{article} \\title{物理實驗結報範本} \\author{學號：X12345678 \\\\ 姓名：XXX \\\\ 第 17 組} \\date{2021-10-08} \\usepackage{amsmath} \\usepackage{mathtools} \\usepackage{graphicx} \\usepackage{array} % for \\newcolumntype macro \\newcolumntype{L}{{$}l$}} % math-mode version of \"l\" column type \\usepackage[utf8]{inputenc} \\usepackage[T1]{fontenc} \\usepackage{textcomp} \\usepackage{gensymb} \\usepackage{multirow} \\usepackage{hhline} \\usepackage{indentfirst} \\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \\newCJKfontfamily\\Kai{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\Hei{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\NewMing{[jf-openhuninn-1.1.ttf]} \\usepackage{fontspec} \\setmainfont{[jf-openhuninn-1.1.ttf]} \\setmonofont{[jf-openhuninn-1.1.ttf]} \\XeTeXlinebreaklocale \"zh\" \\begin{document} \\maketitle \\section{簡介} \\section{原始數據} \\section{數據分析} \\section{誤差分析} \\subsection{百分誤差} \\subsection{誤差原因} \\section{結果與討論} \\end{document} ","wordCount":"166","inLanguage":"zh-tw","datePublished":"2021-12-22T23:18:41+08:00","dateModified":"2021-12-22T23:18:41+08:00","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/other/latex-starter/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"LaTeX Starter","name":"LaTeX Starter","description":"LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構\u0026hellip;\u0026hellip;\n        credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。\n幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定\n（.ttf 可以指向你自己喜歡的中文字型檔）\n\\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \\newCJKfontfamily\\Kai{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\Hei{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\NewMing{[jf-openhuninn-1.1.ttf]}  \\usepackage{fontspec} \\setmainfont{[jf-openhuninn-1.1.ttf]} \\setmonofont{[jf-openhuninn-1.1.ttf]} \\XeTeXlinebreaklocale \u0026#34;zh\u0026#34; 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\\\（兩個反斜線）\n巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \\（反斜線），巨集可以自己定義，也可以用 \\usepackage{} 載入別人寫好的\noverleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。\n表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）","keywords":[],"articleBody":"LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構……\n        credit:https://zh.wikipedia.org/wiki/LaTeX    在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。\n幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定\n（.ttf 可以指向你自己喜歡的中文字型檔）\n\\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \\newCJKfontfamily\\Kai{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\Hei{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\NewMing{[jf-openhuninn-1.1.ttf]}  \\usepackage{fontspec} \\setmainfont{[jf-openhuninn-1.1.ttf]} \\setmonofont{[jf-openhuninn-1.1.ttf]} \\XeTeXlinebreaklocale \"zh\" 換行 LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用  （兩個空白），在 LaTeX 是 \\\\（兩個反斜線）\n巨集與 Package LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 \\（反斜線），巨集可以自己定義，也可以用 \\usepackage{} 載入別人寫好的\noverleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。\n表格 切版 畫 LaTeX 表格最簡單的方式是用 Google Sheet + latexkit，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）\n格線 直線 如果直線你需要兩條，在 \\begin{tabular}{|L|L|} 這裡多加幾條 | 就可以了。直線如果遇到跨列的格子會自動跳過，所以你不需要處理\n橫線 只需要用 \\hline 就可以畫一條橫線。\n但是因為橫線遇到跨行的格子不會自動跳過，所以需要特殊處理。可以用 hhline 這個 package，用法很簡單，\\hhline{|~|-|=|}。\n~ 是不劃線，- 是畫一條線，=是畫兩條線，而這裡的 | 是在畫兩條線時要畫線中間的直線（你畫兩條線時試試看就知道了）\n數學表格 做報告的時候一定會遇到表格裡有數學符號，如果你懶得前後都加 $ 的話，可以用以下的方式\n\\newcolumntype{L}{{$}l$}} % math-mode version of \"l\" column type  \\begin{tabular}{|L|L|} \\pi \u0026 \\tau \\end{tabular} 其他 其他零碎的使用方法建議參考 Saintan的LaTeX小教室，裡面寫的非常詳細\n符號表 在 LaTeX 打數學式的時候，一定會遇到一些莫名其妙的符號，可以參考下面兩個網站，可以依序找，第二個因為東西太多了所以會比較難找一點\nhttps://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols\nhttps://www.caam.rice.edu/~heinken/latex/symbols.pdf\n我的 LaTeX 範本 這是我寫物理實驗結報的範本\n\\documentclass[12pt,a4paper]{article}  \\title{物理實驗結報範本} \\author{學號：X12345678 \\\\ 姓名：XXX \\\\ 第 17 組} \\date{2021-10-08}  \\usepackage{amsmath} \\usepackage{mathtools} \\usepackage{graphicx} \\usepackage{array} % for \\newcolumntype macro \\newcolumntype{L}{{$}l$}} % math-mode version of \"l\" column type \\usepackage[utf8]{inputenc} \\usepackage[T1]{fontenc} \\usepackage{textcomp} \\usepackage{gensymb} \\usepackage{multirow} \\usepackage{hhline} \\usepackage{indentfirst}  \\usepackage[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]{xeCJK} \\newCJKfontfamily\\Kai{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\Hei{[jf-openhuninn-1.1.ttf]} \\newCJKfontfamily\\NewMing{[jf-openhuninn-1.1.ttf]}  \\usepackage{fontspec} \\setmainfont{[jf-openhuninn-1.1.ttf]} \\setmonofont{[jf-openhuninn-1.1.ttf]} \\XeTeXlinebreaklocale \"zh\"  \\begin{document} \\maketitle  \\section{簡介}  \\section{原始數據}  \\section{數據分析}  \\section{誤差分析} \\subsection{百分誤差}  \\subsection{誤差原因}  \\section{結果與討論} \\end{document} ","wordCount":"166","inLanguage":"zh-tw","datePublished":"2021-12-22T23:18:41+08:00","dateModified":"2021-12-22T23:18:41+08:00","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/other/latex-starter/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
+</head><body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -68,46 +63,34 @@ overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有�
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </span>
-</div>
-<ul id=menu>
+</div><ul id=menu>
 <li>
 <a href=https://blog.simba-fs.dev/posts/ title=Categories>
 <span>Categories</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/tags/ title=Tags>
 <span>Tags</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/archive/ title=Archives>
 <span>Archives</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/resource/ title=Resource>
 <span>Resource</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
+</li></ul></nav></header><main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/other/>other</a></div>
-<h1 class=post-title>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/other/>other</a></div><h1 class=post-title>
 LaTeX Starter
-</h1>
-<div class=post-meta><span title="2021-12-22 23:18:41 +0800 +0800">2021-December-22</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs
-</div>
-</header> <div class=toc>
+</h1><div class=post-meta><span title="2021-12-22 23:18:41 +0800 +0800">2021-December-22</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs
+</div></header><div class=toc>
 <details open>
 <summary accesskey=c title="(Alt + C)">
 <span class=details>目錄</span>
@@ -116,148 +99,94 @@ LaTeX Starter
 <li>
 <a href=#%e5%b9%be%e5%80%8b%e9%87%8d%e9%bb%9e aria-label=幾個重點>幾個重點</a><ul>
 <li>
-<a href=#%e4%b8%ad%e6%96%87 aria-label=中文>中文</a></li>
-<li>
-<a href=#%e6%8f%9b%e8%a1%8c aria-label=換行>換行</a></li>
-<li>
-<a href=#%e5%b7%a8%e9%9b%86%e8%88%87-package aria-label="巨集與 Package">巨集與 Package</a></li>
-<li>
-<a href=#overleaf aria-label=overleaf>overleaf</a></li>
-<li>
+<a href=#%e4%b8%ad%e6%96%87 aria-label=中文>中文</a></li><li>
+<a href=#%e6%8f%9b%e8%a1%8c aria-label=換行>換行</a></li><li>
+<a href=#%e5%b7%a8%e9%9b%86%e8%88%87-package aria-label="巨集與 Package">巨集與 Package</a></li><li>
+<a href=#overleaf aria-label=overleaf>overleaf</a></li><li>
 <a href=#%e8%a1%a8%e6%a0%bc aria-label=表格>表格</a><ul>
 <li>
-<a href=#%e5%88%87%e7%89%88 aria-label=切版>切版</a></li>
-<li>
+<a href=#%e5%88%87%e7%89%88 aria-label=切版>切版</a></li><li>
 <a href=#%e6%a0%bc%e7%b7%9a aria-label=格線>格線</a><ul>
 <li>
-<a href=#%e7%9b%b4%e7%b7%9a aria-label=直線>直線</a></li>
-<li>
-<a href=#%e6%a9%ab%e7%b7%9a aria-label=橫線>橫線</a></li></ul>
-</li></ul>
-</li>
-<li>
-<a href=#%e6%95%b8%e5%ad%b8%e8%a1%a8%e6%a0%bc aria-label=數學表格>數學表格</a></li>
-<li>
-<a href=#%e5%85%b6%e4%bb%96 aria-label=其他>其他</a></li>
-<li>
-<a href=#%e7%ac%a6%e8%99%9f%e8%a1%a8 aria-label=符號表>符號表</a></li></ul>
-</li>
-<li>
+<a href=#%e7%9b%b4%e7%b7%9a aria-label=直線>直線</a></li><li>
+<a href=#%e6%a9%ab%e7%b7%9a aria-label=橫線>橫線</a></li></ul></li></ul></li><li>
+<a href=#%e6%95%b8%e5%ad%b8%e8%a1%a8%e6%a0%bc aria-label=數學表格>數學表格</a></li><li>
+<a href=#%e5%85%b6%e4%bb%96 aria-label=其他>其他</a></li><li>
+<a href=#%e7%ac%a6%e8%99%9f%e8%a1%a8 aria-label=符號表>符號表</a></li></ul></li><li>
 <a href=#%e6%88%91%e7%9a%84-latex-%e7%af%84%e6%9c%ac aria-label="我的 LaTeX 範本">我的 LaTeX 範本</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><p>LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構&mldr;&mldr;</p>
-<table>
+</li></ul></div></details>
+</div><div class=post-content><p>LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構&mldr;&mldr;</p><table>
 <thead>
 <tr>
 <th style=text-align:center><img loading=lazy src=/images/latex-starter/latex-example.png alt=莫名其妙排版範例>
-</th>
-</tr>
-</thead>
-<tbody>
+</th></tr></thead><tbody>
 <tr>
-<td style=text-align:center>credit:<a href=https://zh.wikipedia.org/wiki/LaTeX>https://zh.wikipedia.org/wiki/LaTeX</a></td>
-</tr>
-</tbody>
-</table>
-<p>在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。</p>
-<h1 id=幾個重點>幾個重點<a hidden class=anchor aria-hidden=true href=#幾個重點>#</a></h1>
-<h2 id=中文>中文<a hidden class=anchor aria-hidden=true href=#中文>#</a></h2>
-<p>使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定<br>
-（<code>.ttf</code> 可以指向你自己喜歡的中文字型檔）</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=color:#66d9ef>\usepackage</span><span style=color:#a6e22e>[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]</span>{xeCJK} 
-<span style=color:#66d9ef>\newCJKfontfamily\Kai</span>{[jf-openhuninn-1.1.ttf]}       
-<span style=color:#66d9ef>\newCJKfontfamily\Hei</span>{[jf-openhuninn-1.1.ttf]}   
-<span style=color:#66d9ef>\newCJKfontfamily\NewMing</span>{[jf-openhuninn-1.1.ttf]} 
-
-<span style=color:#66d9ef>\usepackage</span>{fontspec}
-<span style=color:#66d9ef>\setmainfont</span>{[jf-openhuninn-1.1.ttf]}
-<span style=color:#66d9ef>\setmonofont</span>{[jf-openhuninn-1.1.ttf]}
-<span style=color:#66d9ef>\XeTeXlinebreaklocale</span> &#34;zh&#34;
-</code></pre></div><h2 id=換行>換行<a hidden class=anchor aria-hidden=true href=#換行>#</a></h2>
-<p>LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用 <code> </code>（兩個空白），在 LaTeX 是 <code>\\</code>（兩個反斜線）</p>
-<h2 id=巨集與-package>巨集與 Package<a hidden class=anchor aria-hidden=true href=#巨集與-package>#</a></h2>
-<p>LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 <code>\</code>（反斜線），巨集可以自己定義，也可以用 <code>\usepackage{}</code> 載入別人寫好的</p>
-<h2 id=overleaf>overleaf<a hidden class=anchor aria-hidden=true href=#overleaf>#</a></h2>
-<p>overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。</p>
-<h2 id=表格>表格<a hidden class=anchor aria-hidden=true href=#表格>#</a></h2>
-<h3 id=切版>切版<a hidden class=anchor aria-hidden=true href=#切版>#</a></h3>
-<p>畫 LaTeX 表格最簡單的方式是用 Google Sheet + <a href="https://workspace.google.com/marketplace/app/latexkit/716178627426?hl=zh_tw">latexkit</a>，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）</p>
-<h3 id=格線>格線<a hidden class=anchor aria-hidden=true href=#格線>#</a></h3>
-<h4 id=直線>直線<a hidden class=anchor aria-hidden=true href=#直線>#</a></h4>
-<p>如果直線你需要兩條，在 <code>\begin{tabular}{|L|L|}</code> 這裡多加幾條 <code>|</code> 就可以了。直線如果遇到跨列的格子會自動跳過，所以你不需要處理</p>
-<h4 id=橫線>橫線<a hidden class=anchor aria-hidden=true href=#橫線>#</a></h4>
-<p>只需要用 <code>\hline</code> 就可以畫一條橫線。<br>
+<td style=text-align:center>credit:<a href=https://zh.wikipedia.org/wiki/LaTeX>https://zh.wikipedia.org/wiki/LaTeX</a></td></tr></tbody></table><p>在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。</p><h1 id=幾個重點>幾個重點<a hidden class=anchor aria-hidden=true href=#幾個重點>#</a></h1><h2 id=中文>中文<a hidden class=anchor aria-hidden=true href=#中文>#</a></h2><p>使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定<br>
+（<code>.ttf</code> 可以指向你自己喜歡的中文字型檔）</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span><span style=color:#a6e22e>[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]</span>{xeCJK} 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newCJKfontfamily\Kai</span>{[jf-openhuninn-1.1.ttf]}       
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newCJKfontfamily\Hei</span>{[jf-openhuninn-1.1.ttf]}   
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newCJKfontfamily\NewMing</span>{[jf-openhuninn-1.1.ttf]} 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{fontspec}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\setmainfont</span>{[jf-openhuninn-1.1.ttf]}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\setmonofont</span>{[jf-openhuninn-1.1.ttf]}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\XeTeXlinebreaklocale</span> &#34;zh&#34;
+</span></span></code></pre></div><h2 id=換行>換行<a hidden class=anchor aria-hidden=true href=#換行>#</a></h2><p>LaTeX 在換行這個設計和 Markdown 一樣，因為內容與呈現分離，所以你的換行不是真的換行。Markdown 用 <code> </code>（兩個空白），在 LaTeX 是 <code>\\</code>（兩個反斜線）</p><h2 id=巨集與-package>巨集與 Package<a hidden class=anchor aria-hidden=true href=#巨集與-package>#</a></h2><p>LaTeX 一個核心概念是巨集，就是函數啦，巨集的開頭是 <code>\</code>（反斜線），巨集可以自己定義，也可以用 <code>\usepackage{}</code> 載入別人寫好的</p><h2 id=overleaf>overleaf<a hidden class=anchor aria-hidden=true href=#overleaf>#</a></h2><p>overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有寫報告用得到的 packages，而且可以上傳自己的字型、圖片，而且右邊可以顯示產生的 PDF（非即時，按 CTRL-Enter 編譯）。這個網站整體使用體驗還算不錯，該有的功能都有了。</p><h2 id=表格>表格<a hidden class=anchor aria-hidden=true href=#表格>#</a></h2><h3 id=切版>切版<a hidden class=anchor aria-hidden=true href=#切版>#</a></h3><p>畫 LaTeX 表格最簡單的方式是用 Google Sheet + <a href="https://workspace.google.com/marketplace/app/latexkit/716178627426?hl=zh_tw">latexkit</a>，這個外掛可以幫你把跨行、跨欄表格通通弄好，你只需要再調整格線和格式就行了（latexkit 只負責切版）</p><h3 id=格線>格線<a hidden class=anchor aria-hidden=true href=#格線>#</a></h3><h4 id=直線>直線<a hidden class=anchor aria-hidden=true href=#直線>#</a></h4><p>如果直線你需要兩條，在 <code>\begin{tabular}{|L|L|}</code> 這裡多加幾條 <code>|</code> 就可以了。直線如果遇到跨列的格子會自動跳過，所以你不需要處理</p><h4 id=橫線>橫線<a hidden class=anchor aria-hidden=true href=#橫線>#</a></h4><p>只需要用 <code>\hline</code> 就可以畫一條橫線。<br>
 但是因為橫線遇到跨行的格子不會自動跳過，所以需要特殊處理。可以用 <code>hhline</code> 這個 package，用法很簡單，<code>\hhline{|~|-|=|}</code>。<br>
-<code>~</code> 是不劃線，<code>-</code> 是畫一條線，<code>=</code>是畫兩條線，而這裡的 <code>|</code> 是在畫兩條線時要畫線中間的直線（你畫兩條線時試試看就知道了）</p>
-<h2 id=數學表格>數學表格<a hidden class=anchor aria-hidden=true href=#數學表格>#</a></h2>
-<p>做報告的時候一定會遇到表格裡有數學符號，如果你懶得前後都加 <code>$</code> 的話，可以用以下的方式</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=color:#66d9ef>\newcolumntype</span>{L}{&gt;{<span style=color:#e6db74>$</span>}l&lt;{<span style=color:#e6db74>$</span>}} <span style=color:#75715e>% math-mode version of &#34;l&#34; column type
-</span><span style=color:#75715e></span>
-<span style=color:#66d9ef>\begin</span>{tabular}{|L|L|}
-<span style=color:#66d9ef>\pi</span> &amp; <span style=color:#66d9ef>\tau</span> 
-<span style=color:#66d9ef>\end</span>{tabular}
-</code></pre></div><h2 id=其他>其他<a hidden class=anchor aria-hidden=true href=#其他>#</a></h2>
-<p>其他零碎的使用方法建議參考 <a href=https://www.overleaf.com/read/hpscgpsbxnjf>Saintan的LaTeX小教室</a>，裡面寫的非常詳細</p>
-<h2 id=符號表>符號表<a hidden class=anchor aria-hidden=true href=#符號表>#</a></h2>
-<p>在 LaTeX 打數學式的時候，一定會遇到一些莫名其妙的符號，可以參考下面兩個網站，可以依序找，第二個因為東西太多了所以會比較難找一點</p>
-<p><a href=https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols>https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols</a><br>
-<a href=https://www.caam.rice.edu/~heinken/latex/symbols.pdf>https://www.caam.rice.edu/~heinken/latex/symbols.pdf</a></p>
-<h1 id=我的-latex-範本>我的 LaTeX 範本<a hidden class=anchor aria-hidden=true href=#我的-latex-範本>#</a></h1>
-<p>這是我寫物理實驗結報的範本</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=color:#66d9ef>\documentclass</span><span style=color:#a6e22e>[12pt,a4paper]</span>{article}
-
-<span style=color:#66d9ef>\title</span>{物理實驗結報範本}
-<span style=color:#66d9ef>\author</span>{學號：X12345678 <span style=color:#66d9ef>\\</span>
-姓名：XXX <span style=color:#66d9ef>\\</span>
-第 17 組}
-<span style=color:#66d9ef>\date</span>{2021-10-08}
-
-<span style=color:#66d9ef>\usepackage</span>{amsmath} 
-<span style=color:#66d9ef>\usepackage</span>{mathtools}
-<span style=color:#66d9ef>\usepackage</span>{graphicx}
-<span style=color:#66d9ef>\usepackage</span>{array}   <span style=color:#75715e>% for \newcolumntype macro
-</span><span style=color:#75715e></span><span style=color:#66d9ef>\newcolumntype</span>{L}{&gt;{<span style=color:#e6db74>$</span>}l&lt;{<span style=color:#e6db74>$</span>}} <span style=color:#75715e>% math-mode version of &#34;l&#34; column type
-</span><span style=color:#75715e></span><span style=color:#66d9ef>\usepackage</span><span style=color:#a6e22e>[utf8]</span>{inputenc}
-<span style=color:#66d9ef>\usepackage</span><span style=color:#a6e22e>[T1]</span>{fontenc}
-<span style=color:#66d9ef>\usepackage</span>{textcomp}
-<span style=color:#66d9ef>\usepackage</span>{gensymb}
-<span style=color:#66d9ef>\usepackage</span>{multirow}
-<span style=color:#66d9ef>\usepackage</span>{hhline}
-<span style=color:#66d9ef>\usepackage</span>{indentfirst}
-
-<span style=color:#66d9ef>\usepackage</span><span style=color:#a6e22e>[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]</span>{xeCJK} 
-<span style=color:#66d9ef>\newCJKfontfamily\Kai</span>{[jf-openhuninn-1.1.ttf]}       
-<span style=color:#66d9ef>\newCJKfontfamily\Hei</span>{[jf-openhuninn-1.1.ttf]}   
-<span style=color:#66d9ef>\newCJKfontfamily\NewMing</span>{[jf-openhuninn-1.1.ttf]} 
-
-<span style=color:#66d9ef>\usepackage</span>{fontspec}
-<span style=color:#66d9ef>\setmainfont</span>{[jf-openhuninn-1.1.ttf]}
-<span style=color:#66d9ef>\setmonofont</span>{[jf-openhuninn-1.1.ttf]}
-<span style=color:#66d9ef>\XeTeXlinebreaklocale</span> &#34;zh&#34;
-
-<span style=color:#66d9ef>\begin</span>{document}
-<span style=color:#66d9ef>\maketitle</span>  
-
-<span style=color:#66d9ef>\section</span>{簡介}
-
-<span style=color:#66d9ef>\section</span>{原始數據}
-
-<span style=color:#66d9ef>\section</span>{數據分析}
-
-<span style=color:#66d9ef>\section</span>{誤差分析}
-<span style=color:#66d9ef>\subsection</span>{百分誤差}
-
-<span style=color:#66d9ef>\subsection</span>{誤差原因}
-
-<span style=color:#66d9ef>\section</span>{結果與討論}
-<span style=color:#66d9ef>\end</span>{document}
-</code></pre></div>
-</div>
-<footer class=post-footer>
+<code>~</code> 是不劃線，<code>-</code> 是畫一條線，<code>=</code>是畫兩條線，而這裡的 <code>|</code> 是在畫兩條線時要畫線中間的直線（你畫兩條線時試試看就知道了）</p><h2 id=數學表格>數學表格<a hidden class=anchor aria-hidden=true href=#數學表格>#</a></h2><p>做報告的時候一定會遇到表格裡有數學符號，如果你懶得前後都加 <code>$</code> 的話，可以用以下的方式</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=display:flex><span><span style=color:#66d9ef>\newcolumntype</span>{L}{&gt;{<span style=color:#e6db74>$</span>}l&lt;{<span style=color:#e6db74>$</span>}} <span style=color:#75715e>% math-mode version of &#34;l&#34; column type
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\begin</span>{tabular}{|L|L|}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\pi</span> &amp; <span style=color:#66d9ef>\tau</span> 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\end</span>{tabular}
+</span></span></code></pre></div><h2 id=其他>其他<a hidden class=anchor aria-hidden=true href=#其他>#</a></h2><p>其他零碎的使用方法建議參考 <a href=https://www.overleaf.com/read/hpscgpsbxnjf>Saintan的LaTeX小教室</a>，裡面寫的非常詳細</p><h2 id=符號表>符號表<a hidden class=anchor aria-hidden=true href=#符號表>#</a></h2><p>在 LaTeX 打數學式的時候，一定會遇到一些莫名其妙的符號，可以參考下面兩個網站，可以依序找，第二個因為東西太多了所以會比較難找一點</p><p><a href=https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols>https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols</a><br>
+<a href=https://www.caam.rice.edu/~heinken/latex/symbols.pdf>https://www.caam.rice.edu/~heinken/latex/symbols.pdf</a></p><h1 id=我的-latex-範本>我的 LaTeX 範本<a hidden class=anchor aria-hidden=true href=#我的-latex-範本>#</a></h1><p>這是我寫物理實驗結報的範本</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=display:flex><span><span style=color:#66d9ef>\documentclass</span><span style=color:#a6e22e>[12pt,a4paper]</span>{article}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\title</span>{物理實驗結報範本}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\author</span>{學號：X12345678 <span style=color:#66d9ef>\\</span>
+</span></span><span style=display:flex><span>姓名：XXX <span style=color:#66d9ef>\\</span>
+</span></span><span style=display:flex><span>第 17 組}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\date</span>{2021-10-08}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{amsmath} 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{mathtools}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{graphicx}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{array}   <span style=color:#75715e>% for \newcolumntype macro
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>\newcolumntype</span>{L}{&gt;{<span style=color:#e6db74>$</span>}l&lt;{<span style=color:#e6db74>$</span>}} <span style=color:#75715e>% math-mode version of &#34;l&#34; column type
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>\usepackage</span><span style=color:#a6e22e>[utf8]</span>{inputenc}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span><span style=color:#a6e22e>[T1]</span>{fontenc}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{textcomp}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{gensymb}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{multirow}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{hhline}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{indentfirst}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span><span style=color:#a6e22e>[CJKmath=true,AutoFakeBold=3,AutoFakeSlant=.2]</span>{xeCJK} 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newCJKfontfamily\Kai</span>{[jf-openhuninn-1.1.ttf]}       
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newCJKfontfamily\Hei</span>{[jf-openhuninn-1.1.ttf]}   
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newCJKfontfamily\NewMing</span>{[jf-openhuninn-1.1.ttf]} 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\usepackage</span>{fontspec}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\setmainfont</span>{[jf-openhuninn-1.1.ttf]}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\setmonofont</span>{[jf-openhuninn-1.1.ttf]}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\XeTeXlinebreaklocale</span> &#34;zh&#34;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\begin</span>{document}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\maketitle</span>  
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\section</span>{簡介}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\section</span>{原始數據}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\section</span>{數據分析}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\section</span>{誤差分析}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\subsection</span>{百分誤差}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\subsection</span>{誤差原因}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\section</span>{結果與討論}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\end</span>{document}
+</span></span></code></pre></div></div><footer class=post-footer>
 <nav class=paginav>
 <a class=prev href=https://blog.simba-fs.dev/posts/frontend/react-composition/>
 <span class=title>« 上一篇</span>
@@ -269,8 +198,7 @@ LaTeX Starter
 <br>
 <span>ExecCmd</span>
 </a>
-</nav>
-<div class=share-buttons>
+</nav><div class=share-buttons>
 <a target=_blank rel="noopener noreferrer" aria-label="share LaTeX Starter on twitter" href="https://twitter.com/intent/tweet/?text=LaTeX%20Starter&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fother%2flatex-starter%2f&hashtags="><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share LaTeX Starter on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fother%2flatex-starter%2f&title=LaTeX%20Starter&summary=LaTeX%20Starter&source=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fother%2flatex-starter%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
@@ -283,22 +211,16 @@ LaTeX Starter
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share LaTeX Starter on telegram" href="https://telegram.me/share/url?text=LaTeX%20Starter&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fother%2flatex-starter%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
 </a>
-</div>
-</footer>
-</article>
-</main>
-<footer class=footer>
+</div></footer></article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script>
+</body></html>

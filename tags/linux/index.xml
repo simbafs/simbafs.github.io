@@ -59,7 +59,7 @@ DOCKER_OPTS=&amp;#34;--dns 8.8.8.8&amp;#34; systemctl restart docker 然後重�
       <description>前言 上次提到可以用 Dockerfile 建立 docker image，但我們還有令一個方法可以建立 docker image，那就是 docker commit 指令
 和 Dockerfile 差別 docker commit 有點像是手動版的 Dockerfile，在用 Dockerfile 建構 docker image 的時候，docker build 的工作就像是自動根據 Dockerfile 操作 docker commit。 Dockerfile 比較適合用在自動化交付和部屬，例如說你有一份程式碼，要將他包成 Docker 就很適合用 Dockerfile 自動化操作，因為程式碼會改變，但是包裝的流程基本上都是一樣的。 docker commit 適合用在建構環境，因為會有比較麻煩的操作，如果寫成 Dockerfile 會比較麻煩，當然如果可以的話還是寫成 Dockerfile 會比較好，因為更新的時候會比較方便。 在建構 image 的時候要用哪個方法就看個人取捨了。
 docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images，有點類似令存新檔的概念。先來看看參數吧！
-參數 $ docker commit --help Usage:	docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] Create a new image from a container&amp;#39;s changes Options: -a, --author string Author (e.</description>
+參數 $ docker commit --help Usage:	docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]  Create a new image from a container&amp;#39;s changes  Options:  -a, --author string Author (e.</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@ docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images
 解法 v1.0 首先，因為每一篇文章 hexo 都會紀錄建立時間，所以我們可以直接把他抓出來，然後把檔案的更新時間設成這個時間就可以啦！
 更改檔案的 modified time 這個功能只要用我們最熟悉的 touch 就可以做到了。一般我們使用 touch 的時候會把 modified time 改成當下時間，那要改任意時間只要加上 -t 選項就可以啦
 -t STAMP use [[CC]YY]MMDDhhmm[.ss] instead of current time 假設我們有個檔案 tmp ，我想把他的日期改成 1999/3/23 12:32:33 ，那我可以這樣下指令
-ted timeouch -t&#39;19993231232.33&#39; tmp 抓出檔名、日期 # git create time grep -rnw source/_posts -e &amp;#39;date&amp;#39; output:（這裡的 date: 後面我多加了一個空白，原因後面會說）
+ted timeouch -t&amp;#39;19993231232.33&amp;#39; tmp 抓出檔名、日期 # git create time grep -rnw source/_posts -e &amp;#39;date&amp;#39; output:（這裡的 date: 後面我多加了一個空白，原因後面會說）
 source/_posts/hexo-installation.md:3:date: 2020-02-10 17:26:45 source/_posts/blessed.md:3:date: 2020-02-17 23:24:10 source/_posts/bash.md:3:date: 2020-02-16 22:15:10 source/_posts/hexo-cli-extras.</description>
     </item>
     

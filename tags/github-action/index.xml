@@ -34,7 +34,7 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
       
       <guid>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</guid>
       <description>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
-name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest strategy: matrix: node-version: [12.x] steps: - uses: actions/checkout@v1 - name: Use Node.js ${{ matrix.node-version }} uses: actions/setup-node@v1 with: node-version: ${{ matrix.node-version }} - name: Configuration environment env: HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}} run: |mkdir -p ~/.ssh/ echo &amp;#34;$HEXO_DEPLOY_PRI&amp;#34; | tr -d &amp;#39;\r&amp;#39; &amp;gt; ~/.ssh/id_rsa chmod 600 ~/.ssh/id_rsa ssh-keyscan github.com &amp;gt;&amp;gt; ~/.ssh/known_hosts git config --global user.name &amp;#34;simba-fs&amp;#34; git config --global user.</description>
+name: HEXO CI  on:  push:  branches:  - master  jobs:  build:  runs-on: ubuntu-latest  strategy:  matrix:  node-version: [12.x]   steps:  - uses: actions/checkout@v1   - name: Use Node.js ${{ matrix.node-version }}  uses: actions/setup-node@v1  with:  node-version: ${{ matrix.node-version }}   - name: Configuration environment  env:  HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}  run: |mkdir -p ~/.</description>
     </item>
     
   </channel>

@@ -33,7 +33,7 @@ import &amp;#34;plugin&amp;#34; 用 func Open(path string) (*Plugin, error) 可�
       <pubDate>Tue, 19 Oct 2021 00:06:19 +0800</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/golang/exec-cmd/</guid>
-      <description>Golang 執行外部命令 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;os/exec&amp;#34; ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command(&amp;#34;wc&amp;#34;) stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, &amp;#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&amp;#34;) output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } </description>
+      <description>Golang 執行外部命令 package main  import ( 	&amp;#34;fmt&amp;#34; 	&amp;#34;os/exec&amp;#34; )  func checkErr(err error) { 	if err != nil { 	panic(err) 	} }  func main() { 	pw := exec.Command(&amp;#34;wc&amp;#34;)  	stdin, err := pw.StdinPipe() 	checkErr(err)  	fmt.Fprintln(stdin, &amp;#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&amp;#34;)  	output, err := pw.Output() 	checkErr(err)  	fmt.Println(string(output)) } </description>
     </item>
     
     <item>
@@ -45,8 +45,8 @@ import &amp;#34;plugin&amp;#34; 用 func Open(path string) (*Plugin, error) 可�
       <description>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
 而且設定檔還可以有不只一個，他可以把多個設定檔合成，相當方便
 基本使用 定義 struct 首先我們需要一個 struct 來定義我們的設定
-type Config struct { Addr string `default:&amp;#34;:3000&amp;#34;` Title string `default:&amp;#34;Aconf Testing&amp;#34;` SysAdmin []string `default:&amp;#34;simba-fs,peter&amp;#34;` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
-loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ // 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 	// SkipDefaults: false, 	// SkipFiles: false, 	// SkipEnv: false, 	// SkipFlags: false, 	EnvPrefix: &amp;#34;APP&amp;#34;, FlagPrefix: &amp;#34;app&amp;#34;, Files: []string{&amp;#34;~/.config/app.toml&amp;#34;, &amp;#34;app.toml&amp;#34;}, FileDecoders: map[string]aconfig.FileDecoder{ &amp;#34;.toml&amp;#34;: aconfigtoml.New(), }, }) if err := loader.Load(); err != nil { panic(err) } 這樣你就可以用檔案、環境變數和命令列參數設定了。</description>
+type Config struct { 	Addr string `default:&amp;#34;:3000&amp;#34;` 	Title string `default:&amp;#34;Aconf Testing&amp;#34;` 	SysAdmin []string `default:&amp;#34;simba-fs,peter&amp;#34;` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
+loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ 	// 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 	// SkipDefaults: false, 	// SkipFiles: false, 	// SkipEnv: false, 	// SkipFlags: false, 	EnvPrefix: &amp;#34;APP&amp;#34;, 	FlagPrefix: &amp;#34;app&amp;#34;, 	Files: []string{&amp;#34;~/.config/app.toml&amp;#34;, &amp;#34;app.toml&amp;#34;}, 	FileDecoders: map[string]aconfig.FileDecoder{ 	&amp;#34;.toml&amp;#34;: aconfigtoml.New(), 	}, })  if err := loader.</description>
     </item>
     
     <item>
@@ -58,9 +58,7 @@ loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ // 這四個預設�
       <description>在用 gin 寫伺服器的時候，我發現模板並不會被 go build 打包進執行檔裡面，所以在執行的時候就找不到檔案，當然這個問題可以用字串的形式直接把模板放進 golang 原始碼裡面，但是這樣程式碼一複雜就會不好用，這時候就可以用 golang 的 embed 函式庫把檔案「嵌入」到原始碼裡面。但是問題又來了，嵌入了之後要怎麼把字串變成模板物件呢？
 Embed  embed 套件是 1.16 新出的功能，所以如果想用的話記得要更新 go 到 1.16 以上
  embed 嵌入檔案的方式是透過特殊格式的註解宣告，直接看官方範例：
-package main import ( &amp;#34;embed&amp;#34; ) //go:embed hello.txt var s string //go:embed hello.txt var b []byte //go:embed hello.txt var f embed.FS func main() { print(s) print(string(b)) data, _ := f.ReadFile(&amp;#34;hello.txt&amp;#34;) print(string(data)) } 可以看到，embed 可以把檔案讀成三種格式 string、[]byte、embed.FS，前兩者只能讀「一個」檔案，如果你只用這兩個的話引入時要用 _ &amp;quot;embed&amp;quot;。embed.FS 除了可以嵌入多個檔案之外，因為實做了 fs.FS 所以可以使用當作一個檔案系統操作。
-Tmeplate No Recursive 最簡單的方法，你可以直接使用
-// go:embed view/* var f embed.</description>
+package main  import ( 	&amp;#34;embed&amp;#34; )  //go:embed hello.txt var s string  //go:embed hello.txt var b []byte  //go:embed hello.txt var f embed.FS  func main() { 	print(s) 	print(string(b)) 	data, _ := f.ReadFile(&amp;#34;hello.txt&amp;#34;) 	print(string(data)) } 可以看到，embed 可以把檔案讀成三種格式 string、[]byte、embed.FS，前兩者只能讀「一個」檔案，如果你只用這兩個的話引入時要用 _ &amp;quot;embed&amp;quot;。embed.</description>
     </item>
     
   </channel>

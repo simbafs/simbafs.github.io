@@ -3,8 +3,7 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Day 14：vim-plug | Simba's Blog</title>
-<meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
+<title>Day 14：vim-plug | Simba's Blog</title><meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
 <meta name=description content="前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。
 安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣
 # neovim sh -c 'curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' # vim sh -c 'curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' 挑選你的 vim 版本，執行完就安裝好了！
@@ -17,7 +16,7 @@ Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了">
 <link rel=canonical href=https://blog.simba-fs.dev/posts/ithelp/day14/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
@@ -25,12 +24,9 @@ Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了">
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.0">
 <noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Day 14：vim-plug">
+<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-175823992-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Day 14：vim-plug">
 <meta property="og:description" content="前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。
 安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣
 # neovim sh -c 'curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' # vim sh -c 'curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' 挑選你的 vim 版本，執行完就安裝好了！
@@ -55,10 +51,9 @@ call plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝�
 加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行
 Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"ithelp","item":"https://blog.simba-fs.dev/posts/ithelp/"},{"@type":"ListItem","position":3,"name":"Day 14：vim-plug","item":"https://blog.simba-fs.dev/posts/ithelp/day14/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 14：vim-plug","name":"Day 14：vim-plug","description":"前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。\n安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣\n# neovim sh -c \u0026#39;curl -fLo \u0026#34;${XDG_DATA_HOME:-$HOME/.local/share}\u0026#34;/nvim/site/autoload/plug.vim --create-dirs \\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\u0026#39; # vim sh -c \u0026#39;curl -fLo \u0026#34;${XDG_DATA_HOME:-$HOME/.local/share}\u0026#34;/nvim/site/autoload/plug.vim --create-dirs \\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\u0026#39; 挑選你的 vim 版本，執行完就安裝好了！\n安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！\n1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面\ncall plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面\n加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行\nPlug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。\n安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣\n# neovim sh -c 'curl -fLo \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/autoload/plug.vim --create-dirs \\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' # vim sh -c 'curl -fLo \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/autoload/plug.vim --create-dirs \\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' 挑選你的 vim 版本，執行完就安裝好了！\n安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！\n1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面\ncall plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面\n加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行\nPlug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了\n安裝套件 現在在 vim 裡面下以下命令\n:so % :PlugInstall 第一個是讓 vim 載入新增的外掛列表，或是你重開 vim 也可以。其中 so 是 source 的縮寫\n這個命令會讓 vim-plug 檢查有沒有新增的外掛，然後安裝。等左邊的視窗都跑完了就可以按 q 關掉，這時候重開 vim 就安裝好外掛了！\n使用 preservim/nerdcommenter 這裡簡單教一下怎麼使用這個方便的外掛 用 \\cspace可以註解/取消註解游標所在這這行。 如果用 v選取的話，只要有選到的行（不論是否完整框起），\\cspace就可以一次註解/取消註解多行\n再按的時候要注意，如果手滑沒按到反斜線會讓 vim 以為你要執行 c 指令，cspace會把一個字刪掉並進入編輯模式，這時候你可以選擇手動把字加回去或是用 u undo 指令來回復，回復好了之後再重新按一次 \\cspace就可以了。\n在 preservim/nerdcommenter 的 github 頁面 有更多的快捷鍵說明，這邊就介紹我最常用也是唯一有在用的，其他如果你覺得不錯再自己記就好了，vim 的快捷鍵/命令貴在精不在多，多了反而容易忘\n關於外掛的設定 在 preservim/nerdcommenter 的 README.md 中提到，要加一條設定 filetype plugin on 才能確保在不同程式語言中正常運作，那這行要加在哪裡比較好呢？以 vim 的觀點來看，vimrc 中任何地方都可以，但是外掛一多你就會發現亂放的話會不好管理。我推薦一個地方——安裝外掛的下面一行開始，這樣不同的外掛的設定就會都分開，萬一哪一天要修改或是移除都很清楚。\n切分 vimrc 外掛裝多了 vimrc 就會變得很長，一堆不重要不常用的外掛設定會全部塞在同一個檔案裡面。我們可以根據功用的不同分開放在不同的檔案，如此一來就會比較好找相關的設定在哪裡\n我們先把\ncall plug#begin('~/.vim/plugged') Plug 'preservim/nerdcommenter' filetype plugin on call plug#end() 這段剪下，放到另一個檔案裡面，然後在 vimrc 最下面加上一行 so ~/.config/nvim/plugin.vim 或是 so ~/.vim/plugin.vim（根據你的 vim 不同路徑不同，前面 nvim 後面 vim） ，以下是 vim 的按鍵操作，角括號中的是特殊按鍵\n先用 S-v 把要剪下的段落選起來\ndoso ~/.config/nvim/plguin.vim:w // 這裡 vimrc 的操作就結束了，`d` 是剪下，`o` 是「在新增一行並進入編輯模式」，之後到  之前的就是新增的內容，最後再儲存 :e ~/.config/nvim/plugin.vimp:w 在這裡用 `:e` 開啟檔案，`p` 貼上剛剛剪下的內容，`:w` 存檔 之後你要外掛相關的設定就不是在 vimrc 了，而是在 plugin.nvim 裡面，記得如果要備份的話要把這個檔案也備份到喔\n結尾 今天的內容穿插了一些 vim 的指令，如果很難理解的話建議你要一個字母一個字母拆開看，為什麼呢？例如 ddo 這個指令，你以為可能是要「做（do）」什麼事，其實這是 dd 和 o 一起寫，意思是「剪下一行」再「新增一行並進入編輯模式」。\n","wordCount":"195","inLanguage":"zh-tw","datePublished":"2021-09-14T00:00:00Z","dateModified":"2021-09-14T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/day14/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 14：vim-plug","name":"Day 14：vim-plug","description":"前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。\n安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣\n# neovim sh -c \u0026#39;curl -fLo \u0026#34;${XDG_DATA_HOME:-$HOME/.local/share}\u0026#34;/nvim/site/autoload/plug.vim --create-dirs \\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\u0026#39; # vim sh -c \u0026#39;curl -fLo \u0026#34;${XDG_DATA_HOME:-$HOME/.local/share}\u0026#34;/nvim/site/autoload/plug.vim --create-dirs \\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\u0026#39; 挑選你的 vim 版本，執行完就安裝好了！\n安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！\n1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面\ncall plug#begin(\u0026#39;~/.vim/plugged\u0026#39;) call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面\n加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行\nPlug \u0026#39;preservim/nerdcommenter\u0026#39; 然後存檔，這樣就算設定好了","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。\n安裝 vim-plug 記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣\n# neovim sh -c 'curl -fLo \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/autoload/plug.vim --create-dirs \\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' # vim sh -c 'curl -fLo \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/autoload/plug.vim --create-dirs \\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' 挑選你的 vim 版本，執行完就安裝好了！\n安裝第一個 plugin 我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 preservim/nerdcommenter，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！\n1. 編輯 vimrc 打開你的 vimrc，把以下內容加在最下面\ncall plug#begin('~/.vim/plugged') call plug#end() 以後所有 plugin 的安裝設定就要放在這兩行裡面\n加上 preservim/nerdcommenter 現在在兩個 call 中間插入以下這行\nPlug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了\n安裝套件 現在在 vim 裡面下以下命令\n:so % :PlugInstall 第一個是讓 vim 載入新增的外掛列表，或是你重開 vim 也可以。其中 so 是 source 的縮寫\n這個命令會讓 vim-plug 檢查有沒有新增的外掛，然後安裝。等左邊的視窗都跑完了就可以按 q 關掉，這時候重開 vim 就安裝好外掛了！\n使用 preservim/nerdcommenter 這裡簡單教一下怎麼使用這個方便的外掛 用 \\cspace可以註解/取消註解游標所在這這行。 如果用 v選取的話，只要有選到的行（不論是否完整框起），\\cspace就可以一次註解/取消註解多行\n再按的時候要注意，如果手滑沒按到反斜線會讓 vim 以為你要執行 c 指令，cspace會把一個字刪掉並進入編輯模式，這時候你可以選擇手動把字加回去或是用 u undo 指令來回復，回復好了之後再重新按一次 \\cspace就可以了。\n在 preservim/nerdcommenter 的 github 頁面 有更多的快捷鍵說明，這邊就介紹我最常用也是唯一有在用的，其他如果你覺得不錯再自己記就好了，vim 的快捷鍵/命令貴在精不在多，多了反而容易忘\n關於外掛的設定 在 preservim/nerdcommenter 的 README.md 中提到，要加一條設定 filetype plugin on 才能確保在不同程式語言中正常運作，那這行要加在哪裡比較好呢？以 vim 的觀點來看，vimrc 中任何地方都可以，但是外掛一多你就會發現亂放的話會不好管理。我推薦一個地方——安裝外掛的下面一行開始，這樣不同的外掛的設定就會都分開，萬一哪一天要修改或是移除都很清楚。\n切分 vimrc 外掛裝多了 vimrc 就會變得很長，一堆不重要不常用的外掛設定會全部塞在同一個檔案裡面。我們可以根據功用的不同分開放在不同的檔案，如此一來就會比較好找相關的設定在哪裡\n我們先把\ncall plug#begin('~/.vim/plugged') Plug 'preservim/nerdcommenter' filetype plugin on call plug#end() 這段剪下，放到另一個檔案裡面，然後在 vimrc 最下面加上一行 so ~/.config/nvim/plugin.vim 或是 so ~/.vim/plugin.vim（根據你的 vim 不同路徑不同，前面 nvim 後面 vim） ，以下是 vim 的按鍵操作，角括號中的是特殊按鍵\n先用 S-v 把要剪下的段落選起來\ndoso ~/.config/nvim/plguin.vim:w // 這裡 vimrc 的操作就結束了，`d` 是剪下，`o` 是「在新增一行並進入編輯模式」，之後到  之前的就是新增的內容，最後再儲存 :e ~/.config/nvim/plugin.vimp:w 在這裡用 `:e` 開啟檔案，`p` 貼上剛剛剪下的內容，`:w` 存檔 之後你要外掛相關的設定就不是在 vimrc 了，而是在 plugin.nvim 裡面，記得如果要備份的話要把這個檔案也備份到喔\n結尾 今天的內容穿插了一些 vim 的指令，如果很難理解的話建議你要一個字母一個字母拆開看，為什麼呢？例如 ddo 這個指令，你以為可能是要「做（do）」什麼事，其實這是 dd 和 o 一起寫，意思是「剪下一行」再「新增一行並進入編輯模式」。\n","wordCount":"195","inLanguage":"zh-tw","datePublished":"2021-09-14T00:00:00Z","dateModified":"2021-09-14T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/day14/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
+</head><body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -68,142 +63,84 @@ Plug 'preservim/nerdcommenter' 然後存檔，這樣就算設定好了">
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </span>
-</div>
-<ul id=menu>
+</div><ul id=menu>
 <li>
 <a href=https://blog.simba-fs.dev/posts/ title=Categories>
 <span>Categories</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/tags/ title=Tags>
 <span>Tags</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/archive/ title=Archives>
 <span>Archives</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/resource/ title=Resource>
 <span>Resource</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
+</li></ul></nav></header><main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div>
-<h1 class=post-title>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div><h1 class=post-title>
 Day 14：vim-plug
-</h1>
-<div class=post-meta><span title="2021-09-14 00:00:00 +0000 UTC">2021-September-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs
-</div>
-</header> <div class=toc>
+</h1><div class=post-meta><span title="2021-09-14 00:00:00 +0000 UTC">2021-September-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs
+</div></header><div class=toc>
 <details open>
 <summary accesskey=c title="(Alt + C)">
 <span class=details>目錄</span>
 </summary>
 <div class=inner><ul>
 <li>
-<a href=#%e5%ae%89%e8%a3%9d-vim-plug aria-label="安裝 vim-plug">安裝 vim-plug</a></li>
-<li>
+<a href=#%e5%ae%89%e8%a3%9d-vim-plug aria-label="安裝 vim-plug">安裝 vim-plug</a></li><li>
 <a href=#%e5%ae%89%e8%a3%9d%e7%ac%ac%e4%b8%80%e5%80%8b-plugin aria-label="安裝第一個 plugin">安裝第一個 plugin</a><ul>
 <li>
-<a href=#1-%e7%b7%a8%e8%bc%af-vimrc aria-label="1. 編輯 vimrc">1. 編輯 vimrc</a></li>
-<li>
-<a href=#%e5%8a%a0%e4%b8%8a-preservimnerdcommenter aria-label="加上 preservim/nerdcommenter">加上 <code>preservim/nerdcommenter</code></a></li>
-<li>
-<a href=#%e5%ae%89%e8%a3%9d%e5%a5%97%e4%bb%b6 aria-label=安裝套件>安裝套件</a></li></ul>
-</li>
-<li>
-<a href=#%e4%bd%bf%e7%94%a8-preservimnerdcommenter aria-label="使用 preservim/nerdcommenter">使用 <code>preservim/nerdcommenter</code></a></li>
-<li>
-<a href=#%e9%97%9c%e6%96%bc%e5%a4%96%e6%8e%9b%e7%9a%84%e8%a8%ad%e5%ae%9a aria-label=關於外掛的設定>關於外掛的設定</a></li>
-<li>
-<a href=#%e5%88%87%e5%88%86-vimrc aria-label="切分 vimrc">切分 vimrc</a></li>
-<li>
+<a href=#1-%e7%b7%a8%e8%bc%af-vimrc aria-label="1. 編輯 vimrc">1. 編輯 vimrc</a></li><li>
+<a href=#%e5%8a%a0%e4%b8%8a-preservimnerdcommenter aria-label="加上 preservim/nerdcommenter">加上 <code>preservim/nerdcommenter</code></a></li><li>
+<a href=#%e5%ae%89%e8%a3%9d%e5%a5%97%e4%bb%b6 aria-label=安裝套件>安裝套件</a></li></ul></li><li>
+<a href=#%e4%bd%bf%e7%94%a8-preservimnerdcommenter aria-label="使用 preservim/nerdcommenter">使用 <code>preservim/nerdcommenter</code></a></li><li>
+<a href=#%e9%97%9c%e6%96%bc%e5%a4%96%e6%8e%9b%e7%9a%84%e8%a8%ad%e5%ae%9a aria-label=關於外掛的設定>關於外掛的設定</a></li><li>
+<a href=#%e5%88%87%e5%88%86-vimrc aria-label="切分 vimrc">切分 vimrc</a></li><li>
 <a href=#%e7%b5%90%e5%b0%be aria-label=結尾>結尾</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><p>前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。</p>
-<h1 id=安裝-vim-plug>安裝 vim-plug<a hidden class=anchor aria-hidden=true href=#安裝-vim-plug>#</a></h1>
-<p>記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=color:#75715e># neovim</span>
-sh -c <span style=color:#e6db74>&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
-</span><span style=color:#e6db74>        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
-<span style=color:#75715e># vim</span>
-sh -c <span style=color:#e6db74>&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
-</span><span style=color:#e6db74>       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
-</code></pre></div><p>挑選你的 vim 版本，執行完就安裝好了！</p>
-<h1 id=安裝第一個-plugin>安裝第一個 plugin<a hidden class=anchor aria-hidden=true href=#安裝第一個-plugin>#</a></h1>
-<p>我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 <code>preservim/nerdcommenter</code>，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！</p>
-<h2 id=1-編輯-vimrc>1. 編輯 vimrc<a hidden class=anchor aria-hidden=true href=#1-編輯-vimrc>#</a></h2>
-<p>打開你的 vimrc，把以下內容加在最下面</p>
-<pre tabindex=0><code>call plug#begin('~/.vim/plugged')
+</li></ul></div></details>
+</div><div class=post-content><p>前面講過了 zsh、tmux 的 plugin manager，vim 一樣有 plguin manager。跟前面幾個 plguin manager 很像，要安裝新的外掛只需要在某個地方加一行設定就好，這樣作的好處是哪天要再建立新的環境時只需要把設定檔帶走，而且集中式的管理可以一目了然。</p><h1 id=安裝-vim-plug>安裝 vim-plug<a hidden class=anchor aria-hidden=true href=#安裝-vim-plug>#</a></h1><p>記得昨天的 vimrc 最上面有一個備註解起來的區塊嗎？這就是載入 vim-plug 的地方，裡面就有安裝 vim-plug 的指令了。要注意你用的是 neovim 還是 vim，這兩個路徑不一樣</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># neovim</span>
+</span></span><span style=display:flex><span>sh -c <span style=color:#e6db74>&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># vim</span>
+</span></span><span style=display:flex><span>sh -c <span style=color:#e6db74>&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
+</span></span></code></pre></div><p>挑選你的 vim 版本，執行完就安裝好了！</p><h1 id=安裝第一個-plugin>安裝第一個 plugin<a hidden class=anchor aria-hidden=true href=#安裝第一個-plugin>#</a></h1><p>我們透過一個範例來說明如何安裝外掛，我們要來裝的第一個外掛是 <code>preservim/nerdcommenter</code>，這個外掛可以快速註解一行/一整段程式碼，這是我覺得比自動補全、語法突顯都還要好用的功能。現在我們來安裝吧！</p><h2 id=1-編輯-vimrc>1. 編輯 vimrc<a hidden class=anchor aria-hidden=true href=#1-編輯-vimrc>#</a></h2><p>打開你的 vimrc，把以下內容加在最下面</p><pre tabindex=0><code>call plug#begin(&#39;~/.vim/plugged&#39;)
 
 call plug#end()
-</code></pre><p>以後所有 plugin 的安裝設定就要放在這兩行裡面</p>
-<h2 id=加上-preservimnerdcommenter>加上 <code>preservim/nerdcommenter</code><a hidden class=anchor aria-hidden=true href=#加上-preservimnerdcommenter>#</a></h2>
-<p>現在在兩個 <code>call</code> 中間插入以下這行</p>
-<pre tabindex=0><code>Plug 'preservim/nerdcommenter'
-</code></pre><p>然後存檔，這樣就算設定好了</p>
-<h2 id=安裝套件>安裝套件<a hidden class=anchor aria-hidden=true href=#安裝套件>#</a></h2>
-<p>現在在 vim 裡面下以下命令</p>
-<pre tabindex=0><code class=language-vimscript data-lang=vimscript>:so %
+</code></pre><p>以後所有 plugin 的安裝設定就要放在這兩行裡面</p><h2 id=加上-preservimnerdcommenter>加上 <code>preservim/nerdcommenter</code><a hidden class=anchor aria-hidden=true href=#加上-preservimnerdcommenter>#</a></h2><p>現在在兩個 <code>call</code> 中間插入以下這行</p><pre tabindex=0><code>Plug &#39;preservim/nerdcommenter&#39;
+</code></pre><p>然後存檔，這樣就算設定好了</p><h2 id=安裝套件>安裝套件<a hidden class=anchor aria-hidden=true href=#安裝套件>#</a></h2><p>現在在 vim 裡面下以下命令</p><pre tabindex=0><code class=language-vimscript data-lang=vimscript>:so %
 :PlugInstall
 </code></pre><p>第一個是讓 vim 載入新增的外掛列表，或是你重開 vim 也可以。其中 <code>so</code> 是 <code>source</code> 的縮寫<br>
-這個命令會讓 vim-plug 檢查有沒有新增的外掛，然後安裝。等左邊的視窗都跑完了就可以按 <code>q</code> 關掉，這時候重開 vim 就安裝好外掛了！</p>
-<h1 id=使用-preservimnerdcommenter>使用 <code>preservim/nerdcommenter</code><a hidden class=anchor aria-hidden=true href=#使用-preservimnerdcommenter>#</a></h1>
-<p>這裡簡單教一下怎麼使用這個方便的外掛
+這個命令會讓 vim-plug 檢查有沒有新增的外掛，然後安裝。等左邊的視窗都跑完了就可以按 <code>q</code> 關掉，這時候重開 vim 就安裝好外掛了！</p><h1 id=使用-preservimnerdcommenter>使用 <code>preservim/nerdcommenter</code><a hidden class=anchor aria-hidden=true href=#使用-preservimnerdcommenter>#</a></h1><p>這裡簡單教一下怎麼使用這個方便的外掛
 用 \cspace 可以註解/取消註解游標所在這這行。
 如果用 v 選取的話，只要有選到的行（不論是否完整框起），\cspace 就可以一次註解/取消註解多行<br>
-再按的時候要注意，如果手滑沒按到反斜線會讓 vim 以為你要執行 <code>c</code> 指令，cspace 會把一個字刪掉並進入編輯模式，這時候你可以選擇手動把字加回去或是用 <code>u</code> undo 指令來回復，回復好了之後再重新按一次 \cspace 就可以了。</p>
-<p>在 <code>preservim/nerdcommenter</code> 的 <a href=https://github.com/preservim/nerdcommenter#default-mappings>github 頁面</a> 有更多的快捷鍵說明，這邊就介紹我最常用也是唯一有在用的，其他如果你覺得不錯再自己記就好了，vim 的快捷鍵/命令貴在精不在多，多了反而容易忘</p>
-<h1 id=關於外掛的設定>關於外掛的設定<a hidden class=anchor aria-hidden=true href=#關於外掛的設定>#</a></h1>
-<p>在 <code>preservim/nerdcommenter</code> 的 README.md 中提到，要加一條設定 <code>filetype plugin on</code> 才能確保在不同程式語言中正常運作，那這行要加在哪裡比較好呢？以 vim 的觀點來看，vimrc 中任何地方都可以，但是外掛一多你就會發現亂放的話會不好管理。我推薦一個地方——安裝外掛的下面一行開始，這樣不同的外掛的設定就會都分開，萬一哪一天要修改或是移除都很清楚。</p>
-<h1 id=切分-vimrc>切分 vimrc<a hidden class=anchor aria-hidden=true href=#切分-vimrc>#</a></h1>
-<p>外掛裝多了 vimrc 就會變得很長，一堆不重要不常用的外掛設定會全部塞在同一個檔案裡面。我們可以根據功用的不同分開放在不同的檔案，如此一來就會比較好找相關的設定在哪裡<br>
-我們先把</p>
-<pre tabindex=0><code>call plug#begin('~/.vim/plugged')
+再按的時候要注意，如果手滑沒按到反斜線會讓 vim 以為你要執行 <code>c</code> 指令，cspace 會把一個字刪掉並進入編輯模式，這時候你可以選擇手動把字加回去或是用 <code>u</code> undo 指令來回復，回復好了之後再重新按一次 \cspace 就可以了。</p><p>在 <code>preservim/nerdcommenter</code> 的 <a href=https://github.com/preservim/nerdcommenter#default-mappings>github 頁面</a> 有更多的快捷鍵說明，這邊就介紹我最常用也是唯一有在用的，其他如果你覺得不錯再自己記就好了，vim 的快捷鍵/命令貴在精不在多，多了反而容易忘</p><h1 id=關於外掛的設定>關於外掛的設定<a hidden class=anchor aria-hidden=true href=#關於外掛的設定>#</a></h1><p>在 <code>preservim/nerdcommenter</code> 的 README.md 中提到，要加一條設定 <code>filetype plugin on</code> 才能確保在不同程式語言中正常運作，那這行要加在哪裡比較好呢？以 vim 的觀點來看，vimrc 中任何地方都可以，但是外掛一多你就會發現亂放的話會不好管理。我推薦一個地方——安裝外掛的下面一行開始，這樣不同的外掛的設定就會都分開，萬一哪一天要修改或是移除都很清楚。</p><h1 id=切分-vimrc>切分 vimrc<a hidden class=anchor aria-hidden=true href=#切分-vimrc>#</a></h1><p>外掛裝多了 vimrc 就會變得很長，一堆不重要不常用的外掛設定會全部塞在同一個檔案裡面。我們可以根據功用的不同分開放在不同的檔案，如此一來就會比較好找相關的設定在哪裡<br>
+我們先把</p><pre tabindex=0><code>call plug#begin(&#39;~/.vim/plugged&#39;)
 
-Plug 'preservim/nerdcommenter'
+Plug &#39;preservim/nerdcommenter&#39;
 filetype plugin on
 
 call plug#end()
 </code></pre><p>這段剪下，放到另一個檔案裡面，然後在 vimrc 最下面加上一行 <code>so ~/.config/nvim/plugin.vim</code> 或是 <code>so ~/.vim/plugin.vim</code>（根據你的 vim 不同路徑不同，前面 nvim 後面 vim）
 ，以下是 vim 的按鍵操作，角括號中的是特殊按鍵<br>
-先用 <code>S-v</code> 把要剪下的段落選起來</p>
-<pre tabindex=0><code>doso ~/.config/nvim/plguin.vim&lt;esc&gt;:w&lt;enter&gt;
+先用 <code>S-v</code> 把要剪下的段落選起來</p><pre tabindex=0><code>doso ~/.config/nvim/plguin.vim&lt;esc&gt;:w&lt;enter&gt;
 // 這裡 vimrc 的操作就結束了，`d` 是剪下，`o` 是「在新增一行並進入編輯模式」，之後到 &lt;esc&gt; 之前的就是新增的內容，最後再儲存
 
 :e ~/.config/nvim/plugin.vim&lt;enter&gt;p:w&lt;enter&gt;
 在這裡用 `:e` 開啟檔案，`p` 貼上剛剛剪下的內容，`:w` 存檔
-</code></pre><p>之後你要外掛相關的設定就不是在 vimrc 了，而是在 plugin.nvim 裡面，記得如果要備份的話要把這個檔案也備份到喔</p>
-<h1 id=結尾>結尾<a hidden class=anchor aria-hidden=true href=#結尾>#</a></h1>
-<p>今天的內容穿插了一些 vim 的指令，如果很難理解的話建議你要一個字母一個字母拆開看，為什麼呢？例如 <code>ddo</code> 這個指令，你以為可能是要「做（do）」什麼事，其實這是 <code>dd</code> 和 <code>o</code> 一起寫，意思是「剪下一行」再「新增一行並進入編輯模式」。</p>
-</div>
-<footer class=post-footer>
+</code></pre><p>之後你要外掛相關的設定就不是在 vimrc 了，而是在 plugin.nvim 裡面，記得如果要備份的話要把這個檔案也備份到喔</p><h1 id=結尾>結尾<a hidden class=anchor aria-hidden=true href=#結尾>#</a></h1><p>今天的內容穿插了一些 vim 的指令，如果很難理解的話建議你要一個字母一個字母拆開看，為什麼呢？例如 <code>ddo</code> 這個指令，你以為可能是要「做（do）」什麼事，其實這是 <code>dd</code> 和 <code>o</code> 一起寫，意思是「剪下一行」再「新增一行並進入編輯模式」。</p></div><footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li>
-</ul>
-<nav class=paginav>
+<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li><li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li><li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li><li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li><li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li><li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li></ul><nav class=paginav>
 <a class=prev href=https://blog.simba-fs.dev/posts/ithelp/day15/>
 <span class=title>« 上一篇</span>
 <br>
@@ -214,8 +151,7 @@ call plug#end()
 <br>
 <span>Day 13：vim 設定檔</span>
 </a>
-</nav>
-<div class=share-buttons>
+</nav><div class=share-buttons>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 14：vim-plug on twitter" href="https://twitter.com/intent/tweet/?text=Day%2014%ef%bc%9avim-plug&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday14%2f&hashtags=cli%2cterminal%2csoftwaredevelopment%2cvim%2ctmux%2czsh"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 14：vim-plug on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday14%2f&title=Day%2014%ef%bc%9avim-plug&summary=Day%2014%ef%bc%9avim-plug&source=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday14%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
@@ -228,22 +164,16 @@ call plug#end()
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 14：vim-plug on telegram" href="https://telegram.me/share/url?text=Day%2014%ef%bc%9avim-plug&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday14%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
 </a>
-</div>
-</footer>
-</article>
-</main>
-<footer class=footer>
+</div></footer></article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script>
+</body></html>

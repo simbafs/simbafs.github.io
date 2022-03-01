@@ -3,8 +3,7 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Day 12：vim 配色方案 | Simba's Blog</title>
-<meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
+<title>Day 12：vim 配色方案 | Simba's Blog</title><meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
 <meta name=description content="俗話說人要衣裝，佛要金裝，我們的 vim 也得要有漂亮的外觀。今天就讓我們來看看如何調教調整 vim 的外觀吧！
 Highlight group highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的一段區塊，可能是一段文字，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以設定樣式，包括前景色、背景色、反白、加底線等等，你可以用 :so $VIMRUNTIME/syntax/hitest.vim 命令查看所有的 hg 名字，他們的樣式也會直接顯示出來。
 如果想看某個 hg 的說明的話（必須是內建的才有），可以用 :help hl-hgName 來查詢說明，例如 CursorLine 就可以用 :help hl-CursorLine 來看說明
@@ -15,7 +14,7 @@ Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色
 <link rel=canonical href=https://blog.simba-fs.dev/posts/ithelp/day12/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
@@ -23,12 +22,9 @@ Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.0">
 <noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Day 12：vim 配色方案">
+<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-175823992-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Day 12：vim 配色方案">
 <meta property="og:description" content="俗話說人要衣裝，佛要金裝，我們的 vim 也得要有漂亮的外觀。今天就讓我們來看看如何調教調整 vim 的外觀吧！
 Highlight group highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的一段區塊，可能是一段文字，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以設定樣式，包括前景色、背景色、反白、加底線等等，你可以用 :so $VIMRUNTIME/syntax/hitest.vim 命令查看所有的 hg 名字，他們的樣式也會直接顯示出來。
 如果想看某個 hg 的說明的話（必須是內建的才有），可以用 :help hl-hgName 來查詢說明，例如 CursorLine 就可以用 :help hl-CursorLine 來看說明
@@ -50,9 +46,8 @@ hi hgName arg=value arg=value......hgName 就是你用 :so $VIMRUNTIME/syntax/hi
 Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色不同而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"ithelp","item":"https://blog.simba-fs.dev/posts/ithelp/"},{"@type":"ListItem","position":3,"name":"Day 12：vim 配色方案","item":"https://blog.simba-fs.dev/posts/ithelp/day12/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 12：vim 配色方案","name":"Day 12：vim 配色方案","description":"俗話說人要衣裝，佛要金裝，我們的 vim 也得要有漂亮的外觀。今天就讓我們來看看如何調教調整 vim 的外觀吧！\nHighlight group highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的一段區塊，可能是一段文字，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以設定樣式，包括前景色、背景色、反白、加底線等等，你可以用 :so $VIMRUNTIME/syntax/hitest.vim 命令查看所有的 hg 名字，他們的樣式也會直接顯示出來。\n如果想看某個 hg 的說明的話（必須是內建的才有），可以用 :help hl-hgName 來查詢說明，例如 CursorLine 就可以用 :help hl-CursorLine 來看說明\nHighlight 用 :highlight 或是縮寫 :hi 可以設定特定 hg 的樣式\nhi hgName arg=value arg=value......hgName 就是你用 :so $VIMRUNTIME/syntax/hitest.vim 查出來的名字，而 arg 常見的有前景色 ctermfg、背景色 ctermbg 和 樣式 cterm\nColor ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色不同而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"俗話說人要衣裝，佛要金裝，我們的 vim 也得要有漂亮的外觀。今天就讓我們來看看如何調教調整 vim 的外觀吧！\nHighlight group highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的一段區塊，可能是一段文字，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以設定樣式，包括前景色、背景色、反白、加底線等等，你可以用 :so $VIMRUNTIME/syntax/hitest.vim 命令查看所有的 hg 名字，他們的樣式也會直接顯示出來。\n如果想看某個 hg 的說明的話（必須是內建的才有），可以用 :help hl-hgName 來查詢說明，例如 CursorLine 就可以用 :help hl-CursorLine 來看說明\nHighlight 用 :highlight 或是縮寫 :hi 可以設定特定 hg 的樣式\nhi hgName arg=value arg=value......hgName 就是你用 :so $VIMRUNTIME/syntax/hitest.vim 查出來的名字，而 arg 常見的有前景色 ctermfg、背景色 ctermbg 和 樣式 cterm\nColor ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色不同而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色\nNR-16 NR-8 COLOR NAME ~ 0\t0\tBlack 1\t4\tDarkBlue 2\t2\tDarkGreen 3\t6\tDarkCyan 4\t1\tDarkRed 5\t5\tDarkMagenta 6\t3\tBrown, DarkYellow 7\t7\tLightGray, LightGrey, Gray, Grey 8\t0*\tDarkGray, DarkGrey 9\t4*\tBlue, LightBlue 10\t2*\tGreen, LightGreen 11\t6*\tCyan, LightCyan 12\t1*\tRed, LightRed 13\t5*\tMagenta, LightMagenta 14\t3*\tYellow, LightYellow 15\t7*\tWhite 第一欄是 16 色，第二欄是 8 色，第三欄是顏色名字，你也可以不用數字用顏色名字（不分大小寫）\n如果你的終端機支援 256 色（通常現在的終端機都會有），那就更好玩了，因為你可以用這麼多種顏色！\n        256 色表（填的是前面的數字（0-255）不是 hex 色碼    cterm 通常文字不會只有顏色，還可以有加粗、底線等等樣式，vim 總共提供了這些樣式\n   樣式名稱 說明     bold 粗體   underline 底線   undercurl 捲捲的底線，如果你的終端機不支援的話會改用底線代替   reverse 反白   inverse 反白   italic 斜體（要字型有支援）   standout 翻譯是「突出」，但是我用起來和 reverse、inverse 效果一樣，有人知道差在哪嗎？   strikethrough 翻譯是「刪除線」但是我試不出來，也許是字體的關係   NONE 清除樣式設定    如果你需要多種樣式混合，例如底線 + 反白，你可以用逗號 , 來串起多的樣式，cterm=underline,reverse，注意不能有空白，不然會跳錯誤。\n有了這些，你就可以自訂 vim 中任何一個部份的樣式了，例如 hg CursorLine 代表的是游標所在行，我可以用以下命令改變他的樣式\n:hi CursorLine ctermbg=240 ctermfg=195        自訂的游標行    colorschema 所謂的 colorschema 其實就是一堆的 hi 指令寫在一個檔案裡面，然後給他一個名字，vim 內建了很多 colorschema，放在 $VIMRUNTIME/colors 目錄下。你可以用命令 :echo $VIMRUNTIME 來取得 $VIMRUNTIME 的值，因為系統環境變數可能不會有他（我的就沒有）。 除了去網路上下載別人設計好的 colorschema， 你也可以參考 $VIMRUNTIME/colors 下的檔案形式來製作自己的 colorschema，或是 Google 搜尋 vim colorschemes generator 就可以在網路上找到很多方便你製作 colorschemes 的工具\n","wordCount":"224","inLanguage":"zh-tw","datePublished":"2021-09-12T00:00:00Z","dateModified":"2021-09-12T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/day12/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+</head><body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -62,78 +57,50 @@ Color ctermbg 和 ctermfg 後面接的值會根據你的終端機支援的顏色
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </span>
-</div>
-<ul id=menu>
+</div><ul id=menu>
 <li>
 <a href=https://blog.simba-fs.dev/posts/ title=Categories>
 <span>Categories</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/tags/ title=Tags>
 <span>Tags</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/archive/ title=Archives>
 <span>Archives</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/resource/ title=Resource>
 <span>Resource</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
+</li></ul></nav></header><main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div>
-<h1 class=post-title>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div><h1 class=post-title>
 Day 12：vim 配色方案
-</h1>
-<div class=post-meta><span title="2021-09-12 00:00:00 +0000 UTC">2021-September-12</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs
-</div>
-</header> <div class=toc>
+</h1><div class=post-meta><span title="2021-09-12 00:00:00 +0000 UTC">2021-September-12</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs
+</div></header><div class=toc>
 <details open>
 <summary accesskey=c title="(Alt + C)">
 <span class=details>目錄</span>
 </summary>
 <div class=inner><ul>
 <li>
-<a href=#highlight-group aria-label="Highlight group">Highlight group</a></li>
-<li>
+<a href=#highlight-group aria-label="Highlight group">Highlight group</a></li><li>
 <a href=#highlight aria-label=Highlight>Highlight</a><ul>
 <li>
-<a href=#color aria-label=Color>Color</a></li>
-<li>
-<a href=#cterm aria-label=cterm>cterm</a></li></ul>
-</li>
-<li>
+<a href=#color aria-label=Color>Color</a></li><li>
+<a href=#cterm aria-label=cterm>cterm</a></li></ul></li><li>
 <a href=#colorschema aria-label=colorschema>colorschema</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><p>俗話說人要衣裝，佛要金裝，我們的 vim 也得要有<strong>漂亮的外觀</strong>。今天就讓我們來看看如何<del>調教</del>調整 vim 的外觀吧！</p>
-<h1 id=highlight-group>Highlight group<a hidden class=anchor aria-hidden=true href=#highlight-group>#</a></h1>
-<p>highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的<strong>一段區塊</strong>，可能是<strong>一段文字</strong>，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以<strong>設定樣式</strong>，包括<strong>前景色</strong>、<strong>背景色</strong>、<strong>反白</strong>、<strong>加底線</strong>等等，你可以用 <code>:so $VIMRUNTIME/syntax/hitest.vim</code> 命令查看<strong>所有的 hg 名字</strong>，他們的樣式也會直接顯示出來。<br>
-如果想看某個 hg 的<strong>說明</strong>的話（必須是內建的才有），可以用 <code>:help hl-hgName</code> 來<strong>查詢說明</strong>，例如 <code>CursorLine</code> 就可以用 <code>:help hl-CursorLine</code> 來看說明</p>
-<h1 id=highlight>Highlight<a hidden class=anchor aria-hidden=true href=#highlight>#</a></h1>
-<p>用 <code>:highlight</code> 或是縮寫 <code>:hi</code> 可以設定特定 hg 的樣式</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=color:#a6e22e>hi</span> <span style=color:#a6e22e>hgName</span> <span style=color:#a6e22e>arg</span>=<span style=color:#a6e22e>value</span> <span style=color:#a6e22e>arg</span>=<span style=color:#a6e22e>value</span>......<span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><p>hgName 就是你用 <code>:so $VIMRUNTIME/syntax/hitest.vim</code> 查出來的名字，而 arg 常見的有前景色 <code>ctermfg</code>、背景色 <code>ctermbg</code> 和 樣式 <code>cterm</code></p>
-<h2 id=color>Color<a hidden class=anchor aria-hidden=true href=#color>#</a></h2>
-<p><code>ctermbg</code> 和 <code>ctermfg</code> 後面接的值會<strong>根據你的終端機支援的顏色不同</strong>而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色</p>
-<pre tabindex=0><code>NR-16   NR-8    COLOR NAME ~
+</li></ul></div></details>
+</div><div class=post-content><p>俗話說人要衣裝，佛要金裝，我們的 vim 也得要有<strong>漂亮的外觀</strong>。今天就讓我們來看看如何<del>調教</del>調整 vim 的外觀吧！</p><h1 id=highlight-group>Highlight group<a hidden class=anchor aria-hidden=true href=#highlight-group>#</a></h1><p>highlight group（以下簡稱 hg ）是 vim 中的一個概念，他會對應到 vim 畫面中的<strong>一段區塊</strong>，可能是<strong>一段文字</strong>，也可能是底下的 status bar 或是左側的行號。每一個 hg 都可以<strong>設定樣式</strong>，包括<strong>前景色</strong>、<strong>背景色</strong>、<strong>反白</strong>、<strong>加底線</strong>等等，你可以用 <code>:so $VIMRUNTIME/syntax/hitest.vim</code> 命令查看<strong>所有的 hg 名字</strong>，他們的樣式也會直接顯示出來。<br>
+如果想看某個 hg 的<strong>說明</strong>的話（必須是內建的才有），可以用 <code>:help hl-hgName</code> 來<strong>查詢說明</strong>，例如 <code>CursorLine</code> 就可以用 <code>:help hl-CursorLine</code> 來看說明</p><h1 id=highlight>Highlight<a hidden class=anchor aria-hidden=true href=#highlight>#</a></h1><p>用 <code>:highlight</code> 或是縮寫 <code>:hi</code> 可以設定特定 hg 的樣式</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=display:flex><span><span style=color:#a6e22e>hi</span> <span style=color:#a6e22e>hgName</span> <span style=color:#a6e22e>arg</span>=<span style=color:#a6e22e>value</span> <span style=color:#a6e22e>arg</span>=<span style=color:#a6e22e>value</span>......<span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><p>hgName 就是你用 <code>:so $VIMRUNTIME/syntax/hitest.vim</code> 查出來的名字，而 arg 常見的有前景色 <code>ctermfg</code>、背景色 <code>ctermbg</code> 和 樣式 <code>cterm</code></p><h2 id=color>Color<a hidden class=anchor aria-hidden=true href=#color>#</a></h2><p><code>ctermbg</code> 和 <code>ctermfg</code> 後面接的值會<strong>根據你的終端機支援的顏色不同</strong>而有變化，其中 8 色和 16 色的終端機都可以用 0 ~ 8 / 0 ~ 16 這樣的方式來表示顏色（數字代表的顏色要看終端機設定），vim help 提供了一個對照表可以參考各個數字代表的顏色</p><pre tabindex=0><code>NR-16   NR-8    COLOR NAME ~
 0	    0	    Black
 1	    4	    DarkBlue
 2	    2	    DarkGreen
@@ -150,99 +117,36 @@ Day 12：vim 配色方案
 13	    5*	    Magenta, LightMagenta
 14	    3*	    Yellow, LightYellow
 15	    7*	    White
-</code></pre><p>第一欄是 16 色，第二欄是 8 色，第三欄是顏色名字，你也可以不用數字用顏色名字（不分大小寫）</p>
-<p>如果你的終端機支援 256 色（通常現在的終端機都會有），那就更好玩了，因為你可以用這麼多種顏色！</p>
-<table>
+</code></pre><p>第一欄是 16 色，第二欄是 8 色，第三欄是顏色名字，你也可以不用數字用顏色名字（不分大小寫）</p><p>如果你的終端機支援 256 色（通常現在的終端機都會有），那就更好玩了，因為你可以用這麼多種顏色！</p><table>
 <thead>
 <tr>
 <th style=text-align:center><img loading=lazy src=/images/ithelp/pure-CLI-IDE/day12/256-color.png alt="256 color">
-</th>
-</tr>
-</thead>
-<tbody>
+</th></tr></thead><tbody>
 <tr>
-<td style=text-align:center>256 色表（填的是前面的數字（0-255）不是 hex 色碼</td>
-</tr>
-</tbody>
-</table>
-<h2 id=cterm>cterm<a hidden class=anchor aria-hidden=true href=#cterm>#</a></h2>
-<p>通常文字不會只有顏色，還可以有加粗、底線等等樣式，vim 總共提供了這些<strong>樣式</strong></p>
-<table>
+<td style=text-align:center>256 色表（填的是前面的數字（0-255）不是 hex 色碼</td></tr></tbody></table><h2 id=cterm>cterm<a hidden class=anchor aria-hidden=true href=#cterm>#</a></h2><p>通常文字不會只有顏色，還可以有加粗、底線等等樣式，vim 總共提供了這些<strong>樣式</strong></p><table>
 <thead>
 <tr>
-<th style=text-align:left>樣式名稱</th>
-<th style=text-align:left>說明</th>
-</tr>
-</thead>
-<tbody>
+<th style=text-align:left>樣式名稱</th><th style=text-align:left>說明</th></tr></thead><tbody>
 <tr>
-<td style=text-align:left>bold</td>
-<td style=text-align:left>粗體</td>
-</tr>
-<tr>
-<td style=text-align:left>underline</td>
-<td style=text-align:left>底線</td>
-</tr>
-<tr>
-<td style=text-align:left>undercurl</td>
-<td style=text-align:left>捲捲的底線，如果你的終端機不支援的話會改用底線代替</td>
-</tr>
-<tr>
-<td style=text-align:left>reverse</td>
-<td style=text-align:left>反白</td>
-</tr>
-<tr>
-<td style=text-align:left>inverse</td>
-<td style=text-align:left>反白</td>
-</tr>
-<tr>
-<td style=text-align:left>italic</td>
-<td style=text-align:left>斜體（要字型有支援）</td>
-</tr>
-<tr>
-<td style=text-align:left>standout</td>
-<td style=text-align:left>翻譯是「突出」，但是我用起來和 <code>reverse</code>、<code>inverse</code> 效果一樣，有人知道差在哪嗎？</td>
-</tr>
-<tr>
-<td style=text-align:left>strikethrough</td>
-<td style=text-align:left>翻譯是「刪除線」但是我試不出來，也許是字體的關係</td>
-</tr>
-<tr>
-<td style=text-align:left>NONE</td>
-<td style=text-align:left>清除樣式設定</td>
-</tr>
-</tbody>
-</table>
-<p>如果你需要多種樣式混合，例如底線 + 反白，你可以用逗號 <code>,</code> 來串起多的樣式，<code>cterm=underline,reverse</code>，注意不能有空白，不然會跳錯誤。</p>
-<p>有了這些，你就可以自訂 vim 中任何一個部份的樣式了，例如 hg CursorLine 代表的<strong>是游標所在行</strong>，我可以用以下命令改變他的樣式</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim>:<span style=color:#a6e22e>hi</span> <span style=color:#a6e22e>CursorLine</span> <span style=color:#a6e22e>ctermbg</span>=<span style=color:#ae81ff>240</span> <span style=color:#a6e22e>ctermfg</span>=<span style=color:#ae81ff>195</span><span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><table>
+<td style=text-align:left>bold</td><td style=text-align:left>粗體</td></tr><tr>
+<td style=text-align:left>underline</td><td style=text-align:left>底線</td></tr><tr>
+<td style=text-align:left>undercurl</td><td style=text-align:left>捲捲的底線，如果你的終端機不支援的話會改用底線代替</td></tr><tr>
+<td style=text-align:left>reverse</td><td style=text-align:left>反白</td></tr><tr>
+<td style=text-align:left>inverse</td><td style=text-align:left>反白</td></tr><tr>
+<td style=text-align:left>italic</td><td style=text-align:left>斜體（要字型有支援）</td></tr><tr>
+<td style=text-align:left>standout</td><td style=text-align:left>翻譯是「突出」，但是我用起來和 <code>reverse</code>、<code>inverse</code> 效果一樣，有人知道差在哪嗎？</td></tr><tr>
+<td style=text-align:left>strikethrough</td><td style=text-align:left>翻譯是「刪除線」但是我試不出來，也許是字體的關係</td></tr><tr>
+<td style=text-align:left>NONE</td><td style=text-align:left>清除樣式設定</td></tr></tbody></table><p>如果你需要多種樣式混合，例如底線 + 反白，你可以用逗號 <code>,</code> 來串起多的樣式，<code>cterm=underline,reverse</code>，注意不能有空白，不然會跳錯誤。</p><p>有了這些，你就可以自訂 vim 中任何一個部份的樣式了，例如 hg CursorLine 代表的<strong>是游標所在行</strong>，我可以用以下命令改變他的樣式</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=display:flex><span>:<span style=color:#a6e22e>hi</span> <span style=color:#a6e22e>CursorLine</span> <span style=color:#a6e22e>ctermbg</span>=<span style=color:#ae81ff>240</span> <span style=color:#a6e22e>ctermfg</span>=<span style=color:#ae81ff>195</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><table>
 <thead>
 <tr>
 <th style=text-align:center><img loading=lazy src=/images/ithelp/pure-CLI-IDE/day12/customed-cursorLine.png alt="Customized CursorLine">
-</th>
-</tr>
-</thead>
-<tbody>
+</th></tr></thead><tbody>
 <tr>
-<td style=text-align:center>自訂的游標行</td>
-</tr>
-</tbody>
-</table>
-<h1 id=colorschema>colorschema<a hidden class=anchor aria-hidden=true href=#colorschema>#</a></h1>
-<p>所謂的 colorschema 其實就是一堆的 <code>hi</code> 指令寫在一個檔案裡面，然後給他一個名字，vim 內建了很多 colorschema，放在 <code>$VIMRUNTIME/colors</code> 目錄下。你可以用命令 <code>:echo $VIMRUNTIME</code> 來取得 <code>$VIMRUNTIME</code> 的值，因為<strong>系統環境變數可能不會有他</strong>（我的就沒有）。
-除了去網路上下載別人設計好的 colorschema， 你也可以參考 <code>$VIMRUNTIME/colors</code> 下的檔案形式來製作自己的 colorschema，或是 Google 搜尋 <code>vim colorschemes generator</code> 就可以在網路上找到很多方便你製作 colorschemes 的工具</p>
-</div>
-<footer class=post-footer>
+<td style=text-align:center>自訂的游標行</td></tr></tbody></table><h1 id=colorschema>colorschema<a hidden class=anchor aria-hidden=true href=#colorschema>#</a></h1><p>所謂的 colorschema 其實就是一堆的 <code>hi</code> 指令寫在一個檔案裡面，然後給他一個名字，vim 內建了很多 colorschema，放在 <code>$VIMRUNTIME/colors</code> 目錄下。你可以用命令 <code>:echo $VIMRUNTIME</code> 來取得 <code>$VIMRUNTIME</code> 的值，因為<strong>系統環境變數可能不會有他</strong>（我的就沒有）。
+除了去網路上下載別人設計好的 colorschema， 你也可以參考 <code>$VIMRUNTIME/colors</code> 下的檔案形式來製作自己的 colorschema，或是 Google 搜尋 <code>vim colorschemes generator</code> 就可以在網路上找到很多方便你製作 colorschemes 的工具</p></div><footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li>
-</ul>
-<nav class=paginav>
+<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li><li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li><li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li><li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li><li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li><li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li></ul><nav class=paginav>
 <a class=prev href=https://blog.simba-fs.dev/posts/ithelp/day13/>
 <span class=title>« 上一篇</span>
 <br>
@@ -253,8 +157,7 @@ Day 12：vim 配色方案
 <br>
 <span>Day 11：批次修改！！</span>
 </a>
-</nav>
-<div class=share-buttons>
+</nav><div class=share-buttons>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 12：vim 配色方案 on twitter" href="https://twitter.com/intent/tweet/?text=Day%2012%ef%bc%9avim%20%e9%85%8d%e8%89%b2%e6%96%b9%e6%a1%88&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday12%2f&hashtags=cli%2cterminal%2csoftwaredevelopment%2cvim%2ctmux%2czsh"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 12：vim 配色方案 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday12%2f&title=Day%2012%ef%bc%9avim%20%e9%85%8d%e8%89%b2%e6%96%b9%e6%a1%88&summary=Day%2012%ef%bc%9avim%20%e9%85%8d%e8%89%b2%e6%96%b9%e6%a1%88&source=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday12%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
@@ -267,22 +170,16 @@ Day 12：vim 配色方案
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 12：vim 配色方案 on telegram" href="https://telegram.me/share/url?text=Day%2012%ef%bc%9avim%20%e9%85%8d%e8%89%b2%e6%96%b9%e6%a1%88&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday12%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
 </a>
-</div>
-</footer>
-</article>
-</main>
-<footer class=footer>
+</div></footer></article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script>
+</body></html>

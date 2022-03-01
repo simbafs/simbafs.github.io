@@ -3,8 +3,7 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Day 13：vim 設定檔 | Simba's Blog</title>
-<meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
+<title>Day 13：vim 設定檔 | Simba's Blog</title><meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
 <meta name=description content="vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 ~/.vimrc，如果是 neovim(nvim)，他會去找 ~/.config/nvim/init.vim。在接下來的文章中都以 vimrc 代指。
 vimrc 內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 :set nu，這個命令可以開啟行號顯示，如果要寫在 vimrc 裡面，就要寫成 set nu。
 vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 &#34; 開頭是 vimscript 的註解)
@@ -13,7 +12,7 @@ vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入�
 <link rel=canonical href=https://blog.simba-fs.dev/posts/ithelp/day13/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
@@ -21,12 +20,9 @@ vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入�
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.0">
 <noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Day 13：vim 設定檔">
+<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-175823992-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Day 13：vim 設定檔">
 <meta property="og:description" content="vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 ~/.vimrc，如果是 neovim(nvim)，他會去找 ~/.config/nvim/init.vim。在接下來的文章中都以 vimrc 代指。
 vimrc 內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 :set nu，這個命令可以開啟行號顯示，如果要寫在 vimrc 裡面，就要寫成 set nu。
 vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 &#34; 開頭是 vimscript 的註解)
@@ -44,9 +40,8 @@ vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入�
 &#34; 打開語法突顯syntax on&#34; load plguin&#34; install vim-plug:&#34; sh -c 'curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \&#34; https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'&#34; 這個是明天的東西，先註解掉，才不會出錯&#34; so ~/.config/nvim/plugin.vim&#34; 256 色set t_Co=256&#34; 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=&#34; 選一個你喜歡的 colorschema&#34; available color schema&#34; blue darkblue default delek desert elflord evening industry koehler&#34; morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler&#34; 雜項設定，詳細解說請用 `:help <opeion>`，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline&#34; make lightline work in single screen&#34; https://github.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"ithelp","item":"https://blog.simba-fs.dev/posts/ithelp/"},{"@type":"ListItem","position":3,"name":"Day 13：vim 設定檔","item":"https://blog.simba-fs.dev/posts/ithelp/day13/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 13：vim 設定檔","name":"Day 13：vim 設定檔","description":"vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 ~/.vimrc，如果是 neovim(nvim)，他會去找 ~/.config/nvim/init.vim。在接下來的文章中都以 vimrc 代指。\nvimrc 內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 :set nu，這個命令可以開啟行號顯示，如果要寫在 vimrc 裡面，就要寫成 set nu。\nvimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 \u0026quot; 開頭是 vimscript 的註解)\n\u0026#34; 打開語法突顯syntax on\u0026#34; load plguin\u0026#34; install vim-plug:\u0026#34; sh -c \u0026#39;curl -fLo \u0026#34;${XDG_DATA_HOME:-$HOME/.local/share}\u0026#34;/nvim/site/autoload/plug.vim --create-dirs \\\u0026#34; https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\u0026#39;\u0026#34; 這個是明天的東西，先註解掉，才不會出錯\u0026#34; so ~/.config/nvim/plugin.vim\u0026#34; 256 色set t_Co=256\u0026#34; 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=\u0026#34; 選一個你喜歡的 colorschema\u0026#34; available color schema\u0026#34; blue darkblue default delek desert elflord evening industry koehler\u0026#34; morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler\u0026#34; 雜項設定，詳細解說請用 `:help \u0026lt;opeion\u0026gt;`，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline\u0026#34; make lightline work in single screen\u0026#34; https://github.","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"vim 在啟動時，都會去執行你的設定檔，這個檔案根據你的 vim 軟體不同而改變，如果是一般的 vim，那他會去讀 ~/.vimrc，如果是 neovim(nvim)，他會去找 ~/.config/nvim/init.vim。在接下來的文章中都以 vimrc 代指。\nvimrc 內容是 vimscript，也就是所有的冒號命令去掉冒號之後的內容，例如有個命令是 :set nu，這個命令可以開啟行號顯示，如果要寫在 vimrc 裡面，就要寫成 set nu。\nvimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入外掛等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 \" 開頭是 vimscript 的註解)\n\" 打開語法突顯syntax on\" load plguin\" install vim-plug:\" sh -c 'curl -fLo \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/autoload/plug.vim --create-dirs \\\" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'\" 這個是明天的東西，先註解掉，才不會出錯\" so ~/.config/nvim/plugin.vim\" 256 色set t_Co=256\" 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vimset t_ut=\" 選一個你喜歡的 colorschema\" available color schema\" blue darkblue default delek desert elflord evening industry koehler\" morning murphy pablo peachpuff ron shine slate torte zellnercolorscheme koehler\" 雜項設定，詳細解說請用 `:help `，例如 `:help showcmd`set showcmdset nuset tabstop=4set shiftwidth=4set autoindentset nowrapset incsearchset autoindentset cindentset smartindentset cursorline\" make lightline work in single screen\" https://github.com/itchyny/lightline.vim/issues/71#issuecomment-47859569set laststatus=2\" 開啟滑鼠功能，對初學者來說非常好用set mouse=a\" markdown\" 如果是檔案類型是 markdown 或 text，打開文字折疊（超出螢幕寬度會折到下一行）\" au 的語法等等會講au FileType markdown set wrapau FileType text set wrap\" ejs\" 不加這個的話 ejs 的語法突顯會很奇怪，順便附帶一個 ft, filetype 的坑\" https://vi.stackexchange.com/questions/16341/what-is-the-difference-between-set-ft-and-setfiletypeau BufNew,BufNewFile,BufRead *.ejs :set filetype=ejsau FileType ejs set syntax=html\" ts \" 這只是因為我比較喜歡 vim 對 javascript 的配色，typesript 的我覺得很醜，所以強制 vim 用 javascript 的配色\" au 就是 autocmd 的縮寫啦！（vim 幾乎每個超過三個字的命令、選項都有縮寫，寫程式的人都很懶XD）autocmd BufNewFile,BufRead *.ts set syntax=javascript\" yaml\" yaml 機車的空格限制，這樣在寫 yaml 檔時比較方便autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab\" hotkey\" 這邊是自訂快捷鍵，語法等等會講，這邊只說明用法\" 在命令模式按  會把整行字向右移一個 tab。 會移回來map tab :s/^/\\tCRmap S-tab :s/^\\t/CR\" 如果要從系統剪貼簿貼上多行程式碼，建議這樣用，才不會被 vim 的自動縮排雷到（你試試就知道是什麼問題，很討厭）nmap F3 :r! catCR\" 切換行號，在複製到系統鍵貼簿時很好用，這樣就不會複製到行號nmap F7 :set invnumberCR\" 清除搜尋結果的語法突顯nmap cs :nohCR\" alias\" 冒號命令的別名，語法等等會講\" 常用就知道為什麼要設這個（按冒號時要按 ，然後下一個字就很常變大寫，簡稱手殘）command W wcommand Q qcommand Wq wqcommand WQ wq\" fix bg color error in Pmenu\" 這個只是顯示問題，有時候背景色和前景色一樣你就看不到字了，所以要自己把他換掉，語法等等會講\" https://vi.stackexchange.com/questions/23328/change-color-of-coc-suggestion-boxhi Pmenu ctermbg=black ctermfg=whitehi Ignore ctermbg=black ctermfg=lightbluecommand 我們從最簡單的命令別名講起，這個命令可以縮寫成 com\n這個命令可以定義 「使用者自訂命令」\n使用者自訂命令一定要是大寫開頭\n列出命令 :verbose com [cmd] 這個可以列出符合 [cmd] 的使用者自訂命令，還有最後定義的位置\n定義新的使用者自訂命令 :commmand {cmd} {rep} 這個會設定 {cmd} 的別名 {rep}\nautocmd autocmd 是在某種類型的檔案載入時自動執行命令用的，可以縮寫成 au\nau 的使用場景通常是某個類型的語法突顯會出問題、想要根據檔案類型套用不同設定，簡單的語法如下\nau [條件] [...命令]\n條件通常長這樣， FileType javascript\n命令就是冒號命令除了冒號的部份\nmap map 的功能是定義不是冒號開頭的命令（像是 dd 這種，在前幾篇文章中稱為快捷鍵），map 又根據作用的模式分為 nmap、vmap、imap 等等非常多種（:help map 會列出所有 map ）。其中最常用的是 map、nmap、imap，這三個分別代表在「除了編輯模式中作用」、「命令模式（ n ）作用」、「在編輯模式作用（ i ）」。\n各種 map 用法都一樣，差別只在作用模式不同\n列出 map :map:nmap:imap定義 map map {快捷鍵} {命令}\n{快捷鍵} 是 vim 的按鍵組合，其中 imap 用的大多都要加 或是 ，否則會沒用 {命令} 是 vim 的命令，注意這裡講的是「廣義的命令」，也就是包括冒號和非冒號命令，所以如果是冒號命令你必須加上冒號和 enter 鍵才會執行\nps: map 給我的感覺有點像「當你按下 {快捷鍵} 時，vim 會自動幫你打 {命令}\n快捷鍵 快捷鍵可以是不只一個按鍵，可以像是以下幾個範例\nf k ggk 如果一個按鍵可以打出來，像是a、b、c、0、1、2、+、=，就不用角括號 \n如果是控制按鍵或是和控制按鍵一起按，就要加上括號，例如 、，其中是指 是反斜線 更多這種按鍵的說明可以參考 :help key-notation\n命令 這邊的命令因為是廣義的命令，所以如果你想要幫某個快捷鍵加上別名也是可以的\nnmap copy yynmap paste p嗯……這可能只在快捷鍵很常出現但是複雜時比較好用\n扯遠了，回到正題。如果你的命令是冒號命令的話，你必須要加上冒號和 enter，不然你在打完快捷鍵之後還要自己按 enter，所以記的在命令最後面加上  ，這個代表的是 enter 鍵，也可以\n","wordCount":"328","inLanguage":"zh-tw","datePublished":"2021-09-13T00:00:00Z","dateModified":"2021-09-13T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/day13/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+</head><body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -56,46 +51,34 @@ vimrc 通常我們會在 vimrc 中設定關於 vim 的外觀、行為、載入�
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </span>
-</div>
-<ul id=menu>
+</div><ul id=menu>
 <li>
 <a href=https://blog.simba-fs.dev/posts/ title=Categories>
 <span>Categories</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/tags/ title=Tags>
 <span>Tags</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/archive/ title=Archives>
 <span>Archives</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/resource/ title=Resource>
 <span>Resource</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
+</li></ul></nav></header><main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div>
-<h1 class=post-title>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div><h1 class=post-title>
 Day 13：vim 設定檔
-</h1>
-<div class=post-meta><span title="2021-09-13 00:00:00 +0000 UTC">2021-September-13</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs
-</div>
-</header> <div class=toc>
+</h1><div class=post-meta><span title="2021-09-13 00:00:00 +0000 UTC">2021-September-13</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs
+</div></header><div class=toc>
 <details open>
 <summary accesskey=c title="(Alt + C)">
 <span class=details>目錄</span>
@@ -106,174 +89,128 @@ Day 13：vim 設定檔
 <li>
 <a href=#command aria-label=command>command</a><ul>
 <li>
-<a href=#%e5%88%97%e5%87%ba%e5%91%bd%e4%bb%a4 aria-label=列出命令>列出命令</a></li>
-<li>
-<a href=#%e5%ae%9a%e7%be%a9%e6%96%b0%e7%9a%84%e4%bd%bf%e7%94%a8%e8%80%85%e8%87%aa%e8%a8%82%e5%91%bd%e4%bb%a4 aria-label=定義新的使用者自訂命令>定義新的使用者自訂命令</a></li></ul>
-</li>
-<li>
-<a href=#autocmd aria-label=autocmd>autocmd</a></li>
-<li>
+<a href=#%e5%88%97%e5%87%ba%e5%91%bd%e4%bb%a4 aria-label=列出命令>列出命令</a></li><li>
+<a href=#%e5%ae%9a%e7%be%a9%e6%96%b0%e7%9a%84%e4%bd%bf%e7%94%a8%e8%80%85%e8%87%aa%e8%a8%82%e5%91%bd%e4%bb%a4 aria-label=定義新的使用者自訂命令>定義新的使用者自訂命令</a></li></ul></li><li>
+<a href=#autocmd aria-label=autocmd>autocmd</a></li><li>
 <a href=#map aria-label=map>map</a><ul>
 <li>
-<a href=#%e5%88%97%e5%87%ba-map aria-label="列出 map">列出 map</a></li>
-<li>
+<a href=#%e5%88%97%e5%87%ba-map aria-label="列出 map">列出 map</a></li><li>
 <a href=#%e5%ae%9a%e7%be%a9-map aria-label="定義 map">定義 map</a><ul>
 <li>
-<a href=#%e5%bf%ab%e6%8d%b7%e9%8d%b5 aria-label=快捷鍵>快捷鍵</a></li>
-<li>
+<a href=#%e5%bf%ab%e6%8d%b7%e9%8d%b5 aria-label=快捷鍵>快捷鍵</a></li><li>
 <a href=#%e5%91%bd%e4%bb%a4 aria-label=命令>命令</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><p>vim 在啟動時，都會去<strong>執行你的設定檔</strong>，這個檔案<strong>根據你的 vim 軟體不同而改變</strong>，如果是一般的 vim，那他會去讀 <code>~/.vimrc</code>，如果是 neovim(nvim)，他會去找 <code>~/.config/nvim/init.vim</code>。在接下來的文章中都以 <code>vimrc</code> 代指。<br>
-<code>vimrc</code> 內容是 vimscript，也就是所有的冒號命令<strong>去掉冒號之後的內容</strong>，例如有個命令是 <code>:set nu</code>，這個命令可以開啟行號顯示，如果要寫在 <code>vimrc</code> 裡面，就要寫成 <code>set nu</code>。</p>
-<h1 id=vimrc>vimrc<a hidden class=anchor aria-hidden=true href=#vimrc>#</a></h1>
-<p>通常我們會在 <code>vimrc</code> 中設定關於 vim 的<strong>外觀</strong>、<strong>行為</strong>、<strong>載入外掛</strong>等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 <code>"</code> 開頭是 vimscript 的註解)</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=color:#75715e>&#34; 打開語法突顯</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>syntax</span> <span style=color:#a6e22e>on</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; load plguin</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; install vim-plug:</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; sh -c &#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34;        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 這個是明天的東西，先註解掉，才不會出錯</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; so ~/.config/nvim/plugin.vim</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; 256 色</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>t_Co</span>=<span style=color:#ae81ff>256</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vim</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>t_ut</span>=<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 選一個你喜歡的 colorschema</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; available color schema</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; blue darkblue default delek desert elflord evening industry koehler</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; morning  murphy pablo peachpuff ron shine slate torte zellner</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>colorscheme</span> <span style=color:#a6e22e>koehler</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; 雜項設定，詳細解說請用 `:help &lt;opeion&gt;`，例如 `:help showcmd`</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>showcmd</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>nu</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>tabstop</span>=<span style=color:#ae81ff>4</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>shiftwidth</span>=<span style=color:#ae81ff>4</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>autoindent</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>nowrap</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>incsearch</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>autoindent</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>cindent</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>smartindent</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>cursorline</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; make lightline work in single screen</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; https://github.com/itchyny/lightline.vim/issues/71#issuecomment-47859569</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>laststatus</span>=<span style=color:#ae81ff>2</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 開啟滑鼠功能，對初學者來說非常好用</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>mouse</span>=<span style=color:#a6e22e>a</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; markdown</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 如果是檔案類型是 markdown 或 text，打開文字折疊（超出螢幕寬度會折到下一行）</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; au 的語法等等會講</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>au</span> <span style=color:#a6e22e>FileType</span> <span style=color:#a6e22e>markdown</span> <span style=color:#a6e22e>set</span> <span style=color:#a6e22e>wrap</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>au</span> <span style=color:#a6e22e>FileType</span> <span style=color:#a6e22e>text</span> <span style=color:#a6e22e>set</span> <span style=color:#a6e22e>wrap</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; ejs</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 不加這個的話 ejs 的語法突顯會很奇怪，順便附帶一個 ft, filetype 的坑</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; https://vi.stackexchange.com/questions/16341/what-is-the-difference-between-set-ft-and-setfiletype</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>au</span> <span style=color:#a6e22e>BufNew</span>,<span style=color:#a6e22e>BufNewFile</span>,<span style=color:#a6e22e>BufRead</span> *.<span style=color:#a6e22e>ejs</span> :<span style=color:#a6e22e>set</span> <span style=color:#a6e22e>filetype</span>=<span style=color:#a6e22e>ejs</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>au</span> <span style=color:#a6e22e>FileType</span> <span style=color:#a6e22e>ejs</span> <span style=color:#a6e22e>set</span> <span style=color:#a6e22e>syntax</span>=<span style=color:#a6e22e>html</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; ts </span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 這只是因為我比較喜歡 vim 對 javascript 的配色，typesript 的我覺得很醜，所以強制 vim 用 javascript 的配色</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; au 就是 autocmd 的縮寫啦！（vim 幾乎每個超過三個字的命令、選項都有縮寫，寫程式的人都很懶XD）</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>autocmd</span> <span style=color:#a6e22e>BufNewFile</span>,<span style=color:#a6e22e>BufRead</span> *.<span style=color:#a6e22e>ts</span> <span style=color:#a6e22e>set</span> <span style=color:#a6e22e>syntax</span>=<span style=color:#a6e22e>javascript</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; yaml</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; yaml 機車的空格限制，這樣在寫 yaml 檔時比較方便</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>autocmd</span> <span style=color:#a6e22e>FileType</span> <span style=color:#a6e22e>yaml</span> <span style=color:#a6e22e>setlocal</span> <span style=color:#a6e22e>ts</span>=<span style=color:#ae81ff>2</span> <span style=color:#a6e22e>sts</span>=<span style=color:#ae81ff>2</span> <span style=color:#a6e22e>sw</span>=<span style=color:#ae81ff>2</span> <span style=color:#a6e22e>expandtab</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; hotkey</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 這邊是自訂快捷鍵，語法等等會講，這邊只說明用法</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 在命令模式按 &lt;tab&gt; 會把整行字向右移一個 tab。&lt;S-tab&gt; 會移回來</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>map</span> &lt;<span style=color:#a6e22e>tab</span>&gt; :<span style=color:#a6e22e>s</span><span style=color:#e6db74>/^/</span>\<span style=color:#a6e22e>t</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>map</span> &lt;<span style=color:#a6e22e>S</span>-<span style=color:#a6e22e>tab</span>&gt; :<span style=color:#a6e22e>s</span><span style=color:#e6db74>/^\t/</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34;  如果要從系統剪貼簿貼上多行程式碼，建議這樣用，才不會被 vim 的自動縮排雷到（你試試就知道是什麼問題，很討厭）</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>nmap</span> &lt;<span style=color:#a6e22e>F3</span>&gt; :<span style=color:#a6e22e>r</span>! <span style=color:#a6e22e>cat</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 切換行號，在複製到系統鍵貼簿時很好用，這樣就不會複製到行號</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>nmap</span> &lt;<span style=color:#a6e22e>F7</span>&gt; :<span style=color:#a6e22e>set</span> <span style=color:#a6e22e>invnumber</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 清除搜尋結果的語法突顯</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>nmap</span> <span style=color:#a6e22e>cs</span> :<span style=color:#a6e22e>noh</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; alias</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 冒號命令的別名，語法等等會講</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 常用就知道為什麼要設這個（按冒號時要按 &lt;shift&gt;，然後下一個字就很常變大寫，簡稱手殘）</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>command</span> <span style=color:#a6e22e>W</span> <span style=color:#a6e22e>w</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>command</span> <span style=color:#a6e22e>Q</span> <span style=color:#a6e22e>q</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>command</span> <span style=color:#a6e22e>Wq</span> <span style=color:#a6e22e>wq</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>command</span> <span style=color:#a6e22e>WQ</span> <span style=color:#a6e22e>wq</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
-</span><span style=color:#75715e>&#34; fix bg color error in Pmenu</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 這個只是顯示問題，有時候背景色和前景色一樣你就看不到字了，所以要自己把他換掉，語法等等會講</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; https://vi.stackexchange.com/questions/23328/change-color-of-coc-suggestion-box</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>hi</span> <span style=color:#a6e22e>Pmenu</span> <span style=color:#a6e22e>ctermbg</span>=<span style=color:#a6e22e>black</span> <span style=color:#a6e22e>ctermfg</span>=<span style=color:#a6e22e>white</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>hi</span> <span style=color:#a6e22e>Ignore</span> <span style=color:#a6e22e>ctermbg</span>=<span style=color:#a6e22e>black</span> <span style=color:#a6e22e>ctermfg</span>=<span style=color:#a6e22e>lightblue</span><span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><h2 id=command>command<a hidden class=anchor aria-hidden=true href=#command>#</a></h2>
-<p>我們從最簡單的命令別名講起，這個命令可以縮寫成 <code>com</code><br>
+</li></ul></li></ul></li></ul></li></ul></div></details>
+</div><div class=post-content><p>vim 在啟動時，都會去<strong>執行你的設定檔</strong>，這個檔案<strong>根據你的 vim 軟體不同而改變</strong>，如果是一般的 vim，那他會去讀 <code>~/.vimrc</code>，如果是 neovim(nvim)，他會去找 <code>~/.config/nvim/init.vim</code>。在接下來的文章中都以 <code>vimrc</code> 代指。<br>
+<code>vimrc</code> 內容是 vimscript，也就是所有的冒號命令<strong>去掉冒號之後的內容</strong>，例如有個命令是 <code>:set nu</code>，這個命令可以開啟行號顯示，如果要寫在 <code>vimrc</code> 裡面，就要寫成 <code>set nu</code>。</p><h1 id=vimrc>vimrc<a hidden class=anchor aria-hidden=true href=#vimrc>#</a></h1><p>通常我們會在 <code>vimrc</code> 中設定關於 vim 的<strong>外觀</strong>、<strong>行為</strong>、<strong>載入外掛</strong>等等，接下來是我用多年的 vimrc 的內容，我會一個一個用註解解說他們的用處(雙引號 <code>"</code> 開頭是 vimscript 的註解)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=display:flex><span><span style=color:#75715e>&#34; 打開語法突顯</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>syntax</span> <span style=color:#a6e22e>on</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; load plguin</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; install vim-plug:</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; sh -c &#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34;        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 這個是明天的東西，先註解掉，才不會出錯</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; so ~/.config/nvim/plugin.vim</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; 256 色</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>t_Co</span>=<span style=color:#ae81ff>256</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 解決和 tmux 衝突，https://vi.stackexchange.com/questions/238/tmux-is-changing-part-of-the-background-in-vim</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>t_ut</span>=<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 選一個你喜歡的 colorschema</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; available color schema</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; blue darkblue default delek desert elflord evening industry koehler</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; morning  murphy pablo peachpuff ron shine slate torte zellner</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>colorscheme</span> <span style=color:#a6e22e>koehler</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; 雜項設定，詳細解說請用 `:help &lt;opeion&gt;`，例如 `:help showcmd`</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>showcmd</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>nu</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>tabstop</span>=<span style=color:#ae81ff>4</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>shiftwidth</span>=<span style=color:#ae81ff>4</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>autoindent</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>nowrap</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>incsearch</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>autoindent</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>cindent</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>smartindent</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>cursorline</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; make lightline work in single screen</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; https://github.com/itchyny/lightline.vim/issues/71#issuecomment-47859569</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>laststatus</span>=<span style=color:#ae81ff>2</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 開啟滑鼠功能，對初學者來說非常好用</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>set</span> <span style=color:#a6e22e>mouse</span>=<span style=color:#a6e22e>a</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; markdown</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 如果是檔案類型是 markdown 或 text，打開文字折疊（超出螢幕寬度會折到下一行）</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; au 的語法等等會講</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>au</span> <span style=color:#a6e22e>FileType</span> <span style=color:#a6e22e>markdown</span> <span style=color:#a6e22e>set</span> <span style=color:#a6e22e>wrap</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>au</span> <span style=color:#a6e22e>FileType</span> <span style=color:#a6e22e>text</span> <span style=color:#a6e22e>set</span> <span style=color:#a6e22e>wrap</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; ejs</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 不加這個的話 ejs 的語法突顯會很奇怪，順便附帶一個 ft, filetype 的坑</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; https://vi.stackexchange.com/questions/16341/what-is-the-difference-between-set-ft-and-setfiletype</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>au</span> <span style=color:#a6e22e>BufNew</span>,<span style=color:#a6e22e>BufNewFile</span>,<span style=color:#a6e22e>BufRead</span> *.<span style=color:#a6e22e>ejs</span> :<span style=color:#a6e22e>set</span> <span style=color:#a6e22e>filetype</span>=<span style=color:#a6e22e>ejs</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>au</span> <span style=color:#a6e22e>FileType</span> <span style=color:#a6e22e>ejs</span> <span style=color:#a6e22e>set</span> <span style=color:#a6e22e>syntax</span>=<span style=color:#a6e22e>html</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; ts </span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 這只是因為我比較喜歡 vim 對 javascript 的配色，typesript 的我覺得很醜，所以強制 vim 用 javascript 的配色</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; au 就是 autocmd 的縮寫啦！（vim 幾乎每個超過三個字的命令、選項都有縮寫，寫程式的人都很懶XD）</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>autocmd</span> <span style=color:#a6e22e>BufNewFile</span>,<span style=color:#a6e22e>BufRead</span> *.<span style=color:#a6e22e>ts</span> <span style=color:#a6e22e>set</span> <span style=color:#a6e22e>syntax</span>=<span style=color:#a6e22e>javascript</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; yaml</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; yaml 機車的空格限制，這樣在寫 yaml 檔時比較方便</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>autocmd</span> <span style=color:#a6e22e>FileType</span> <span style=color:#a6e22e>yaml</span> <span style=color:#a6e22e>setlocal</span> <span style=color:#a6e22e>ts</span>=<span style=color:#ae81ff>2</span> <span style=color:#a6e22e>sts</span>=<span style=color:#ae81ff>2</span> <span style=color:#a6e22e>sw</span>=<span style=color:#ae81ff>2</span> <span style=color:#a6e22e>expandtab</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; hotkey</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 這邊是自訂快捷鍵，語法等等會講，這邊只說明用法</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 在命令模式按 &lt;tab&gt; 會把整行字向右移一個 tab。&lt;S-tab&gt; 會移回來</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>map</span> &lt;<span style=color:#a6e22e>tab</span>&gt; :<span style=color:#a6e22e>s</span><span style=color:#e6db74>/^/</span>\<span style=color:#a6e22e>t</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>map</span> &lt;<span style=color:#a6e22e>S</span>-<span style=color:#a6e22e>tab</span>&gt; :<span style=color:#a6e22e>s</span><span style=color:#e6db74>/^\t/</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34;  如果要從系統剪貼簿貼上多行程式碼，建議這樣用，才不會被 vim 的自動縮排雷到（你試試就知道是什麼問題，很討厭）</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>nmap</span> &lt;<span style=color:#a6e22e>F3</span>&gt; :<span style=color:#a6e22e>r</span>! <span style=color:#a6e22e>cat</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 切換行號，在複製到系統鍵貼簿時很好用，這樣就不會複製到行號</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>nmap</span> &lt;<span style=color:#a6e22e>F7</span>&gt; :<span style=color:#a6e22e>set</span> <span style=color:#a6e22e>invnumber</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 清除搜尋結果的語法突顯</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>nmap</span> <span style=color:#a6e22e>cs</span> :<span style=color:#a6e22e>noh</span>&lt;<span style=color:#a6e22e>CR</span>&gt;<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; alias</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 冒號命令的別名，語法等等會講</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 常用就知道為什麼要設這個（按冒號時要按 &lt;shift&gt;，然後下一個字就很常變大寫，簡稱手殘）</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>command</span> <span style=color:#a6e22e>W</span> <span style=color:#a6e22e>w</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>command</span> <span style=color:#a6e22e>Q</span> <span style=color:#a6e22e>q</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>command</span> <span style=color:#a6e22e>Wq</span> <span style=color:#a6e22e>wq</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>command</span> <span style=color:#a6e22e>WQ</span> <span style=color:#a6e22e>wq</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>&#34; fix bg color error in Pmenu</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; 這個只是顯示問題，有時候背景色和前景色一樣你就看不到字了，所以要自己把他換掉，語法等等會講</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>&#34; https://vi.stackexchange.com/questions/23328/change-color-of-coc-suggestion-box</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>hi</span> <span style=color:#a6e22e>Pmenu</span> <span style=color:#a6e22e>ctermbg</span>=<span style=color:#a6e22e>black</span> <span style=color:#a6e22e>ctermfg</span>=<span style=color:#a6e22e>white</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>hi</span> <span style=color:#a6e22e>Ignore</span> <span style=color:#a6e22e>ctermbg</span>=<span style=color:#a6e22e>black</span> <span style=color:#a6e22e>ctermfg</span>=<span style=color:#a6e22e>lightblue</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><h2 id=command>command<a hidden class=anchor aria-hidden=true href=#command>#</a></h2><p>我們從最簡單的命令別名講起，這個命令可以縮寫成 <code>com</code><br>
 這個命令可以定義 <strong>「使用者自訂命令」</strong><br>
-使用者自訂命令一定要是<strong>大寫</strong>開頭</p>
-<h3 id=列出命令>列出命令<a hidden class=anchor aria-hidden=true href=#列出命令>#</a></h3>
-<p><code>:verbose com [cmd]</code>
-這個可以列出符合 <code>[cmd]</code> 的使用者自訂命令，還有<strong>最後定義的位置</strong></p>
-<h3 id=定義新的使用者自訂命令>定義新的使用者自訂命令<a hidden class=anchor aria-hidden=true href=#定義新的使用者自訂命令>#</a></h3>
-<p><code>:commmand {cmd} {rep}</code>
-這個會設定 <code>{cmd}</code> 的別名 <code>{rep}</code></p>
-<h2 id=autocmd>autocmd<a hidden class=anchor aria-hidden=true href=#autocmd>#</a></h2>
-<p>autocmd 是在某種類型的檔案載入時自動執行命令用的，可以縮寫成 <code>au</code><br>
+使用者自訂命令一定要是<strong>大寫</strong>開頭</p><h3 id=列出命令>列出命令<a hidden class=anchor aria-hidden=true href=#列出命令>#</a></h3><p><code>:verbose com [cmd]</code>
+這個可以列出符合 <code>[cmd]</code> 的使用者自訂命令，還有<strong>最後定義的位置</strong></p><h3 id=定義新的使用者自訂命令>定義新的使用者自訂命令<a hidden class=anchor aria-hidden=true href=#定義新的使用者自訂命令>#</a></h3><p><code>:commmand {cmd} {rep}</code>
+這個會設定 <code>{cmd}</code> 的別名 <code>{rep}</code></p><h2 id=autocmd>autocmd<a hidden class=anchor aria-hidden=true href=#autocmd>#</a></h2><p>autocmd 是在某種類型的檔案載入時自動執行命令用的，可以縮寫成 <code>au</code><br>
 au 的使用場景通常是某個類型的語法突顯會出問題、想要根據檔案類型套用不同設定，簡單的語法如下<br>
 <code>au [條件] [...命令]</code><br>
 條件通常長這樣， <code>FileType javascript</code><br>
-命令就是冒號命令除了冒號的部份</p>
-<h2 id=map>map<a hidden class=anchor aria-hidden=true href=#map>#</a></h2>
-<p>map 的功能是定義不是冒號開頭的命令（像是 <code>dd</code> 這種，在前幾篇文章中稱為快捷鍵），map 又根據作用的模式分為 <code>nmap</code>、<code>vmap</code>、<code>imap</code> 等等非常多種（<code>:help map</code> 會列出所有 map ）。其中最常用的是 <code>map</code>、<code>nmap</code>、<code>imap</code>，這三個分別代表在「除了編輯模式中作用」、「命令模式（ n ）作用」、「在編輯模式作用（ i ）」。<br>
-各種 map <strong>用法都一樣，差別只在作用模式不同</strong></p>
-<h3 id=列出-map>列出 map<a hidden class=anchor aria-hidden=true href=#列出-map>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim>:<span style=color:#a6e22e>map</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span>:<span style=color:#a6e22e>nmap</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span>:<span style=color:#a6e22e>imap</span><span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><h3 id=定義-map>定義 map<a hidden class=anchor aria-hidden=true href=#定義-map>#</a></h3>
-<p><code>map {快捷鍵} {命令}</code><br>
+命令就是冒號命令除了冒號的部份</p><h2 id=map>map<a hidden class=anchor aria-hidden=true href=#map>#</a></h2><p>map 的功能是定義不是冒號開頭的命令（像是 <code>dd</code> 這種，在前幾篇文章中稱為快捷鍵），map 又根據作用的模式分為 <code>nmap</code>、<code>vmap</code>、<code>imap</code> 等等非常多種（<code>:help map</code> 會列出所有 map ）。其中最常用的是 <code>map</code>、<code>nmap</code>、<code>imap</code>，這三個分別代表在「除了編輯模式中作用」、「命令模式（ n ）作用」、「在編輯模式作用（ i ）」。<br>
+各種 map <strong>用法都一樣，差別只在作用模式不同</strong></p><h3 id=列出-map>列出 map<a hidden class=anchor aria-hidden=true href=#列出-map>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=display:flex><span>:<span style=color:#a6e22e>map</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>:<span style=color:#a6e22e>nmap</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>:<span style=color:#a6e22e>imap</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><h3 id=定義-map>定義 map<a hidden class=anchor aria-hidden=true href=#定義-map>#</a></h3><p><code>map {快捷鍵} {命令}</code><br>
 {快捷鍵} 是 vim 的按鍵組合，其中 <code>imap</code> 用的大多都要加 或是 ，否則會沒用
 {命令} 是 vim 的命令，注意這裡講的是「廣義的命令」，也就是包括冒號和非冒號命令，所以如果是冒號命令你必須加上冒號和 enter 鍵才會執行<br>
-ps: map 給我的感覺有點像「當你按下 {快捷鍵} 時，vim 會自動幫你打 {命令}</p>
-<h4 id=快捷鍵>快捷鍵<a hidden class=anchor aria-hidden=true href=#快捷鍵>#</a></h4>
-<p>快捷鍵可以是不只一個按鍵，可以像是以下幾個範例</p>
-<pre tabindex=0><code>&lt;leader&gt;f
+ps: map 給我的感覺有點像「當你按下 {快捷鍵} 時，vim 會自動幫你打 {命令}</p><h4 id=快捷鍵>快捷鍵<a hidden class=anchor aria-hidden=true href=#快捷鍵>#</a></h4><p>快捷鍵可以是不只一個按鍵，可以像是以下幾個範例</p><pre tabindex=0><code>&lt;leader&gt;f
 &lt;C-y&gt;k
 ggk
 </code></pre><p>如果一個按鍵可以打出來，像是<code>a</code>、<code>b</code>、<code>c</code>、<code>0</code>、<code>1</code>、<code>2</code>、<code>+</code>、<code>=</code>，就不用角括號 <code>&lt;></code><br>
 如果是控制按鍵或是和控制按鍵一起按，就要加上括號，例如 <code>&lt;C-y></code>、<code>&lt;leader></code>，其中是指 是反斜線
-更多這種按鍵的說明可以參考 <code>:help key-notation</code></p>
-<h4 id=命令>命令<a hidden class=anchor aria-hidden=true href=#命令>#</a></h4>
-<p>這邊的命令因為是廣義的命令，所以如果你想要幫某個快捷鍵加上別名也是可以的</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=color:#a6e22e>nmap</span> <span style=color:#a6e22e>copy</span> <span style=color:#a6e22e>yy</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>nmap</span> <span style=color:#a6e22e>paste</span> <span style=color:#a6e22e>p</span><span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><p>嗯&mldr;&mldr;這可能只在快捷鍵很常出現但是複雜時比較好用<br>
-扯遠了，回到正題。如果你的命令是冒號命令的話，你必須要加上冒號和 enter，不然你在打完快捷鍵之後還要自己按 enter，所以記的在命令最後面加上 <code>&lt;CR></code> ，這個代表的是 enter 鍵， 也可以</p>
-</div>
-<footer class=post-footer>
+更多這種按鍵的說明可以參考 <code>:help key-notation</code></p><h4 id=命令>命令<a hidden class=anchor aria-hidden=true href=#命令>#</a></h4><p>這邊的命令因為是廣義的命令，所以如果你想要幫某個快捷鍵加上別名也是可以的</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=display:flex><span><span style=color:#a6e22e>nmap</span> <span style=color:#a6e22e>copy</span> <span style=color:#a6e22e>yy</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#a6e22e>nmap</span> <span style=color:#a6e22e>paste</span> <span style=color:#a6e22e>p</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><p>嗯&mldr;&mldr;這可能只在快捷鍵很常出現但是複雜時比較好用<br>
+扯遠了，回到正題。如果你的命令是冒號命令的話，你必須要加上冒號和 enter，不然你在打完快捷鍵之後還要自己按 enter，所以記的在命令最後面加上 <code>&lt;CR></code> ，這個代表的是 enter 鍵， 也可以</p></div><footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li>
-</ul>
-<nav class=paginav>
+<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li><li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li><li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li><li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li><li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li><li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li></ul><nav class=paginav>
 <a class=prev href=https://blog.simba-fs.dev/posts/ithelp/day14/>
 <span class=title>« 上一篇</span>
 <br>
@@ -284,8 +221,7 @@ ggk
 <br>
 <span>Day 12：vim 配色方案</span>
 </a>
-</nav>
-<div class=share-buttons>
+</nav><div class=share-buttons>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 13：vim 設定檔 on twitter" href="https://twitter.com/intent/tweet/?text=Day%2013%ef%bc%9avim%20%e8%a8%ad%e5%ae%9a%e6%aa%94&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday13%2f&hashtags=cli%2cterminal%2csoftwaredevelopment%2cvim%2ctmux%2czsh"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 13：vim 設定檔 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday13%2f&title=Day%2013%ef%bc%9avim%20%e8%a8%ad%e5%ae%9a%e6%aa%94&summary=Day%2013%ef%bc%9avim%20%e8%a8%ad%e5%ae%9a%e6%aa%94&source=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday13%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
@@ -298,22 +234,16 @@ ggk
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 13：vim 設定檔 on telegram" href="https://telegram.me/share/url?text=Day%2013%ef%bc%9avim%20%e8%a8%ad%e5%ae%9a%e6%aa%94&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday13%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
 </a>
-</div>
-</footer>
-</article>
-</main>
-<footer class=footer>
+</div></footer></article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script>
+</body></html>

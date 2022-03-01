@@ -31,8 +31,8 @@
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/express-%E9%87%8D%E8%A4%87-send/</guid>
       <description>問題 在 express route 裡面，我通常會在 res.send() 之類的函式前面都會加一個 return 防止因為程式邏輯漏洞造成重複送出然後噴 error。像是這樣
-route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; { return res.send(&amp;#39;Hello world&amp;#39;); }); 但是如果我們用到 Promise 的時候 return 並不會跳出整個 route，所以我們需要另一個方法，我的想法是一個變數儲存是否送出，然後在每次送出前都判斷，送出候更改變數值
-+--------------------------+ | is sent( flag === false) | +-+------------------------+ |no | +-+----+ | send | +-+----+ | +-+-----------+ | change flag | +-------------+ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; { let flag = false; doSomePromise() .then(() =&amp;gt; { // do something  if(!flag){ res.send(&amp;#39;Hello world&amp;#39;); flag = true; } }) }) 這樣就不會噴一堆 error 啦！</description>
+route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; {  return res.send(&amp;#39;Hello world&amp;#39;); }); 但是如果我們用到 Promise 的時候 return 並不會跳出整個 route，所以我們需要另一個方法，我的想法是一個變數儲存是否送出，然後在每次送出前都判斷，送出候更改變數值
++--------------------------+ | is sent( flag === false) | +-+------------------------+ |no | +-+----+ | send | +-+----+ | +-+-----------+ | change flag | +-------------+ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; {  let flag = false;  doSomePromise()  .then(() =&amp;gt; {  // do something  if(!</description>
     </item>
     
     <item>

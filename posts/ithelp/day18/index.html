@@ -3,20 +3,16 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet | Simba's Blog</title>
-<meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
+<title>Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet | Simba's Blog</title><meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
 <meta name=description content="emmet-vim 是 emmet 的 vim 版本（這句好像是廢話
  注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
  emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子
-.tab>(tr#col$>td*3)*4 會被解析成 <div class=&#34;tab&#34;> <tr id=&#34;col1&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col2&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col3&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col4&#34;> <td></td> <td></td> <td></td> </tr> </div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！
-安裝 在 ~/.config/nvim/plugin.vim 加入一行
-+ Plug 'mattn/emmet-vim' 然後記得修改後需要打指令 :so % | PlugInstall 安裝
-coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(p>div.title$)，你還是只能按 emmet-vim 的快捷鍵">
+.tab>(tr#col$>td*3)*4  會被解析成  <div class=&#34;tab&#34;> 	<tr id=&#34;col1&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col2&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col3&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col4&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> </div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！">
 <meta name=author content="simba-fs">
 <link rel=canonical href=https://blog.simba-fs.dev/posts/ithelp/day18/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
@@ -24,19 +20,13 @@ coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.0">
 <noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet">
+<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-175823992-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet">
 <meta property="og:description" content="emmet-vim 是 emmet 的 vim 版本（這句好像是廢話
  注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
  emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子
-.tab>(tr#col$>td*3)*4 會被解析成 <div class=&#34;tab&#34;> <tr id=&#34;col1&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col2&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col3&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col4&#34;> <td></td> <td></td> <td></td> </tr> </div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！
-安裝 在 ~/.config/nvim/plugin.vim 加入一行
-+ Plug 'mattn/emmet-vim' 然後記得修改後需要打指令 :so % | PlugInstall 安裝
-coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(p>div.title$)，你還是只能按 emmet-vim 的快捷鍵">
+.tab>(tr#col$>td*3)*4  會被解析成  <div class=&#34;tab&#34;> 	<tr id=&#34;col1&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col2&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col3&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col4&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> </div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://blog.simba-fs.dev/posts/ithelp/day18/"><meta property="og:image" content="https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-09-18T00:00:00+00:00">
@@ -47,15 +37,11 @@ coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 
 <meta name=twitter:description content="emmet-vim 是 emmet 的 vim 版本（這句好像是廢話
  注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
  emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子
-.tab>(tr#col$>td*3)*4 會被解析成 <div class=&#34;tab&#34;> <tr id=&#34;col1&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col2&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col3&#34;> <td></td> <td></td> <td></td> </tr> <tr id=&#34;col4&#34;> <td></td> <td></td> <td></td> </tr> </div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！
-安裝 在 ~/.config/nvim/plugin.vim 加入一行
-+ Plug 'mattn/emmet-vim' 然後記得修改後需要打指令 :so % | PlugInstall 安裝
-coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(p>div.title$)，你還是只能按 emmet-vim 的快捷鍵">
+.tab>(tr#col$>td*3)*4  會被解析成  <div class=&#34;tab&#34;> 	<tr id=&#34;col1&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col2&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col3&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> 	<tr id=&#34;col4&#34;> 	<td></td> 	<td></td> 	<td></td> 	</tr> </div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"ithelp","item":"https://blog.simba-fs.dev/posts/ithelp/"},{"@type":"ListItem","position":3,"name":"Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet","item":"https://blog.simba-fs.dev/posts/ithelp/day18/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet","name":"Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet","description":"emmet-vim 是 emmet 的 vim 版本（這句好像是廢話\n 注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎\n emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子\n.tab\u0026gt;(tr#col$\u0026gt;td*3)*4 會被解析成 \u0026lt;div class=\u0026#34;tab\u0026#34;\u0026gt; \u0026lt;tr id=\u0026#34;col1\u0026#34;\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;/tr\u0026gt; \u0026lt;tr id=\u0026#34;col2\u0026#34;\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;/tr\u0026gt; \u0026lt;tr id=\u0026#34;col3\u0026#34;\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;/tr\u0026gt; \u0026lt;tr id=\u0026#34;col4\u0026#34;\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \u0026lt;/tr\u0026gt; \u0026lt;/div\u0026gt; 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！\n安裝 在 ~/.config/nvim/plugin.vim 加入一行\n+ Plug \u0026#39;mattn/emmet-vim\u0026#39; 然後記得修改後需要打指令 :so % | PlugInstall 安裝\ncoc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(p\u0026gt;div.title$)，你還是只能按 emmet-vim 的快捷鍵","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"emmet-vim 是 emmet 的 vim 版本（這句好像是廢話\n 注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎\n emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子\n.tab(tr#col$td*3)*4 會被解析成 div class=\"tab\" tr id=\"col1\" tdtd tdtd tdtd tr tr id=\"col2\" tdtd tdtd tdtd tr tr id=\"col3\" tdtd tdtd tdtd tr tr id=\"col4\" tdtd tdtd tdtd tr div 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！\n安裝 在 ~/.config/nvim/plugin.vim 加入一行\n+ Plug 'mattn/emmet-vim' 然後記得修改後需要打指令 :so % | PlugInstall 安裝\ncoc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(pdiv.title$)，你還是只能按 emmet-vim 的快捷鍵\n這個擴充還有個問題，像是這樣的 emmet 程式碼 (pdiv.title$)*6 用 coc.nvim 展開後用 u 退回，*6 就神奇的消失了！（也許是我設定的問題，但不是什麼大問題）\n總而言之這個擴充相當不錯，可以裝一下\n產生標籤 emmet 最基本功能是幫你寫角括號，像是這樣\n- 左邊是 emmet 程式碼，右邊是根據左邊產生出來的 HTML\ndiv - divdiv 內容 在標籤後面加上大括號 {}，大括號內的文字就會被放進標籤裡面\np{hello world} - phello worldp 屬性 你可以幫標籤加上屬性，在標籤後面加上 [key=value] 就可以指定屬性。\n其中 id 和 class 因為太常用了，所以有自己專屬的縮寫，在井字號 # 後面的是 id，在點 . 後面的是 class\n而 div 這個標籤因為很常用，所以如果直接用井字號或是點可以不用寫 div（第三個範例）\nh1[hidden=\"hidden\"] - h1 hidden=\"hidden\"h1 h1.title - hi class=\"title\"hi #username - div id=\"username\"div button.bg-blue.round#login - button id=\"login\" class=\"bg-blue round\"button 並排 你可以用加號 + 讓兩個標籤並排\nh1+h2 - h1h1 h2h2 巢狀標籤 大於符號  代表右側的標籤在左側標籤的裡面，而且你可以一層套一層\ndivspan - div spanspan div ------------ divspamh1a - div spam h1a href=\"\"ah1 spam div ------------ div.mainh1.bg-green.bolda - div class=\"main\" h1 class=\"bg-green bold\"a href=\"\"ah1 div 群組 在建立巢狀標籤時，你也可以用小括號 () 來建立群組，打破原本運算子的優先度\ndiv(h1+h2) - div h1h1 h2h2 div 假內容產生 有一個運算子名稱特別奇怪，他可以幫你產生假內容，還可以加數字指定假內容要有幾個單字\nlorem - Sit elit consectetur ullam eius aliquam repellat! Illo quaerat quisquam minima laboriosam fugit sunt Ex voluptas modi laboriosam commodi optio, sapiente. Quasi perferendis aliquam reprehenderit in praesentium Deserunt inventore natus. ------------ plorem4 - p Lorem sunt esse odio? p 結尾 今天的內容差不多就到這裡，但是 emmet 精華的部份還沒出來呢！明天今天的程式碼一行可以產生五六行，加上明天的重複、迭代後四五百行都是小 case（呃，這麼長有點誇張）\n","wordCount":"231","inLanguage":"zh-tw","datePublished":"2021-09-18T00:00:00Z","dateModified":"2021-09-18T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/day18/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet","name":"Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet","description":"emmet-vim 是 emmet 的 vim 版本（這句好像是廢話\n 注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎\n emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子\n.tab\u0026gt;(tr#col$\u0026gt;td*3)*4  會被解析成  \u0026lt;div class=\u0026#34;tab\u0026#34;\u0026gt; \t\u0026lt;tr id=\u0026#34;col1\u0026#34;\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;/tr\u0026gt; \t\u0026lt;tr id=\u0026#34;col2\u0026#34;\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;/tr\u0026gt; \t\u0026lt;tr id=\u0026#34;col3\u0026#34;\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;/tr\u0026gt; \t\u0026lt;tr id=\u0026#34;col4\u0026#34;\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;td\u0026gt;\u0026lt;/td\u0026gt; \t\u0026lt;/tr\u0026gt; \u0026lt;/div\u0026gt; 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"emmet-vim 是 emmet 的 vim 版本（這句好像是廢話\n 注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎\n emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子\n.tab(tr#col$td*3)*4  會被解析成  div class=\"tab\" \ttr id=\"col1\" \ttdtd \ttdtd \ttdtd \ttr \ttr id=\"col2\" \ttdtd \ttdtd \ttdtd \ttr \ttr id=\"col3\" \ttdtd \ttdtd \ttdtd \ttr \ttr id=\"col4\" \ttdtd \ttdtd \ttdtd \ttr div 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！\n安裝 在 ~/.config/nvim/plugin.vim 加入一行\n+ Plug 'mattn/emmet-vim' 然後記得修改後需要打指令 :so % | PlugInstall 安裝\ncoc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：(pdiv.title$)，你還是只能按 emmet-vim 的快捷鍵\n這個擴充還有個問題，像是這樣的 emmet 程式碼 (pdiv.title$)*6 用 coc.nvim 展開後用 u 退回，*6 就神奇的消失了！（也許是我設定的問題，但不是什麼大問題）\n總而言之這個擴充相當不錯，可以裝一下\n產生標籤 emmet 最基本功能是幫你寫角括號，像是這樣\n- 左邊是 emmet 程式碼，右邊是根據左邊產生出來的 HTML\ndiv  -  divdiv 內容 在標籤後面加上大括號 {}，大括號內的文字就會被放進標籤裡面\np{hello world}  -  phello worldp 屬性 你可以幫標籤加上屬性，在標籤後面加上 [key=value] 就可以指定屬性。\n其中 id 和 class 因為太常用了，所以有自己專屬的縮寫，在井字號 # 後面的是 id，在點 . 後面的是 class\n而 div 這個標籤因為很常用，所以如果直接用井字號或是點可以不用寫 div（第三個範例）\nh1[hidden=\"hidden\"] - h1 hidden=\"hidden\"h1  h1.title - hi class=\"title\"hi  #username - div id=\"username\"div  button.bg-blue.round#login - button id=\"login\" class=\"bg-blue round\"button 並排 你可以用加號 + 讓兩個標籤並排\nh1+h2  -  h1h1 h2h2 巢狀標籤 大於符號  代表右側的標籤在左側標籤的裡面，而且你可以一層套一層\ndivspan  -  div \tspanspan div  ------------  divspamh1a  -  div \tspam \th1a href=\"\"ah1 \tspam div  ------------  div.mainh1.bg-green.bolda  -  div class=\"main\" \th1 class=\"bg-green bold\"a href=\"\"ah1 div 群組 在建立巢狀標籤時，你也可以用小括號 () 來建立群組，打破原本運算子的優先度\ndiv(h1+h2)  -  div \th1h1 \th2h2 div 假內容產生 有一個運算子名稱特別奇怪，他可以幫你產生假內容，還可以加數字指定假內容要有幾個單字\nlorem  -  Sit elit consectetur ullam eius aliquam repellat! Illo quaerat quisquam minima laboriosam fugit sunt Ex voluptas modi laboriosam commodi optio, sapiente. Quasi perferendis aliquam reprehenderit in praesentium Deserunt inventore natus.  ------------  plorem4  -  p \tLorem sunt esse odio? p 結尾 今天的內容差不多就到這裡，但是 emmet 精華的部份還沒出來呢！明天今天的程式碼一行可以產生五六行，加上明天的重複、迭代後四五百行都是小 case（呃，這麼長有點誇張）\n","wordCount":"231","inLanguage":"zh-tw","datePublished":"2021-09-18T00:00:00Z","dateModified":"2021-09-18T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/day18/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
+</head><body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -65,46 +51,34 @@ coc-emmet coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </span>
-</div>
-<ul id=menu>
+</div><ul id=menu>
 <li>
 <a href=https://blog.simba-fs.dev/posts/ title=Categories>
 <span>Categories</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/tags/ title=Tags>
 <span>Tags</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/archive/ title=Archives>
 <span>Archives</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/resource/ title=Resource>
 <span>Resource</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
+</li></ul></nav></header><main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div>
-<h1 class=post-title>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div><h1 class=post-title>
 Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet
-</h1>
-<div class=post-meta><span title="2021-09-18 00:00:00 +0000 UTC">2021-September-18</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs
-</div>
-</header> <div class=toc>
+</h1><div class=post-meta><span title="2021-09-18 00:00:00 +0000 UTC">2021-September-18</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs
+</div></header><div class=toc>
 <details open>
 <summary accesskey=c title="(Alt + C)">
 <span class=details>目錄</span>
@@ -113,175 +87,127 @@ Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet
 <li>
 <a href=#%e5%ae%89%e8%a3%9d aria-label=安裝>安裝</a><ul>
 <li>
-<a href=#coc-emmet aria-label=coc-emmet>coc-emmet</a></li>
-<li>
-<a href=#%e7%94%a2%e7%94%9f%e6%a8%99%e7%b1%a4 aria-label=產生標籤>產生標籤</a></li>
-<li>
-<a href=#%e5%85%a7%e5%ae%b9 aria-label=內容>內容</a></li>
-<li>
-<a href=#%e5%b1%ac%e6%80%a7 aria-label=屬性>屬性</a></li>
-<li>
-<a href=#%e4%b8%a6%e6%8e%92 aria-label=並排>並排</a></li>
-<li>
-<a href=#%e5%b7%a2%e7%8b%80%e6%a8%99%e7%b1%a4 aria-label=巢狀標籤>巢狀標籤</a></li>
-<li>
-<a href=#%e7%be%a4%e7%b5%84 aria-label=群組>群組</a></li>
-<li>
-<a href=#%e5%81%87%e5%85%a7%e5%ae%b9%e7%94%a2%e7%94%9f aria-label=假內容產生>假內容產生</a></li></ul>
-</li>
-<li>
+<a href=#coc-emmet aria-label=coc-emmet>coc-emmet</a></li><li>
+<a href=#%e7%94%a2%e7%94%9f%e6%a8%99%e7%b1%a4 aria-label=產生標籤>產生標籤</a></li><li>
+<a href=#%e5%85%a7%e5%ae%b9 aria-label=內容>內容</a></li><li>
+<a href=#%e5%b1%ac%e6%80%a7 aria-label=屬性>屬性</a></li><li>
+<a href=#%e4%b8%a6%e6%8e%92 aria-label=並排>並排</a></li><li>
+<a href=#%e5%b7%a2%e7%8b%80%e6%a8%99%e7%b1%a4 aria-label=巢狀標籤>巢狀標籤</a></li><li>
+<a href=#%e7%be%a4%e7%b5%84 aria-label=群組>群組</a></li><li>
+<a href=#%e5%81%87%e5%85%a7%e5%ae%b9%e7%94%a2%e7%94%9f aria-label=假內容產生>假內容產生</a></li></ul></li><li>
 <a href=#%e7%b5%90%e5%b0%be aria-label=結尾>結尾</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><p>emmet-vim 是 emmet 的 vim 版本（這句好像是廢話</p>
-<blockquote>
-<p>注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎</p>
-</blockquote>
-<p>emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>.tab&gt;(tr#col$&gt;td*3)*4
-
-會被解析成 
-
-&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tab&#34;</span>&gt;
-	&lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;col1&#34;</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-	&lt;/<span style=color:#f92672>tr</span>&gt;
-	&lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;col2&#34;</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-	&lt;/<span style=color:#f92672>tr</span>&gt;
-	&lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;col3&#34;</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-	&lt;/<span style=color:#f92672>tr</span>&gt;
-	&lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;col4&#34;</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
-	&lt;/<span style=color:#f92672>tr</span>&gt;
-&lt;/<span style=color:#f92672>div</span>&gt;
-</code></pre></div><p>是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！</p>
-<h1 id=安裝>安裝<a hidden class=anchor aria-hidden=true href=#安裝>#</a></h1>
-<p>在 <code>~/.config/nvim/plugin.vim</code> 加入一行</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=color:#a6e22e>+ Plug &#39;mattn/emmet-vim&#39;
-</span></code></pre></div><p>然後記得修改後需要打指令 <code>:so % | PlugInstall</code> 安裝</p>
-<h2 id=coc-emmet>coc-emmet<a hidden class=anchor aria-hidden=true href=#coc-emmet>#</a></h2>
-<p>coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：<code>(p>div.title$)</code>，你還是只能按 emmet-vim 的快捷鍵<br>
+</li></ul></div></details>
+</div><div class=post-content><p>emmet-vim 是 emmet 的 vim 版本（這句好像是廢話</p><blockquote>
+<p>注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎</p></blockquote><p>emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>.tab&gt;(tr#col$&gt;td*3)*4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>會被解析成 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tab&#34;</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;col1&#34;</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>	&lt;/<span style=color:#f92672>tr</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;col2&#34;</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>	&lt;/<span style=color:#f92672>tr</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;col3&#34;</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>	&lt;/<span style=color:#f92672>tr</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;col4&#34;</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>td</span>&gt;&lt;/<span style=color:#f92672>td</span>&gt;
+</span></span><span style=display:flex><span>	&lt;/<span style=color:#f92672>tr</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><p>是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！</p><h1 id=安裝>安裝<a hidden class=anchor aria-hidden=true href=#安裝>#</a></h1><p>在 <code>~/.config/nvim/plugin.vim</code> 加入一行</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span><span style=color:#a6e22e>+ Plug &#39;mattn/emmet-vim&#39;
+</span></span></span></code></pre></div><p>然後記得修改後需要打指令 <code>:so % | PlugInstall</code> 安裝</p><h2 id=coc-emmet>coc-emmet<a hidden class=anchor aria-hidden=true href=#coc-emmet>#</a></h2><p>coc-emmet 是個可選可不選的 coc 擴充，可以讓你不用按 emmet-vim 的快捷鍵。雖然這個擴充幾乎可以代替 emmet-vim，但是因為他依靠 coc.nvim，所以有時候他會跳不出建議，例如右括號結尾：<code>(p>div.title$)</code>，你還是只能按 emmet-vim 的快捷鍵<br>
 這個擴充還有個問題，像是這樣的 emmet 程式碼 <code>(p>div.title$)*6</code> 用 coc.nvim 展開後用 <code>u</code> 退回，<code>*6</code> 就神奇的消失了！（也許是我設定的問題，但不是什麼大問題）<br>
-總而言之這個擴充相當不錯，可以裝一下</p>
-<h2 id=產生標籤>產生標籤<a hidden class=anchor aria-hidden=true href=#產生標籤>#</a></h2>
-<p>emmet 最基本功能是幫你寫角括號，像是這樣<br>
-<code>-></code> 左邊是 emmet 程式碼，右邊是根據左邊產生出來的 HTML</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>div 
-
--&gt; 
-
-&lt;<span style=color:#f92672>div</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
-</code></pre></div><h2 id=內容>內容<a hidden class=anchor aria-hidden=true href=#內容>#</a></h2>
-<p>在標籤後面加上大括號 <code>{}</code>，大括號內的文字就會被放進標籤裡面</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>p{hello world}
-
--&gt;
-
-&lt;<span style=color:#f92672>p</span>&gt;hello world&lt;/<span style=color:#f92672>p</span>&gt;
-</code></pre></div><h2 id=屬性>屬性<a hidden class=anchor aria-hidden=true href=#屬性>#</a></h2>
-<p>你可以幫標籤加上屬性，在標籤後面加上 <code>[key=value]</code> 就可以指定屬性。<br>
+總而言之這個擴充相當不錯，可以裝一下</p><h2 id=產生標籤>產生標籤<a hidden class=anchor aria-hidden=true href=#產生標籤>#</a></h2><p>emmet 最基本功能是幫你寫角括號，像是這樣<br>
+<code>-></code> 左邊是 emmet 程式碼，右邊是根據左邊產生出來的 HTML</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>div 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><h2 id=內容>內容<a hidden class=anchor aria-hidden=true href=#內容>#</a></h2><p>在標籤後面加上大括號 <code>{}</code>，大括號內的文字就會被放進標籤裡面</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>p{hello world}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>p</span>&gt;hello world&lt;/<span style=color:#f92672>p</span>&gt;
+</span></span></code></pre></div><h2 id=屬性>屬性<a hidden class=anchor aria-hidden=true href=#屬性>#</a></h2><p>你可以幫標籤加上屬性，在標籤後面加上 <code>[key=value]</code> 就可以指定屬性。<br>
 其中 <code>id</code> 和 <code>class</code> 因為太常用了，所以有自己專屬的縮寫，在井字號 <code>#</code> 後面的是 <code>id</code>，在點 <code>.</code> 後面的是 <code>class</code><br>
-而 <code>div</code> 這個標籤因為很常用，所以如果直接用井字號或是點可以不用寫 div（第三個範例）</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>h1[hidden=&#34;hidden&#34;] -&gt; &lt;<span style=color:#f92672>h1</span> <span style=color:#a6e22e>hidden</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hidden&#34;</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
-
-h1.title -&gt; &lt;<span style=color:#f92672>hi</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;title&#34;</span>&gt;&lt;/<span style=color:#f92672>hi</span>&gt;
-
-#username -&gt; &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
-
-button.bg-blue.round#login -&gt; &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;bg-blue round&#34;</span>&gt;&lt;/<span style=color:#f92672>button</span>&gt;
-</code></pre></div><h2 id=並排>並排<a hidden class=anchor aria-hidden=true href=#並排>#</a></h2>
-<p>你可以用加號 <code>+</code> 讓兩個標籤並排</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>h1+h2
-
--&gt; 
-
-&lt;<span style=color:#f92672>h1</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
-&lt;<span style=color:#f92672>h2</span>&gt;&lt;/<span style=color:#f92672>h2</span>&gt;
-</code></pre></div><h2 id=巢狀標籤>巢狀標籤<a hidden class=anchor aria-hidden=true href=#巢狀標籤>#</a></h2>
-<p>大於符號 <code>></code> 代表右側的標籤在左側標籤的裡面，而且你可以一層套一層</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>div&gt;span 
-
--&gt; 
-
-&lt;<span style=color:#f92672>div</span>&gt;
-	&lt;<span style=color:#f92672>span</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
-&lt;/<span style=color:#f92672>div</span>&gt;
-
-------------
-
-div&gt;spam&gt;h1&gt;a
-
--&gt; 
-
-&lt;<span style=color:#f92672>div</span>&gt;
-	&lt;<span style=color:#f92672>spam</span>&gt;
-		&lt;<span style=color:#f92672>h1</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>&gt;&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
-	&lt;/<span style=color:#f92672>spam</span>&gt;
-&lt;/<span style=color:#f92672>div</span>&gt;
-
-------------
-
-div.main&gt;h1.bg-green.bold&gt;a
-
--&gt;
-
-&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;main&#34;</span>&gt;
-	&lt;<span style=color:#f92672>h1</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;bg-green bold&#34;</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>&gt;&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
-&lt;/<span style=color:#f92672>div</span>&gt;
-</code></pre></div><h2 id=群組>群組<a hidden class=anchor aria-hidden=true href=#群組>#</a></h2>
-<p>在建立巢狀標籤時，你也可以用小括號 <code>()</code> 來建立群組，打破原本運算子的優先度</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>div&gt;(h1+h2)
-
--&gt; 
-
-&lt;<span style=color:#f92672>div</span>&gt;
-	&lt;<span style=color:#f92672>h1</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
-	&lt;<span style=color:#f92672>h2</span>&gt;&lt;/<span style=color:#f92672>h2</span>&gt;
-&lt;/<span style=color:#f92672>div</span>&gt;
-
-</code></pre></div><h2 id=假內容產生>假內容產生<a hidden class=anchor aria-hidden=true href=#假內容產生>#</a></h2>
-<p>有一個運算子名稱特別奇怪，他可以幫你產生假內容，還可以加數字指定假內容要有幾個單字</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>lorem
-
--&gt;
-
-Sit elit consectetur ullam eius aliquam repellat! Illo quaerat quisquam minima laboriosam fugit sunt Ex voluptas modi laboriosam commodi optio, sapiente. Quasi perferendis aliquam reprehenderit in praesentium Deserunt inventore natus.
-
-------------
-
-p&gt;lorem4
-
--&gt;
-
-&lt;<span style=color:#f92672>p</span>&gt;
-	Lorem sunt esse odio?
-&lt;/<span style=color:#f92672>p</span>&gt;
-</code></pre></div><h1 id=結尾>結尾<a hidden class=anchor aria-hidden=true href=#結尾>#</a></h1>
-<p>今天的內容差不多就到這裡，但是 emmet 精華的部份還沒出來呢！明天今天的程式碼一行可以產生五六行，加上明天的重複、迭代後四五百行都是小 case（呃，這麼長有點誇張）</p>
-</div>
-<footer class=post-footer>
+而 <code>div</code> 這個標籤因為很常用，所以如果直接用井字號或是點可以不用寫 div（第三個範例）</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>h1[hidden=&#34;hidden&#34;] -&gt; &lt;<span style=color:#f92672>h1</span> <span style=color:#a6e22e>hidden</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hidden&#34;</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>h1.title -&gt; &lt;<span style=color:#f92672>hi</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;title&#34;</span>&gt;&lt;/<span style=color:#f92672>hi</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#username -&gt; &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>button.bg-blue.round#login -&gt; &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;bg-blue round&#34;</span>&gt;&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span></code></pre></div><h2 id=並排>並排<a hidden class=anchor aria-hidden=true href=#並排>#</a></h2><p>你可以用加號 <code>+</code> 讓兩個標籤並排</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>h1+h2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>h1</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>h2</span>&gt;&lt;/<span style=color:#f92672>h2</span>&gt;
+</span></span></code></pre></div><h2 id=巢狀標籤>巢狀標籤<a hidden class=anchor aria-hidden=true href=#巢狀標籤>#</a></h2><p>大於符號 <code>></code> 代表右側的標籤在左側標籤的裡面，而且你可以一層套一層</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>div&gt;span 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>span</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------------
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>div&gt;spam&gt;h1&gt;a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>spam</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>h1</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>&gt;&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>	&lt;/<span style=color:#f92672>spam</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------------
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>div.main&gt;h1.bg-green.bold&gt;a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;main&#34;</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>h1</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;bg-green bold&#34;</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>&gt;&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><h2 id=群組>群組<a hidden class=anchor aria-hidden=true href=#群組>#</a></h2><p>在建立巢狀標籤時，你也可以用小括號 <code>()</code> 來建立群組，打破原本運算子的優先度</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>div&gt;(h1+h2)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>h1</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>h2</span>&gt;&lt;/<span style=color:#f92672>h2</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><h2 id=假內容產生>假內容產生<a hidden class=anchor aria-hidden=true href=#假內容產生>#</a></h2><p>有一個運算子名稱特別奇怪，他可以幫你產生假內容，還可以加數字指定假內容要有幾個單字</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>lorem
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Sit elit consectetur ullam eius aliquam repellat! Illo quaerat quisquam minima laboriosam fugit sunt Ex voluptas modi laboriosam commodi optio, sapiente. Quasi perferendis aliquam reprehenderit in praesentium Deserunt inventore natus.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------------
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>p&gt;lorem4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>	Lorem sunt esse odio?
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>p</span>&gt;
+</span></span></code></pre></div><h1 id=結尾>結尾<a hidden class=anchor aria-hidden=true href=#結尾>#</a></h1><p>今天的內容差不多就到這裡，但是 emmet 精華的部份還沒出來呢！明天今天的程式碼一行可以產生五六行，加上明天的重複、迭代後四五百行都是小 case（呃，這麼長有點誇張）</p></div><footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li>
-</ul>
-<nav class=paginav>
+<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li><li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li><li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li><li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li><li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li><li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li></ul><nav class=paginav>
 <a class=prev href=https://blog.simba-fs.dev/posts/ithelp/day19/>
 <span class=title>« 上一篇</span>
 <br>
@@ -292,8 +218,7 @@ p&gt;lorem4
 <br>
 <span>Day 17：coc.nvim 設定下集</span>
 </a>
-</nav>
-<div class=share-buttons>
+</nav><div class=share-buttons>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet on twitter" href="https://twitter.com/intent/tweet/?text=Day%2018%ef%bc%9a%e5%b9%ab%e4%bd%a0%e7%9a%84%20HTML%20%e9%96%8b%e7%99%bc%e8%a3%9d%e4%b8%8a%e5%99%b4%e5%b0%84%e5%bc%95%e6%93%8e%ef%bc%81vim-emmet&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday18%2f&hashtags=cli%2cterminal%2csoftwaredevelopment%2cvim%2ctmux%2czsh"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday18%2f&title=Day%2018%ef%bc%9a%e5%b9%ab%e4%bd%a0%e7%9a%84%20HTML%20%e9%96%8b%e7%99%bc%e8%a3%9d%e4%b8%8a%e5%99%b4%e5%b0%84%e5%bc%95%e6%93%8e%ef%bc%81vim-emmet&summary=Day%2018%ef%bc%9a%e5%b9%ab%e4%bd%a0%e7%9a%84%20HTML%20%e9%96%8b%e7%99%bc%e8%a3%9d%e4%b8%8a%e5%99%b4%e5%b0%84%e5%bc%95%e6%93%8e%ef%bc%81vim-emmet&source=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday18%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
@@ -306,22 +231,16 @@ p&gt;lorem4
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet on telegram" href="https://telegram.me/share/url?text=Day%2018%ef%bc%9a%e5%b9%ab%e4%bd%a0%e7%9a%84%20HTML%20%e9%96%8b%e7%99%bc%e8%a3%9d%e4%b8%8a%e5%99%b4%e5%b0%84%e5%bc%95%e6%93%8e%ef%bc%81vim-emmet&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday18%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
 </a>
-</div>
-</footer>
-</article>
-</main>
-<footer class=footer>
+</div></footer></article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script>
+</body></html>

@@ -3,8 +3,7 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair | Simba's Blog</title>
-<meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
+<title>Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair | Simba's Blog</title><meta name=keywords content="cli,terminal,software development,vim,tmux,zsh">
 <meta name=description content="今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias
 zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。
    ❓ > autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？     前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突    安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定
@@ -18,7 +17,7 @@ zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔�
 <link rel=canonical href=https://blog.simba-fs.dev/posts/ithelp/day05/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=preload href=/images/icon/icon.png as=image>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <link rel=icon type=image/png sizes=16x16 href=https://blog.simba-fs.dev/images/icon/icon-16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://blog.simba-fs.dev/images/icon/icon-32.png>
@@ -26,12 +25,9 @@ zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔�
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.0">
 <noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-175823992-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair">
+<style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-175823992-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair">
 <meta property="og:description" content="今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias
 zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。
    ❓ > autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？     前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突    安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定
@@ -58,10 +54,9 @@ zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔�
  為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了
 # case sensitive zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"posts","item":"https://blog.simba-fs.dev/posts/"},{"@type":"ListItem","position":2,"name":"ithelp","item":"https://blog.simba-fs.dev/posts/ithelp/"},{"@type":"ListItem","position":3,"name":"Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair","item":"https://blog.simba-fs.dev/posts/ithelp/day05/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair","name":"Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair","description":"今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias\nzsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。\n   ❓ \u0026gt; autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？     前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突    安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定\n+ zplug \u0026#39;marlonrichert/zsh-autocomplete\u0026#39; 然後重新開啟終端機並安裝新增的外掛就可以了\n你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。\n 在 https://github.com/marlonrichert/zsh-autocomplete 有快捷鍵教學\n 設定  這段是我在寫完第一版後新增了，所以在 純‧ CLI 整合開發環境 是沒有的\n 為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了\n# case sensitive zstyle \u0026#39;:completion:*\u0026#39; matcher-list \u0026#39;\u0026#39; \u0026#39;m:{a-zA-Z}={A-Za-z}\u0026#39; \u0026#39;r:|[.","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias\nzsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。\n   ❓  autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？     前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突    安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定\n+ zplug 'marlonrichert/zsh-autocomplete' 然後重新開啟終端機並安裝新增的外掛就可以了\n你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。\n 在 https://github.com/marlonrichert/zsh-autocomplete 有快捷鍵教學\n 設定  這段是我在寫完第一版後新增了，所以在 純‧ CLI 整合開發環境 是沒有的\n 為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了\n# case sensitive zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # zsh-autocomplete configure # Down arrow: bindkey '\\e[B' down-line-or-select bindkey '\\eOB' down-line-or-select # down-line-or-select: Open completion menu. # down-line-or-history: Cycle to next history line. 這裡新增了「區分大小寫」和「方向鍵選建議」兩個功能\nzsh-autopair 這個簡單但是貼心的功能在這個 IDE 中很常見，我們的當然也不能漏掉他\n一樣修改 ~/.zshrc 就可以安裝了\n+ zplug 'hlissner/zsh-autopair' 重新開啟安裝後就可以享受自動括號了！\nalias alias 的語法很簡單，day02 有提到過，我們再複習一次\nalias a=b 關於 alias 有兩點要注意\n 等號 = 左右不能有空白 如果右邊有空白，要用引號 '、\" 括起來  alias a=b # O alias c = d # X 接下來會有我精鍊出來必備的 alias，上面的註解是關於這個 alias 解釋\n# 加上 -r 在刪除/複製目錄時才不會跳警告 alias rm='rm -r' alias cp='cp -r' # -h 可以把檔案大小加上適當的單位，比較好讀 # -l 印出除了檔名其他的資訊，ex：權限、大小 # -F、--color 純粹是好看 alias ls='ls -hlF --color=auto' # 大推，這個 alias 非常好用（zsh 有類似功能的外掛可以裝，但是我覺得可以用 alias 就用 alias alias ..='cd ../' # 把當前目錄下的檔案/目錄以樹狀結構印出來，會把不重要的（.git, node_modules）忽略，後面可以接路徑 alias tree=\"tree -alI 'node_modules|.git'\" # 加上顏色 alias grep='grep --color=always' # 超好用，在當前目錄中所有檔案中找指定字串，用法：grepFind 'console.log'，會印出檔案行號，還會把目標字串上色 alias grepFind='grep --exclude-dir=node_modules -nr . -e' # 建立巢狀目錄時會一並建立上層目錄，下面解釋 alias mkdir='mkdir -p' mkdir -p 假設你現在在一個空目錄裡，下以下指令（沒有 alias）\nmkdir src/user 你會得到 mkdir: 無法建立 「src/user」 目錄: 沒有此一檔案或目錄，這是因為 mkdir 找不到 user 的上層目錄 src，這時候加上 -p 就不一樣了，因為 -p 會讓 mkdir 在上層目錄不存在時自動建立，因此 mkdir src/user 就會成功，不會再跳錯誤\n預告 到今天關於 zsh 的介紹就結束了，明天開始會來講講終端機管理神器 tmux\n","wordCount":"219","inLanguage":"zh-tw","datePublished":"2021-09-05T00:00:00Z","dateModified":"2021-09-05T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/day05/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair","name":"Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair","description":"今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias\nzsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。\n   ❓ \u0026gt; autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？     前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突    安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定\n+ zplug \u0026#39;marlonrichert/zsh-autocomplete\u0026#39; 然後重新開啟終端機並安裝新增的外掛就可以了\n你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。\n 在 https://github.com/marlonrichert/zsh-autocomplete 有快捷鍵教學\n 設定  這段是我在寫完第一版後新增了，所以在 純‧ CLI 整合開發環境 是沒有的\n 為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了\n# case sensitive zstyle \u0026#39;:completion:*\u0026#39; matcher-list \u0026#39;\u0026#39; \u0026#39;m:{a-zA-Z}={A-Za-z}\u0026#39; \u0026#39;r:|[.","keywords":["cli","terminal","software development","vim","tmux","zsh"],"articleBody":"今天會介紹兩個開箱即用（ out of box ）的外掛和簡化指令的 alias\nzsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔名中的 k 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出接下來可以填的字，像是選項、子命令、檔名等等。\n   ❓  autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？     前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突    安裝 autocomplete 托 zplug 的福，我們只需要修改 ~/.zshrc 就可以安裝外掛了。在 ~/.zshrc 中新增以下設定\n+ zplug 'marlonrichert/zsh-autocomplete' 然後重新開啟終端機並安裝新增的外掛就可以了\n你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。\n 在 https://github.com/marlonrichert/zsh-autocomplete 有快捷鍵教學\n 設定  這段是我在寫完第一版後新增了，所以在 純‧ CLI 整合開發環境 是沒有的\n 為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 ~/.zshrc 裡面隨便一個地方就可以了\n# case sensitive zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'  # zsh-autocomplete configure # Down arrow: bindkey '\\e[B' down-line-or-select bindkey '\\eOB' down-line-or-select # down-line-or-select: Open completion menu. # down-line-or-history: Cycle to next history line. 這裡新增了「區分大小寫」和「方向鍵選建議」兩個功能\nzsh-autopair 這個簡單但是貼心的功能在這個 IDE 中很常見，我們的當然也不能漏掉他\n一樣修改 ~/.zshrc 就可以安裝了\n+ zplug 'hlissner/zsh-autopair' 重新開啟安裝後就可以享受自動括號了！\nalias alias 的語法很簡單，day02 有提到過，我們再複習一次\nalias a=b 關於 alias 有兩點要注意\n 等號 = 左右不能有空白 如果右邊有空白，要用引號 '、\" 括起來  alias a=b # O alias c = d # X 接下來會有我精鍊出來必備的 alias，上面的註解是關於這個 alias 解釋\n# 加上 -r 在刪除/複製目錄時才不會跳警告 alias rm='rm -r' alias cp='cp -r'  # -h 可以把檔案大小加上適當的單位，比較好讀 # -l 印出除了檔名其他的資訊，ex：權限、大小 # -F、--color 純粹是好看 alias ls='ls -hlF --color=auto'  # 大推，這個 alias 非常好用（zsh 有類似功能的外掛可以裝，但是我覺得可以用 alias 就用 alias alias ..='cd ../'  # 把當前目錄下的檔案/目錄以樹狀結構印出來，會把不重要的（.git, node_modules）忽略，後面可以接路徑 alias tree=\"tree -alI 'node_modules|.git'\"  # 加上顏色 alias grep='grep --color=always'  # 超好用，在當前目錄中所有檔案中找指定字串，用法：grepFind 'console.log'，會印出檔案行號，還會把目標字串上色 alias grepFind='grep --exclude-dir=node_modules -nr . -e'  # 建立巢狀目錄時會一並建立上層目錄，下面解釋 alias mkdir='mkdir -p' mkdir -p 假設你現在在一個空目錄裡，下以下指令（沒有 alias）\nmkdir src/user 你會得到 mkdir: 無法建立 「src/user」 目錄: 沒有此一檔案或目錄，這是因為 mkdir 找不到 user 的上層目錄 src，這時候加上 -p 就不一樣了，因為 -p 會讓 mkdir 在上層目錄不存在時自動建立，因此 mkdir src/user 就會成功，不會再跳錯誤\n預告 到今天關於 zsh 的介紹就結束了，明天開始會來講講終端機管理神器 tmux\n","wordCount":"219","inLanguage":"zh-tw","datePublished":"2021-09-05T00:00:00Z","dateModified":"2021-09-05T00:00:00Z","author":{"@type":"Person","name":"simba-fs"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.simba-fs.dev/posts/ithelp/day05/"},"publisher":{"@type":"Organization","name":"Simba's Blog","logo":{"@type":"ImageObject","url":"https://blog.simba-fs.dev/images/icon/icon.png"}}}</script>
+</head><body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -71,46 +66,34 @@ zsh-autocomplete 在 CLI 下指令時，有時候會忘記選項叫什麼、檔�
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </span>
-</div>
-<ul id=menu>
+</div><ul id=menu>
 <li>
 <a href=https://blog.simba-fs.dev/posts/ title=Categories>
 <span>Categories</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/tags/ title=Tags>
 <span>Tags</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/archive/ title=Archives>
 <span>Archives</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/resource/ title=Resource>
 <span>Resource</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://blog.simba-fs.dev/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
+</li></ul></nav></header><main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div>
-<h1 class=post-title>
+<div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/ithelp/>ithelp</a></div><h1 class=post-title>
 Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair
-</h1>
-<div class=post-meta><span title="2021-09-05 00:00:00 +0000 UTC">2021-September-5</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs
-</div>
-</header> <div class=toc>
+</h1><div class=post-meta><span title="2021-09-05 00:00:00 +0000 UTC">2021-September-5</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs
+</div></header><div class=toc>
 <details open>
 <summary accesskey=c title="(Alt + C)">
 <span class=details>目錄</span>
@@ -119,118 +102,65 @@ Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair
 <li>
 <a href=#zsh-autocomplete aria-label=zsh-autocomplete>zsh-autocomplete</a><ul>
 <li>
-<a href=#%e5%ae%89%e8%a3%9d-autocomplete aria-label="安裝 autocomplete">安裝 autocomplete</a></li>
-<li>
-<a href=#%e8%a8%ad%e5%ae%9a aria-label=設定>設定</a></li></ul>
-</li>
-<li>
-<a href=#zsh-autopair aria-label=zsh-autopair>zsh-autopair</a></li>
-<li>
+<a href=#%e5%ae%89%e8%a3%9d-autocomplete aria-label="安裝 autocomplete">安裝 autocomplete</a></li><li>
+<a href=#%e8%a8%ad%e5%ae%9a aria-label=設定>設定</a></li></ul></li><li>
+<a href=#zsh-autopair aria-label=zsh-autopair>zsh-autopair</a></li><li>
 <a href=#alias aria-label=alias>alias</a><ul>
 <li>
-<a href=#mkdir--p aria-label="mkdir -p">mkdir -p</a></li></ul>
-</li>
-<li>
+<a href=#mkdir--p aria-label="mkdir -p">mkdir -p</a></li></ul></li><li>
 <a href=#%e9%a0%90%e5%91%8a aria-label=預告>預告</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><p>今天會介紹兩個<strong>開箱即用</strong>（ out of box ）的外掛和簡化指令的 alias</p>
-<h1 id=zsh-autocomplete>zsh-autocomplete<a hidden class=anchor aria-hidden=true href=#zsh-autocomplete>#</a></h1>
-<p>在 CLI 下指令時，有時候會<strong>忘記選項</strong>叫什麼、檔名中的 <code>k</code> 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出<strong>接下來可以填的字</strong>，像是<strong>選項</strong>、<strong>子命令</strong>、<strong>檔名</strong>等等。</p>
-<table>
+</li></ul></div></details>
+</div><div class=post-content><p>今天會介紹兩個<strong>開箱即用</strong>（ out of box ）的外掛和簡化指令的 alias</p><h1 id=zsh-autocomplete>zsh-autocomplete<a hidden class=anchor aria-hidden=true href=#zsh-autocomplete>#</a></h1><p>在 CLI 下指令時，有時候會<strong>忘記選項</strong>叫什麼、檔名中的 <code>k</code> 到底是大寫還是小寫，這時候 autocomplete 就很好用，他會幫我們選出<strong>接下來可以填的字</strong>，像是<strong>選項</strong>、<strong>子命令</strong>、<strong>檔名</strong>等等。</p><table>
 <thead>
 <tr>
-<th style=text-align:left>❓ > autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？</th>
-</tr>
-</thead>
-<tbody>
+<th style=text-align:left>❓ > autocomplete 和 autosuggestion 有什麼不同？會同衝突嗎？</th></tr></thead><tbody>
 <tr>
-<td style=text-align:left>前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突</td>
-</tr>
-</tbody>
-</table>
-<h2 id=安裝-autocomplete>安裝 autocomplete<a hidden class=anchor aria-hidden=true href=#安裝-autocomplete>#</a></h2>
-<p>托 <a href=./day02.md#zplug>zplug</a> 的福，我們只需要修改 <code>~/.zshrc</code> 就可以安裝外掛了。在 <code>~/.zshrc</code> 中新增以下設定</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=color:#a6e22e>+ zplug &#39;marlonrichert/zsh-autocomplete&#39;
-</span></code></pre></div><p>然後重新開啟終端機並安裝新增的外掛就可以了<br>
-你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。</p>
-<blockquote>
-<p>在 <a href=https://github.com/marlonrichert/zsh-autocomplete>https://github.com/marlonrichert/zsh-autocomplete</a> 有快捷鍵教學</p>
-</blockquote>
-<h2 id=設定>設定<a hidden class=anchor aria-hidden=true href=#設定>#</a></h2>
-<blockquote>
-<p>這段是我在寫完第一版後新增了，所以在 <a href=https://ithelp.ithome.com.tw/users/20130473/ironman/3975>純‧ CLI 整合開發環境</a> 是沒有的</p>
-</blockquote>
-<p>為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 <code>~/.zshrc</code> 裡面隨便一個地方就可以了</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=color:#75715e># case sensitive</span>
-zstyle <span style=color:#e6db74>&#39;:completion:*&#39;</span> matcher-list <span style=color:#e6db74>&#39;&#39;</span> <span style=color:#e6db74>&#39;m:{a-zA-Z}={A-Za-z}&#39;</span> <span style=color:#e6db74>&#39;r:|[._-]=* r:|=*&#39;</span> <span style=color:#e6db74>&#39;l:|=* r:|=*&#39;</span>
-
-<span style=color:#75715e># zsh-autocomplete configure</span>
-<span style=color:#75715e># Down arrow:</span>
-bindkey <span style=color:#e6db74>&#39;\e[B&#39;</span> down-line-or-select
-bindkey <span style=color:#e6db74>&#39;\eOB&#39;</span> down-line-or-select
-<span style=color:#75715e># down-line-or-select:  Open completion menu.</span>
-<span style=color:#75715e># down-line-or-history: Cycle to next history line.</span>
-</code></pre></div><p>這裡新增了「區分大小寫」和「方向鍵選建議」兩個功能</p>
-<h1 id=zsh-autopair>zsh-autopair<a hidden class=anchor aria-hidden=true href=#zsh-autopair>#</a></h1>
-<p>這個簡單但是貼心的功能在這個 IDE 中很常見，我們的當然也不能漏掉他<br>
-一樣修改 <code>~/.zshrc</code> 就可以安裝了</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=color:#a6e22e>+ zplug &#39;hlissner/zsh-autopair&#39;
-</span></code></pre></div><p>重新開啟安裝後就可以享受<strong>自動括號了</strong>！</p>
-<h1 id=alias>alias<a hidden class=anchor aria-hidden=true href=#alias>#</a></h1>
-<p>alias 的語法很簡單，<a href=../day02>day02</a> 有提到過，我們再複習一次</p>
-<pre tabindex=0><code>alias a=b
-</code></pre><p>關於 alias 有兩點要注意</p>
-<ul>
-<li>等號 <code>=</code> <strong>左右不能有空白</strong></li>
-<li>如果右邊有空白，要用引號 <code>'</code>、<code>"</code> 括起來</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh>alias a<span style=color:#f92672>=</span>b    <span style=color:#75715e># O</span>
-alias c <span style=color:#f92672>=</span> d  <span style=color:#75715e># X</span>
-</code></pre></div><p>接下來會有我精鍊出來必備的 alias，上面的註解是關於這個 alias 解釋</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=color:#75715e># 加上 -r 在刪除/複製目錄時才不會跳警告</span>
-alias rm<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;rm -r&#39;</span>
-alias cp<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;cp -r&#39;</span>
-
-<span style=color:#75715e># -h 可以把檔案大小加上適當的單位，比較好讀</span>
-<span style=color:#75715e># -l 印出除了檔名其他的資訊，ex：權限、大小</span>
-<span style=color:#75715e># -F、--color 純粹是好看</span>
-alias ls<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ls -hlF --color=auto&#39;</span>
-
-<span style=color:#75715e># 大推，這個 alias 非常好用（zsh 有類似功能的外掛可以裝，但是我覺得可以用 alias 就用 alias</span>
-alias ..<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;cd ../&#39;</span>
-
-<span style=color:#75715e># 把當前目錄下的檔案/目錄以樹狀結構印出來，會把不重要的（.git, node_modules）忽略，後面可以接路徑</span>
-alias tree<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tree -alI &#39;node_modules|.git&#39;&#34;</span>
-
-<span style=color:#75715e># 加上顏色</span>
-alias grep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;grep --color=always&#39;</span>
-
-<span style=color:#75715e># 超好用，在當前目錄中所有檔案中找指定字串，用法：grepFind &#39;console.log&#39;，會印出檔案行號，還會把目標字串上色</span>
-alias grepFind<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;grep --exclude-dir=node_modules -nr . -e&#39;</span>
-
-<span style=color:#75715e># 建立巢狀目錄時會一並建立上層目錄，下面解釋</span>
-alias mkdir<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;mkdir -p&#39;</span>
-</code></pre></div><h2 id=mkdir--p>mkdir -p<a hidden class=anchor aria-hidden=true href=#mkdir--p>#</a></h2>
-<p>假設你現在在一個空目錄裡，下以下指令（沒有 alias）</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh>mkdir src/user
-</code></pre></div><p>你會得到 <code>mkdir: 無法建立 「src/user」 目錄: 沒有此一檔案或目錄</code>，這是因為 <code>mkdir</code> <strong>找不到</strong> <code>user</code> 的<strong>上層目錄</strong> <code>src</code>，這時候加上 <code>-p</code> 就不一樣了，因為 <code>-p</code> 會讓 <code>mkdir</code> 在上層目錄不存在時<strong>自動建立</strong>，因此 <code>mkdir src/user</code> 就會成功，不會再跳錯誤</p>
-<h1 id=預告>預告<a hidden class=anchor aria-hidden=true href=#預告>#</a></h1>
-<p>到今天關於 zsh 的介紹就結束了，明天開始會來講講終端機管理神器 tmux</p>
-</div>
-<footer class=post-footer>
+<td style=text-align:left>前者是從 completion function 中找建議，後者是從以前下過的指令中找建議，兩者不會衝突</td></tr></tbody></table><h2 id=安裝-autocomplete>安裝 autocomplete<a hidden class=anchor aria-hidden=true href=#安裝-autocomplete>#</a></h2><p>托 <a href=./day02.md#zplug>zplug</a> 的福，我們只需要修改 <code>~/.zshrc</code> 就可以安裝外掛了。在 <code>~/.zshrc</code> 中新增以下設定</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span><span style=color:#a6e22e>+ zplug &#39;marlonrichert/zsh-autocomplete&#39;
+</span></span></span></code></pre></div><p>然後重新開啟終端機並安裝新增的外掛就可以了<br>
+你會發現你現在打指令，下面都會出現一些可能可以選的選項，例如同樣開頭的指令、檔名。</p><blockquote>
+<p>在 <a href=https://github.com/marlonrichert/zsh-autocomplete>https://github.com/marlonrichert/zsh-autocomplete</a> 有快捷鍵教學</p></blockquote><h2 id=設定>設定<a hidden class=anchor aria-hidden=true href=#設定>#</a></h2><blockquote>
+<p>這段是我在寫完第一版後新增了，所以在 <a href=https://ithelp.ithome.com.tw/users/20130473/ironman/3975>純‧ CLI 整合開發環境</a> 是沒有的</p></blockquote><p>為了可以爽爽的用 autocomplete，我新增了一些設定，這些放到 <code>~/.zshrc</code> 裡面隨便一個地方就可以了</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># case sensitive</span>
+</span></span><span style=display:flex><span>zstyle <span style=color:#e6db74>&#39;:completion:*&#39;</span> matcher-list <span style=color:#e6db74>&#39;&#39;</span> <span style=color:#e6db74>&#39;m:{a-zA-Z}={A-Za-z}&#39;</span> <span style=color:#e6db74>&#39;r:|[._-]=* r:|=*&#39;</span> <span style=color:#e6db74>&#39;l:|=* r:|=*&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># zsh-autocomplete configure</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Down arrow:</span>
+</span></span><span style=display:flex><span>bindkey <span style=color:#e6db74>&#39;\e[B&#39;</span> down-line-or-select
+</span></span><span style=display:flex><span>bindkey <span style=color:#e6db74>&#39;\eOB&#39;</span> down-line-or-select
+</span></span><span style=display:flex><span><span style=color:#75715e># down-line-or-select:  Open completion menu.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># down-line-or-history: Cycle to next history line.</span>
+</span></span></code></pre></div><p>這裡新增了「區分大小寫」和「方向鍵選建議」兩個功能</p><h1 id=zsh-autopair>zsh-autopair<a hidden class=anchor aria-hidden=true href=#zsh-autopair>#</a></h1><p>這個簡單但是貼心的功能在這個 IDE 中很常見，我們的當然也不能漏掉他<br>
+一樣修改 <code>~/.zshrc</code> 就可以安裝了</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span><span style=color:#a6e22e>+ zplug &#39;hlissner/zsh-autopair&#39;
+</span></span></span></code></pre></div><p>重新開啟安裝後就可以享受<strong>自動括號了</strong>！</p><h1 id=alias>alias<a hidden class=anchor aria-hidden=true href=#alias>#</a></h1><p>alias 的語法很簡單，<a href=../day02>day02</a> 有提到過，我們再複習一次</p><pre tabindex=0><code>alias a=b
+</code></pre><p>關於 alias 有兩點要注意</p><ul>
+<li>等號 <code>=</code> <strong>左右不能有空白</strong></li><li>如果右邊有空白，要用引號 <code>'</code>、<code>"</code> 括起來</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>alias a<span style=color:#f92672>=</span>b    <span style=color:#75715e># O</span>
+</span></span><span style=display:flex><span>alias c <span style=color:#f92672>=</span> d  <span style=color:#75715e># X</span>
+</span></span></code></pre></div><p>接下來會有我精鍊出來必備的 alias，上面的註解是關於這個 alias 解釋</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># 加上 -r 在刪除/複製目錄時才不會跳警告</span>
+</span></span><span style=display:flex><span>alias rm<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;rm -r&#39;</span>
+</span></span><span style=display:flex><span>alias cp<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;cp -r&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># -h 可以把檔案大小加上適當的單位，比較好讀</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># -l 印出除了檔名其他的資訊，ex：權限、大小</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># -F、--color 純粹是好看</span>
+</span></span><span style=display:flex><span>alias ls<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ls -hlF --color=auto&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 大推，這個 alias 非常好用（zsh 有類似功能的外掛可以裝，但是我覺得可以用 alias 就用 alias</span>
+</span></span><span style=display:flex><span>alias ..<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;cd ../&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 把當前目錄下的檔案/目錄以樹狀結構印出來，會把不重要的（.git, node_modules）忽略，後面可以接路徑</span>
+</span></span><span style=display:flex><span>alias tree<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tree -alI &#39;node_modules|.git&#39;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 加上顏色</span>
+</span></span><span style=display:flex><span>alias grep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;grep --color=always&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 超好用，在當前目錄中所有檔案中找指定字串，用法：grepFind &#39;console.log&#39;，會印出檔案行號，還會把目標字串上色</span>
+</span></span><span style=display:flex><span>alias grepFind<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;grep --exclude-dir=node_modules -nr . -e&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 建立巢狀目錄時會一並建立上層目錄，下面解釋</span>
+</span></span><span style=display:flex><span>alias mkdir<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;mkdir -p&#39;</span>
+</span></span></code></pre></div><h2 id=mkdir--p>mkdir -p<a hidden class=anchor aria-hidden=true href=#mkdir--p>#</a></h2><p>假設你現在在一個空目錄裡，下以下指令（沒有 alias）</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>mkdir src/user
+</span></span></code></pre></div><p>你會得到 <code>mkdir: 無法建立 「src/user」 目錄: 沒有此一檔案或目錄</code>，這是因為 <code>mkdir</code> <strong>找不到</strong> <code>user</code> 的<strong>上層目錄</strong> <code>src</code>，這時候加上 <code>-p</code> 就不一樣了，因為 <code>-p</code> 會讓 <code>mkdir</code> 在上層目錄不存在時<strong>自動建立</strong>，因此 <code>mkdir src/user</code> 就會成功，不會再跳錯誤</p><h1 id=預告>預告<a hidden class=anchor aria-hidden=true href=#預告>#</a></h1><p>到今天關於 zsh 的介紹就結束了，明天開始會來講講終端機管理神器 tmux</p></div><footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li>
-<li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li>
-</ul>
-<nav class=paginav>
+<li><a href=https://blog.simba-fs.dev/tags/cli/>cli</a></li><li><a href=https://blog.simba-fs.dev/tags/terminal/>terminal</a></li><li><a href=https://blog.simba-fs.dev/tags/software-development/>software development</a></li><li><a href=https://blog.simba-fs.dev/tags/vim/>vim</a></li><li><a href=https://blog.simba-fs.dev/tags/tmux/>tmux</a></li><li><a href=https://blog.simba-fs.dev/tags/zsh/>zsh</a></li></ul><nav class=paginav>
 <a class=prev href=https://blog.simba-fs.dev/posts/ithelp/day06/>
 <span class=title>« 上一篇</span>
 <br>
@@ -241,8 +171,7 @@ alias mkdir<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;mkdi
 <br>
 <span>Day 04：金魚記憶力太短暫，交給外掛記吧！autosuggestions 與 sugstring-search</span>
 </a>
-</nav>
-<div class=share-buttons>
+</nav><div class=share-buttons>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair on twitter" href="https://twitter.com/intent/tweet/?text=Day%2005%ef%bc%9a%e6%98%af%e8%aa%aa%ef%bc%8c%e9%80%99%e5%80%8b%e9%81%b8%e9%a0%85%e5%8f%af%e4%bb%a5%e6%8e%a5%e4%bb%80%e9%ba%bc%e6%9d%b1%e8%a5%bf%ef%bc%9fautocomplete%20%e8%88%87%20auto-pair&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday05%2f&hashtags=cli%2cterminal%2csoftwaredevelopment%2cvim%2ctmux%2czsh"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday05%2f&title=Day%2005%ef%bc%9a%e6%98%af%e8%aa%aa%ef%bc%8c%e9%80%99%e5%80%8b%e9%81%b8%e9%a0%85%e5%8f%af%e4%bb%a5%e6%8e%a5%e4%bb%80%e9%ba%bc%e6%9d%b1%e8%a5%bf%ef%bc%9fautocomplete%20%e8%88%87%20auto-pair&summary=Day%2005%ef%bc%9a%e6%98%af%e8%aa%aa%ef%bc%8c%e9%80%99%e5%80%8b%e9%81%b8%e9%a0%85%e5%8f%af%e4%bb%a5%e6%8e%a5%e4%bb%80%e9%ba%bc%e6%9d%b1%e8%a5%bf%ef%bc%9fautocomplete%20%e8%88%87%20auto-pair&source=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday05%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
@@ -255,22 +184,16 @@ alias mkdir<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;mkdi
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Day 05：是說，這個選項可以接什麼東西？autocomplete 與 auto-pair on telegram" href="https://telegram.me/share/url?text=Day%2005%ef%bc%9a%e6%98%af%e8%aa%aa%ef%bc%8c%e9%80%99%e5%80%8b%e9%81%b8%e9%a0%85%e5%8f%af%e4%bb%a5%e6%8e%a5%e4%bb%80%e9%ba%bc%e6%9d%b1%e8%a5%bf%ef%bc%9fautocomplete%20%e8%88%87%20auto-pair&url=https%3a%2f%2fblog.simba-fs.dev%2fposts%2fithelp%2fday05%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
 </a>
-</div>
-</footer>
-</article>
-</main>
-<footer class=footer>
+</div></footer></article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://blog.simba-fs.dev/>Simba's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script>
+</body></html>
