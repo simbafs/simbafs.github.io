@@ -75,6 +75,15 @@
 </a>
 </div></footer></article><article class=post-entry>
 <header class=entry-header>
+<h2>Bluetooth 突然卡住都不動
+</h2></header><section class=entry-content>
+<p>裝了 Ubuntu 20.04 之後不知道為什麼藍芽用一用就會卡住，所有設備都連不上，也關不掉。一開始的解決方式是重開機（這時候關機會跳一個奇怪的錯誤訊息），但是覺得太沒效率了，上網查了一下。
+原因 根據 這個網頁，這個似乎是 linux 核心的藍芽驅動有問題（我沒有認真看，但好像是升級到最新的 linux kernel 就可以解決了）。
+雖然升級 linux kernel 應該可以一勞永逸解決這個問題，但是這個 bug 其實不常出現，為了他編譯核心有點大題小做，所以我們需要一個簡單的方法解決。
+輕便解法 根據 這篇問答，經過我的測試，第一個答案就可以解決了，當藍芽又掛掉時，執行
+sudo rmmod btusb sudo modprobe btusb 這樣藍芽就回來了。這兩個指令簡單來說就是重新載入藍芽模組，這就是為什麼重開機可以解決（重開機就是重新載入所有模組）</p></section><footer class=entry-footer><span title="2022-03-02 23:31:59 +0800 +0800">2022-March-2</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Bluetooth 突然卡住都不動" href=https://blog.simba-fs.dev/posts/linux/other/bluwtooth-error/></a>
+</article><article class=post-entry>
+<header class=entry-header>
 <h2>Golang Plguin
 </h2></header><section class=entry-content>
 <p>Go 動態載入程式 Go 是一個編譯式的語言，也就是說他不像 JS 那樣可以動態執行程式碼。像是 Hexo 和 Hugo，前者因為是 JS 寫的，因此支援非常豐富的外掛，但後者因為是 Go 寫的，因此在不使用其他直譯式程式語言的情況下，很難製作外掛。
@@ -155,13 +164,6 @@ h1#title$$*12 -> &lt;h1 id="title01">&lt;/h1> &lt;h1 id="title02">&lt;/h1> &lt;h
 注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
 emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子
 .tab>(tr#col$>td*3)*4 會被解析成 &lt;div class="tab"> &lt;tr id="col1"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col2"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col3"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col4"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;/div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！...</p></section><footer class=entry-footer><span title="2021-09-18 00:00:00 +0000 UTC">2021-September-18</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet" href=https://blog.simba-fs.dev/posts/ithelp/day18/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>Day 17：coc.nvim 設定下集
-</h2></header><section class=entry-content>
-<p>今天的東西相當多，在 GitHub README Example 中除了昨天介紹過得今天都收錄了，直接進主題吧！
-喔！另外有些東西我真的不知道是什麼我會用原文寫並用中文括號括起來，歡迎知道的朋友留言告訴我
-" 設定文字編碼（我想這個你的 init.vim/.vimrc 都應該有了）set encoding=utf-8" 如果 hidden 沒有設定，「TextEdit」可能會失敗" TextEdit 也許是彈出式輸入框吧？阿災set hidden" 有些伺服器對於備份檔會出錯，請看 issue #649" https://github.com/neoclide/coc.nvim/issues/649set nobackupset nowritebackup" 把下面的命令欄變高，多一點空間set cmdheight=2" 不傳訊息給「|ins-completion-menu|」（這我看不太出來有什麼差set shortmess+=c" 使用 &lt;c-space> 觸發自動完成if has('nvim') inoremap &lt;silent>&lt;expr> &lt;c-space> coc#refresh()else inoremap &lt;silent>&lt;expr> &lt;c-@> coc#refreshendif" 用 `[g` 和 `]g` 跳到診斷的位置（就是程式碼有問題地方" 用命令 `:CocDiagnostics` 在分割視窗列出目前檔案中所有有問題的點nmap &lt;silent> [g &lt;Plug>(coc-diagnostic-prev)nmap &lt;silent> ]g &lt;Plug>(coc-diagnostic-next)" 程式碼轉跳（這個我覺得有點難記，而且這四個實驗出來效果非常像，我的建議是試過後選你覺得順眼的，不要全上nmap &lt;silent> gd &lt;Plug>(coc-definition)nmap &lt;silent> gy &lt;Plug>(coc-type-definition)nmap &lt;silent> gi &lt;Plug>(coc-implementation)nmap &lt;silent> gr &lt;Plug>(coc-references)" 用 K（注意大寫）顯示文件在分割視窗nnoremap &lt;silent> K :call &lt;SID>show_documentation()&lt;CR>function!...</p></section><footer class=entry-footer><span title="2021-09-17 00:00:00 +0000 UTC">2021-September-17</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 17：coc.nvim 設定下集" href=https://blog.simba-fs.dev/posts/ithelp/day17/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=next href=https://blog.simba-fs.dev/page/2/>下一篇 »</a>

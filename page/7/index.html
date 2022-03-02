@@ -64,6 +64,16 @@
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>gpg
+</h2></header><section class=entry-content>
+<p>今天心血來潮想設定 GPG，網路上查了一個教學，無疑的又遇到一個坑
+坑 & 解法 我按照他的作法弄完後就是沒辦法 commit 他說 GPG 無法簽章 後來我發現是我的 name 填錯（應該啦，我猜的） 總而言之就重新產生 GPG key 就好了 name 和 git 設定的一樣
+指令 $ gpg --full-gen-key $ gpg --list-secret-keys $ gpg --armor --export &lt;secret key> 刪除金鑰 在刪除的時候分成兩步驟，刪除私鑰、刪除公鑰。在刪除之前要先知道要刪除的金鑰的 ID
+gpg --list-keys 找到那串很長的文字，那就是 ID，複製起來，他起來也許會像這樣
+JFDKSA8FEWHE29HFVC92UHFPA93WOHFVDOPA39U2 再來用兩個指令就可以刪除了，注意一定要先刪私鑰。
+gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p></section><footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to gpg" href=https://blog.simba-fs.dev/posts/linux/gpg/></a>
+</article><article class=post-entry>
+<header class=entry-header>
 <h2>meta-tag
 </h2></header><section class=entry-content>
 <p>今天為了幫 Let’s Remind Daniel 做 SEO 在 免費資源網路社群 找到了一個工具可以直接生成 還有一個可以測試的工具
@@ -120,24 +130,6 @@
 ssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：
 ssh -L &lt;local port>:localhost:&lt;remote port> &lt;user>@&lt;remote> 反向;
 ssh -R &lt;remote port>:localhost:&lt;local port> &lt;user>@&lt;remote> 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port...</p></section><footer class=entry-footer><span title="2020-02-24 00:00:00 +0000 UTC">2020-February-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to ssh-tunnel" href=https://blog.simba-fs.dev/posts/linux/ssh-tunnel/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>reverse-ssh
-</h2></header><section class=entry-content>
-<p>一直以來連線回社辦的電腦都要走 webtty 再開 tmate 但是今天發現了一個新的方法可以透過反向的 ssh 連回社辦
-reverse ssh 在社辦電腦
-$ ssh -NfR 2222:localhost:22 simba@simba-vps 這可以建立一個連線 這時候到 simba-vps
-$ ssh server@localhost -p 2222 就可以連線回社辦伺服器了
-autossh 但是這樣做 ssh 連線有可能會超時然後斷掉 這時候可以透過 autossh 來幫我們自動建立連線 在社辦電腦
-$ apt install autossh $ autossh -Mf 2222 -NR 1111:localhost:22 simba@simba-vps -p 22 這樣就可以在 vps 上
-$ ssh server@localhost -p 1111 來連回社辦啦！ 最後可以把這堆在 vps 上再做一次就可以在 internet 連回社辦伺服器了
-參考網址 https://stackoverflow.com/questions/15983795/how-do-i-establish-a-bidirectional-ssh-tunnel
-https://ez3c.tw/2043
-https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&topic_id=17538&forum=7
-http://blog.adahsu.net/2007/11/ssh-reverse-tunnel.html
-https://codertw.com/%E4%BC%BA%E6%9C%8D%E5%99%A8/377688/
-這篇講 ssh tunnel 最清楚
-https://yu-jack.github.io/2019/01/08/ssh-tunnel/</p></section><footer class=entry-footer><span title="2020-02-23 00:00:00 +0000 UTC">2020-February-23</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to reverse-ssh" href=https://blog.simba-fs.dev/posts/linux/reverse-ssh/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/6/>« 上一篇</a>

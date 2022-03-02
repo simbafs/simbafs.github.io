@@ -64,6 +64,24 @@
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>reverse-ssh
+</h2></header><section class=entry-content>
+<p>一直以來連線回社辦的電腦都要走 webtty 再開 tmate 但是今天發現了一個新的方法可以透過反向的 ssh 連回社辦
+reverse ssh 在社辦電腦
+$ ssh -NfR 2222:localhost:22 simba@simba-vps 這可以建立一個連線 這時候到 simba-vps
+$ ssh server@localhost -p 2222 就可以連線回社辦伺服器了
+autossh 但是這樣做 ssh 連線有可能會超時然後斷掉 這時候可以透過 autossh 來幫我們自動建立連線 在社辦電腦
+$ apt install autossh $ autossh -Mf 2222 -NR 1111:localhost:22 simba@simba-vps -p 22 這樣就可以在 vps 上
+$ ssh server@localhost -p 1111 來連回社辦啦！ 最後可以把這堆在 vps 上再做一次就可以在 internet 連回社辦伺服器了
+參考網址 https://stackoverflow.com/questions/15983795/how-do-i-establish-a-bidirectional-ssh-tunnel
+https://ez3c.tw/2043
+https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&topic_id=17538&forum=7
+http://blog.adahsu.net/2007/11/ssh-reverse-tunnel.html
+https://codertw.com/%E4%BC%BA%E6%9C%8D%E5%99%A8/377688/
+這篇講 ssh tunnel 最清楚
+https://yu-jack.github.io/2019/01/08/ssh-tunnel/</p></section><footer class=entry-footer><span title="2020-02-23 00:00:00 +0000 UTC">2020-February-23</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to reverse-ssh" href=https://blog.simba-fs.dev/posts/linux/reverse-ssh/></a>
+</article><article class=post-entry>
+<header class=entry-header>
 <h2>unix-socket
 </h2></header><section class=entry-content>
 <p>今天心血來潮在看 unix socket 突然想到 node 可不可以把 服務監聽在一個 socket file 這樣在設定的時候就不用記哪個服務是幾 port
@@ -124,11 +142,6 @@ const fs = require('fs'); const express = require('express'); const app = expres
 </h2></header><section class=entry-content>
 <p>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
 name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest strategy: matrix: node-version: [12.x] steps: - uses: actions/checkout@v1 - name: Use Node.js ${{ matrix.node-version }} uses: actions/setup-node@v1 with: node-version: ${{ matrix.node-version }} - name: Configuration environment env: HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}} run: |mkdir -p ~/....</p></section><footer class=entry-footer><span title="2020-02-11 00:00:00 +0000 UTC">2020-February-11</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to audo-depoly-by-github-action" href=https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>gitalk
-</h2></header><section class=entry-content>
-<p>啟用 gitalk 留言 到這個網址填資料 加入下面的片段到_config.yml disqus: enabled: false gitalk: enabled: true owner: &lt;username> repo: &lt;username>.github.io admin: ['&lt;username>'] clientID: &lt;clientID> clientSecret: &lt;clientSecret> 加入下面的片段到themes/cactus/layout/_partial/comments.ejs &lt;% if(page.comments && theme.gitalk.enabled){ %> &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> &lt;script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">&lt;/script> &lt;script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js">&lt;/script> &lt;div id="gitalk-container">&lt;/div> &lt;script type="text/javascript"> var gitalk = new Gitalk({ clientID: '&lt;%= theme.gitalk.clientID %>', clientSecret: '&lt;%= theme.gitalk.clientSecret %>', id: md5(window.location.pathname), repo: '&lt;%= theme.gitalk.repo %>', owner: '&lt;%= theme.gitalk.owner %>', admin: '&lt;%= theme.gitalk.admin %>', distractionFreeMode: '&lt;%= theme....</p></section><footer class=entry-footer><span title="2020-02-11 00:00:00 +0000 UTC">2020-February-11</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to gitalk" href=https://blog.simba-fs.dev/posts/hexo/gitalk/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/7/>« 上一篇</a>

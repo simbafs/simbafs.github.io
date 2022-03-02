@@ -64,6 +64,20 @@
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Cast Phone Screen to Computer
+</h2></header><section class=entry-content>
+<p>有沒有一種經驗是某的應用程式手機板操作勉強算順暢，但是一電腦上就炸開，反應慢到靠北、界面又很難用（沒錯 messenger 我正在看著你）。這個時候相信你會和我一樣想把手機畫面投影到電腦上的一個視窗裡面，最好可以互動、可以打字。有人第一個想法是在手機開 VNC 伺服器，但是這個方法有點麻煩，這篇文章介紹的是目前我覺得最佳解決方案。
+SCRCPY 這個軟體支援有線（ USB debug ）、無線（ WIFI ）的連接，還支援螢幕錄影和傳檔案。最重要的是，開在電腦上的視窗可以調整大小，不需要侷限在一個小小的視窗內，你最大可以放大到全螢幕！在某種意義上你獲得了一台和電腦一樣大的手機。
+Installation 安裝流程意外的簡單，只需要用 apt 就可以安裝了，或是你可以自己 build，稍微看了一下 說明 ，看起來不困難，但是既然 apt 就可以安裝了我們就省一點時間
+$ sudo apt install scrcpy USB debug 首先無論是有線無線都要先打開手機的 USB debug 選項，在開發人員選項裡面，詳細步驟請看 官方文件。
+USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面非常簡單，只有兩個步驟：
+插上 USB 並且無論跳出什麼都按「同意」「OK」 打開終端機，執行 scrcpy 然後就會有一個視窗跳出來，你現在就可以在電腦上滑手機了！ Wireless 無線的話比較麻煩，首先是必須要可以連線，看是在同一個區域網路或是 VPN、ssh tunnel 都可以。再來是因為連線設定頗麻煩，所以我把相關的步驟寫成一個 script，下載後給予執行權限就可以執行了（當然要安裝 scrcpy ）。有線的方式一樣很簡單，不用加任何選項就可以連接了。
+如果要啟用無線，只需要加上 -w 選項（用預設的 ip 192.168.43.1)
+如果 ip 不是預設的話，可以加上 -i IP 來指定其他的 ip
+加上 -f 可以開啟全螢幕
+參連連結 https://github.com/Genymobile/scrcpy https://developer.android.com/studio/debug/dev-options https://gist.github.com/simba-fs/9132289f63368ad325d6a2ef62be7a20</p></section><footer class=entry-footer><span title="2021-06-14 00:00:00 +0000 UTC">2021-June-14</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Cast Phone Screen to Computer" href=https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/></a>
+</article><article class=post-entry>
+<header class=entry-header>
 <h2>YouComopleteMe install
 </h2></header><section class=entry-content>
 <p>下載 source code 編輯 ~/.vimrc Plug 'Valloric/YouCompleteMe'接著按下 esc:w | so %載入設定 接著 :PlugInstall下載 source code 存檔離開 編譯 執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &lt;你要的選項> </p></section><footer class=entry-footer><span title="2021-05-17 00:00:00 +0000 UTC">2021-May-17</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to YouComopleteMe install" href=https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/></a>
@@ -142,14 +156,6 @@ vm.createScript 在 nodejs docs 上我沒有找到，但是我在自己的電腦
 首先，你要把剛剛的 SECRET 給 server 知道，我用的是 dotenv，當然其他的套件也是可以。
 簡而言之，剛剛複製下來的 SECRET 就是用在這裡。
 驗證 後端我選用的套件是 express-hcaptcha ，它提供一個 middleware 驗證 hcaptcha 的 token。 按照 README....</p></section><footer class=entry-footer><span title="2021-01-05 00:00:00 +0000 UTC">2021-January-5</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to hCaptcha" href=https://blog.simba-fs.dev/posts/nodejs/hcaptcha/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>docker login error
-</h2></header><section class=entry-content>
-<p>錯誤說明 昨天我在 terminal 登入 docker 的時候發現不知道為什麼不能登入，我先透過網頁登入確認過密碼沒有問題，也不是打錯字的關係，但還是不能當入。總是會有類似以下的錯誤訊息。
-Error saving credentials: error storing credentials - err: exit status 1, out: `exit status 1: gpg: simbafs: 已跳過: 沒有公鑰 gpg: [stdin]: encryption failed: 沒有公鑰 Password encryption aborted.` 解決方法 經過搜尋之後，我按照 https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388634452 的方法成功登入了，但是在這之前要先安裝 gpg 和 pass
-apt install gnupg2 pass 接下來是我用的指令
-apt install gnupg2 wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz tar xvf docker-credential-pass-v0.6.3-amd64.tar.gz chmod 755 docker-credential-pass sudo mv docker-credential-pass /usr/bin/ ass insert docker-credential-helpers/docker-pass-initialized-check pass insert docker-credential-helpers/docker-pass-initialized-check pass show docker-credential-helpers/docker-pass-initialized-check docker-credential-pass list docker login 參考連結 https://github....</p></section><footer class=entry-footer><span title="2020-12-05 00:00:00 +0000 UTC">2020-December-5</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to docker login error" href=https://blog.simba-fs.dev/posts/linux/docker/docker-login-error/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/3/>« 上一篇</a>

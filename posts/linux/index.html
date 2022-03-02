@@ -63,6 +63,15 @@
 </li></ul></nav></header><main class=main>
 <header class=page-header><div class=breadcrumbs><a href=https://blog.simba-fs.dev/>首頁</a>&nbsp;»&nbsp;<a href=https://blog.simba-fs.dev/posts/>posts</a></div><h1>linux</h1></header><article class=post-entry>
 <header class=entry-header>
+<h2>Bluetooth 突然卡住都不動
+</h2></header><section class=entry-content>
+<p>裝了 Ubuntu 20.04 之後不知道為什麼藍芽用一用就會卡住，所有設備都連不上，也關不掉。一開始的解決方式是重開機（這時候關機會跳一個奇怪的錯誤訊息），但是覺得太沒效率了，上網查了一下。
+原因 根據 這個網頁，這個似乎是 linux 核心的藍芽驅動有問題（我沒有認真看，但好像是升級到最新的 linux kernel 就可以解決了）。
+雖然升級 linux kernel 應該可以一勞永逸解決這個問題，但是這個 bug 其實不常出現，為了他編譯核心有點大題小做，所以我們需要一個簡單的方法解決。
+輕便解法 根據 這篇問答，經過我的測試，第一個答案就可以解決了，當藍芽又掛掉時，執行
+sudo rmmod btusb sudo modprobe btusb 這樣藍芽就回來了。這兩個指令簡單來說就是重新載入藍芽模組，這就是為什麼重開機可以解決（重開機就是重新載入所有模組）</p></section><footer class=entry-footer><span title="2022-03-02 23:31:59 +0800 +0800">2022-March-2</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Bluetooth 突然卡住都不動" href=https://blog.simba-fs.dev/posts/linux/other/bluwtooth-error/></a>
+</article><article class=post-entry>
+<header class=entry-header>
 <h2>mxlinux boot with systemd
 </h2></header><section class=entry-content>
 <p>問題 在 mxlinux 裡面，預設的 init 不是 systmed，這導致如果想用 systemctl 的時候就會跳出錯誤說
@@ -134,11 +143,6 @@ https://yu-jack.github.io/2019/01/08/ssh-tunnel/</p></section><footer class=entr
 <h2>software
 </h2></header><section class=entry-content>
 <p></p></section><footer class=entry-footer><span title="2021-06-14 00:00:00 +0000 UTC">2021-June-14</span>&nbsp;·&nbsp;0 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to software" href=https://blog.simba-fs.dev/posts/linux/software/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>vim
-</h2></header><section class=entry-content>
-<p></p></section><footer class=entry-footer><span title="2021-05-17 00:00:00 +0000 UTC">2021-May-17</span>&nbsp;·&nbsp;0 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to vim" href=https://blog.simba-fs.dev/posts/linux/vim/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=next href=https://blog.simba-fs.dev/posts/linux/page/2/>下一篇 »</a>

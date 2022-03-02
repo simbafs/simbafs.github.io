@@ -64,6 +64,13 @@
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Day 17：coc.nvim 設定下集
+</h2></header><section class=entry-content>
+<p>今天的東西相當多，在 GitHub README Example 中除了昨天介紹過得今天都收錄了，直接進主題吧！
+喔！另外有些東西我真的不知道是什麼我會用原文寫並用中文括號括起來，歡迎知道的朋友留言告訴我
+" 設定文字編碼（我想這個你的 init.vim/.vimrc 都應該有了）set encoding=utf-8" 如果 hidden 沒有設定，「TextEdit」可能會失敗" TextEdit 也許是彈出式輸入框吧？阿災set hidden" 有些伺服器對於備份檔會出錯，請看 issue #649" https://github.com/neoclide/coc.nvim/issues/649set nobackupset nowritebackup" 把下面的命令欄變高，多一點空間set cmdheight=2" 不傳訊息給「|ins-completion-menu|」（這我看不太出來有什麼差set shortmess+=c" 使用 &lt;c-space> 觸發自動完成if has('nvim') inoremap &lt;silent>&lt;expr> &lt;c-space> coc#refresh()else inoremap &lt;silent>&lt;expr> &lt;c-@> coc#refreshendif" 用 `[g` 和 `]g` 跳到診斷的位置（就是程式碼有問題地方" 用命令 `:CocDiagnostics` 在分割視窗列出目前檔案中所有有問題的點nmap &lt;silent> [g &lt;Plug>(coc-diagnostic-prev)nmap &lt;silent> ]g &lt;Plug>(coc-diagnostic-next)" 程式碼轉跳（這個我覺得有點難記，而且這四個實驗出來效果非常像，我的建議是試過後選你覺得順眼的，不要全上nmap &lt;silent> gd &lt;Plug>(coc-definition)nmap &lt;silent> gy &lt;Plug>(coc-type-definition)nmap &lt;silent> gi &lt;Plug>(coc-implementation)nmap &lt;silent> gr &lt;Plug>(coc-references)" 用 K（注意大寫）顯示文件在分割視窗nnoremap &lt;silent> K :call &lt;SID>show_documentation()&lt;CR>function!...</p></section><footer class=entry-footer><span title="2021-09-17 00:00:00 +0000 UTC">2021-September-17</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 17：coc.nvim 設定下集" href=https://blog.simba-fs.dev/posts/ithelp/day17/></a>
+</article><article class=post-entry>
+<header class=entry-header>
 <h2>Day 16：自動補全！coc.nvim
 </h2></header><section class=entry-content>
 <p>一個好的自動補全工具可以讓你工作效率翻倍，你不用再去查文件了，自動補全不僅可以告訴你這裡有什麼函數可以用，還會告訴你參數的型態、函數功能的說明，可以說是把文件都寫在 vim 裡面了。
@@ -162,15 +169,6 @@ vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹) 通常 Normal
 在分割畫面中移動 調整分割大小 有時候我們不一定是要分成一半，例如下面五行，上面滿版。這時候你可以用 CTRLa+ CTRL方向鍵調整大小 調整大小 新增分頁 你有沒有發現終端機最下面那行？那個是 tmux 的分頁，用 CTRLa+ c就可以新增一個分頁，新增順序會從 0 開始找空的補上
 範例和分頁移動一起
 分頁移動 在多個分頁中，你可以用 CTRLa+ CTRLa移動到上一次使用的分頁，或是用 CTRLa+ 數字鍵移動到特定 ID 的分頁。...</p></section><footer class=entry-footer><span title="2021-09-08 00:00:00 +0000 UTC">2021-September-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 08：八爪章魚之 tmux 快捷鍵" href=https://blog.simba-fs.dev/posts/ithelp/day08/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>Day 07：整合 tmux 和 zsh
-</h2></header><section class=entry-content>
-<p>昨天的結尾提到要整合 tmux 和 zsh 不是在 ~/.zshrc 結尾執行 tmux 這麼簡單，今天就讓我們看看會遇到什麼問題吧！
-直接執行 tmux 在正式開始前，先讓我們看看直接在 ~/.zshrc 後面執行 tmux 會發生什麼錯誤
-直接執行 tmux 嗯，錯誤訊息說要 unset $TMUX 那我們就照作吧！
-加上 unset TMUX，嗯，爆炸了！ 分析問題 可以看到，如果直接執行 tmux 的話總是會跳出一個錯誤 sessions should be nested with care, unset $TMUX to force，這段訊息告訴我們，不能建立巢狀 tmux，除非將 $TMUX 環境變數移除。欸？我們不是只執行一次 tmux 嗎？為什麼會他說我們建立巢狀 tmux？我們來看看登入之後發生了什麼事：
-執行 zsh（因為我們的 default shell 是 zsh） zsh 執行 ~/....</p></section><footer class=entry-footer><span title="2021-09-07 00:00:00 +0000 UTC">2021-September-7</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 07：整合 tmux 和 zsh" href=https://blog.simba-fs.dev/posts/ithelp/day07/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/>« 上一篇</a>

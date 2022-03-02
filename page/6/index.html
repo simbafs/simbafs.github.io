@@ -64,6 +64,16 @@
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>文章更新時間錯亂問題
+</h2></header><section class=entry-content>
+<p>問題 在設定完 GitHub Action 之後，我發現我的文章的更新時間都錯了，會全部變成當天日期。但是本地生成的就沒有這個問題，經過一番盤查和猜測後，我發現問題是因為 git 不會把 modified date 紀錄，因為每台電腦的時區都是不一樣的，紀錄起來沒有意義。但是我們需要這項 meta data，所以我們就要自己想法紀錄
+解法 v1.0 首先，因為每一篇文章 hexo 都會紀錄建立時間，所以我們可以直接把他抓出來，然後把檔案的更新時間設成這個時間就可以啦！
+更改檔案的 modified time 這個功能只要用我們最熟悉的 touch 就可以做到了。一般我們使用 touch 的時候會把 modified time 改成當下時間，那要改任意時間只要加上 -t 選項就可以啦
+-t STAMP use [[CC]YY]MMDDhhmm[.ss] instead of current time 假設我們有個檔案 tmp ，我想把他的日期改成 1999/3/23 12:32:33 ，那我可以這樣下指令
+ted timeouch -t'19993231232.33' tmp 抓出檔名、日期 # git create time grep -rnw source/_posts -e 'date' output:（這裡的 date: 後面我多加了一個空白，原因後面會說）
+source/_posts/hexo-installation.md:3:date: 2020-02-10 17:26:45 source/_posts/blessed.md:3:date: 2020-02-17 23:24:10 source/_posts/bash.md:3:date: 2020-02-16 22:15:10 source/_posts/hexo-cli-extras....</p></section><footer class=entry-footer><span title="2020-08-20 00:00:00 +0000 UTC">2020-August-20</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to 文章更新時間錯亂問題" href=https://blog.simba-fs.dev/posts/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/></a>
+</article><article class=post-entry>
+<header class=entry-header>
 <h2>express 重複 send
 </h2></header><section class=entry-content>
 <p>問題 在 express route 裡面，我通常會在 res.send() 之類的函式前面都會加一個 return 防止因為程式邏輯漏洞造成重複送出然後噴 error。像是這樣
@@ -135,16 +145,6 @@ docker run -p 8080:8080 -v /etc/nginx:/etc/nginx schenkd/nginx-ui 然後打開�
 </h2></header><section class=entry-content>
 <p>切換工作區 今天想要在 mxlinux 中快速的切換工作區 我看到可以用滑鼠滾輪切換 可是我想要的是鍵盤快捷鍵 上網查了一下 發現可以透過 Ctrl+Alt+up/down/home/end 來切換
 參考資料 https://unix.stackexchange.com/questions/270334/how-to-move-a-window-to-another-workspace-in-xfce</p></section><footer class=entry-footer><span title="2020-05-08 00:00:00 +0000 UTC">2020-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to mxlinux-change-workspace" href=https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>gpg
-</h2></header><section class=entry-content>
-<p>今天心血來潮想設定 GPG，網路上查了一個教學，無疑的又遇到一個坑
-坑 & 解法 我按照他的作法弄完後就是沒辦法 commit 他說 GPG 無法簽章 後來我發現是我的 name 填錯（應該啦，我猜的） 總而言之就重新產生 GPG key 就好了 name 和 git 設定的一樣
-指令 $ gpg --full-gen-key $ gpg --list-secret-keys $ gpg --armor --export &lt;secret key> 刪除金鑰 在刪除的時候分成兩步驟，刪除私鑰、刪除公鑰。在刪除之前要先知道要刪除的金鑰的 ID
-gpg --list-keys 找到那串很長的文字，那就是 ID，複製起來，他起來也許會像這樣
-JFDKSA8FEWHE29HFVC92UHFPA93WOHFVDOPA39U2 再來用兩個指令就可以刪除了，注意一定要先刪私鑰。
-gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p></section><footer class=entry-footer><span title="2020-03-28 00:00:00 +0000 UTC">2020-March-28</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to gpg" href=https://blog.simba-fs.dev/posts/linux/gpg/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/5/>« 上一篇</a>
