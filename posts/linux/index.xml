@@ -12,10 +12,10 @@
     <lastBuildDate>Wed, 02 Mar 2022 23:31:59 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bluetooth 突然卡住都不動</title>
-      <link>https://blog.simba-fs.dev/posts/linux/other/bluwtooth-error/</link>
+      <link>https://blog.simba-fs.dev/posts/linux/bluwtooth-error/</link>
       <pubDate>Wed, 02 Mar 2022 23:31:59 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/other/bluwtooth-error/</guid>
+      <guid>https://blog.simba-fs.dev/posts/linux/bluwtooth-error/</guid>
       <description>裝了 Ubuntu 20.04 之後不知道為什麼藍芽用一用就會卡住，所有設備都連不上，也關不掉。一開始的解決方式是重開機（這時候關機會跳一個奇怪的錯誤訊息），但是覺得太沒效率了，上網查了一下。
 原因 根據 這個網頁，這個似乎是 linux 核心的藍芽驅動有問題（我沒有認真看，但好像是升級到最新的 linux kernel 就可以解決了）。
 雖然升級 linux kernel 應該可以一勞永逸解決這個問題，但是這個 bug 其實不常出現，為了他編譯核心有點大題小做，所以我們需要一個簡單的方法解決。
