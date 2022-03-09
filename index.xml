@@ -9,7 +9,19 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 Mar 2022 23:31:59 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Mar 2022 23:16:55 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>震動 vs 振動</title>
+      <link>https://blog.simba-fs.dev/posts/daily/vibrate/</link>
+      <pubDate>Wed, 09 Mar 2022 23:16:55 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/daily/vibrate/</guid>
+      <description>震動 vs 振動 都是往復運動，但有不同，簡單來說，振動比震動有規律。 像是單擺是振動，地震是震動，因為單擺的運動是規律的，而地震波比較不規律
+https://pedia.cloud.edu.tw/Entry/Detail/?title=%E6%8C%AF%E5%8B%95 https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9C%87%E5%8B%95
+至於為什麼我會去查這個呢？因為我發現物理實驗預報寫「簡諧震動」，但是我覺得「震」筆畫太多了，我想寫「振」於是就跑去查教育部字典
+得證：懶惰使人進步</description>
+    </item>
+    
     <item>
       <title>Bluetooth 突然卡住都不動</title>
       <link>https://blog.simba-fs.dev/posts/linux/bluwtooth-error/</link>

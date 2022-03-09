@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.93.0">
+<meta name=generator content="Hugo 0.93.3">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -63,6 +63,14 @@
 </a>
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
+<header class=entry-header>
+<h2>taiwan-town-location
+</h2></header><section class=entry-content>
+<p>這是一個給經緯度吐地址的 api，甚至路段都會出來，搭配 web geolocation api 蠻不錯的，精確度不錯。可以不知道有沒有 rate limited 的問題，目前看起來連 token 都不用。
+網址 https://api.nlsc.gov.tw/other/TownVillagePointQuery/
+用法 https://api.nlsc.gov.tw/other/TownVillagePointQuery/經度/緯度
+舉例： request GET https://api.nlsc.gov.tw/other/TownVillagePointQuery/121.46278679999999/25.0169826 response &lt;townVillageItem> &lt;ctyCode>F&lt;/ctyCode> &lt;ctyName>新北市&lt;/ctyName> &lt;townCode>F14&lt;/townCode> &lt;townName>板橋區&lt;/townName> &lt;officeCode>FA&lt;/officeCode> &lt;officeName>板橋&lt;/officeName> &lt;sectCode>0008&lt;/sectCode> &lt;sectName>民權段&lt;/sectName> &lt;villageCode>65000010020&lt;/villageCode> &lt;villageName>漢生里&lt;/villageName> &lt;/townVillageItem> 參考資料 https://data.gov.tw/dataset/101898</p></section><footer class=entry-footer><span title="2021-06-24 00:00:00 +0000 UTC">2021-June-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to taiwan-town-location" href=https://blog.simba-fs.dev/posts/other/taiwan-town-location/></a>
+</article><article class=post-entry>
 <header class=entry-header>
 <h2>Cast Phone Screen to Computer
 </h2></header><section class=entry-content>
@@ -146,16 +154,6 @@ const vm = require('vm'); const script = new vm.Script('i++'); 也可以用 vm.c
 const vm = require('vm'); const script = vm.createScript('i++'); vm.Script
 vm.createScript 在 nodejs docs 上我沒有找到，但是我在自己的電腦上 (node v14.15.0) 測試是可以用的
 建立 context vm 模組沒有提供建立 context 的建構子，我們只能透過 vm.createContext 來建立 context。...</p></section><footer class=entry-footer><span title="2021-01-13 00:00:00 +0000 UTC">2021-January-13</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to node-vm" href=https://blog.simba-fs.dev/posts/nodejs/node-vm/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>hCaptcha
-</h2></header><section class=entry-content>
-<p>前情提要 我們社團的短網址服務裡面常常出現一些奇怪的網址，我猜可能是有機器人在刷，所以我想加入 captcha 減少這類問題。我選擇的是 hCaptcha 這套，能不依賴 Google 就盡量不要。
-安裝步驟 申請帳號 先到 hCaptcha 註冊、新增一個網站，複製 sitekey (Sites > site setting) 和 secret key (Settings)，我們等等會用到
-前端 首先引入 script ，在 &lt;head> 加入 &lt;script src="https://hcaptcha.com/1/api.js" async defer>&lt;/script> 接著在你的 &lt;form> 裡面加入，這邊的 your_site_key 就是剛剛複製的那個。記得 &lt;form> 的 method 要設成 post &lt;div class="h-captcha" data-sitekey="your_site_key">&lt;/div> 後端（node express） SECRET
-首先，你要把剛剛的 SECRET 給 server 知道，我用的是 dotenv，當然其他的套件也是可以。
-簡而言之，剛剛複製下來的 SECRET 就是用在這裡。
-驗證 後端我選用的套件是 express-hcaptcha ，它提供一個 middleware 驗證 hcaptcha 的 token。 按照 README....</p></section><footer class=entry-footer><span title="2021-01-05 00:00:00 +0000 UTC">2021-January-5</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to hCaptcha" href=https://blog.simba-fs.dev/posts/nodejs/hcaptcha/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/3/>« 上一篇</a>

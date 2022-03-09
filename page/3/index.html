@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.93.0">
+<meta name=generator content="Hugo 0.93.3">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -63,6 +63,16 @@
 </a>
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
+<header class=entry-header>
+<h2>Day 08：八爪章魚之 tmux 快捷鍵
+</h2></header><section class=entry-content>
+<p>tmux 有許多的快捷鍵來控制螢幕，不論是分割、移動都可以輕鬆完成
+分割畫面 垂直分割畫面的快捷鍵是 CTRLa+ %，水平分割的快捷鍵是 CTRLa+ |(pipe，shift + enter 上面那個)。按下去畫面就會以中間分開，兩邊都是獨立的，即使一邊在編譯卡住了，另一邊的編輯器還是可以正常操作的 分割畫面，一邊編輯，一邊編譯，另一邊執行 在分割畫面中移動 現在你畫面分割好了，要怎麼移動呢？非常直覺，往上就是上，往右就是右。CTRLa+ 方向鍵你也可以用 CTRLa+ tab按照順序移動，CTRLa+ SHIFTtab反向移動
+記得，按方向鍵時 CTRL要放開，不然就會變接下來要介紹的快捷鍵
+在分割畫面中移動 調整分割大小 有時候我們不一定是要分成一半，例如下面五行，上面滿版。這時候你可以用 CTRLa+ CTRL方向鍵調整大小 調整大小 新增分頁 你有沒有發現終端機最下面那行？那個是 tmux 的分頁，用 CTRLa+ c就可以新增一個分頁，新增順序會從 0 開始找空的補上
+範例和分頁移動一起
+分頁移動 在多個分頁中，你可以用 CTRLa+ CTRLa移動到上一次使用的分頁，或是用 CTRLa+ 數字鍵移動到特定 ID 的分頁。...</p></section><footer class=entry-footer><span title="2021-09-08 00:00:00 +0000 UTC">2021-September-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 08：八爪章魚之 tmux 快捷鍵" href=https://blog.simba-fs.dev/posts/ithelp/day08/></a>
+</article><article class=post-entry>
 <header class=entry-header>
 <h2>Day 07：整合 tmux 和 zsh
 </h2></header><section class=entry-content>
@@ -157,14 +167,6 @@ git clone git@domain:10022:user/repo.git 這個問題 Gitea 官方已經有提�
 1. 建立 git 使用者 先在 host 建立一個名叫 git 的使用者，因為這個帳號會被對應到容器內的 git 使用者，所以要有一樣的 UID, GID
 sudo adduser git grep git /etc/passwd 記好 git 的 UID 和 GID
 git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2....</p></section><footer class=entry-footer><span title="2021-07-13 00:00:00 +0000 UTC">2021-July-13</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to ssh on gitea with docker" href=https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>taiwan-town-location
-</h2></header><section class=entry-content>
-<p>這是一個給經緯度吐地址的 api，甚至路段都會出來，搭配 web geolocation api 蠻不錯的，精確度不錯。可以不知道有沒有 rate limited 的問題，目前看起來連 token 都不用。
-網址 https://api.nlsc.gov.tw/other/TownVillagePointQuery/
-用法 https://api.nlsc.gov.tw/other/TownVillagePointQuery/經度/緯度
-舉例： request GET https://api.nlsc.gov.tw/other/TownVillagePointQuery/121.46278679999999/25.0169826 response &lt;townVillageItem> &lt;ctyCode>F&lt;/ctyCode> &lt;ctyName>新北市&lt;/ctyName> &lt;townCode>F14&lt;/townCode> &lt;townName>板橋區&lt;/townName> &lt;officeCode>FA&lt;/officeCode> &lt;officeName>板橋&lt;/officeName> &lt;sectCode>0008&lt;/sectCode> &lt;sectName>民權段&lt;/sectName> &lt;villageCode>65000010020&lt;/villageCode> &lt;villageName>漢生里&lt;/villageName> &lt;/townVillageItem> 參考資料 https://data.gov.tw/dataset/101898</p></section><footer class=entry-footer><span title="2021-06-24 00:00:00 +0000 UTC">2021-June-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to taiwan-town-location" href=https://blog.simba-fs.dev/posts/other/taiwan-town-location/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/2/>« 上一篇</a>

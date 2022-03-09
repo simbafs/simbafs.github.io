@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.93.0">
+<meta name=generator content="Hugo 0.93.3">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -63,6 +63,12 @@
 </a>
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
+<header class=entry-header>
+<h2>mxlinux-change-workspace
+</h2></header><section class=entry-content>
+<p>切換工作區 今天想要在 mxlinux 中快速的切換工作區 我看到可以用滑鼠滾輪切換 可是我想要的是鍵盤快捷鍵 上網查了一下 發現可以透過 Ctrl+Alt+up/down/home/end 來切換
+參考資料 https://unix.stackexchange.com/questions/270334/how-to-move-a-window-to-another-workspace-in-xfce</p></section><footer class=entry-footer><span title="2020-05-08 00:00:00 +0000 UTC">2020-May-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to mxlinux-change-workspace" href=https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/></a>
+</article><article class=post-entry>
 <header class=entry-header>
 <h2>gpg
 </h2></header><section class=entry-content>
@@ -120,16 +126,6 @@ gpg --delete-secret-key &lt;ID> gpg --delete-key &lt;ID> </p></section><footer c
 <p>這是一篇我在用 blessed 時踩的一些雷 會持續的更新
 1. 記得 render 今天在寫 API 時踩到兩次 更新了資料卻沒有 render 例如 textarea.setValue() 這個函式設定完之後他畫面不會更新 要自己 render
 2. textarea.setValue() 只接受字串當參數 我個人覺得 blessed 缺少一個像是 jquery 的函式庫 沒有一個很好的 API 包裝 例如說這個函式 textarea.setValue() 就只吃字串 因為他用了 String.prototype.replace 這個函數 而且他沒有一個很好的防呆機制例如參數型別檢查 幸好是他的程式碼沒有做 uglify 還算簡單易懂 而且 node 的錯誤訊息的 stack 可以引導到真正出錯的地方</p></section><footer class=entry-footer><span title="2020-02-26 00:00:00 +0000 UTC">2020-February-26</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to blessed-landmine" href=https://blog.simba-fs.dev/posts/nodejs/blessed/blessed-landmine/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>ssh-tunnel
-</h2></header><section class=entry-content>
-<p>昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel
-簡介 ssh tunnel 分正反向 其實他們的差別只有在方向不一樣 連語法參數都一樣
-正向 tunnel 正向的 tunnel 參數是 -L 語法：
-ssh -L [bind_address:]port:host:hostport ssh -L [bind_address:]port:remote_socket ssh -L local_socket:host:hostport ssh -L local_socket:remote_socket 反向 tunnel ssh -R [bind_address:]port:host:hostport ssh -R [bind_address:]port:local_socket ssh -R remote_socket:host:hostport ssh -R remote_socket:local_socket ssh -R [bind_address:]port 心得 看起來好像很難 但是其實用下面這個就夠了 正向：
-ssh -L &lt;local port>:localhost:&lt;remote port> &lt;user>@&lt;remote> 反向;
-ssh -R &lt;remote port>:localhost:&lt;local port> &lt;user>@&lt;remote> 總而言之就是前面的和選項一樣 如果是 -L 那前面就是 local port 如果是 -R 那前面就是 remote port...</p></section><footer class=entry-footer><span title="2020-02-24 00:00:00 +0000 UTC">2020-February-24</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to ssh-tunnel" href=https://blog.simba-fs.dev/posts/linux/ssh-tunnel/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/6/>« 上一篇</a>

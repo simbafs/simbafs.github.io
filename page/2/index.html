@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.93.0">
+<meta name=generator content="Hugo 0.93.3">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -63,6 +63,14 @@
 </a>
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
+<header class=entry-header>
+<h2>Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet
+</h2></header><section class=entry-content>
+<p>emmet-vim 是 emmet 的 vim 版本（這句好像是廢話
+注意：emmet-vim 用的是自己寫的而不是用 emmet.io 官方的解析引擎
+emmet-vim 是一套外掛程式，他可以解析一段字串，然後根據規則變成 html，例如下面的例子
+.tab>(tr#col$>td*3)*4 會被解析成 &lt;div class="tab"> &lt;tr id="col1"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col2"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col3"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr id="col4"> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;/div> 是不是很方便，用一行的指令可以變成 22 行的 HTML，而且還會幫你排版好喔，有沒有香！...</p></section><footer class=entry-footer><span title="2021-09-18 00:00:00 +0000 UTC">2021-September-18</span>&nbsp;·&nbsp;2 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 18：幫你的 HTML 開發裝上噴射引擎！vim-emmet" href=https://blog.simba-fs.dev/posts/ithelp/day18/></a>
+</article><article class=post-entry>
 <header class=entry-header>
 <h2>Day 17：coc.nvim 設定下集
 </h2></header><section class=entry-content>
@@ -159,16 +167,6 @@ vim 模式切換 (From: 高見龍——超簡明 Vim 操作介紹) 通常 Normal
 有時候進來看看有什麼方便的快捷鍵自己還不知道也挺好玩的
 滑鼠控制 不知道昨天的各種 tmux 移動、調整大小的快捷鍵有沒有嚇到你。tmux 其實還有提供一個更簡單的操作方式，如果你的終端機有支援滑鼠的話（像是我用的 gnome-terminal 就有提供）你可以在 ~/.tmux.conf 中加上一行
 + set -g mouse on 然後重新開啟 tmux，這時候你就可以用滑鼠換頁、切換分割畫面、調整大小等等操作，在不同的地方按右鍵還會有不同的功能呦！...</p></section><footer class=entry-footer><span title="2021-09-09 00:00:00 +0000 UTC">2021-September-9</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 09：今天又想不出標題了！tmux plugin 和 mouse mode" href=https://blog.simba-fs.dev/posts/ithelp/day09/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>Day 08：八爪章魚之 tmux 快捷鍵
-</h2></header><section class=entry-content>
-<p>tmux 有許多的快捷鍵來控制螢幕，不論是分割、移動都可以輕鬆完成
-分割畫面 垂直分割畫面的快捷鍵是 CTRLa+ %，水平分割的快捷鍵是 CTRLa+ |(pipe，shift + enter 上面那個)。按下去畫面就會以中間分開，兩邊都是獨立的，即使一邊在編譯卡住了，另一邊的編輯器還是可以正常操作的 分割畫面，一邊編輯，一邊編譯，另一邊執行 在分割畫面中移動 現在你畫面分割好了，要怎麼移動呢？非常直覺，往上就是上，往右就是右。CTRLa+ 方向鍵你也可以用 CTRLa+ tab按照順序移動，CTRLa+ SHIFTtab反向移動
-記得，按方向鍵時 CTRL要放開，不然就會變接下來要介紹的快捷鍵
-在分割畫面中移動 調整分割大小 有時候我們不一定是要分成一半，例如下面五行，上面滿版。這時候你可以用 CTRLa+ CTRL方向鍵調整大小 調整大小 新增分頁 你有沒有發現終端機最下面那行？那個是 tmux 的分頁，用 CTRLa+ c就可以新增一個分頁，新增順序會從 0 開始找空的補上
-範例和分頁移動一起
-分頁移動 在多個分頁中，你可以用 CTRLa+ CTRLa移動到上一次使用的分頁，或是用 CTRLa+ 數字鍵移動到特定 ID 的分頁。...</p></section><footer class=entry-footer><span title="2021-09-08 00:00:00 +0000 UTC">2021-September-8</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to Day 08：八爪章魚之 tmux 快捷鍵" href=https://blog.simba-fs.dev/posts/ithelp/day08/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/>« 上一篇</a>

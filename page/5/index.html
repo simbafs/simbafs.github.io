@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.93.0">
+<meta name=generator content="Hugo 0.93.3">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -63,6 +63,16 @@
 </a>
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
+<header class=entry-header>
+<h2>hCaptcha
+</h2></header><section class=entry-content>
+<p>前情提要 我們社團的短網址服務裡面常常出現一些奇怪的網址，我猜可能是有機器人在刷，所以我想加入 captcha 減少這類問題。我選擇的是 hCaptcha 這套，能不依賴 Google 就盡量不要。
+安裝步驟 申請帳號 先到 hCaptcha 註冊、新增一個網站，複製 sitekey (Sites > site setting) 和 secret key (Settings)，我們等等會用到
+前端 首先引入 script ，在 &lt;head> 加入 &lt;script src="https://hcaptcha.com/1/api.js" async defer>&lt;/script> 接著在你的 &lt;form> 裡面加入，這邊的 your_site_key 就是剛剛複製的那個。記得 &lt;form> 的 method 要設成 post &lt;div class="h-captcha" data-sitekey="your_site_key">&lt;/div> 後端（node express） SECRET
+首先，你要把剛剛的 SECRET 給 server 知道，我用的是 dotenv，當然其他的套件也是可以。
+簡而言之，剛剛複製下來的 SECRET 就是用在這裡。
+驗證 後端我選用的套件是 express-hcaptcha ，它提供一個 middleware 驗證 hcaptcha 的 token。 按照 README....</p></section><footer class=entry-footer><span title="2021-01-05 00:00:00 +0000 UTC">2021-January-5</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to hCaptcha" href=https://blog.simba-fs.dev/posts/nodejs/hcaptcha/></a>
+</article><article class=post-entry>
 <header class=entry-header>
 <h2>docker login error
 </h2></header><section class=entry-content>
@@ -137,14 +147,6 @@ https://github.com/nodejs/node/issues/1979
 https://www.npmjs.com/package/rooty
 ^^^
 這個是在 github issue 裡面看到的，沒試過，但是應該也可以用吧？只是我覺得沒有 paths 的解法來的優雅。</p></section><footer class=entry-footer><span title="2020-09-02 00:00:00 +0000 UTC">2020-September-2</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to node require from project root" href=https://blog.simba-fs.dev/posts/nodejs/node-require-from-project-root/></a>
-</article><article class=post-entry>
-<header class=entry-header>
-<h2>vim auto comment plugin
-</h2></header><section class=entry-content>
-<p>套件 nerdcommenter
-好用的指令 在每次動作前都要按 &lt;leader>，預設是 反斜線 \
-c&lt;space> 簡單來說就是 toggle 你的註解
-cA 跳到行尾並在行尾加上註解</p></section><footer class=entry-footer><span title="2020-08-25 00:00:00 +0000 UTC">2020-August-25</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to vim auto comment plugin" href=https://blog.simba-fs.dev/posts/linux/vim/vim-auto-comment-plugin/></a>
 </article><footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://blog.simba-fs.dev/page/4/>« 上一篇</a>

@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://blog.simba-fs.dev/images/icon/icon.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.93.0">
+<meta name=generator content="Hugo 0.93.3">
 <link rel=alternate type=application/rss+xml href=https://blog.simba-fs.dev/index.xml>
 <link rel=alternate type=application/json href=https://blog.simba-fs.dev/index.json>
 <noscript>
@@ -63,6 +63,12 @@
 </a>
 </li></ul></nav></header><main class=main>
 <article class=post-entry>
+<header class=entry-header>
+<h2>audo-depoly-by-github-action
+</h2></header><section class=entry-content>
+<p>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
+name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest strategy: matrix: node-version: [12.x] steps: - uses: actions/checkout@v1 - name: Use Node.js ${{ matrix.node-version }} uses: actions/setup-node@v1 with: node-version: ${{ matrix.node-version }} - name: Configuration environment env: HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}} run: |mkdir -p ~/....</p></section><footer class=entry-footer><span title="2020-02-11 00:00:00 +0000 UTC">2020-February-11</span>&nbsp;·&nbsp;1 分鐘&nbsp;·&nbsp;simba-fs</footer><a class=entry-link aria-label="post link to audo-depoly-by-github-action" href=https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/></a>
+</article><article class=post-entry>
 <header class=entry-header>
 <h2>gitalk
 </h2></header><section class=entry-content>
