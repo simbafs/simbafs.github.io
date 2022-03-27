@@ -53,25 +53,29 @@ defaultContentLanguage = 'zh-tw'
 	iconHeight = 35
 
 [params.profileMode]
-	enabled = false
-	title = "ExampleSite"
-	subtitle = "This is subtitle"
-	imageUrl = "<img location>"
+	enabled = true
+	title = "Simba 的喵窩"
+	subtitle = "雜七雜八的東西"
+	imageUrl = "/images/icon/icon.png"
 	imageWidth = 120
 	imageHeight = 120
-	imageTitle = "my image"
+	imageTitle = "simba-fs"
 
 [[params.profileMode.buttons]]
 	name = "Posts"
-	url = "posts"
+	url = "/archive"
 
 [[params.profileMode.buttons]]
-	name = "Tags"
-	url = "tags"
+	name = "Categories"
+	url = "/posts"
 
-[params.homeInfoParams]
-	Title = "🖐️ 哈囉！問世界安好"
-	Content = "歡迎來到我的小角落"
+[[params.profileMode.buttons]]
+	name = "About"
+	url = "/about"
+
+# [params.homeInfoParams]
+#     Title = "🖐️ 哈囉！問世界安好"
+#     Content = "歡迎來到我的小角落"
 
 [[params.socialIcons]]
 	name = "github"
