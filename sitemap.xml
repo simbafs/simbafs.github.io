@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.simba-fs.dev/posts/daily/</loc>
-    <lastmod>2022-03-09T23:16:55+08:00</lastmod>
+    <loc>https://blog.simba-fs.dev/tags/github/</loc>
+    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/tags/github-action/</loc>
+    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/golang/</loc>
+    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/</loc>
-    <lastmod>2022-03-09T23:16:55+08:00</lastmod>
+    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/</loc>
+    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/tags/</loc>
+    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/golang/github-action-release/</loc>
+    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/daily/</loc>
     <lastmod>2022-03-09T23:16:55+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/daily/vibrate/</loc>
@@ -19,9 +34,6 @@
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/</loc>
     <lastmod>2022-03-02T23:31:59+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/golang/</loc>
-    <lastmod>2022-02-21T18:54:55+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/golang/plguin/</loc>
     <lastmod>2022-02-21T18:54:55+08:00</lastmod>
@@ -66,9 +78,6 @@
     <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/software-development/</loc>
-    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/tags/</loc>
     <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/terminal/</loc>
@@ -410,12 +419,6 @@
     <loc>https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/tags/github/</loc>
-    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/tags/github-action/</loc>
-    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</loc>
     <lastmod>2020-08-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -600,6 +603,8 @@
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/archive/</loc>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/tags/ci/cd/</loc>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/ci/cl/</loc>
   </url><url>

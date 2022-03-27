@@ -9,7 +9,23 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 16 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Mar 2022 11:00:18 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 Github Action 編譯並發 Release</title>
+      <link>https://blog.simba-fs.dev/posts/golang/github-action-release/</link>
+      <pubDate>Sun, 27 Mar 2022 11:00:18 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/golang/github-action-release/</guid>
+      <description>如果自己寫的小工具的 GitHub 頁面右邊 Release 那欄有個什麼東西，一定很酷對吧！如果裡面已經提供了不同作業系統編譯好的程式，一定更酷！
+想要建立 Release，你可以在新版本發布時自己手動 crose compile 再手動設定 Release，這個方法可行，但是聽起來全手動就很 low，我們要用一個全自動的方式發 Release！
+Github Actioin 既然我們程式碼都託管在 GitHub 了，直接用 Gtithub Action 是很合理的吧！
+觸發條件 因為我們要做的是發布版本，不是每個 commit 都要觸發，因此觸發條件就設成
+on:  push:  tags:  - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 v0.1.13 這樣的標籤會觸發，也就是你建立新版本時。
+編譯 在嘗試各種套件之後，我覺得 goreleaser-action 是我用起來最舒服的，不用太多設定，就直接都編譯好了（詳細設定可以去 goreleaser 的網站看 )
+在 GitHub Action 中設定就下面幾行，第一個步驟是安裝 go，再來就是編譯了。
+- name: Set up Go  uses: actions/setup-go@v3.0.0  with:  go-version: 1.17.x - name: Run GoReleaser  uses: goreleaser/goreleaser-action@v2.9.1  with:  version: latest  args: release --rm-dist  env:  GITHUB_TOKEN: ${{ secrets.</description>
+    </item>
+    
     <item>
       <title>GitHub Action 自動部署 hexo</title>
       <link>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
