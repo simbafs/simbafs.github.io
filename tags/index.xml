@@ -11,6 +11,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 27 Mar 2022 11:00:18 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>CICD</title>
+      <link>https://blog.simba-fs.dev/tags/cicd/</link>
+      <pubDate>Sun, 27 Mar 2022 11:00:18 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>github</title>
       <link>https://blog.simba-fs.dev/tags/github/</link>
       <pubDate>Sun, 27 Mar 2022 11:00:18 +0800</pubDate>
@@ -718,15 +727,6 @@
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/tags/rss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CI/CD</title>
-      <link>https://blog.simba-fs.dev/tags/ci/cd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.simba-fs.dev/tags/ci/cd/</guid>
       <description></description>
     </item>
     

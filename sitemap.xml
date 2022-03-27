@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.simba-fs.dev/tags/cicd/</loc>
+    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
+  </url><url>
     <loc>https://blog.simba-fs.dev/tags/github/</loc>
     <lastmod>2022-03-27T11:00:18+08:00</lastmod>
   </url><url>
@@ -603,8 +606,6 @@
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/archive/</loc>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/tags/ci/cd/</loc>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/ci/cl/</loc>
   </url><url>
