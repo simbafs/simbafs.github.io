@@ -2,7 +2,7 @@
 title = "用 Github Action 編譯並發 Release"
 slug = "github-action-release"
 date = 2022-03-27T11:00:18+08:00
-tags = ["github", "CI/CD", "github action"]
+tags = ["github", "CICD", "github action"]
 draft = false
 +++
 
