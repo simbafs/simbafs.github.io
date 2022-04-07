@@ -9,7 +9,19 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/linux/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Apr 2022 23:13:04 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/linux/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modeline</title>
+      <link>https://blog.simba-fs.dev/posts/linux/vim/modeline/</link>
+      <pubDate>Thu, 07 Apr 2022 23:13:04 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/vim/modeline/</guid>
+      <description>modeline 是一個可以將 vim 設定嵌入檔案的方式，這樣就可以讓某些檔案有自己的設定，像是折疊、不要行數、tab 等於多少空白等等。
+簡單的條件 簡單的 modeline 需要滿足幾個條件：
+ 開頭（不必是行首）至少有一個空白/tab 用 vim、vi 等字開頭，這裡還可以設定哪個版本才要載入  基本的範例  vim: wrap 參考資料 https://stackoverflow.com/questions/3958416/embed-vim-settings-in-file
+help page in :help modeline</description>
+    </item>
+    
     <item>
       <title>YouComopleteMe install</title>
       <link>https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/</link>

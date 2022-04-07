@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.simba-fs.dev/posts/linux/software/kdeconnect/</loc>
+    <lastmod>2022-04-07T23:25:28+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/</loc>
+    <lastmod>2022-04-07T23:25:28+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/</loc>
+    <lastmod>2022-04-07T23:25:28+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/</loc>
+    <lastmod>2022-04-07T23:25:28+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/software/</loc>
+    <lastmod>2022-04-07T23:25:28+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/vim/modeline/</loc>
+    <lastmod>2022-04-07T23:13:04+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/vim/</loc>
+    <lastmod>2022-04-07T23:13:04+08:00</lastmod>
+  </url><url>
     <loc>https://blog.simba-fs.dev/tags/cicd/</loc>
     <lastmod>2022-03-27T11:00:18+08:00</lastmod>
   </url><url>
@@ -12,12 +33,6 @@
     <lastmod>2022-03-27T11:00:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/golang/</loc>
-    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/</loc>
-    <lastmod>2022-03-27T11:00:18+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/</loc>
     <lastmod>2022-03-27T11:00:18+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/</loc>
@@ -33,9 +48,6 @@
     <lastmod>2022-03-09T23:16:55+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/bluwtooth-error/</loc>
-    <lastmod>2022-03-02T23:31:59+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/</loc>
     <lastmod>2022-03-02T23:31:59+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/golang/plguin/</loc>
@@ -221,9 +233,6 @@
     <loc>https://blog.simba-fs.dev/categories/software/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/software/</loc>
-    <lastmod>2021-06-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.simba-fs.dev/tags/usb-debug/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -240,9 +249,6 @@
     <lastmod>2021-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/categories/vim/</loc>
-    <lastmod>2021-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/vim/</loc>
     <lastmod>2021-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/ycm/</loc>
