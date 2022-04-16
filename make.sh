@@ -17,6 +17,6 @@ case $1 in
 		git commit -m '' --allow-empty-message
 		git push
 		hugo
-		rsync -avz --delete public/ $USER@$HOST:~/$DIR
+		# rsync -avz --delete public/ $USER@$HOST:~/$DIR
 		;;
 esac
