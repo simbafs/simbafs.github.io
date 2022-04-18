@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.simba-fs.dev/posts/linux/anbox/</loc>
+    <lastmod>2022-04-18T18:53:50+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/linux/</loc>
+    <lastmod>2022-04-18T18:53:50+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/posts/</loc>
+    <lastmod>2022-04-18T18:53:50+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.simba-fs.dev/</loc>
+    <lastmod>2022-04-18T18:53:50+08:00</lastmod>
+  </url><url>
     <loc>https://blog.simba-fs.dev/tags/font/</loc>
     <lastmod>2022-04-16T21:47:25+08:00</lastmod>
   </url><url>
@@ -9,15 +21,6 @@
     <lastmod>2022-04-16T21:47:25+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/software/ibus-font/</loc>
-    <lastmod>2022-04-16T21:47:25+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/</loc>
-    <lastmod>2022-04-16T21:47:25+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/</loc>
-    <lastmod>2022-04-16T21:47:25+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/</loc>
     <lastmod>2022-04-16T21:47:25+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/software/</loc>
