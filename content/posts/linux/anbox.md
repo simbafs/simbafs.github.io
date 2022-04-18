@@ -40,6 +40,8 @@ ls -1 /dev/{ashmem,binder} # 這個是官方用的，但是我怎麼試都失敗
 lsmod | grep -e ashmem -e binder # 我不確定這個找到是不是代表有成功啟動，但是他兩個都找的到
 ```
 
+> [https://docs.anbox.io/userguide/install_kernel_modules.html](https://docs.anbox.io/userguide/install_kernel_modules.html)
+
 # 安裝 anbox
 如果你的電腦上有 snap，就用 snap 裝；如果沒有，就先去裝 snap。  
 ```bash
@@ -50,6 +52,8 @@ sudo snap install --devmode --beta anbox
 ```bash
 snap info anbox
 ```
+
+> [https://docs.anbox.io/userguide/install.html](https://docs.anbox.io/userguide/install.html)
 
 ## apt
 如果你是 Ubuntu/Debian 長期使用者，你可能會想用 apt 裝 anbox，也不是不行，但是等等裝 Google Play 的時候會出一點點問題（OverlayFS 路徑有問題），最佳解決辦法就是用 snap，不要用 apt
@@ -68,6 +72,7 @@ sudo ./install-playstore.sh
 如果遇到 Overlay not enable 的問題，請不要用 apt，至於位什麼自己研究 `install-playstores.sh`
 跑完如果沒錯誤就可以打開 `anbox.appmgr`，打開 play 安裝 APP 了。
 
+> [https://www.clusterednetworks.com/blog/post/install-google-play-store-anbox](https://www.clusterednetworks.com/blog/post/install-google-play-store-anbox)
+
 # 問遺
 目前裝好 APP 但是我打不開
-
