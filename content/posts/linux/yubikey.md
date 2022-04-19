@@ -2,7 +2,6 @@
 title = "Yubikey"
 slug = ""
 date = 2022-04-19T15:22:55+08:00
-draft = true
 +++
 
 感謝廖煥杰 [liaojason2](https://github.com/liaojason2) 賣我一個 1200，撿到寶啦！我買的是 [Yubikey 5C NFC](https://www.yubico.com/tw/product/yubikey-5c-nfc/)，看起來幾乎所有功能都有
