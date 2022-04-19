@@ -20,16 +20,13 @@
     <loc>https://blog.simba-fs.dev/tags/ibus/</loc>
     <lastmod>2022-04-16T21:47:25+08:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/software/ibus-font/</loc>
-    <lastmod>2022-04-16T21:47:25+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/software/</loc>
+    <loc>https://blog.simba-fs.dev/posts/linux/ibus-font/</loc>
     <lastmod>2022-04-16T21:47:25+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/</loc>
     <lastmod>2022-04-16T21:47:25+08:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/software/kdeconnect/</loc>
+    <loc>https://blog.simba-fs.dev/posts/linux/kdeconnect/</loc>
     <lastmod>2022-04-07T23:25:28+08:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/linux/vim/modeline/</loc>
@@ -236,7 +233,7 @@
     <loc>https://blog.simba-fs.dev/tags/android/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/</loc>
+    <loc>https://blog.simba-fs.dev/posts/linux/cast-phone-screen-to-computer/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/linux/</loc>
@@ -272,7 +269,7 @@
     <loc>https://blog.simba-fs.dev/tags/firefox/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/</loc>
+    <loc>https://blog.simba-fs.dev/posts/linux/firefox-touch-screen-scroll/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/ubuntu/</loc>
@@ -299,7 +296,7 @@
     <loc>https://blog.simba-fs.dev/tags/logitech/</loc>
     <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/software/logitech-mouse-permission-error/</loc>
+    <loc>https://blog.simba-fs.dev/posts/linux/logitech-mouse-permission-error/</loc>
     <lastmod>2021-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/code-format/</loc>
@@ -308,7 +305,7 @@
     <loc>https://blog.simba-fs.dev/tags/libreoffice/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/linux/software/libreoffice-code-format-plugin-install/</loc>
+    <loc>https://blog.simba-fs.dev/posts/linux/libreoffice-code-format-plugin-install/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/api/</loc>
@@ -428,19 +425,19 @@
     <loc>https://blog.simba-fs.dev/categories/hexo/</loc>
     <lastmod>2020-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/</loc>
     <lastmod>2020-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</loc>
     <lastmod>2020-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/posts/nodejs/express-%E9%87%8D%E8%A4%87-send/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</loc>
     <lastmod>2020-08-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/react/</loc>
@@ -602,7 +599,7 @@
     <loc>https://blog.simba-fs.dev/tags/cactus/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/hexo-config/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-config/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/tags/highlight/</loc>
@@ -611,16 +608,16 @@
     <loc>https://blog.simba-fs.dev/tags/rss/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/audo-depoly-by-github-action/</loc>
     <lastmod>2020-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/gitalk/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/gitalk/</loc>
     <lastmod>2020-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/hexo-cli-extras/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-cli-extras/</loc>
     <lastmod>2020-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.simba-fs.dev/posts/hexo/hexo-installation/</loc>
+    <loc>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-installation/</loc>
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.simba-fs.dev/about/</loc>

@@ -12,10 +12,10 @@
     <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/cactus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hexo-config</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/hexo-config/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-config/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/hexo-config/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-config/</guid>
       <description>各種設定值嘗試 Highlight - # highlight: rainbow + highlight: rainbow var a = 7122; console.log(a); var a = 7122; console.log(a); int a = 7122; cout &amp;lt;&amp;lt; a; </description>
     </item>
     

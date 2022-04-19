@@ -12,10 +12,10 @@
     <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文章更新時間錯亂問題</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</guid>
       <description>問題 在設定完 GitHub Action 之後，我發現我的文章的更新時間都錯了，會全部變成當天日期。但是本地生成的就沒有這個問題，經過一番盤查和猜測後，我發現問題是因為 git 不會把 modified date 紀錄，因為每台電腦的時區都是不一樣的，紀錄起來沒有意義。但是我們需要這項 meta data，所以我們就要自己想法紀錄
 解法 v1.0 首先，因為每一篇文章 hexo 都會紀錄建立時間，所以我們可以直接把他抓出來，然後把檔案的更新時間設成這個時間就可以啦！
 更改檔案的 modified time 這個功能只要用我們最熟悉的 touch 就可以做到了。一般我們使用 touch 的時候會把 modified time 改成當下時間，那要改任意時間只要加上 -t 選項就可以啦
@@ -26,10 +26,10 @@ source/_posts/hexo-installation.md:3:date: 2020-02-10 17:26:45 source/_posts/ble
     
     <item>
       <title>加入 google search 和 sitemap</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</guid>
       <description>前置設定 npm 安裝 hexo-generator-sitemap npm i -S hexo-generator-sitemap 設定插件 將以下內容加到 _config.yml
  注意空白
  # sitemap sitemap:  path: sitemap.xml 驗證網域 如果你的 hexo 是架在自己的網域可以跳過這步
@@ -42,10 +42,10 @@ source/_posts/hexo-installation.md:3:date: 2020-02-10 17:26:45 source/_posts/ble
     
     <item>
       <title>GitHub Action 自動部署 hexo</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
       <description>前言 本來部署 hexo 都是手動下指令，但是這樣在手機上因為沒辦法裝 hexo ,所以一直不能在手機上寫文章。剛好想到 GitHub Action 可以滿足我的需求，上網查了一下資料發現蠻多人有和我一樣的需求，這次參考的是 owlran 大大的文章。
 ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦。
 ssh-keygen 首先隨便找個資料夾產生一組 ssh key
@@ -59,38 +59,38 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
     
     <item>
       <title>hexo-config</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/hexo-config/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-config/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/hexo-config/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-config/</guid>
       <description>各種設定值嘗試 Highlight - # highlight: rainbow + highlight: rainbow var a = 7122; console.log(a); var a = 7122; console.log(a); int a = 7122; cout &amp;lt;&amp;lt; a; </description>
     </item>
     
     <item>
       <title>audo-depoly-by-github-action</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/audo-depoly-by-github-action/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/audo-depoly-by-github-action/</guid>
       <description>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
 name: HEXO CI  on:  push:  branches:  - master  jobs:  build:  runs-on: ubuntu-latest  strategy:  matrix:  node-version: [12.x]   steps:  - uses: actions/checkout@v1   - name: Use Node.js ${{ matrix.node-version }}  uses: actions/setup-node@v1  with:  node-version: ${{ matrix.node-version }}   - name: Configuration environment  env:  HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}  run: |mkdir -p ~/.</description>
     </item>
     
     <item>
       <title>gitalk</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/gitalk/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/gitalk/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/gitalk/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/gitalk/</guid>
       <description>啟用 gitalk 留言  到這個網址填資料 加入下面的片段到_config.yml  disqus: enabled: false gitalk: enabled: true owner: &amp;lt;username&amp;gt; repo: &amp;lt;username&amp;gt;.github.io admin: [&amp;#39;&amp;lt;username&amp;gt;&amp;#39;] clientID: &amp;lt;clientID&amp;gt; clientSecret: &amp;lt;clientSecret&amp;gt; 加入下面的片段到themes/cactus/layout/_partial/comments.ejs  &amp;lt;% if(page.comments &amp;amp;&amp;amp; theme.gitalk.enabled){ %&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;gitalk-container&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; var gitalk = new Gitalk({ clientID: &amp;#39;&amp;lt;%= theme.gitalk.clientID %&amp;gt;&amp;#39;, clientSecret: &amp;#39;&amp;lt;%= theme.gitalk.clientSecret %&amp;gt;&amp;#39;, id: md5(window.location.pathname), repo: &amp;#39;&amp;lt;%= theme.gitalk.repo %&amp;gt;&amp;#39;, owner: &amp;#39;&amp;lt;%= theme.gitalk.owner %&amp;gt;&amp;#39;, admin: &amp;#39;&amp;lt;%= theme.gitalk.admin %&amp;gt;&amp;#39;, distractionFreeMode: &amp;#39;&amp;lt;%= theme.</description>
     </item>
     
     <item>
       <title>hexo-cli-extras</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/hexo-cli-extras/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-cli-extras/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/hexo-cli-extras/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-cli-extras/</guid>
       <description>好用的插件 因為 hexo 本身沒有提供編輯器
 所以每次在編輯文章時都需要打路徑
 這個插件他會去找到你的文章
@@ -102,10 +102,10 @@ name: HEXO CI  on:  push:  branches:  - master  jobs:  build:  runs-on: ubuntu-l
     
     <item>
       <title>hexo-installation</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/hexo-installation/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-installation/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/hexo-installation/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-installation/</guid>
       <description>把 hexo 部屬到 gh-page 執行
 $ npm i hexo -g $ hexo init blog $ cd blog 修改 _config.yml 刪除最後兩行，改成
 deploy: type: git repo: git@github.com:&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt; branch: master 執行

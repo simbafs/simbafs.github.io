@@ -28,10 +28,10 @@ on:  push:  tags:  - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像�
     
     <item>
       <title>GitHub Action 自動部署 hexo</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
       <description>前言 本來部署 hexo 都是手動下指令，但是這樣在手機上因為沒辦法裝 hexo ,所以一直不能在手機上寫文章。剛好想到 GitHub Action 可以滿足我的需求，上網查了一下資料發現蠻多人有和我一樣的需求，這次參考的是 owlran 大大的文章。
 ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦。
 ssh-keygen 首先隨便找個資料夾產生一組 ssh key
@@ -45,10 +45,10 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
     
     <item>
       <title>audo-depoly-by-github-action</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/audo-depoly-by-github-action/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/audo-depoly-by-github-action/</guid>
       <description>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
 name: HEXO CI  on:  push:  branches:  - master  jobs:  build:  runs-on: ubuntu-latest  strategy:  matrix:  node-version: [12.x]   steps:  - uses: actions/checkout@v1   - name: Use Node.js ${{ matrix.node-version }}  uses: actions/setup-node@v1  with:  node-version: ${{ matrix.node-version }}   - name: Configuration environment  env:  HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}  run: |mkdir -p ~/.</description>
     </item>

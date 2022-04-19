@@ -26,10 +26,10 @@
     
     <item>
       <title>Ibus Font</title>
-      <link>https://blog.simba-fs.dev/posts/linux/software/ibus-font/</link>
+      <link>https://blog.simba-fs.dev/posts/linux/ibus-font/</link>
       <pubDate>Sat, 16 Apr 2022 21:47:25 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/software/ibus-font/</guid>
+      <guid>https://blog.simba-fs.dev/posts/linux/ibus-font/</guid>
       <description>最近在打字時總覺得中文選字的時候 ibus 字體好小，於是就開始查怎麼弄
 經過搜尋後，找到 https://askubuntu.com/questions/1030442/how-to-increase-font-size-of-preview-options-when-using-an-input-method 這個網頁，總而言之就是先去裝 ibus font setting 這個外掛，然後就可以用 ibus-setup 調整了
 照做之後的確可以調大小字體，但我不知道是不是因為裝了這個外掛的關係，反正我是成功改好了</description>
@@ -37,10 +37,10 @@
     
     <item>
       <title>kdeconnect</title>
-      <link>https://blog.simba-fs.dev/posts/linux/software/kdeconnect/</link>
+      <link>https://blog.simba-fs.dev/posts/linux/kdeconnect/</link>
       <pubDate>Thu, 07 Apr 2022 23:25:28 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/software/kdeconnect/</guid>
+      <guid>https://blog.simba-fs.dev/posts/linux/kdeconnect/</guid>
       <description>kdeconnect 顧名思義是 kde 出的一款 connect 軟體，功能非常多而且方便。電腦和手機都安裝好軟體後，只要在同一個網域就可以配對連接
 功能介紹  基本訊息 - 在電腦和手機上可以互相看到電池、網路等基本訊息 通知 - 可以設定電腦顯示手機通知或手機顯示電腦通知，或是兩者都開啟，我通常只開前者 媒體控制 - 無論是 VLC、YouTube、Nefflix 或任何網頁，都可以控制進度、音量、暫停，而且雙方都可以控制。這個是我最愛的功能之一 命令控制 - kdeconnect 可以讓你在手機上執行電腦上預先設定好的指令，像是關機、鎖定等等，下面會推薦幾個我設定的命令 傳檔案和資料夾共用 - kdeconnect 可以讓你連接電腦和手機上特定的資料夾，或是傳送單一檔案 共用剪貼簿 - 如其名，這是一個非常實用的功能，但是有時候觸發條件怪怪的 輸入 - 不論是滑鼠、鍵盤，兩邊都可以互相當對方的輸入裝置，這個功能非常好用 還有像是讓手機大叫（找手機用）、簡報控制、傳簡訊、手機有電話的時候自動暫停音樂等等奇奇怪怪的功能  推薦命令    Description Command     鎖定螢幕並暫停 VLC 播放 loginctl lock-session; dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause   解除鎖定螢幕（免密碼） loginctl unlock-session    </description>
     </item>
@@ -508,10 +508,10 @@ git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2.</descri
     
     <item>
       <title>Cast Phone Screen to Computer</title>
-      <link>https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/</link>
+      <link>https://blog.simba-fs.dev/posts/linux/cast-phone-screen-to-computer/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/</guid>
+      <guid>https://blog.simba-fs.dev/posts/linux/cast-phone-screen-to-computer/</guid>
       <description>有沒有一種經驗是某的應用程式手機板操作勉強算順暢，但是一電腦上就炸開，反應慢到靠北、界面又很難用（沒錯 messenger 我正在看著你）。這個時候相信你會和我一樣想把手機畫面投影到電腦上的一個視窗裡面，最好可以互動、可以打字。有人第一個想法是在手機開 VNC 伺服器，但是這個方法有點麻煩，這篇文章介紹的是目前我覺得最佳解決方案。
 SCRCPY 這個軟體支援有線（ USB debug ）、無線（ WIFI ）的連接，還支援螢幕錄影和傳檔案。最重要的是，開在電腦上的視窗可以調整大小，不需要侷限在一個小小的視窗內，你最大可以放大到全螢幕！在某種意義上你獲得了一台和電腦一樣大的手機。
 Installation 安裝流程意外的簡單，只需要用 apt 就可以安裝了，或是你可以自己 build，稍微看了一下 說明 ，看起來不困難，但是既然 apt 就可以安裝了我們就省一點時間
@@ -535,10 +535,10 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
     
     <item>
       <title>firefox touch screen scroll</title>
-      <link>https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/</link>
+      <link>https://blog.simba-fs.dev/posts/linux/firefox-touch-screen-scroll/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/software/firefox-touch-screen-scroll/</guid>
+      <guid>https://blog.simba-fs.dev/posts/linux/firefox-touch-screen-scroll/</guid>
       <description>再換了觸控筆電後，在 firefox 一直有個問題：觸控往下滑會被當成選取，要卷動一定要用右邊的 scroll bar
 解決方案 按照 https://askubuntu.com/questions/853910/ubuntu-16-and-touchscreen-scrolling-in-firefox 的最佳解法，真的加上 MOZ_USE_XINPUT2=1 的環境變數就可以了。
 另外在設定 ~/.local/share/applications/firefox.desktop 的時候要注意有不只一個 Exec，改完如果沒有生效可以重開機看看。</description>
@@ -565,10 +565,10 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
     
     <item>
       <title>logitech-mouse-permission-error</title>
-      <link>https://blog.simba-fs.dev/posts/linux/software/logitech-mouse-permission-error/</link>
+      <link>https://blog.simba-fs.dev/posts/linux/logitech-mouse-permission-error/</link>
       <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/software/logitech-mouse-permission-error/</guid>
+      <guid>https://blog.simba-fs.dev/posts/linux/logitech-mouse-permission-error/</guid>
       <description>前言 我的無線華和滑鼠和鍵盤都是羅技的，在我的 Ubuntu 筆電上一直都沒有問題。有一次我想改我的鍵盤被配置，但是因為 logitech unifying 沒有 Linux 版，所以我另一個軟體叫 solaar，功能是差不多的。 當我裝好軟體以後，鍵盤滑鼠操作都沒問題，只有插上滑鼠的接收器以後都對跳出一個 permission error 的錯誤視窗。雖然在 solaar 裡面就無法看到我的滑鼠就是了，但是完全不影響使用，所以我就擺在那邊放它爛，反正就是多按一個叉叉。
 嘗試自己解 今天閒閒沒事做剛好來看看這個怎麼解。我一開始想說，把他的 permission 改成和鍵盤一樣就啦！於是我進行了下面的操作
 $ ls /dev/hidraw* 拔下鍵盤的接收器，發現他是 /dev/hidraw4 和 /dev/hidraw5，再插上去。拔下滑鼠接收器，發現他是 /dev/hidraw2。
@@ -582,10 +582,10 @@ $ chmod 660 /dev/hidraw2 拔下滑鼠接收器，插上。
     
     <item>
       <title>libreoffice-code-format-plugin-install</title>
-      <link>https://blog.simba-fs.dev/posts/linux/software/libreoffice-code-format-plugin-install/</link>
+      <link>https://blog.simba-fs.dev/posts/linux/libreoffice-code-format-plugin-install/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/software/libreoffice-code-format-plugin-install/</guid>
+      <guid>https://blog.simba-fs.dev/posts/linux/libreoffice-code-format-plugin-install/</guid>
       <description>安裝  去 https://extensions.libreoffice.org/en/extensions/show/code-highlighter 下載最新的外掛 把檔名前面的前綴刪掉，   例如：ea4db15f_codehighlighter.oxt -&amp;gt; codehighlighter.oxt
  安裝相依性套件  sudo apt install libreoffice-script-provider-python python3-pip sudo pip3 install pygments 安裝外掛   工具 &amp;gt; 擴充套件管理員 &amp;gt; 加入 &amp;gt; 選擇你的檔案
  使用  插入文字方塊   插入 &amp;gt; 文字方塊
@@ -765,10 +765,10 @@ cA 跳到行尾並在行尾加上註解</description>
     
     <item>
       <title>文章更新時間錯亂問題</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</guid>
       <description>問題 在設定完 GitHub Action 之後，我發現我的文章的更新時間都錯了，會全部變成當天日期。但是本地生成的就沒有這個問題，經過一番盤查和猜測後，我發現問題是因為 git 不會把 modified date 紀錄，因為每台電腦的時區都是不一樣的，紀錄起來沒有意義。但是我們需要這項 meta data，所以我們就要自己想法紀錄
 解法 v1.0 首先，因為每一篇文章 hexo 都會紀錄建立時間，所以我們可以直接把他抓出來，然後把檔案的更新時間設成這個時間就可以啦！
 更改檔案的 modified time 這個功能只要用我們最熟悉的 touch 就可以做到了。一般我們使用 touch 的時候會把 modified time 改成當下時間，那要改任意時間只要加上 -t 選項就可以啦
@@ -790,10 +790,10 @@ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; {  return res.send(&am
     
     <item>
       <title>加入 google search 和 sitemap</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/%E5%8A%A0%E5%85%A5-google-search-%E5%92%8C-sitemap/</guid>
       <description>前置設定 npm 安裝 hexo-generator-sitemap npm i -S hexo-generator-sitemap 設定插件 將以下內容加到 _config.yml
  注意空白
  # sitemap sitemap:  path: sitemap.xml 驗證網域 如果你的 hexo 是架在自己的網域可以跳過這步
@@ -806,10 +806,10 @@ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; {  return res.send(&am
     
     <item>
       <title>GitHub Action 自動部署 hexo</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
       <description>前言 本來部署 hexo 都是手動下指令，但是這樣在手機上因為沒辦法裝 hexo ,所以一直不能在手機上寫文章。剛好想到 GitHub Action 可以滿足我的需求，上網查了一下資料發現蠻多人有和我一樣的需求，這次參考的是 owlran 大大的文章。
 ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦。
 ssh-keygen 首先隨便找個資料夾產生一組 ssh key
@@ -1097,38 +1097,38 @@ const fs = require(&amp;#39;fs&amp;#39;); const express = require(&amp;#39;expre
     
     <item>
       <title>hexo-config</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/hexo-config/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-config/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/hexo-config/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-config/</guid>
       <description>各種設定值嘗試 Highlight - # highlight: rainbow + highlight: rainbow var a = 7122; console.log(a); var a = 7122; console.log(a); int a = 7122; cout &amp;lt;&amp;lt; a; </description>
     </item>
     
     <item>
       <title>audo-depoly-by-github-action</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/audo-depoly-by-github-action/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/audo-depoly-by-github-action/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/audo-depoly-by-github-action/</guid>
       <description>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
 name: HEXO CI  on:  push:  branches:  - master  jobs:  build:  runs-on: ubuntu-latest  strategy:  matrix:  node-version: [12.x]   steps:  - uses: actions/checkout@v1   - name: Use Node.js ${{ matrix.node-version }}  uses: actions/setup-node@v1  with:  node-version: ${{ matrix.node-version }}   - name: Configuration environment  env:  HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}  run: |mkdir -p ~/.</description>
     </item>
     
     <item>
       <title>gitalk</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/gitalk/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/gitalk/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/gitalk/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/gitalk/</guid>
       <description>啟用 gitalk 留言  到這個網址填資料 加入下面的片段到_config.yml  disqus: enabled: false gitalk: enabled: true owner: &amp;lt;username&amp;gt; repo: &amp;lt;username&amp;gt;.github.io admin: [&amp;#39;&amp;lt;username&amp;gt;&amp;#39;] clientID: &amp;lt;clientID&amp;gt; clientSecret: &amp;lt;clientSecret&amp;gt; 加入下面的片段到themes/cactus/layout/_partial/comments.ejs  &amp;lt;% if(page.comments &amp;amp;&amp;amp; theme.gitalk.enabled){ %&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;gitalk-container&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; var gitalk = new Gitalk({ clientID: &amp;#39;&amp;lt;%= theme.gitalk.clientID %&amp;gt;&amp;#39;, clientSecret: &amp;#39;&amp;lt;%= theme.gitalk.clientSecret %&amp;gt;&amp;#39;, id: md5(window.location.pathname), repo: &amp;#39;&amp;lt;%= theme.gitalk.repo %&amp;gt;&amp;#39;, owner: &amp;#39;&amp;lt;%= theme.gitalk.owner %&amp;gt;&amp;#39;, admin: &amp;#39;&amp;lt;%= theme.gitalk.admin %&amp;gt;&amp;#39;, distractionFreeMode: &amp;#39;&amp;lt;%= theme.</description>
     </item>
     
     <item>
       <title>hexo-cli-extras</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/hexo-cli-extras/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-cli-extras/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/hexo-cli-extras/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-cli-extras/</guid>
       <description>好用的插件 因為 hexo 本身沒有提供編輯器
 所以每次在編輯文章時都需要打路徑
 這個插件他會去找到你的文章
@@ -1140,10 +1140,10 @@ name: HEXO CI  on:  push:  branches:  - master  jobs:  build:  runs-on: ubuntu-l
     
     <item>
       <title>hexo-installation</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/hexo-installation/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-installation/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/hexo-installation/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/hexo-installation/</guid>
       <description>把 hexo 部屬到 gh-page 執行
 $ npm i hexo -g $ hexo init blog $ cd blog 修改 _config.yml 刪除最後兩行，改成
 deploy: type: git repo: git@github.com:&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt; branch: master 執行

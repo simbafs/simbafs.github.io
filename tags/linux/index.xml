@@ -12,10 +12,10 @@
     <lastBuildDate>Mon, 14 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cast Phone Screen to Computer</title>
-      <link>https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/</link>
+      <link>https://blog.simba-fs.dev/posts/linux/cast-phone-screen-to-computer/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/software/cast-phone-screen-to-computer/</guid>
+      <guid>https://blog.simba-fs.dev/posts/linux/cast-phone-screen-to-computer/</guid>
       <description>有沒有一種經驗是某的應用程式手機板操作勉強算順暢，但是一電腦上就炸開，反應慢到靠北、界面又很難用（沒錯 messenger 我正在看著你）。這個時候相信你會和我一樣想把手機畫面投影到電腦上的一個視窗裡面，最好可以互動、可以打字。有人第一個想法是在手機開 VNC 伺服器，但是這個方法有點麻煩，這篇文章介紹的是目前我覺得最佳解決方案。
 SCRCPY 這個軟體支援有線（ USB debug ）、無線（ WIFI ）的連接，還支援螢幕錄影和傳檔案。最重要的是，開在電腦上的視窗可以調整大小，不需要侷限在一個小小的視窗內，你最大可以放大到全螢幕！在某種意義上你獲得了一台和電腦一樣大的手機。
 Installation 安裝流程意外的簡單，只需要用 apt 就可以安裝了，或是你可以自己 build，稍微看了一下 說明 ，看起來不困難，但是既然 apt 就可以安裝了我們就省一點時間
@@ -77,10 +77,10 @@ docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images
     
     <item>
       <title>文章更新時間錯亂問題</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E9%8C%AF%E4%BA%82%E5%95%8F%E9%A1%8C/</guid>
       <description>問題 在設定完 GitHub Action 之後，我發現我的文章的更新時間都錯了，會全部變成當天日期。但是本地生成的就沒有這個問題，經過一番盤查和猜測後，我發現問題是因為 git 不會把 modified date 紀錄，因為每台電腦的時區都是不一樣的，紀錄起來沒有意義。但是我們需要這項 meta data，所以我們就要自己想法紀錄
 解法 v1.0 首先，因為每一篇文章 hexo 都會紀錄建立時間，所以我們可以直接把他抓出來，然後把檔案的更新時間設成這個時間就可以啦！
 更改檔案的 modified time 這個功能只要用我們最熟悉的 touch 就可以做到了。一般我們使用 touch 的時候會把 modified time 改成當下時間，那要改任意時間只要加上 -t 選項就可以啦

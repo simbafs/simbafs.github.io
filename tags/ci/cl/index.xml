@@ -11,10 +11,10 @@
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://blog.simba-fs.dev/tags/ci/cl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub Action 自動部署 hexo</title>
-      <link>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
+      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
+      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
       <description>前言 本來部署 hexo 都是手動下指令，但是這樣在手機上因為沒辦法裝 hexo ,所以一直不能在手機上寫文章。剛好想到 GitHub Action 可以滿足我的需求，上網查了一下資料發現蠻多人有和我一樣的需求，這次參考的是 owlran 大大的文章。
 ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦。
 ssh-keygen 首先隨便找個資料夾產生一組 ssh key
