@@ -25,5 +25,6 @@ draft = true
 * Github
 * twitter
 * facebook
+* heroku
 
 twitter 在手機登入好像怪怪的，試了 5 分鐘才成功登入了
