@@ -16,6 +16,7 @@ defaultContentLanguage = 'zh-tw'
 	disableXML = true
 	minifyOutput = true
 
+# PaperMod config
 [params]
 	env = "production"
 	title = "Simba 的喵窩"
@@ -28,7 +29,7 @@ defaultContentLanguage = 'zh-tw'
 	disableThemeToggle = false
 	
 	ShowReadingTime = true
-	ShowShareButtons = true
+	ShowShareButtons = false
 	ShowPostNavLinks = true
 	ShowBreadCrumbs = true
 	ShowCodeCopyButtons = false
@@ -123,11 +124,11 @@ defaultContentLanguage = 'zh-tw'
 	url = "/posts/"
 	weight = 10
 
-[[menu.main]]
-	identifier = "tags"
-	name = "Tags"
-	url = "/tags/"
-	weight = 20
+# [[menu.main]]
+#     identifier = "tags"
+#     name = "Tags"
+#     url = "/tags/"
+#     weight = 20
 
 [[menu.main]]
 	identifier = "archives"
