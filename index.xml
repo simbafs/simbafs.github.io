@@ -9,7 +9,19 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 17 May 2022 16:16:27 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 May 2022 16:29:13 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>砲台自動瞄準</title>
+      <link>https://blog.simba-fs.dev/posts/game/mindustry/turretautoaim/</link>
+      <pubDate>Wed, 18 May 2022 16:29:13 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/game/mindustry/turretautoaim/</guid>
+      <description>用處理器可以控制砲台們打的方向和什麼時候打，這樣只要有一群受控的砲台，就可以在射程範圍內指哪打哪
+單一砲台 如圖所示，砲台跟著玩家瞄準的方向打
+以下是程式碼
+radar player any any distance duo1 1 player sensor x player @shootX sensor y player @shootY sensor shoot player @shooting control shoot duo1 x y shoot 0    command description     radar 取得玩家物件   sensor 抽出玩家物件的 shootX、shootY（瞄準的點）和 shooting（是否正在開火）   control 控制 duo1 砲台       variable description     player 玩家物件   x 瞄準的 X 座標   y 瞄準的 Y 座標   shooting 是否開火    多個砲台 上面的指令只能控制一個砲台，那麼要怎麼控制多個砲台呢？答案是 loop，但是 Mindustry 沒有提供 loop，我們只能用 jump，那麼就來看看程式吧！</description>
+    </item>
+    
     <item>
       <title>控制敵方路徑</title>
       <link>https://blog.simba-fs.dev/posts/game/mindustry/pathofenemy/</link>
