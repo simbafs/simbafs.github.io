@@ -67,3 +67,7 @@ jump 1 always x false
 
 ![multiple turrets screenshot](./multipleTurretsScreenshot.png)  
 ![multipleTurretsCode](./multipleTurretCode.png)
+
+# 參考資料
+https://www.youtube.com/watch?v=UFK5m6qKT6U  
+https://www.youtube.com/watch?v=YMxU0jcS11I  
