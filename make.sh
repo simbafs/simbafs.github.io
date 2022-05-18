@@ -4,12 +4,34 @@ HOST=simba-fs.dev
 DIR=website/blog
 GITROOT=$(git rev-parse --show-toplevel)
 
+EDITOR=${EDITOR:-vim}
+
+# TODO
+mkindex(){
+	echo hi
+}
+
 case $1 in
 	list)
 		tree -I '*.md' content/posts
 		;;
 	server)
 		hugo server -D
+		;;
+	edit)
+		$EDITOR content/posts/$2/index.md
+		;;
+	new)
+		path=$2
+		if [ -z "$path" ]; then
+			echo "Usage: $0 new <path>"
+			exit 1
+		fi
+		path=content/posts/$path
+		mkdir -p $path
+		hugo new $path/index.md
+		# mkindex
+		$EDITOR $path/index.md
 		;;
 	deploy|*)
 		cd $GITROOT
