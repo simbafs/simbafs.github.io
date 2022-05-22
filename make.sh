@@ -38,7 +38,7 @@ case $1 in
 		git add .
 		git commit -m '' --allow-empty-message
 		git push
-		hugo
+		# hugo
 		# rsync -avz --delete public/ $USER@$HOST:~/$DIR
 		;;
 esac
