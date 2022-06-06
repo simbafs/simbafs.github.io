@@ -18,10 +18,10 @@
       <guid>https://blog.simba-fs.dev/posts/nodejs/hcaptcha/</guid>
       <description>前情提要 我們社團的短網址服務裡面常常出現一些奇怪的網址，我猜可能是有機器人在刷，所以我想加入 captcha 減少這類問題。我選擇的是 hCaptcha 這套，能不依賴 Google 就盡量不要。
 安裝步驟 申請帳號 先到 hCaptcha 註冊、新增一個網站，複製 sitekey (Sites &amp;gt; site setting) 和 secret key (Settings)，我們等等會用到
-前端  首先引入 script ，在 &amp;lt;head&amp;gt; 加入  &amp;lt;script src=&amp;#34;https://hcaptcha.com/1/api.js&amp;#34; async defer&amp;gt;&amp;lt;/script&amp;gt; 接著在你的 &amp;lt;form&amp;gt; 裡面加入，這邊的 your_site_key 就是剛剛複製的那個。記得 &amp;lt;form&amp;gt; 的 method 要設成 post  &amp;lt;div class=&amp;#34;h-captcha&amp;#34; data-sitekey=&amp;#34;your_site_key&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 後端（node express）   SECRET
+前端 首先引入 script ，在 &amp;lt;head&amp;gt; 加入 &amp;lt;script src=&amp;#34;https://hcaptcha.com/1/api.js&amp;#34; async defer&amp;gt;&amp;lt;/script&amp;gt; 接著在你的 &amp;lt;form&amp;gt; 裡面加入，這邊的 your_site_key 就是剛剛複製的那個。記得 &amp;lt;form&amp;gt; 的 method 要設成 post &amp;lt;div class=&amp;#34;h-captcha&amp;#34; data-sitekey=&amp;#34;your_site_key&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 後端（node express） SECRET
 首先，你要把剛剛的 SECRET 給 server 知道，我用的是 dotenv，當然其他的套件也是可以。
 簡而言之，剛剛複製下來的 SECRET 就是用在這裡。
-  驗證 後端我選用的套件是 express-hcaptcha ，它提供一個 middleware 驗證 hcaptcha 的 token。 按照 README.</description>
+驗證 後端我選用的套件是 express-hcaptcha ，它提供一個 middleware 驗證 hcaptcha 的 token。 按照 README.md 的說明，應該是像這樣就可以了，當驗證通過時就會執行第二個 middleware</description>
     </item>
     
     <item>
@@ -31,8 +31,8 @@
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/express-%E9%87%8D%E8%A4%87-send/</guid>
       <description>問題 在 express route 裡面，我通常會在 res.send() 之類的函式前面都會加一個 return 防止因為程式邏輯漏洞造成重複送出然後噴 error。像是這樣
-route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; {  return res.send(&amp;#39;Hello world&amp;#39;); }); 但是如果我們用到 Promise 的時候 return 並不會跳出整個 route，所以我們需要另一個方法，我的想法是一個變數儲存是否送出，然後在每次送出前都判斷，送出候更改變數值
-+--------------------------+ | is sent( flag === false) | +-+------------------------+ |no | +-+----+ | send | +-+----+ | +-+-----------+ | change flag | +-------------+ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; {  let flag = false;  doSomePromise()  .then(() =&amp;gt; {  // do something  if(!</description>
+route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; { return res.send(&amp;#39;Hello world&amp;#39;); }); 但是如果我們用到 Promise 的時候 return 並不會跳出整個 route，所以我們需要另一個方法，我的想法是一個變數儲存是否送出，然後在每次送出前都判斷，送出候更改變數值
++--------------------------+ | is sent( flag === false) | +-+------------------------+ |no | +-+----+ | send | +-+----+ | +-+-----------+ | change flag | +-------------+ route.get(&amp;#39;/&amp;#39;, (req, res, next) =&amp;gt; { let flag = false; doSomePromise() .then(() =&amp;gt; { // do something if(!flag){ res.send(&amp;#39;Hello world&amp;#39;); flag = true; } }) }) 這樣就不會噴一堆 error 啦！</description>
     </item>
     
     <item>

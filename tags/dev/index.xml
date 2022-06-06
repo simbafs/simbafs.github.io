@@ -16,7 +16,7 @@
       <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/</guid>
-      <description>下載 source code  編輯 ~/.vimrc  Plug &amp;#39;Valloric/YouCompleteMe&amp;#39;接著按下 esc:w | so %載入設定 接著 :PlugInstall下載 source code 存檔離開  編譯  執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &amp;lt;你要的選項&amp;gt;  </description>
+      <description>下載 source code 編輯 ~/.vimrc Plug &amp;#39;Valloric/YouCompleteMe&amp;#39; 接著按下 esc :w | so % 載入設定 接著 :PlugInstall 下載 source code 存檔離開 編譯 執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &amp;lt;你要的選項&amp;gt; </description>
     </item>
     
   </channel>

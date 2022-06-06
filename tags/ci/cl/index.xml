@@ -20,8 +20,8 @@ ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦
 ssh-keygen 首先隨便找個資料夾產生一組 ssh key
 ssh-keygen -f deploy-key GitHub 再來要讓 GitHub 知道你的 ssh key（public/secret 都要）
 public key public key 是要放在你的 &amp;lt;username&amp;gt;.github.io 的 repo 下
- .ggithub.io -&amp;gt; settings -&amp;gt; Deploy keys -&amp;gt; add deploy key
- 新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
+.ggithub.io -&amp;gt; settings -&amp;gt; Deploy keys -&amp;gt; add deploy key
+新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
 把 depoly-key.pub 的內容貼上，記得下面的勾勾（Allow write access ）要選起來
 secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大是放在同一個 repo 不同 branch，我是放在兩個不同 repo，其中放部落格檔案的 repo 我設成 private repo（因為我放了一些 gitalk 要用的 clientSecret，這個不能公開）。</description>
     </item>

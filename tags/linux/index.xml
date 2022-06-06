@@ -21,7 +21,7 @@ SCRCPY 這個軟體支援有線（ USB debug ）、無線（ WIFI ）的連接�
 Installation 安裝流程意外的簡單，只需要用 apt 就可以安裝了，或是你可以自己 build，稍微看了一下 說明 ，看起來不困難，但是既然 apt 就可以安裝了我們就省一點時間
 $ sudo apt install scrcpy USB debug 首先無論是有線無線都要先打開手機的 USB debug 選項，在開發人員選項裡面，詳細步驟請看 官方文件。
 USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面非常簡單，只有兩個步驟：
- 插上 USB 並且無論跳出什麼都按「同意」「OK」 打開終端機，執行 scrcpy 然後就會有一個視窗跳出來，你現在就可以在電腦上滑手機了！  Wireless 無線的話比較麻煩，首先是必須要可以連線，看是在同一個區域網路或是 VPN、ssh tunnel 都可以。再來是因為連線設定頗麻煩，所以我把相關的步驟寫成一個 script，下載後給予執行權限就可以執行了（當然要安裝 scrcpy ）。有線的方式一樣很簡單，不用加任何選項就可以連接了。
+插上 USB 並且無論跳出什麼都按「同意」「OK」 打開終端機，執行 scrcpy 然後就會有一個視窗跳出來，你現在就可以在電腦上滑手機了！ Wireless 無線的話比較麻煩，首先是必須要可以連線，看是在同一個區域網路或是 VPN、ssh tunnel 都可以。再來是因為連線設定頗麻煩，所以我把相關的步驟寫成一個 script，下載後給予執行權限就可以執行了（當然要安裝 scrcpy ）。有線的方式一樣很簡單，不用加任何選項就可以連接了。
 如果要啟用無線，只需要加上 -w 選項（用預設的 ip 192.168.43.1)
 如果 ip 不是預設的話，可以加上 -i IP 來指定其他的 ip
 加上 -f 可以開啟全螢幕
@@ -37,7 +37,7 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
       <description>錯誤說明 昨天我在 terminal 登入 docker 的時候發現不知道為什麼不能登入，我先透過網頁登入確認過密碼沒有問題，也不是打錯字的關係，但還是不能當入。總是會有類似以下的錯誤訊息。
 Error saving credentials: error storing credentials - err: exit status 1, out: `exit status 1: gpg: simbafs: 已跳過: 沒有公鑰 gpg: [stdin]: encryption failed: 沒有公鑰 Password encryption aborted.` 解決方法 經過搜尋之後，我按照 https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388634452 的方法成功登入了，但是在這之前要先安裝 gpg 和 pass
 apt install gnupg2 pass 接下來是我用的指令
-apt install gnupg2 wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz tar xvf docker-credential-pass-v0.6.3-amd64.tar.gz chmod 755 docker-credential-pass sudo mv docker-credential-pass /usr/bin/ ass insert docker-credential-helpers/docker-pass-initialized-check pass insert docker-credential-helpers/docker-pass-initialized-check pass show docker-credential-helpers/docker-pass-initialized-check docker-credential-pass list docker login 參考連結  https://github.</description>
+apt install gnupg2 wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz tar xvf docker-credential-pass-v0.6.3-amd64.tar.gz chmod 755 docker-credential-pass sudo mv docker-credential-pass /usr/bin/ ass insert docker-credential-helpers/docker-pass-initialized-check pass insert docker-credential-helpers/docker-pass-initialized-check pass show docker-credential-helpers/docker-pass-initialized-check docker-credential-pass list docker login 參考連結 https://github.</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ DOCKER_OPTS=&amp;#34;--dns 8.8.8.8&amp;#34; systemctl restart docker 然後重�
       <description>前言 上次提到可以用 Dockerfile 建立 docker image，但我們還有令一個方法可以建立 docker image，那就是 docker commit 指令
 和 Dockerfile 差別 docker commit 有點像是手動版的 Dockerfile，在用 Dockerfile 建構 docker image 的時候，docker build 的工作就像是自動根據 Dockerfile 操作 docker commit。 Dockerfile 比較適合用在自動化交付和部屬，例如說你有一份程式碼，要將他包成 Docker 就很適合用 Dockerfile 自動化操作，因為程式碼會改變，但是包裝的流程基本上都是一樣的。 docker commit 適合用在建構環境，因為會有比較麻煩的操作，如果寫成 Dockerfile 會比較麻煩，當然如果可以的話還是寫成 Dockerfile 會比較好，因為更新的時候會比較方便。 在建構 image 的時候要用哪個方法就看個人取捨了。
 docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images，有點類似令存新檔的概念。先來看看參數吧！
-參數 $ docker commit --help Usage:	docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]  Create a new image from a container&amp;#39;s changes  Options:  -a, --author string Author (e.</description>
+參數 $ docker commit --help Usage:	docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] Create a new image from a container&amp;#39;s changes Options: -a, --author string Author (e.</description>
     </item>
     
     <item>
@@ -69,7 +69,7 @@ docker commit 指令 docker commit 可以把運行中的 comtainer 轉成 images
       
       <guid>https://blog.simba-fs.dev/posts/linux/docker/docker-%E5%9F%BA%E7%A4%8E%E6%8C%87%E4%BB%A4/</guid>
       <description>Install apt install docker docker.io docker-compose What is docker Docker 是一個容器化的技術，基本上使用的時候可以把他當成虛擬機，雖然他們的使用的技術完全不一樣。對新手來說，在 Docker 裡面有四個重要的名詞：dockerfile, docker image, docker container, docker-compose。
- dockerfile
+dockerfile
 純文字檔，定義建立 docker image 的步驟，有點像是一個 bash shell。通常命名成 Dockerfile ，在 build 的時候會預設用這個，也可以用 -f 來指定其他的檔案。 docker image
 這是透過 docker build 編譯出來的東西。可以想成 docker container 的藍圖，在 docker pull 的時候也是下載 docker image 而不是 dockerfile。基本上 image 裡面已經包括了編譯好的執行檔和基本的環境設定，所以在 docker 外面是不用做他設定的，這也是 docker 的魅力所在。 docker container
 每個 docker image 可以產生很多個 container，也就是執行中的程式。在這裡你已經可以用 docker 來建立各種服務了。這裡也可以想像成虛擬機，用 docker exec -it container_name bash 可以進到 container 裡面(如果裡面有 bash 的話) docker-compose</description>

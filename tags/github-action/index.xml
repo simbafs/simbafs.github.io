@@ -20,10 +20,10 @@
 想要建立 Release，你可以在新版本發布時自己手動 crose compile 再手動設定 Release，這個方法可行，但是聽起來全手動就很 low，我們要用一個全自動的方式發 Release！
 Github Actioin 既然我們程式碼都託管在 GitHub 了，直接用 Gtithub Action 是很合理的吧！
 觸發條件 因為我們要做的是發布版本，不是每個 commit 都要觸發，因此觸發條件就設成
-on:  push:  tags:  - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 v0.1.13 這樣的標籤會觸發，也就是你建立新版本時。
+on: push: tags: - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 v0.1.13 這樣的標籤會觸發，也就是你建立新版本時。
 編譯 在嘗試各種套件之後，我覺得 goreleaser-action 是我用起來最舒服的，不用太多設定，就直接都編譯好了（詳細設定可以去 goreleaser 的網站看 )
 在 GitHub Action 中設定就下面幾行，第一個步驟是安裝 go，再來就是編譯了。
-- name: Set up Go  uses: actions/setup-go@v3.0.0  with:  go-version: 1.17.x - name: Run GoReleaser  uses: goreleaser/goreleaser-action@v2.9.1  with:  version: latest  args: release --rm-dist  env:  GITHUB_TOKEN: ${{ secrets.</description>
+- name: Set up Go uses: actions/setup-go@v3.0.0 with: go-version: 1.17.x - name: Run GoReleaser uses: goreleaser/goreleaser-action@v2.9.1 with: version: latest args: release --rm-dist env: GITHUB_TOKEN: ${{ secrets.</description>
     </item>
     
     <item>
@@ -37,8 +37,8 @@ ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦
 ssh-keygen 首先隨便找個資料夾產生一組 ssh key
 ssh-keygen -f deploy-key GitHub 再來要讓 GitHub 知道你的 ssh key（public/secret 都要）
 public key public key 是要放在你的 &amp;lt;username&amp;gt;.github.io 的 repo 下
- .ggithub.io -&amp;gt; settings -&amp;gt; Deploy keys -&amp;gt; add deploy key
- 新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
+.ggithub.io -&amp;gt; settings -&amp;gt; Deploy keys -&amp;gt; add deploy key
+新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
 把 depoly-key.pub 的內容貼上，記得下面的勾勾（Allow write access ）要選起來
 secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大是放在同一個 repo 不同 branch，我是放在兩個不同 repo，其中放部落格檔案的 repo 我設成 private repo（因為我放了一些 gitalk 要用的 clientSecret，這個不能公開）。</description>
     </item>
@@ -50,7 +50,7 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/audo-depoly-by-github-action/</guid>
       <description>自動部屬部落格 參考網址：https://op30132.github.io/2020/02/05/github-action/ 生成公私鑰時不用在部落格根目錄，記的不要加入 git，要刪掉
-name: HEXO CI  on:  push:  branches:  - master  jobs:  build:  runs-on: ubuntu-latest  strategy:  matrix:  node-version: [12.x]   steps:  - uses: actions/checkout@v1   - name: Use Node.js ${{ matrix.node-version }}  uses: actions/setup-node@v1  with:  node-version: ${{ matrix.node-version }}   - name: Configuration environment  env:  HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}  run: |mkdir -p ~/.</description>
+name: HEXO CI on: push: branches: - master jobs: build: runs-on: ubuntu-latest strategy: matrix: node-version: [12.x] steps: - uses: actions/checkout@v1 - name: Use Node.js ${{ matrix.node-version }} uses: actions/setup-node@v1 with: node-version: ${{ matrix.node-version }} - name: Configuration environment env: HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}} run: | mkdir -p ~/.ssh/ echo &amp;#34;$HEXO_DEPLOY_PRI&amp;#34; | tr -d &amp;#39;\r&amp;#39; &amp;gt; ~/.ssh/id_rsa chmod 600 ~/.ssh/id_rsa ssh-keyscan github.com &amp;gt;&amp;gt; ~/.ssh/known_hosts git config --global user.name &amp;#34;simba-fs&amp;#34; git config --global user.</description>
     </item>
     
   </channel>

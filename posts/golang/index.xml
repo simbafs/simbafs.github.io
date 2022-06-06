@@ -20,10 +20,10 @@
 想要建立 Release，你可以在新版本發布時自己手動 crose compile 再手動設定 Release，這個方法可行，但是聽起來全手動就很 low，我們要用一個全自動的方式發 Release！
 Github Actioin 既然我們程式碼都託管在 GitHub 了，直接用 Gtithub Action 是很合理的吧！
 觸發條件 因為我們要做的是發布版本，不是每個 commit 都要觸發，因此觸發條件就設成
-on:  push:  tags:  - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 v0.1.13 這樣的標籤會觸發，也就是你建立新版本時。
+on: push: tags: - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 v0.1.13 這樣的標籤會觸發，也就是你建立新版本時。
 編譯 在嘗試各種套件之後，我覺得 goreleaser-action 是我用起來最舒服的，不用太多設定，就直接都編譯好了（詳細設定可以去 goreleaser 的網站看 )
 在 GitHub Action 中設定就下面幾行，第一個步驟是安裝 go，再來就是編譯了。
-- name: Set up Go  uses: actions/setup-go@v3.0.0  with:  go-version: 1.17.x - name: Run GoReleaser  uses: goreleaser/goreleaser-action@v2.9.1  with:  version: latest  args: release --rm-dist  env:  GITHUB_TOKEN: ${{ secrets.</description>
+- name: Set up Go uses: actions/setup-go@v3.0.0 with: go-version: 1.17.x - name: Run GoReleaser uses: goreleaser/goreleaser-action@v2.9.1 with: version: latest args: release --rm-dist env: GITHUB_TOKEN: ${{ secrets.</description>
     </item>
     
     <item>
@@ -34,8 +34,8 @@ on:  push:  tags:  - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像�
       <guid>https://blog.simba-fs.dev/posts/golang/plguin/</guid>
       <description>Go 動態載入程式 Go 是一個編譯式的語言，也就是說他不像 JS 那樣可以動態執行程式碼。像是 Hexo 和 Hugo，前者因為是 JS 寫的，因此支援非常豐富的外掛，但後者因為是 Go 寫的，因此在不使用其他直譯式程式語言的情況下，很難製作外掛。
 另一個 Go 寫的軟體 ponzu 則是在加入一段程式碼後，重新編譯自己。這麼做解決了外掛的問題，而且又不會失去 Go 的快速，但是就必須保留整個主程式的原始碼，而且也不那麼的「動態」
- ponzu 這個軟體兩年沒人維護了，很多東西都怪怪的，超級難編譯
- Plugin in Go 在 1.8 版的時候，Go 推出了 Plguin 套件，可以將外掛和主程式分開編譯，如果外掛有更動，不需要重新編譯主程式；主程式也可以動態載入外掛。
+ponzu 這個軟體兩年沒人維護了，很多東西都怪怪的，超級難編譯
+Plugin in Go 在 1.8 版的時候，Go 推出了 Plguin 套件，可以將外掛和主程式分開編譯，如果外掛有更動，不需要重新編譯主程式；主程式也可以動態載入外掛。
 外掛 如果要將一個 package 編譯成外掛，首先他的 package 必須是 main，但是裡面的函式 main、init 都不會被執行，只有大寫開頭的變數、型態、函式會被暴露給主程式。
 編譯外掛時，需要加上 -buildmode=plguin，這樣 go build 就會將原始碼編譯成 .so（share object）檔，這樣就可以被主程式呼叫。
 主程式 主程式要載入外掛前，需要引用 plugin 套件
@@ -49,7 +49,7 @@ import &amp;#34;plugin&amp;#34; 用 func Open(path string) (*Plugin, error) 可�
       <pubDate>Tue, 19 Oct 2021 00:06:19 +0800</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/golang/exec-cmd/</guid>
-      <description>Golang 執行外部命令 package main  import ( 	&amp;#34;fmt&amp;#34; 	&amp;#34;os/exec&amp;#34; )  func checkErr(err error) { 	if err != nil { 	panic(err) 	} }  func main() { 	pw := exec.Command(&amp;#34;wc&amp;#34;)  	stdin, err := pw.StdinPipe() 	checkErr(err)  	fmt.Fprintln(stdin, &amp;#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&amp;#34;)  	output, err := pw.Output() 	checkErr(err)  	fmt.Println(string(output)) } </description>
+      <description>Golang 執行外部命令 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;os/exec&amp;#34; ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command(&amp;#34;wc&amp;#34;) stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, &amp;#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&amp;#34;) output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } </description>
     </item>
     
     <item>
@@ -61,8 +61,8 @@ import &amp;#34;plugin&amp;#34; 用 func Open(path string) (*Plugin, error) 可�
       <description>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
 而且設定檔還可以有不只一個，他可以把多個設定檔合成，相當方便
 基本使用 定義 struct 首先我們需要一個 struct 來定義我們的設定
-type Config struct { 	Addr string `default:&amp;#34;:3000&amp;#34;` 	Title string `default:&amp;#34;Aconf Testing&amp;#34;` 	SysAdmin []string `default:&amp;#34;simba-fs,peter&amp;#34;` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
-loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ 	// 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 	// SkipDefaults: false, 	// SkipFiles: false, 	// SkipEnv: false, 	// SkipFlags: false, 	EnvPrefix: &amp;#34;APP&amp;#34;, 	FlagPrefix: &amp;#34;app&amp;#34;, 	Files: []string{&amp;#34;~/.config/app.toml&amp;#34;, &amp;#34;app.toml&amp;#34;}, 	FileDecoders: map[string]aconfig.FileDecoder{ 	&amp;#34;.toml&amp;#34;: aconfigtoml.New(), 	}, })  if err := loader.</description>
+type Config struct { Addr string `default:&amp;#34;:3000&amp;#34;` Title string `default:&amp;#34;Aconf Testing&amp;#34;` SysAdmin []string `default:&amp;#34;simba-fs,peter&amp;#34;` } 載入設定 再來，我們可以設定要從哪些來源載入設定值
+loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ // 這四個預設都是關閉的，如果你想關閉任何一個隨時都可以關閉他 // SkipDefaults: false, // SkipFiles: false, // SkipEnv: false, // SkipFlags: false, EnvPrefix: &amp;#34;APP&amp;#34;, FlagPrefix: &amp;#34;app&amp;#34;, Files: []string{&amp;#34;~/.config/app.toml&amp;#34;, &amp;#34;app.toml&amp;#34;}, FileDecoders: map[string]aconfig.FileDecoder{ &amp;#34;.toml&amp;#34;: aconfigtoml.New(), }, }) if err := loader.Load(); err != nil { panic(err) } 這樣你就可以用檔案、環境變數和命令列參數設定了。</description>
     </item>
     
     <item>
@@ -72,9 +72,11 @@ loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ 	// 這四個預設
       
       <guid>https://blog.simba-fs.dev/posts/golang/golang-parse-all-files-in-directory-into-templates/</guid>
       <description>在用 gin 寫伺服器的時候，我發現模板並不會被 go build 打包進執行檔裡面，所以在執行的時候就找不到檔案，當然這個問題可以用字串的形式直接把模板放進 golang 原始碼裡面，但是這樣程式碼一複雜就會不好用，這時候就可以用 golang 的 embed 函式庫把檔案「嵌入」到原始碼裡面。但是問題又來了，嵌入了之後要怎麼把字串變成模板物件呢？
-Embed  embed 套件是 1.16 新出的功能，所以如果想用的話記得要更新 go 到 1.16 以上
- embed 嵌入檔案的方式是透過特殊格式的註解宣告，直接看官方範例：
-package main  import ( 	&amp;#34;embed&amp;#34; )  //go:embed hello.txt var s string  //go:embed hello.txt var b []byte  //go:embed hello.txt var f embed.FS  func main() { 	print(s) 	print(string(b)) 	data, _ := f.ReadFile(&amp;#34;hello.txt&amp;#34;) 	print(string(data)) } 可以看到，embed 可以把檔案讀成三種格式 string、[]byte、embed.FS，前兩者只能讀「一個」檔案，如果你只用這兩個的話引入時要用 _ &amp;quot;embed&amp;quot;。embed.</description>
+Embed embed 套件是 1.16 新出的功能，所以如果想用的話記得要更新 go 到 1.16 以上
+embed 嵌入檔案的方式是透過特殊格式的註解宣告，直接看官方範例：
+package main import ( &amp;#34;embed&amp;#34; ) //go:embed hello.txt var s string //go:embed hello.txt var b []byte //go:embed hello.txt var f embed.FS func main() { print(s) print(string(b)) data, _ := f.ReadFile(&amp;#34;hello.txt&amp;#34;) print(string(data)) } 可以看到，embed 可以把檔案讀成三種格式 string、[]byte、embed.FS，前兩者只能讀「一個」檔案，如果你只用這兩個的話引入時要用 _ &amp;quot;embed&amp;quot;。embed.FS 除了可以嵌入多個檔案之外，因為實做了 fs.FS 所以可以使用當作一個檔案系統操作。
+Tmeplate No Recursive 最簡單的方法，你可以直接使用
+// go:embed view/* var f embed.</description>
     </item>
     
   </channel>

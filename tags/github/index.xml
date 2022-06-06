@@ -20,10 +20,10 @@
 想要建立 Release，你可以在新版本發布時自己手動 crose compile 再手動設定 Release，這個方法可行，但是聽起來全手動就很 low，我們要用一個全自動的方式發 Release！
 Github Actioin 既然我們程式碼都託管在 GitHub 了，直接用 Gtithub Action 是很合理的吧！
 觸發條件 因為我們要做的是發布版本，不是每個 commit 都要觸發，因此觸發條件就設成
-on:  push:  tags:  - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 v0.1.13 這樣的標籤會觸發，也就是你建立新版本時。
+on: push: tags: - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 v0.1.13 這樣的標籤會觸發，也就是你建立新版本時。
 編譯 在嘗試各種套件之後，我覺得 goreleaser-action 是我用起來最舒服的，不用太多設定，就直接都編譯好了（詳細設定可以去 goreleaser 的網站看 )
 在 GitHub Action 中設定就下面幾行，第一個步驟是安裝 go，再來就是編譯了。
-- name: Set up Go  uses: actions/setup-go@v3.0.0  with:  go-version: 1.17.x - name: Run GoReleaser  uses: goreleaser/goreleaser-action@v2.9.1  with:  version: latest  args: release --rm-dist  env:  GITHUB_TOKEN: ${{ secrets.</description>
+- name: Set up Go uses: actions/setup-go@v3.0.0 with: go-version: 1.17.x - name: Run GoReleaser uses: goreleaser/goreleaser-action@v2.9.1 with: version: latest args: release --rm-dist env: GITHUB_TOKEN: ${{ secrets.</description>
     </item>
     
     <item>
@@ -37,8 +37,8 @@ ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦
 ssh-keygen 首先隨便找個資料夾產生一組 ssh key
 ssh-keygen -f deploy-key GitHub 再來要讓 GitHub 知道你的 ssh key（public/secret 都要）
 public key public key 是要放在你的 &amp;lt;username&amp;gt;.github.io 的 repo 下
- .ggithub.io -&amp;gt; settings -&amp;gt; Deploy keys -&amp;gt; add deploy key
- 新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
+.ggithub.io -&amp;gt; settings -&amp;gt; Deploy keys -&amp;gt; add deploy key
+新增一個 ssh key，名字叫 DEPLOY_KEY_PUB
 把 depoly-key.pub 的內容貼上，記得下面的勾勾（Allow write access ）要選起來
 secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大是放在同一個 repo 不同 branch，我是放在兩個不同 repo，其中放部落格檔案的 repo 我設成 private repo（因為我放了一些 gitalk 要用的 clientSecret，這個不能公開）。</description>
     </item>
@@ -49,7 +49,7 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/gitalk/</guid>
-      <description>啟用 gitalk 留言  到這個網址填資料 加入下面的片段到_config.yml  disqus: enabled: false gitalk: enabled: true owner: &amp;lt;username&amp;gt; repo: &amp;lt;username&amp;gt;.github.io admin: [&amp;#39;&amp;lt;username&amp;gt;&amp;#39;] clientID: &amp;lt;clientID&amp;gt; clientSecret: &amp;lt;clientSecret&amp;gt; 加入下面的片段到themes/cactus/layout/_partial/comments.ejs  &amp;lt;% if(page.comments &amp;amp;&amp;amp; theme.gitalk.enabled){ %&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;gitalk-container&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; var gitalk = new Gitalk({ clientID: &amp;#39;&amp;lt;%= theme.gitalk.clientID %&amp;gt;&amp;#39;, clientSecret: &amp;#39;&amp;lt;%= theme.gitalk.clientSecret %&amp;gt;&amp;#39;, id: md5(window.location.pathname), repo: &amp;#39;&amp;lt;%= theme.gitalk.repo %&amp;gt;&amp;#39;, owner: &amp;#39;&amp;lt;%= theme.gitalk.owner %&amp;gt;&amp;#39;, admin: &amp;#39;&amp;lt;%= theme.gitalk.admin %&amp;gt;&amp;#39;, distractionFreeMode: &amp;#39;&amp;lt;%= theme.</description>
+      <description>啟用 gitalk 留言 到這個網址填資料 加入下面的片段到_config.yml disqus: enabled: false gitalk: enabled: true owner: &amp;lt;username&amp;gt; repo: &amp;lt;username&amp;gt;.github.io admin: [&amp;#39;&amp;lt;username&amp;gt;&amp;#39;] clientID: &amp;lt;clientID&amp;gt; clientSecret: &amp;lt;clientSecret&amp;gt; 加入下面的片段到themes/cactus/layout/_partial/comments.ejs &amp;lt;% if(page.comments &amp;amp;&amp;amp; theme.gitalk.enabled){ %&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;gitalk-container&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; var gitalk = new Gitalk({ clientID: &amp;#39;&amp;lt;%= theme.gitalk.clientID %&amp;gt;&amp;#39;, clientSecret: &amp;#39;&amp;lt;%= theme.gitalk.clientSecret %&amp;gt;&amp;#39;, id: md5(window.location.pathname), repo: &amp;#39;&amp;lt;%= theme.gitalk.repo %&amp;gt;&amp;#39;, owner: &amp;#39;&amp;lt;%= theme.gitalk.owner %&amp;gt;&amp;#39;, admin: &amp;#39;&amp;lt;%= theme.gitalk.admin %&amp;gt;&amp;#39;, distractionFreeMode: &amp;#39;&amp;lt;%= theme.gitalk.on %&amp;gt;&amp;#39; }) gitalk.</description>
     </item>
     
   </channel>

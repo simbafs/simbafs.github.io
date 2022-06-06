@@ -17,9 +17,10 @@
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/react/react-update-state-on-props-change/</guid>
       <description>問題 今天在研究 React 遇到一個問題 當我從外面更新 props 的時候 component 內的 state 不會更新
-function Input(props){ 	const [text, setText] = React.useState(props.text);  	return ( 	&amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; 	) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
+function Input(props){ const [text, setText] = React.useState(props.text); return ( &amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; ) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
 解法 後來找到解法，加上一個 useEffect 監聽 props.text 然後更新 state 就好了
-function Input(props){ 	const [text, setText] = React.useState(props.text); 	React.useEffect(() =&amp;gt; { 	setText(props.text); 	}, [props.text]); 	return ( 	&amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; 	) } 如此一來 state 就會和 props 同步了</description>
+function Input(props){ const [text, setText] = React.useState(props.text); React.useEffect(() =&amp;gt; { setText(props.text); }, [props.text]); return ( &amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; ) } 如此一來 state 就會和 props 同步了
+參考資料 https://stackoverflow.com/questions/54865764/react-usestate-does-not-reload-state-from-props https://zh-hant.reactjs.org/docs/hooks-effect.html</description>
     </item>
     
     <item>
@@ -30,7 +31,7 @@ function Input(props){ 	const [text, setText] = React.useState(props.text); 	Rea
       <guid>https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/</guid>
       <description>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
 Cannot use JSX unless the &amp;#39;--jsx&amp;#39; flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
-{  &amp;#34;compilerOptions&amp;#34;: {  &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;,  &amp;#34;checkJs&amp;#34;: true + }, + &amp;#34;compilerOptions&amp;#34;: { + &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;  } } </description>
+{ &amp;#34;compilerOptions&amp;#34;: { &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;checkJs&amp;#34;: true + }, + &amp;#34;compilerOptions&amp;#34;: { + &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34; } } </description>
     </item>
     
   </channel>

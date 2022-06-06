@@ -19,11 +19,11 @@
       <description>感謝廖煥杰 liaojason2 賣我一個 1200，撿到寶啦！我買的是 Yubikey 5C NFC，看起來幾乎所有功能都有
 login 如果開啟這個，登入、解除鎖定等等動作都需要 Yubikey，聽起還很安全，但是因為我的筆電只有一個 type C，所以必須把 USB hub 拔掉，挺麻煩，我就把他關掉了。
 在密碼輸入框的地方，先插入 yubikey，輸入密碼、按 enter，然後轉圈圈的時候按 yubikey 上金色按鈕（這個似乎是指紋辨識），就可以登入了。
- Yubico Yubikey 5C NFC setup on Ubuntu 21.04
- ssh gpg 研究中&amp;hellip;
- 如何在 Mac 上，把 YubiKey 與 GPG、SSH 搭配在一起 OpenPGP SSH access with Yubikey and GnuPG
- 2FA 按照各個網站的說明設定，下面是我找到可以設定 Yubikey 的網站/APP
- Google（我買這個 yubikey 最主要目的） Github twitter facebook heroku  twitter 在手機登入好像怪怪的，試了 5 分鐘才成功登入了</description>
+Yubico Yubikey 5C NFC setup on Ubuntu 21.04
+ssh gpg 研究中&amp;hellip;
+如何在 Mac 上，把 YubiKey 與 GPG、SSH 搭配在一起 OpenPGP SSH access with Yubikey and GnuPG
+2FA 按照各個網站的說明設定，下面是我找到可以設定 Yubikey 的網站/APP
+Google（我買這個 yubikey 最主要目的） Github twitter facebook heroku twitter 在手機登入好像怪怪的，試了 5 分鐘才成功登入了</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ login 如果開啟這個，登入、解除鎖定等等動作都需要 Yubikey，
 系統 我用的系統是 Ubuntu 21.04，如果你的系統不一樣，可能會有某些步驟不太一樣。
 這次安裝因為涉及 Linux Kernel 所以隨時重開機有很大機會幫助改善遇到的問題
 安裝 Linux Kernal Modules 如果你的 Linux kernale &amp;gt; 5.0，那理論上已經包在 Kernel 裡面了，所以不用安裝
- Starting with Ubuntu 19.04 binder and ashmem are now build with the standard Ubuntu kernel (&amp;gt;= 5.0) and you don’t have to install the modules from the PPA anymore.</description>
+Starting with Ubuntu 19.04 binder and ashmem are now build with the standard Ubuntu kernel (&amp;gt;= 5.0) and you don’t have to install the modules from the PPA anymore.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ login 如果開啟這個，登入、解除鎖定等等動作都需要 Yubikey，
       
       <guid>https://blog.simba-fs.dev/posts/linux/kdeconnect/</guid>
       <description>kdeconnect 顧名思義是 kde 出的一款 connect 軟體，功能非常多而且方便。電腦和手機都安裝好軟體後，只要在同一個網域就可以配對連接
-功能介紹  基本訊息 - 在電腦和手機上可以互相看到電池、網路等基本訊息 通知 - 可以設定電腦顯示手機通知或手機顯示電腦通知，或是兩者都開啟，我通常只開前者 媒體控制 - 無論是 VLC、YouTube、Nefflix 或任何網頁，都可以控制進度、音量、暫停，而且雙方都可以控制。這個是我最愛的功能之一 命令控制 - kdeconnect 可以讓你在手機上執行電腦上預先設定好的指令，像是關機、鎖定等等，下面會推薦幾個我設定的命令 傳檔案和資料夾共用 - kdeconnect 可以讓你連接電腦和手機上特定的資料夾，或是傳送單一檔案 共用剪貼簿 - 如其名，這是一個非常實用的功能，但是有時候觸發條件怪怪的 輸入 - 不論是滑鼠、鍵盤，兩邊都可以互相當對方的輸入裝置，這個功能非常好用 還有像是讓手機大叫（找手機用）、簡報控制、傳簡訊、手機有電話的時候自動暫停音樂等等奇奇怪怪的功能  推薦命令    Description Command     鎖定螢幕並暫停 VLC 播放 loginctl lock-session; dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause   解除鎖定螢幕（免密碼） loginctl unlock-session    </description>
+功能介紹 基本訊息 - 在電腦和手機上可以互相看到電池、網路等基本訊息 通知 - 可以設定電腦顯示手機通知或手機顯示電腦通知，或是兩者都開啟，我通常只開前者 媒體控制 - 無論是 VLC、YouTube、Nefflix 或任何網頁，都可以控制進度、音量、暫停，而且雙方都可以控制。這個是我最愛的功能之一 命令控制 - kdeconnect 可以讓你在手機上執行電腦上預先設定好的指令，像是關機、鎖定等等，下面會推薦幾個我設定的命令 傳檔案和資料夾共用 - kdeconnect 可以讓你連接電腦和手機上特定的資料夾，或是傳送單一檔案 共用剪貼簿 - 如其名，這是一個非常實用的功能，但是有時候觸發條件怪怪的 輸入 - 不論是滑鼠、鍵盤，兩邊都可以互相當對方的輸入裝置，這個功能非常好用 還有像是讓手機大叫（找手機用）、簡報控制、傳簡訊、手機有電話的時候自動暫停音樂等等奇奇怪怪的功能 推薦命令 Description Command 鎖定螢幕並暫停 VLC 播放 loginctl lock-session; dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause 解除鎖定螢幕（免密碼） loginctl unlock-session </description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@ SCRCPY 這個軟體支援有線（ USB debug ）、無線（ WIFI ）的連接�
 Installation 安裝流程意外的簡單，只需要用 apt 就可以安裝了，或是你可以自己 build，稍微看了一下 說明 ，看起來不困難，但是既然 apt 就可以安裝了我們就省一點時間
 $ sudo apt install scrcpy USB debug 首先無論是有線無線都要先打開手機的 USB debug 選項，在開發人員選項裡面，詳細步驟請看 官方文件。
 USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面非常簡單，只有兩個步驟：
- 插上 USB 並且無論跳出什麼都按「同意」「OK」 打開終端機，執行 scrcpy 然後就會有一個視窗跳出來，你現在就可以在電腦上滑手機了！  Wireless 無線的話比較麻煩，首先是必須要可以連線，看是在同一個區域網路或是 VPN、ssh tunnel 都可以。再來是因為連線設定頗麻煩，所以我把相關的步驟寫成一個 script，下載後給予執行權限就可以執行了（當然要安裝 scrcpy ）。有線的方式一樣很簡單，不用加任何選項就可以連接了。
+插上 USB 並且無論跳出什麼都按「同意」「OK」 打開終端機，執行 scrcpy 然後就會有一個視窗跳出來，你現在就可以在電腦上滑手機了！ Wireless 無線的話比較麻煩，首先是必須要可以連線，看是在同一個區域網路或是 VPN、ssh tunnel 都可以。再來是因為連線設定頗麻煩，所以我把相關的步驟寫成一個 script，下載後給予執行權限就可以執行了（當然要安裝 scrcpy ）。有線的方式一樣很簡單，不用加任何選項就可以連接了。
 如果要啟用無線，只需要加上 -w 選項（用預設的 ip 192.168.43.1)
 如果 ip 不是預設的話，可以加上 -i IP 來指定其他的 ip
 加上 -f 可以開啟全螢幕
@@ -126,11 +126,11 @@ $ chmod 660 /dev/hidraw2 拔下滑鼠接收器，插上。
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/linux/libreoffice-code-format-plugin-install/</guid>
-      <description>安裝  去 https://extensions.libreoffice.org/en/extensions/show/code-highlighter 下載最新的外掛 把檔名前面的前綴刪掉，   例如：ea4db15f_codehighlighter.oxt -&amp;gt; codehighlighter.oxt
- 安裝相依性套件  sudo apt install libreoffice-script-provider-python python3-pip sudo pip3 install pygments 安裝外掛   工具 &amp;gt; 擴充套件管理員 &amp;gt; 加入 &amp;gt; 選擇你的檔案
- 使用  插入文字方塊   插入 &amp;gt; 文字方塊
- 貼上程式碼 選擇文字方塊，不是文字（按文字方塊的邊邊） format   工具 &amp;gt; highlight code &amp;gt; 選得語言、style
- 參考資料 Libreoffice extensions issue</description>
+      <description>安裝 去 https://extensions.libreoffice.org/en/extensions/show/code-highlighter 下載最新的外掛 把檔名前面的前綴刪掉， 例如：ea4db15f_codehighlighter.oxt -&amp;gt; codehighlighter.oxt
+安裝相依性套件 sudo apt install libreoffice-script-provider-python python3-pip sudo pip3 install pygments 安裝外掛 工具 &amp;gt; 擴充套件管理員 &amp;gt; 加入 &amp;gt; 選擇你的檔案
+使用 插入文字方塊 插入 &amp;gt; 文字方塊
+貼上程式碼 選擇文字方塊，不是文字（按文字方塊的邊邊） format 工具 &amp;gt; highlight code &amp;gt; 選得語言、style
+參考資料 Libreoffice extensions issue</description>
     </item>
     
     <item>

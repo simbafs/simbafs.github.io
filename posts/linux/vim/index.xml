@@ -18,7 +18,7 @@
       <guid>https://blog.simba-fs.dev/posts/linux/vim/modeline/</guid>
       <description>modeline 是一個可以將 vim 設定嵌入檔案的方式，這樣就可以讓某些檔案有自己的設定，像是折疊、不要行數、tab 等於多少空白等等。
 簡單的條件 簡單的 modeline 需要滿足幾個條件：
- 開頭（不必是行首）至少有一個空白/tab 用 vim、vi 等字開頭，這裡還可以設定哪個版本才要載入  基本的範例  vim: wrap 參考資料 https://stackoverflow.com/questions/3958416/embed-vim-settings-in-file
+開頭（不必是行首）至少有一個空白/tab 用 vim、vi 等字開頭，這裡還可以設定哪個版本才要載入 基本的範例 vim: wrap 參考資料 https://stackoverflow.com/questions/3958416/embed-vim-settings-in-file
 help page in :help modeline</description>
     </item>
     
@@ -28,7 +28,7 @@ help page in :help modeline</description>
       <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/linux/vim/youcomopleteme-install/</guid>
-      <description>下載 source code  編輯 ~/.vimrc  Plug &amp;#39;Valloric/YouCompleteMe&amp;#39;接著按下 esc:w | so %載入設定 接著 :PlugInstall下載 source code 存檔離開  編譯  執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &amp;lt;你要的選項&amp;gt;  </description>
+      <description>下載 source code 編輯 ~/.vimrc Plug &amp;#39;Valloric/YouCompleteMe&amp;#39; 接著按下 esc :w | so % 載入設定 接著 :PlugInstall 下載 source code 存檔離開 編譯 執行 sudo apt install python3-dev build-essential 進入 ~/.vim/plugged/YouCompleteMe 執行 ./install.py --help 並挑選需要的選項 執行 ./install.py &amp;lt;你要的選項&amp;gt; </description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@ cA 跳到行尾並在行尾加上註解</description>
       <guid>https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/</guid>
       <description>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
 Cannot use JSX unless the &amp;#39;--jsx&amp;#39; flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
-{  &amp;#34;compilerOptions&amp;#34;: {  &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;,  &amp;#34;checkJs&amp;#34;: true + }, + &amp;#34;compilerOptions&amp;#34;: { + &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;  } } </description>
+{ &amp;#34;compilerOptions&amp;#34;: { &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;checkJs&amp;#34;: true + }, + &amp;#34;compilerOptions&amp;#34;: { + &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34; } } </description>
     </item>
     
   </channel>

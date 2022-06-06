@@ -16,11 +16,11 @@
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simba-fs.dev/posts/linux/libreoffice-code-format-plugin-install/</guid>
-      <description>安裝  去 https://extensions.libreoffice.org/en/extensions/show/code-highlighter 下載最新的外掛 把檔名前面的前綴刪掉，   例如：ea4db15f_codehighlighter.oxt -&amp;gt; codehighlighter.oxt
- 安裝相依性套件  sudo apt install libreoffice-script-provider-python python3-pip sudo pip3 install pygments 安裝外掛   工具 &amp;gt; 擴充套件管理員 &amp;gt; 加入 &amp;gt; 選擇你的檔案
- 使用  插入文字方塊   插入 &amp;gt; 文字方塊
- 貼上程式碼 選擇文字方塊，不是文字（按文字方塊的邊邊） format   工具 &amp;gt; highlight code &amp;gt; 選得語言、style
- 參考資料 Libreoffice extensions issue</description>
+      <description>安裝 去 https://extensions.libreoffice.org/en/extensions/show/code-highlighter 下載最新的外掛 把檔名前面的前綴刪掉， 例如：ea4db15f_codehighlighter.oxt -&amp;gt; codehighlighter.oxt
+安裝相依性套件 sudo apt install libreoffice-script-provider-python python3-pip sudo pip3 install pygments 安裝外掛 工具 &amp;gt; 擴充套件管理員 &amp;gt; 加入 &amp;gt; 選擇你的檔案
+使用 插入文字方塊 插入 &amp;gt; 文字方塊
+貼上程式碼 選擇文字方塊，不是文字（按文字方塊的邊邊） format 工具 &amp;gt; highlight code &amp;gt; 選得語言、style
+參考資料 Libreoffice extensions issue</description>
     </item>
     
   </channel>

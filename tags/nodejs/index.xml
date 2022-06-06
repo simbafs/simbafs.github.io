@@ -18,13 +18,13 @@
       <guid>https://blog.simba-fs.dev/posts/nodejs/strapi-quick-start/</guid>
       <description>strapi 是一個 headless CMS (content management system)，透過 web 介面就可以建立一個 api server
 strapi 什麼是 headless CMS headless CMS 顧名思義是「無頭的 內容管理系統」，意思是沒有前端、只有後端，它就是一個 DB 的 web 界面 + api server。headless CMS 專注於處理 api 的部份，前端的部份一律不關心。這對於前後端分離有很大的幫助，基本上 headless CMS 已經解決了後端 80% 的工作，剩下的就是一些客製化的邏輯，像是登入、特殊的計算等等。
-strapi 的優點  他的界面完善 支援多種 DB   MySQL &amp;gt;= 5.6
+strapi 的優點 他的界面完善 支援多種 DB MySQL &amp;gt;= 5.6
 MariaDB &amp;gt;= 10.1
 PostgreSQL &amp;gt;= 10
 SQLite &amp;gt;= 3
 MongoDB &amp;gt;= 3.6
- 存取權限控制 外掛  quickstart 以下步驟是補充 官網的 quick start
- 安裝
+存取權限控制 外掛 quickstart 以下步驟是補充 官網的 quick start
+安裝
 $ npx create-strapi-app my-project --quickstart; cd my-project</description>
     </item>
     
@@ -37,10 +37,11 @@ $ npx create-strapi-app my-project --quickstart; cd my-project</description>
       <description>node.js VM 模組 VM 是 node.js 的核心模組，提供安全的環境 (沙箱) 來測試不信任的程式碼。
 基本概念 在 VM 模組裡面，有兩個基本的物件，script 和 context。script 是經過「編譯」程式，context 是給在沙箱裡面的程式碼的全域物件 (global) 。沙箱中的程式只能存取透過 context 指定的物件。
 建立 script VM 模組提供 Script 建構子，可以透過他來建立 Script 物件。
-const vm = require(&amp;#39;vm&amp;#39;);  const script = new vm.Script(&amp;#39;i++&amp;#39;); 也可以用 vm.createScript
-const vm = require(&amp;#39;vm&amp;#39;);  const script = vm.createScript(&amp;#39;i++&amp;#39;);  vm.Script
+const vm = require(&amp;#39;vm&amp;#39;); const script = new vm.Script(&amp;#39;i++&amp;#39;); 也可以用 vm.createScript
+const vm = require(&amp;#39;vm&amp;#39;); const script = vm.createScript(&amp;#39;i++&amp;#39;); vm.Script
 vm.createScript 在 nodejs docs 上我沒有找到，但是我在自己的電腦上 (node v14.15.0) 測試是可以用的
- 建立 context vm 模組沒有提供建立 context 的建構子，我們只能透過 vm.createContext 來建立 context。</description>
+建立 context vm 模組沒有提供建立 context 的建構子，我們只能透過 vm.createContext 來建立 context。
+注意 vm.createContext 不是 pure function，除了會回傳 context 以外，還會把傳入的物件變成 context，兩者傳入 vm.</description>
     </item>
     
     <item>
@@ -53,7 +54,7 @@ vm.createScript 在 nodejs docs 上我沒有找到，但是我在自己的電腦
 . ├── index.js ├── lib │ └── random.js └── routes └── page └── signup └── index.js 在 index.js 裡面如果要引入 random.js 就會變成這樣
 const random = require(&amp;#39;../../lib/random.js&amp;#39;); 爛解法 如果我們想要直接用 require(&#39;lib/random&#39;) 的話做簡單的方式是上傳 npm，但是這樣稍嫌麻煩，而且別的專案不一定用的到。每一次修改都要上傳 npm 很不方便。
 好解法 在 linux 裡面要把執行檔做成指令有兩個方法
- 放到 /usr/bin 之類的地方 把這個路徑直接加到 PATH 裡面  在 node 裡面也有 path 設定，module.paths，在 require 時會去這個裡面的目路尋找檔案。所以如果要達成上述的功能的話就只要加這行就可以了
+放到 /usr/bin 之類的地方 把這個路徑直接加到 PATH 裡面 在 node 裡面也有 path 設定，module.paths，在 require 時會去這個裡面的目路尋找檔案。所以如果要達成上述的功能的話就只要加這行就可以了
 module.paths.push(process.cwd()); 這樣就可以直接用 require(&#39;lib/random&#39;) 引入了
 參考資料 https://github.com/nodejs/node/issues/4223
 https://github.com/nodejs/node/issues/1979

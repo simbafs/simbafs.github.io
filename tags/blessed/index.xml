@@ -28,7 +28,7 @@
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/blessed/blessed%E5%88%87%E6%8F%9B%E7%95%AB%E9%9D%A2/</guid>
       <description>今天完成了新版本的 treetify 看這 同時我設計好了右邊的 edit 但是我的問題是他要根據情況不同切換不同的頁面 來看看我的一些想法：
- 從 screen.children[2] 把他會掉，可是會出錯不行 有一個元件 Carousel 好像可以但是他其實是用方向鍵控制所以也不行 終於我想了一個方法，接下來來介紹 這是測試程式碼  const blessed = require(&amp;#39;blessed&amp;#39;); const contrib = require(&amp;#39;blessed-contrib&amp;#39;);  const screen = blessed.screen({  title: &amp;#39;JSON viewer&amp;#39;,  debug: true }); const grid = new contrib.grid({  rows: 1,  cols: 2,  screen: screen });  const tree = grid.set(0, 0, 1, 1, blessed.box, {  border: {type: &amp;#39;line&amp;#39;},  content: &amp;#39;Tree&amp;#39;,  label: &amp;#39;Tree&amp;#39; });  const edit = grid.</description>
+從 screen.children[2] 把他會掉，可是會出錯不行 有一個元件 Carousel 好像可以但是他其實是用方向鍵控制所以也不行 終於我想了一個方法，接下來來介紹 這是測試程式碼 const blessed = require(&amp;#39;blessed&amp;#39;); const contrib = require(&amp;#39;blessed-contrib&amp;#39;); const screen = blessed.screen({ title: &amp;#39;JSON viewer&amp;#39;, debug: true }); const grid = new contrib.grid({ rows: 1, cols: 2, screen: screen }); const tree = grid.set(0, 0, 1, 1, blessed.box, { border: {type: &amp;#39;line&amp;#39;}, content: &amp;#39;Tree&amp;#39;, label: &amp;#39;Tree&amp;#39; }); const edit = grid.set(0, 1, 1, 1, blessed.box, { border: {type: &amp;#39;line&amp;#39;}, content: &amp;#39;Edit&amp;#39;, label: &amp;#39;Edit&amp;#39; }); const box2 = blessed.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@
       <guid>https://blog.simba-fs.dev/posts/nodejs/blessed/blessed-contrib-tree/</guid>
       <description>Tree 想說先想一個專案來練練手 熟悉一下 blessed 突然看到 blessed-contrib 裡有個元件叫 tree 想說可以做成 JSON viewer 於是就開工了！
 其中最重要的部份就是搞定樹狀結構 因為他有特定的格式和選項 下面是官方的範例
-範例 {  extended: true,  children: {  &amp;#39;Fruit&amp;#39;: {  children: {  &amp;#39;Banana&amp;#39;: {},  &amp;#39;Apple&amp;#39;: {},  &amp;#39;Cherry&amp;#39;: {},  &amp;#39;Exotics&amp;#39;: {  children: {  &amp;#39;Mango&amp;#39;: {},  &amp;#39;Papaya&amp;#39;: {},  &amp;#39;Kiwi&amp;#39;: {  name: &amp;#39;Kiwi(notthebird!)&amp;#39;,  myCustomProperty: &amp;#34;hairyfruit&amp;#34;  }  }  },  &amp;#39;Pear&amp;#39;: {}  }  },  &amp;#39;Vegetables&amp;#39;: {  children: {  &amp;#39;Peas&amp;#39;: {},  &amp;#39;Lettuce&amp;#39;: {},  &amp;#39;Pepper&amp;#39;: {}  }  }  } } 每個節點都是物件 他的子節點存在 children 裡 如果是空物件代表這是葉節點 extended 屬性是是否展開，預設 true name 是顯示出來的字，如果要改再設，預設是 index myCustomProperty 直翻是自訂屬性，應該是當 tree.</description>
+範例 { extended: true, children: { &amp;#39;Fruit&amp;#39;: { children: { &amp;#39;Banana&amp;#39;: {}, &amp;#39;Apple&amp;#39;: {}, &amp;#39;Cherry&amp;#39;: {}, &amp;#39;Exotics&amp;#39;: { children: { &amp;#39;Mango&amp;#39;: {}, &amp;#39;Papaya&amp;#39;: {}, &amp;#39;Kiwi&amp;#39;: { name: &amp;#39;Kiwi(notthebird!)&amp;#39;, myCustomProperty: &amp;#34;hairyfruit&amp;#34; } } }, &amp;#39;Pear&amp;#39;: {} } }, &amp;#39;Vegetables&amp;#39;: { children: { &amp;#39;Peas&amp;#39;: {}, &amp;#39;Lettuce&amp;#39;: {}, &amp;#39;Pepper&amp;#39;: {} } } } } 每個節點都是物件 他的子節點存在 children 裡 如果是空物件代表這是葉節點 extended 屬性是是否展開，預設 true name 是顯示出來的字，如果要改再設，預設是 index myCustomProperty 直翻是自訂屬性，應該是當 tree.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       
       <guid>https://blog.simba-fs.dev/posts/nodejs/blessed/blessed/</guid>
       <description>某天我有一個問題 gtop 的圖畫界面是怎麼做的，我知道他是用 node 寫的，對他別有興趣 我上 github 看他的 package.json 發現他的 depandence 只有三個
-... 	&amp;#34;dependencies&amp;#34;: { 	&amp;#34;blessed&amp;#34;: &amp;#34;^0.1.81&amp;#34;, 	&amp;#34;blessed-contrib&amp;#34;: &amp;#34;^4.8.16&amp;#34;, 	&amp;#34;systeminformation&amp;#34;: &amp;#34;^4.14.4&amp;#34; 	}, ... 其中 systeminformation 很顯然是取得系統資訊 那 GUI 的 library 應該就是 blessed 和 blessed-contrib 了 去 blessed 的 github 看看 沒想到這是一個超強大的函式庫 可是網路上的教學卻很少 只好自己看 docs 啦
+... &amp;#34;dependencies&amp;#34;: { &amp;#34;blessed&amp;#34;: &amp;#34;^0.1.81&amp;#34;, &amp;#34;blessed-contrib&amp;#34;: &amp;#34;^4.8.16&amp;#34;, &amp;#34;systeminformation&amp;#34;: &amp;#34;^4.14.4&amp;#34; }, ... 其中 systeminformation 很顯然是取得系統資訊 那 GUI 的 library 應該就是 blessed 和 blessed-contrib 了 去 blessed 的 github 看看 沒想到這是一個超強大的函式庫 可是網路上的教學卻很少 只好自己看 docs 啦
 接下來是我測試的一些程式碼和截圖</description>
     </item>
     

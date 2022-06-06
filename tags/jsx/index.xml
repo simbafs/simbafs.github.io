@@ -18,7 +18,7 @@
       <guid>https://blog.simba-fs.dev/posts/linux/vim/%E8%AE%93-ycm-%E6%8E%A5%E5%8F%97-jsx/</guid>
       <description>最近寫ˋreact 的時候只要遇到 jsx 語法 YCM 就會跳出這個錯誤
 Cannot use JSX unless the &amp;#39;--jsx&amp;#39; flag is provided. (FixIt) 研究之後發現這是要給 tsserver 一個 --jsx 的 flag 就可以解決 爬文半個小時後發現只要在專案下的 jsconfig.json
-{  &amp;#34;compilerOptions&amp;#34;: {  &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;,  &amp;#34;checkJs&amp;#34;: true + }, + &amp;#34;compilerOptions&amp;#34;: { + &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;  } } </description>
+{ &amp;#34;compilerOptions&amp;#34;: { &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;checkJs&amp;#34;: true + }, + &amp;#34;compilerOptions&amp;#34;: { + &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34; } } </description>
     </item>
     
   </channel>
