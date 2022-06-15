@@ -9,7 +9,18 @@
       <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 07 Apr 2022 23:13:04 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/linux/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jun 2022 17:09:18 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/linux/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solarized</title>
+      <link>https://blog.simba-fs.dev/posts/linux/vim/solarized/</link>
+      <pubDate>Wed, 15 Jun 2022 17:09:18 +0800</pubDate>
+      
+      <guid>https://blog.simba-fs.dev/posts/linux/vim/solarized/</guid>
+      <description>solarized 是一個文字界面常見的配色方案，不僅是用在 vim，大多數 terminal 和 editor 也都支援
+install 加入 ```vim Plug &amp;rsquo;ericbn/vim-solarized&#39;
+然後安裝 # transparent background 因為設定關係，所以如果你的終端機有設定透明背景，在 vim 中會全部變不透明，載入[這個設定](https://gist.github.com/fuadnafiz98/d91e468c9bc4689868eb0984a29fef66)就可以解決，你也可以放在另外檔案再引入 ```vim &amp;#34; https://gist.github.com/fuadnafiz98/d91e468c9bc4689868eb0984a29fef66 &amp;#34; for transparent background function! AdaptColorscheme() highlight clear CursorLine highlight Normal ctermbg=none highlight LineNr ctermbg=none highlight Folded ctermbg=none highlight NonText ctermbg=none highlight SpecialKey ctermbg=none highlight VertSplit ctermbg=none highlight SignColumn ctermbg=none endfunction autocmd ColorScheme * call AdaptColorscheme() highlight Normal guibg=NONE ctermbg=NONE highlight CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE highlight CursorLineNr cterm=NONE ctermbg=NONE ctermfg=NONE highlight clear LineNr highlight clear SignColumn highlight clear StatusLine &amp;#34; Change Color when entering Insert Mode autocmd InsertEnter * set nocursorline &amp;#34; Revert Color to default when leaving Insert Mode autocmd InsertLeave * set nocursorline &amp;#34;&amp;#34; extra settings, uncomment them if necessary :) &amp;#34;set cursorline &amp;#34;set noshowmode &amp;#34;set nocursorline &amp;#34; trasparent end </description>
+    </item>
+    
     <item>
       <title>Modeline</title>
       <link>https://blog.simba-fs.dev/posts/linux/vim/modeline/</link>
