@@ -1,4 +1,4 @@
-baseURL = "https://blog.simba-fs.dev/"
+baseURL = "https://blog.simbafs.cc/"
 title = "Simba's Blog"
 paginate = 10
 theme = "PaperMod"
