@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>bash on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/categories/bash/</link>
+    <link>https://blog.simbafs.cc/categories/bash/</link>
     <description>Recent content in bash on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/categories/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/categories/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>bash number loop</title>
-      <link>https://blog.simba-fs.dev/posts/linux/bash/bash-number-loop/</link>
+      <link>https://blog.simbafs.cc/posts/linux/bash/bash-number-loop/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/bash/bash-number-loop/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/bash/bash-number-loop/</guid>
       <description>今天在某的地方剛好看到一個 bash 的小技巧，當我們要從 1 數到 100 時，通常會用 seq 指令來做，但是如果我們的需求剛剛好是每次遞增（遞減）1 的話，就可以使用 {start..end} 縮寫，下面兩個範例的效果是一樣的：
 # for 迴圈 + seq 的寫法 for i in $(seq 1 1 100); do echo $i done # 用 {start..end} echo {1..100} 這個技巧也可以用在建立檔案，像這樣：
 touch user{1..100} </description>
@@ -23,10 +23,10 @@ touch user{1..100} </description>
     
     <item>
       <title>bash completion</title>
-      <link>https://blog.simba-fs.dev/posts/linux/bash/bash-completion/</link>
+      <link>https://blog.simbafs.cc/posts/linux/bash/bash-completion/</link>
       <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/bash/bash-completion/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/bash/bash-completion/</guid>
       <description>需求 今天寫了一個 bash script 幫我管理 mongodb docker，在使用的時候一些子命令，像是 up、down、clean。我希望可以讓 bash 當我自動補齊這些選項。
 bash_completion bash_completion 是一個可以幫我們做程式化補齊的工具，像是 git 就有使用到這個工具，在 commit、push 的時候按 tab 都會顯示出當下我們可以用的東西，像是 git push&amp;lt;tab&amp;gt;&amp;lt;tab&amp;gt; 就會自動補齊 origin 而不是給我們看檔案（bash 預設只會補齊檔案和命令）。我們這次只須要用基本的 complete 就可以了
 complete complete 可以幫命令加上簡單的自動完成，其實 bash_completion 也是去呼叫這個命令來達成自動補齊。complete 傻用非常簡單，像下面這樣就可以幫 mongodb 這個命令加上自動補齊

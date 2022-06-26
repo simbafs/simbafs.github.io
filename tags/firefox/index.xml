@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>firefox on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/tags/firefox/</link>
+    <link>https://blog.simbafs.cc/tags/firefox/</link>
     <description>Recent content in firefox on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>firefox touch screen scroll</title>
-      <link>https://blog.simba-fs.dev/posts/linux/firefox-touch-screen-scroll/</link>
+      <link>https://blog.simbafs.cc/posts/linux/firefox-touch-screen-scroll/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/firefox-touch-screen-scroll/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/firefox-touch-screen-scroll/</guid>
       <description>再換了觸控筆電後，在 firefox 一直有個問題：觸控往下滑會被當成選取，要卷動一定要用右邊的 scroll bar
 解決方案 按照 https://askubuntu.com/questions/853910/ubuntu-16-and-touchscreen-scrolling-in-firefox 的最佳解法，真的加上 MOZ_USE_XINPUT2=1 的環境變數就可以了。
 另外在設定 ~/.local/share/applications/firefox.desktop 的時候要注意有不只一個 Exec，改完如果沒有生效可以重開機看看。</description>
@@ -23,10 +23,10 @@
     
     <item>
       <title>firefox-event-listener-breakpoint</title>
-      <link>https://blog.simba-fs.dev/posts/frontend/firefox-event-listener-breakpoint/</link>
+      <link>https://blog.simbafs.cc/posts/frontend/firefox-event-listener-breakpoint/</link>
       <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/frontend/firefox-event-listener-breakpoint/</guid>
+      <guid>https://blog.simbafs.cc/posts/frontend/firefox-event-listener-breakpoint/</guid>
       <description>問題 最近在用 jquery 但是不知道為什麼每次 debugger 都會跳出一個通知 很煩
 解決 後來尋線發現原來是 firefox 好心的 debugger 在 DOM 發生改變的時候通知我 在 裡面 Debugger 頁籤左下有個拉頁叫「Event Listener Breakpoints」 把裡面的東西都點掉就好了 就是那個 DOM Mutation 心得 我原本還以為是 jquery 的問題 原來是好心的 firefox 啊</description>
     </item>

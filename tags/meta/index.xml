@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>meta on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/tags/meta/</link>
+    <link>https://blog.simbafs.cc/tags/meta/</link>
     <description>Recent content in meta on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/tags/meta/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>meta-tag</title>
-      <link>https://blog.simba-fs.dev/posts/frontend/meta-tag/</link>
+      <link>https://blog.simbafs.cc/posts/frontend/meta-tag/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/frontend/meta-tag/</guid>
+      <guid>https://blog.simbafs.cc/posts/frontend/meta-tag/</guid>
       <description>今天為了幫 Let&amp;rsquo;s Remind Daniel 做 SEO 在 免費資源網路社群 找到了一個工具可以直接生成 還有一個可以測試的工具
 連結 生成 測試</description>
     </item>

@@ -2,758 +2,758 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/tags/</link>
+    <link>https://blog.simbafs.cc/tags/</link>
     <description>Recent content in Tags on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Apr 2022 21:47:25 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Apr 2022 21:47:25 +0800</lastBuildDate><atom:link href="https://blog.simbafs.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>font</title>
-      <link>https://blog.simba-fs.dev/tags/font/</link>
+      <link>https://blog.simbafs.cc/tags/font/</link>
       <pubDate>Sat, 16 Apr 2022 21:47:25 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/font/</guid>
+      <guid>https://blog.simbafs.cc/tags/font/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ibus</title>
-      <link>https://blog.simba-fs.dev/tags/ibus/</link>
+      <link>https://blog.simbafs.cc/tags/ibus/</link>
       <pubDate>Sat, 16 Apr 2022 21:47:25 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/ibus/</guid>
+      <guid>https://blog.simbafs.cc/tags/ibus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CICD</title>
-      <link>https://blog.simba-fs.dev/tags/cicd/</link>
+      <link>https://blog.simbafs.cc/tags/cicd/</link>
       <pubDate>Sun, 27 Mar 2022 11:00:18 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/cicd/</guid>
+      <guid>https://blog.simbafs.cc/tags/cicd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
-      <link>https://blog.simba-fs.dev/tags/github/</link>
+      <link>https://blog.simbafs.cc/tags/github/</link>
       <pubDate>Sun, 27 Mar 2022 11:00:18 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/github/</guid>
+      <guid>https://blog.simbafs.cc/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github action</title>
-      <link>https://blog.simba-fs.dev/tags/github-action/</link>
+      <link>https://blog.simbafs.cc/tags/github-action/</link>
       <pubDate>Sun, 27 Mar 2022 11:00:18 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/github-action/</guid>
+      <guid>https://blog.simbafs.cc/tags/github-action/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cli</title>
-      <link>https://blog.simba-fs.dev/tags/cli/</link>
+      <link>https://blog.simbafs.cc/tags/cli/</link>
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/cli/</guid>
+      <guid>https://blog.simbafs.cc/tags/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>software development</title>
-      <link>https://blog.simba-fs.dev/tags/software-development/</link>
+      <link>https://blog.simbafs.cc/tags/software-development/</link>
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/software-development/</guid>
+      <guid>https://blog.simbafs.cc/tags/software-development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>terminal</title>
-      <link>https://blog.simba-fs.dev/tags/terminal/</link>
+      <link>https://blog.simbafs.cc/tags/terminal/</link>
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/terminal/</guid>
+      <guid>https://blog.simbafs.cc/tags/terminal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tmux</title>
-      <link>https://blog.simba-fs.dev/tags/tmux/</link>
+      <link>https://blog.simbafs.cc/tags/tmux/</link>
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/tmux/</guid>
+      <guid>https://blog.simbafs.cc/tags/tmux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>https://blog.simba-fs.dev/tags/vim/</link>
+      <link>https://blog.simbafs.cc/tags/vim/</link>
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/vim/</guid>
+      <guid>https://blog.simbafs.cc/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zsh</title>
-      <link>https://blog.simba-fs.dev/tags/zsh/</link>
+      <link>https://blog.simbafs.cc/tags/zsh/</link>
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/zsh/</guid>
+      <guid>https://blog.simbafs.cc/tags/zsh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>embed</title>
-      <link>https://blog.simba-fs.dev/tags/embed/</link>
+      <link>https://blog.simbafs.cc/tags/embed/</link>
       <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/embed/</guid>
+      <guid>https://blog.simbafs.cc/tags/embed/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gin</title>
-      <link>https://blog.simba-fs.dev/tags/gin/</link>
+      <link>https://blog.simbafs.cc/tags/gin/</link>
       <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/gin/</guid>
+      <guid>https://blog.simbafs.cc/tags/gin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>https://blog.simba-fs.dev/tags/golang/</link>
+      <link>https://blog.simbafs.cc/tags/golang/</link>
       <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/golang/</guid>
+      <guid>https://blog.simbafs.cc/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>template</title>
-      <link>https://blog.simba-fs.dev/tags/template/</link>
+      <link>https://blog.simbafs.cc/tags/template/</link>
       <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/template/</guid>
+      <guid>https://blog.simbafs.cc/tags/template/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://blog.simba-fs.dev/tags/git/</link>
+      <link>https://blog.simbafs.cc/tags/git/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/git/</guid>
+      <guid>https://blog.simbafs.cc/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gitea</title>
-      <link>https://blog.simba-fs.dev/tags/gitea/</link>
+      <link>https://blog.simbafs.cc/tags/gitea/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/gitea/</guid>
+      <guid>https://blog.simbafs.cc/tags/gitea/</guid>
       <description></description>
     </item>
     
     <item>
       <title>self-host</title>
-      <link>https://blog.simba-fs.dev/tags/self-host/</link>
+      <link>https://blog.simbafs.cc/tags/self-host/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/self-host/</guid>
+      <guid>https://blog.simbafs.cc/tags/self-host/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://blog.simba-fs.dev/tags/ssh/</link>
+      <link>https://blog.simbafs.cc/tags/ssh/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/ssh/</guid>
+      <guid>https://blog.simbafs.cc/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>geolocation</title>
-      <link>https://blog.simba-fs.dev/tags/geolocation/</link>
+      <link>https://blog.simbafs.cc/tags/geolocation/</link>
       <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/geolocation/</guid>
+      <guid>https://blog.simbafs.cc/tags/geolocation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>taiwan</title>
-      <link>https://blog.simba-fs.dev/tags/taiwan/</link>
+      <link>https://blog.simbafs.cc/tags/taiwan/</link>
       <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/taiwan/</guid>
+      <guid>https://blog.simbafs.cc/tags/taiwan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>adb</title>
-      <link>https://blog.simba-fs.dev/tags/adb/</link>
+      <link>https://blog.simbafs.cc/tags/adb/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/adb/</guid>
+      <guid>https://blog.simbafs.cc/tags/adb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>android</title>
-      <link>https://blog.simba-fs.dev/tags/android/</link>
+      <link>https://blog.simbafs.cc/tags/android/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/android/</guid>
+      <guid>https://blog.simbafs.cc/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://blog.simba-fs.dev/tags/linux/</link>
+      <link>https://blog.simbafs.cc/tags/linux/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/linux/</guid>
+      <guid>https://blog.simbafs.cc/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>usb debug</title>
-      <link>https://blog.simba-fs.dev/tags/usb-debug/</link>
+      <link>https://blog.simbafs.cc/tags/usb-debug/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/usb-debug/</guid>
+      <guid>https://blog.simbafs.cc/tags/usb-debug/</guid>
       <description></description>
     </item>
     
     <item>
       <title>wireless</title>
-      <link>https://blog.simba-fs.dev/tags/wireless/</link>
+      <link>https://blog.simbafs.cc/tags/wireless/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/wireless/</guid>
+      <guid>https://blog.simbafs.cc/tags/wireless/</guid>
       <description></description>
     </item>
     
     <item>
       <title>complete</title>
-      <link>https://blog.simba-fs.dev/tags/complete/</link>
+      <link>https://blog.simbafs.cc/tags/complete/</link>
       <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/complete/</guid>
+      <guid>https://blog.simbafs.cc/tags/complete/</guid>
       <description></description>
     </item>
     
     <item>
       <title>completing</title>
-      <link>https://blog.simba-fs.dev/tags/completing/</link>
+      <link>https://blog.simbafs.cc/tags/completing/</link>
       <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/completing/</guid>
+      <guid>https://blog.simbafs.cc/tags/completing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dev</title>
-      <link>https://blog.simba-fs.dev/tags/dev/</link>
+      <link>https://blog.simbafs.cc/tags/dev/</link>
       <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/dev/</guid>
+      <guid>https://blog.simbafs.cc/tags/dev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>YCM</title>
-      <link>https://blog.simba-fs.dev/tags/ycm/</link>
+      <link>https://blog.simbafs.cc/tags/ycm/</link>
       <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/ycm/</guid>
+      <guid>https://blog.simbafs.cc/tags/ycm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>firefox</title>
-      <link>https://blog.simba-fs.dev/tags/firefox/</link>
+      <link>https://blog.simbafs.cc/tags/firefox/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/firefox/</guid>
+      <guid>https://blog.simbafs.cc/tags/firefox/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link>https://blog.simba-fs.dev/tags/ubuntu/</link>
+      <link>https://blog.simbafs.cc/tags/ubuntu/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/ubuntu/</guid>
+      <guid>https://blog.simbafs.cc/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kotlin</title>
-      <link>https://blog.simba-fs.dev/tags/kotlin/</link>
+      <link>https://blog.simbafs.cc/tags/kotlin/</link>
       <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/kotlin/</guid>
+      <guid>https://blog.simbafs.cc/tags/kotlin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>college</title>
-      <link>https://blog.simba-fs.dev/tags/college/</link>
+      <link>https://blog.simbafs.cc/tags/college/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/college/</guid>
+      <guid>https://blog.simbafs.cc/tags/college/</guid>
       <description></description>
     </item>
     
     <item>
       <title>logitech</title>
-      <link>https://blog.simba-fs.dev/tags/logitech/</link>
+      <link>https://blog.simbafs.cc/tags/logitech/</link>
       <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/logitech/</guid>
+      <guid>https://blog.simbafs.cc/tags/logitech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>code format</title>
-      <link>https://blog.simba-fs.dev/tags/code-format/</link>
+      <link>https://blog.simbafs.cc/tags/code-format/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/code-format/</guid>
+      <guid>https://blog.simbafs.cc/tags/code-format/</guid>
       <description></description>
     </item>
     
     <item>
       <title>libreoffice</title>
-      <link>https://blog.simba-fs.dev/tags/libreoffice/</link>
+      <link>https://blog.simbafs.cc/tags/libreoffice/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/libreoffice/</guid>
+      <guid>https://blog.simbafs.cc/tags/libreoffice/</guid>
       <description></description>
     </item>
     
     <item>
       <title>api</title>
-      <link>https://blog.simba-fs.dev/tags/api/</link>
+      <link>https://blog.simbafs.cc/tags/api/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/api/</guid>
+      <guid>https://blog.simbafs.cc/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>database</title>
-      <link>https://blog.simba-fs.dev/tags/database/</link>
+      <link>https://blog.simbafs.cc/tags/database/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/database/</guid>
+      <guid>https://blog.simbafs.cc/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>headless api</title>
-      <link>https://blog.simba-fs.dev/tags/headless-api/</link>
+      <link>https://blog.simbafs.cc/tags/headless-api/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/headless-api/</guid>
+      <guid>https://blog.simbafs.cc/tags/headless-api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>node</title>
-      <link>https://blog.simba-fs.dev/tags/node/</link>
+      <link>https://blog.simbafs.cc/tags/node/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/node/</guid>
+      <guid>https://blog.simbafs.cc/tags/node/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nodejs</title>
-      <link>https://blog.simba-fs.dev/tags/nodejs/</link>
+      <link>https://blog.simbafs.cc/tags/nodejs/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/nodejs/</guid>
+      <guid>https://blog.simbafs.cc/tags/nodejs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>strapi</title>
-      <link>https://blog.simba-fs.dev/tags/strapi/</link>
+      <link>https://blog.simbafs.cc/tags/strapi/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/strapi/</guid>
+      <guid>https://blog.simbafs.cc/tags/strapi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vm</title>
-      <link>https://blog.simba-fs.dev/tags/vm/</link>
+      <link>https://blog.simbafs.cc/tags/vm/</link>
       <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/vm/</guid>
+      <guid>https://blog.simbafs.cc/tags/vm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>captcha</title>
-      <link>https://blog.simba-fs.dev/tags/captcha/</link>
+      <link>https://blog.simbafs.cc/tags/captcha/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/captcha/</guid>
+      <guid>https://blog.simbafs.cc/tags/captcha/</guid>
       <description></description>
     </item>
     
     <item>
       <title>express</title>
-      <link>https://blog.simba-fs.dev/tags/express/</link>
+      <link>https://blog.simbafs.cc/tags/express/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/express/</guid>
+      <guid>https://blog.simbafs.cc/tags/express/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hCaptcha</title>
-      <link>https://blog.simba-fs.dev/tags/hcaptcha/</link>
+      <link>https://blog.simbafs.cc/tags/hcaptcha/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/hcaptcha/</guid>
+      <guid>https://blog.simbafs.cc/tags/hcaptcha/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>https://blog.simba-fs.dev/tags/docker/</link>
+      <link>https://blog.simbafs.cc/tags/docker/</link>
       <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/docker/</guid>
+      <guid>https://blog.simbafs.cc/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bash</title>
-      <link>https://blog.simba-fs.dev/tags/bash/</link>
+      <link>https://blog.simbafs.cc/tags/bash/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/bash/</guid>
+      <guid>https://blog.simbafs.cc/tags/bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>loop</title>
-      <link>https://blog.simba-fs.dev/tags/loop/</link>
+      <link>https://blog.simbafs.cc/tags/loop/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/loop/</guid>
+      <guid>https://blog.simbafs.cc/tags/loop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>seq</title>
-      <link>https://blog.simba-fs.dev/tags/seq/</link>
+      <link>https://blog.simbafs.cc/tags/seq/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/seq/</guid>
+      <guid>https://blog.simbafs.cc/tags/seq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tips</title>
-      <link>https://blog.simba-fs.dev/tags/tips/</link>
+      <link>https://blog.simbafs.cc/tags/tips/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/tips/</guid>
+      <guid>https://blog.simbafs.cc/tags/tips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mongoose</title>
-      <link>https://blog.simba-fs.dev/tags/mongoose/</link>
+      <link>https://blog.simbafs.cc/tags/mongoose/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/mongoose/</guid>
+      <guid>https://blog.simbafs.cc/tags/mongoose/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mxlinux</title>
-      <link>https://blog.simba-fs.dev/tags/mxlinux/</link>
+      <link>https://blog.simbafs.cc/tags/mxlinux/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/mxlinux/</guid>
+      <guid>https://blog.simbafs.cc/tags/mxlinux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>systemd</title>
-      <link>https://blog.simba-fs.dev/tags/systemd/</link>
+      <link>https://blog.simbafs.cc/tags/systemd/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/systemd/</guid>
+      <guid>https://blog.simbafs.cc/tags/systemd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hexo</title>
-      <link>https://blog.simba-fs.dev/tags/hexo/</link>
+      <link>https://blog.simbafs.cc/tags/hexo/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/hexo/</guid>
+      <guid>https://blog.simbafs.cc/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>react</title>
-      <link>https://blog.simba-fs.dev/tags/react/</link>
+      <link>https://blog.simbafs.cc/tags/react/</link>
       <pubDate>Sun, 12 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/react/</guid>
+      <guid>https://blog.simbafs.cc/tags/react/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jsx</title>
-      <link>https://blog.simba-fs.dev/tags/jsx/</link>
+      <link>https://blog.simbafs.cc/tags/jsx/</link>
       <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/jsx/</guid>
+      <guid>https://blog.simbafs.cc/tags/jsx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>frontend</title>
-      <link>https://blog.simba-fs.dev/tags/frontend/</link>
+      <link>https://blog.simbafs.cc/tags/frontend/</link>
       <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/frontend/</guid>
+      <guid>https://blog.simbafs.cc/tags/frontend/</guid>
       <description></description>
     </item>
     
     <item>
       <title>reactjs</title>
-      <link>https://blog.simba-fs.dev/tags/reactjs/</link>
+      <link>https://blog.simbafs.cc/tags/reactjs/</link>
       <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/reactjs/</guid>
+      <guid>https://blog.simbafs.cc/tags/reactjs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>webpack</title>
-      <link>https://blog.simba-fs.dev/tags/webpack/</link>
+      <link>https://blog.simbafs.cc/tags/webpack/</link>
       <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/webpack/</guid>
+      <guid>https://blog.simbafs.cc/tags/webpack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nginx linux</title>
-      <link>https://blog.simba-fs.dev/tags/nginx-linux/</link>
+      <link>https://blog.simbafs.cc/tags/nginx-linux/</link>
       <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/nginx-linux/</guid>
+      <guid>https://blog.simbafs.cc/tags/nginx-linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML</title>
-      <link>https://blog.simba-fs.dev/tags/html/</link>
+      <link>https://blog.simbafs.cc/tags/html/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/html/</guid>
+      <guid>https://blog.simbafs.cc/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gpg</title>
-      <link>https://blog.simba-fs.dev/tags/gpg/</link>
+      <link>https://blog.simbafs.cc/tags/gpg/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/gpg/</guid>
+      <guid>https://blog.simbafs.cc/tags/gpg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>meta</title>
-      <link>https://blog.simba-fs.dev/tags/meta/</link>
+      <link>https://blog.simbafs.cc/tags/meta/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/meta/</guid>
+      <guid>https://blog.simbafs.cc/tags/meta/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jquery</title>
-      <link>https://blog.simba-fs.dev/tags/jquery/</link>
+      <link>https://blog.simbafs.cc/tags/jquery/</link>
       <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/jquery/</guid>
+      <guid>https://blog.simbafs.cc/tags/jquery/</guid>
       <description></description>
     </item>
     
     <item>
       <title>passport.js</title>
-      <link>https://blog.simba-fs.dev/tags/passport.js/</link>
+      <link>https://blog.simbafs.cc/tags/passport.js/</link>
       <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/passport.js/</guid>
+      <guid>https://blog.simbafs.cc/tags/passport.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>async</title>
-      <link>https://blog.simba-fs.dev/tags/async/</link>
+      <link>https://blog.simbafs.cc/tags/async/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/async/</guid>
+      <guid>https://blog.simbafs.cc/tags/async/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sqlite</title>
-      <link>https://blog.simba-fs.dev/tags/sqlite/</link>
+      <link>https://blog.simbafs.cc/tags/sqlite/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/sqlite/</guid>
+      <guid>https://blog.simbafs.cc/tags/sqlite/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sandbox</title>
-      <link>https://blog.simba-fs.dev/tags/sandbox/</link>
+      <link>https://blog.simbafs.cc/tags/sandbox/</link>
       <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/sandbox/</guid>
+      <guid>https://blog.simbafs.cc/tags/sandbox/</guid>
       <description></description>
     </item>
     
     <item>
       <title>youtube-dl</title>
-      <link>https://blog.simba-fs.dev/tags/youtube-dl/</link>
+      <link>https://blog.simbafs.cc/tags/youtube-dl/</link>
       <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/youtube-dl/</guid>
+      <guid>https://blog.simbafs.cc/tags/youtube-dl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blessed</title>
-      <link>https://blog.simba-fs.dev/tags/blessed/</link>
+      <link>https://blog.simbafs.cc/tags/blessed/</link>
       <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/blessed/</guid>
+      <guid>https://blog.simbafs.cc/tags/blessed/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nginx</title>
-      <link>https://blog.simba-fs.dev/tags/nginx/</link>
+      <link>https://blog.simbafs.cc/tags/nginx/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/nginx/</guid>
+      <guid>https://blog.simbafs.cc/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unix socket</title>
-      <link>https://blog.simba-fs.dev/tags/unix-socket/</link>
+      <link>https://blog.simbafs.cc/tags/unix-socket/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/unix-socket/</guid>
+      <guid>https://blog.simbafs.cc/tags/unix-socket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blessed-contrib</title>
-      <link>https://blog.simba-fs.dev/tags/blessed-contrib/</link>
+      <link>https://blog.simbafs.cc/tags/blessed-contrib/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/blessed-contrib/</guid>
+      <guid>https://blog.simbafs.cc/tags/blessed-contrib/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RegEx</title>
-      <link>https://blog.simba-fs.dev/tags/regex/</link>
+      <link>https://blog.simbafs.cc/tags/regex/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/regex/</guid>
+      <guid>https://blog.simbafs.cc/tags/regex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>certbot</title>
-      <link>https://blog.simba-fs.dev/tags/certbot/</link>
+      <link>https://blog.simbafs.cc/tags/certbot/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/certbot/</guid>
+      <guid>https://blog.simbafs.cc/tags/certbot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ddos</title>
-      <link>https://blog.simba-fs.dev/tags/ddos/</link>
+      <link>https://blog.simbafs.cc/tags/ddos/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/ddos/</guid>
+      <guid>https://blog.simbafs.cc/tags/ddos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>reverse proxy</title>
-      <link>https://blog.simba-fs.dev/tags/reverse-proxy/</link>
+      <link>https://blog.simbafs.cc/tags/reverse-proxy/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/reverse-proxy/</guid>
+      <guid>https://blog.simbafs.cc/tags/reverse-proxy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cactus</title>
-      <link>https://blog.simba-fs.dev/tags/cactus/</link>
+      <link>https://blog.simbafs.cc/tags/cactus/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/cactus/</guid>
+      <guid>https://blog.simbafs.cc/tags/cactus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>highlight</title>
-      <link>https://blog.simba-fs.dev/tags/highlight/</link>
+      <link>https://blog.simbafs.cc/tags/highlight/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/highlight/</guid>
+      <guid>https://blog.simbafs.cc/tags/highlight/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RSS</title>
-      <link>https://blog.simba-fs.dev/tags/rss/</link>
+      <link>https://blog.simbafs.cc/tags/rss/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/rss/</guid>
+      <guid>https://blog.simbafs.cc/tags/rss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CI/Cl</title>
-      <link>https://blog.simba-fs.dev/tags/ci/cl/</link>
+      <link>https://blog.simbafs.cc/tags/ci/cl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/tags/ci/cl/</guid>
+      <guid>https://blog.simbafs.cc/tags/ci/cl/</guid>
       <description></description>
     </item>
     

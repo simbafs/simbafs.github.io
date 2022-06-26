@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>react on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/categories/react/</link>
+    <link>https://blog.simbafs.cc/categories/react/</link>
     <description>Recent content in react on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/categories/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/categories/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>React update state on props change</title>
-      <link>https://blog.simba-fs.dev/posts/nodejs/react/react-update-state-on-props-change/</link>
+      <link>https://blog.simbafs.cc/posts/nodejs/react/react-update-state-on-props-change/</link>
       <pubDate>Sun, 12 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/nodejs/react/react-update-state-on-props-change/</guid>
+      <guid>https://blog.simbafs.cc/posts/nodejs/react/react-update-state-on-props-change/</guid>
       <description>問題 今天在研究 React 遇到一個問題 當我從外面更新 props 的時候 component 內的 state 不會更新
 function Input(props){ const [text, setText] = React.useState(props.text); return ( &amp;lt;input type=&amp;#34;text&amp;#34; value={text}&amp;gt; ) } 如同上面程式，第二行的 useState 不會隨著 props 更新而更新
 解法 後來找到解法，加上一個 useEffect 監聽 props.text 然後更新 state 就好了
@@ -25,10 +25,10 @@ function Input(props){ const [text, setText] = React.useState(props.text); React
     
     <item>
       <title>webpack-react</title>
-      <link>https://blog.simba-fs.dev/posts/nodejs/react/webpack-react/</link>
+      <link>https://blog.simbafs.cc/posts/nodejs/react/webpack-react/</link>
       <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/nodejs/react/webpack-react/</guid>
+      <guid>https://blog.simbafs.cc/posts/nodejs/react/webpack-react/</guid>
       <description>前言 最近開始想學 react 在這之前當然要先把開發環境搞好 其中 react 最重要的就是 webpack 和 babel 了 babel 負責編譯 webpack 負責串街所有工作
 安裝套件 建立一個專案並初始化 mkdir react-test cd react-test npm init -y git init -y 安裝開發用套件 npm i -D \ @babel/core \ @babel/cli \ @babel/preset-env \ @babel/preset-react \ babel-loader \ react \ react-dom \ webpack package.json 加入以下的 script
 { &amp;#34;dev&amp;#34;: &amp;#34;webpack --mode development&amp;#34;, &amp;#34;watch&amp;#34;: &amp;#34;webpack --mode development --watch&amp;#34;, &amp;#34;depoly&amp;#34;: &amp;#34;webpack --mode production&amp;#34; } webpack.config.js 建立 webpack.config.js 這是最小的版本了 沒有任何的擴充</description>

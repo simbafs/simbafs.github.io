@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>other on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/categories/other/</link>
+    <link>https://blog.simbafs.cc/categories/other/</link>
     <description>Recent content in other on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Dec 2021 23:18:41 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/categories/other/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Dec 2021 23:18:41 +0800</lastBuildDate><atom:link href="https://blog.simbafs.cc/categories/other/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LaTeX Starter</title>
-      <link>https://blog.simba-fs.dev/posts/other/latex-starter/</link>
+      <link>https://blog.simbafs.cc/posts/other/latex-starter/</link>
       <pubDate>Wed, 22 Dec 2021 23:18:41 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/other/latex-starter/</guid>
+      <guid>https://blog.simbafs.cc/posts/other/latex-starter/</guid>
       <description>LaTeX 是一老牌的排版系統，基本的概念是內容與呈現分離，在撰寫內容時不用管排版（所以你就不會擔心移動圖片一咪咪整份文件就跑版了）。除了排版，LaTeX 還很擅長輸出各種莫名其妙的東西，像是超複雜的數學式、象棋棋譜、化學結構&amp;hellip;&amp;hellip;
 credit:https://zh.wikipedia.org/wiki/LaTeX 在使用 LaTeX 一段時間之後，對它的印象就是加強版的 Markdown（或是說 Markdown 是簡化版的 LaTeX），而且他還有巨集，可以擴展原版沒有提供的功能（就是上面那些奇奇怪怪的東西）。
 幾個重點 中文 使用 LaTeX 對大部分人最重要的就是「怎麼打中文」，總不可能打全英文報告吧！要用中文，渲染引擎要用 XLaTeX，然後加上以下設定
@@ -29,10 +29,10 @@ overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有�
     
     <item>
       <title>taiwan-town-location</title>
-      <link>https://blog.simba-fs.dev/posts/other/taiwan-town-location/</link>
+      <link>https://blog.simbafs.cc/posts/other/taiwan-town-location/</link>
       <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/other/taiwan-town-location/</guid>
+      <guid>https://blog.simbafs.cc/posts/other/taiwan-town-location/</guid>
       <description>這是一個給經緯度吐地址的 api，甚至路段都會出來，搭配 web geolocation api 蠻不錯的，精確度不錯。可以不知道有沒有 rate limited 的問題，目前看起來連 token 都不用。
 網址 https://api.nlsc.gov.tw/other/TownVillagePointQuery/
 用法 https://api.nlsc.gov.tw/other/TownVillagePointQuery/經度/緯度
@@ -41,10 +41,10 @@ overleaf overleaf 是一個線上編輯 LaTeX 的網站，預裝了幾乎所有�
     
     <item>
       <title>college-exam-interview-and-written-test</title>
-      <link>https://blog.simba-fs.dev/posts/other/college-exam-interview-and-written-test/</link>
+      <link>https://blog.simbafs.cc/posts/other/college-exam-interview-and-written-test/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/other/college-exam-interview-and-written-test/</guid>
+      <guid>https://blog.simbafs.cc/posts/other/college-exam-interview-and-written-test/</guid>
       <description>師大科技系面試 兩關各十分鐘
 第一關： 自我介紹 一分鐘補充說明（有利備審、競賽）解決問題的經驗 自由談話時間 第二關： 自我介紹一分鐘 科技系分幾組？差別在哪？你會選哪組？ 我看你的自傳有寫「專案開發」，有例子嗎？ 如果團隊合作時有人擺爛，你會怎麼做？（20秒） 心得 這個系是團體面試，三個教授對三個考生，輪流回答問題，因為我是那組第一個，所以幾乎都是我先回答，教授沒有問什麼很難得問題，另外系主任看起來人很好。</description>
     </item>

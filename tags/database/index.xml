@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>database on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/tags/database/</link>
+    <link>https://blog.simbafs.cc/tags/database/</link>
     <description>Recent content in database on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>strapi-quick-start</title>
-      <link>https://blog.simba-fs.dev/posts/nodejs/strapi-quick-start/</link>
+      <link>https://blog.simbafs.cc/posts/nodejs/strapi-quick-start/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/nodejs/strapi-quick-start/</guid>
+      <guid>https://blog.simbafs.cc/posts/nodejs/strapi-quick-start/</guid>
       <description>strapi 是一個 headless CMS (content management system)，透過 web 介面就可以建立一個 api server
 strapi 什麼是 headless CMS headless CMS 顧名思義是「無頭的 內容管理系統」，意思是沒有前端、只有後端，它就是一個 DB 的 web 界面 + api server。headless CMS 專注於處理 api 的部份，前端的部份一律不關心。這對於前後端分離有很大的幫助，基本上 headless CMS 已經解決了後端 80% 的工作，剩下的就是一些客製化的邏輯，像是登入、特殊的計算等等。
 strapi 的優點 他的界面完善 支援多種 DB MySQL &amp;gt;= 5.6

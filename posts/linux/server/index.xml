@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>server on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/posts/linux/server/</link>
+    <link>https://blog.simbafs.cc/posts/linux/server/</link>
     <description>Recent content in server on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/linux/server/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/posts/linux/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ssh on gitea with docker</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/ssh-on-gitea-with-docker/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/ssh-on-gitea-with-docker/</guid>
       <description>Gitea 是一個開源的 git 伺服器，他的界面幾乎和 GitHub 一模一樣，但是完全開源而且非常輕，甚至一片樹梅派就可以開伺服器了。Gitea 因為是使用 Golang 編寫的，所以提供各種平台的執行檔。我選擇透過 docker 裝 Gitea 伺服器，但是這樣有一個問題，gitea 伺服器開在 container 內，沒辦法使用標準的 22 port，所以 git clone 就必須加上一個醜醜的數字，像是這樣
 git clone git@domain:10022:user/repo.git 這個問題 Gitea 官方已經有提供完整的教學了，但是是英文版，我這篇文章是我讀完消化過後的中文版教學
 容器 ssh 穿透 因為 Gitea 的 ssh 是跑在容器裡，我沒辦法讓他和 host 共用 22 port，所以要透過 host 「轉發」連線。
@@ -26,10 +26,10 @@ git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2.</descri
     
     <item>
       <title>nginx-ui</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/nginx-ui/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/nginx-ui/</link>
       <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/nginx-ui/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/nginx-ui/</guid>
       <description>前幾天發現一個專案 nginx ui 他是一個可以讓你在網頁上更改 nginx config 的專案 安裝：
 docker pull schenkd/nginx-ui 啟動；
 docker run -p 8080:8080 -v /etc/nginx:/etc/nginx schenkd/nginx-ui 然後打開瀏覽器 http://localhost:8080 就可以看到管理頁面了 很陽春，就是不用 ssh 進 server，沒什麼特點 我應該是不會用這套</description>
@@ -37,10 +37,10 @@ docker run -p 8080:8080 -v /etc/nginx:/etc/nginx schenkd/nginx-ui 然後打開�
     
     <item>
       <title>server-tool</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/server-tool/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/server-tool/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/server-tool/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/server-tool/</guid>
       <description>用 bash 寫 log 分析工具 因為我們的 server 不知道是為什麼一直受到 DDoS 攻擊
 我想知道是什麼時段容易受到攻擊和每次多久、來自那個 ip
 於是我花了一點時間寫了幾個簡單的 script</description>
@@ -48,10 +48,10 @@ docker run -p 8080:8080 -v /etc/nginx:/etc/nginx schenkd/nginx-ui 然後打開�
     
     <item>
       <title>ddos</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/ddos/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/ddos/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/ddos/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/ddos/</guid>
       <description>伺服器被 DDoS 惹 今天早上把社團的 reverse proxy server 換成 nginx
 下午心血來潮看看 log 檔 因為沒有寫好的工具
 首先把 log 檔 cp 到我的電腦再來處理</description>
@@ -59,10 +59,10 @@ docker run -p 8080:8080 -v /etc/nginx:/etc/nginx schenkd/nginx-ui 然後打開�
     
     <item>
       <title>nginx-reverse-proxy-setup</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/nginx-reverse-proxy-setup/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/nginx-reverse-proxy-setup/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/nginx-reverse-proxy-setup/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/nginx-reverse-proxy-setup/</guid>
       <description>nginx 反向代理伺服器 (reverse proxy) 之前社網 server 因為學校防火牆限制只能對外開 80 443 兩個 port
 而且我們只有一個 ip (203.64.138.177)
 所以要用 reverse proxy 來代理我們的多項服務

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ddos on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/tags/ddos/</link>
+    <link>https://blog.simbafs.cc/tags/ddos/</link>
     <description>Recent content in ddos on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 13 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/ddos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/tags/ddos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ddos</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/ddos/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/ddos/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/ddos/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/ddos/</guid>
       <description>伺服器被 DDoS 惹 今天早上把社團的 reverse proxy server 換成 nginx
 下午心血來潮看看 log 檔 因為沒有寫好的工具
 首先把 log 檔 cp 到我的電腦再來處理</description>

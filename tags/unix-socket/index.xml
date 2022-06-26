@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>unix socket on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/tags/unix-socket/</link>
+    <link>https://blog.simbafs.cc/tags/unix-socket/</link>
     <description>Recent content in unix socket on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/unix-socket/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/tags/unix-socket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>unix-socket</title>
-      <link>https://blog.simba-fs.dev/posts/nodejs/unix-socket/</link>
+      <link>https://blog.simbafs.cc/posts/nodejs/unix-socket/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/nodejs/unix-socket/</guid>
+      <guid>https://blog.simbafs.cc/posts/nodejs/unix-socket/</guid>
       <description>今天心血來潮在看 unix socket 突然想到 node 可不可以把 服務監聽在一個 socket file 這樣在設定的時候就不用記哪個服務是幾 port
 node 部份 監聽在 unix socket 查完資料後發現其實只要把原本填 port 的地方改成 socket file 的路徑就好了 像這樣
 const express = require(&amp;#39;express&amp;#39;); const app = express(); app.get(&amp;#39;/&amp;#39;, (req, res) =&amp;gt; { res.send(&amp;#39;Hello World\n&amp;#39;); }); app.listen(&amp;#39;/tmp/express.sock&amp;#39;); 刪除 socket file 因為每次的 listen 都會新增一個 socket file 相當於佔用一個 port 如果不刪除的話就相當於 port 被佔用了 會噴錯 所以每次程式結束的時候要把這個 socket file 刪掉 然後在 /tmp 下的檔案會在開機後自動刪掉 所以如果部屬後發什麼問題重開機就對了！ 修改完的 code 長這樣

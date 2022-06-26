@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>gitea on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/tags/gitea/</link>
+    <link>https://blog.simbafs.cc/tags/gitea/</link>
     <description>Recent content in gitea on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/gitea/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/tags/gitea/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ssh on gitea with docker</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/ssh-on-gitea-with-docker/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/ssh-on-gitea-with-docker/</guid>
       <description>Gitea 是一個開源的 git 伺服器，他的界面幾乎和 GitHub 一模一樣，但是完全開源而且非常輕，甚至一片樹梅派就可以開伺服器了。Gitea 因為是使用 Golang 編寫的，所以提供各種平台的執行檔。我選擇透過 docker 裝 Gitea 伺服器，但是這樣有一個問題，gitea 伺服器開在 container 內，沒辦法使用標準的 22 port，所以 git clone 就必須加上一個醜醜的數字，像是這樣
 git clone git@domain:10022:user/repo.git 這個問題 Gitea 官方已經有提供完整的教學了，但是是英文版，我這篇文章是我讀完消化過後的中文版教學
 容器 ssh 穿透 因為 Gitea 的 ssh 是跑在容器裡，我沒辦法讓他和 host 共用 22 port，所以要透過 host 「轉發」連線。

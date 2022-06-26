@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>golang on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/posts/golang/</link>
+    <link>https://blog.simbafs.cc/posts/golang/</link>
     <description>Recent content in golang on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 27 Mar 2022 11:00:18 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/posts/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Mar 2022 11:00:18 +0800</lastBuildDate><atom:link href="https://blog.simbafs.cc/posts/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用 Github Action 編譯並發 Release</title>
-      <link>https://blog.simba-fs.dev/posts/golang/github-action-release/</link>
+      <link>https://blog.simbafs.cc/posts/golang/github-action-release/</link>
       <pubDate>Sun, 27 Mar 2022 11:00:18 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/golang/github-action-release/</guid>
+      <guid>https://blog.simbafs.cc/posts/golang/github-action-release/</guid>
       <description>如果自己寫的小工具的 GitHub 頁面右邊 Release 那欄有個什麼東西，一定很酷對吧！如果裡面已經提供了不同作業系統編譯好的程式，一定更酷！
 想要建立 Release，你可以在新版本發布時自己手動 crose compile 再手動設定 Release，這個方法可行，但是聽起來全手動就很 low，我們要用一個全自動的方式發 Release！
 Github Actioin 既然我們程式碼都託管在 GitHub 了，直接用 Gtithub Action 是很合理的吧！
@@ -28,10 +28,10 @@ on: push: tags: - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 
     
     <item>
       <title>Golang Plguin</title>
-      <link>https://blog.simba-fs.dev/posts/golang/plguin/</link>
+      <link>https://blog.simbafs.cc/posts/golang/plguin/</link>
       <pubDate>Mon, 21 Feb 2022 18:54:55 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/golang/plguin/</guid>
+      <guid>https://blog.simbafs.cc/posts/golang/plguin/</guid>
       <description>Go 動態載入程式 Go 是一個編譯式的語言，也就是說他不像 JS 那樣可以動態執行程式碼。像是 Hexo 和 Hugo，前者因為是 JS 寫的，因此支援非常豐富的外掛，但後者因為是 Go 寫的，因此在不使用其他直譯式程式語言的情況下，很難製作外掛。
 另一個 Go 寫的軟體 ponzu 則是在加入一段程式碼後，重新編譯自己。這麼做解決了外掛的問題，而且又不會失去 Go 的快速，但是就必須保留整個主程式的原始碼，而且也不那麼的「動態」
 ponzu 這個軟體兩年沒人維護了，很多東西都怪怪的，超級難編譯
@@ -45,19 +45,19 @@ import &amp;#34;plugin&amp;#34; 用 func Open(path string) (*Plugin, error) 可�
     
     <item>
       <title>ExecCmd</title>
-      <link>https://blog.simba-fs.dev/posts/golang/exec-cmd/</link>
+      <link>https://blog.simbafs.cc/posts/golang/exec-cmd/</link>
       <pubDate>Tue, 19 Oct 2021 00:06:19 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/golang/exec-cmd/</guid>
+      <guid>https://blog.simbafs.cc/posts/golang/exec-cmd/</guid>
       <description>Golang 執行外部命令 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;os/exec&amp;#34; ) func checkErr(err error) { if err != nil { panic(err) } } func main() { pw := exec.Command(&amp;#34;wc&amp;#34;) stdin, err := pw.StdinPipe() checkErr(err) fmt.Fprintln(stdin, &amp;#34;fjasdfkjsad\njdfaksdfjksdfjkasdfj\ndjfkajsdk&amp;#34;) output, err := pw.Output() checkErr(err) fmt.Println(string(output)) } </description>
     </item>
     
     <item>
       <title>Aconf</title>
-      <link>https://blog.simba-fs.dev/posts/golang/aconf/</link>
+      <link>https://blog.simbafs.cc/posts/golang/aconf/</link>
       <pubDate>Fri, 24 Sep 2021 08:46:37 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/golang/aconf/</guid>
+      <guid>https://blog.simbafs.cc/posts/golang/aconf/</guid>
       <description>aconf 是個可以直接幫你解決所有「設定」問題的套件，設定可以有預設、從命令列參數、環境變數和設定檔，設定檔還有官方支援四種格式，dotEnv、HCL、toml、yaml 和 json。
 而且設定檔還可以有不只一個，他可以把多個設定檔合成，相當方便
 基本使用 定義 struct 首先我們需要一個 struct 來定義我們的設定
@@ -67,10 +67,10 @@ loader := aconfig.LoaderFor(&amp;amp;config, aconfig.Config{ // 這四個預設�
     
     <item>
       <title>Golang Parse All Files In Directory Into Templates</title>
-      <link>https://blog.simba-fs.dev/posts/golang/golang-parse-all-files-in-directory-into-templates/</link>
+      <link>https://blog.simbafs.cc/posts/golang/golang-parse-all-files-in-directory-into-templates/</link>
       <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/golang/golang-parse-all-files-in-directory-into-templates/</guid>
+      <guid>https://blog.simbafs.cc/posts/golang/golang-parse-all-files-in-directory-into-templates/</guid>
       <description>在用 gin 寫伺服器的時候，我發現模板並不會被 go build 打包進執行檔裡面，所以在執行的時候就找不到檔案，當然這個問題可以用字串的形式直接把模板放進 golang 原始碼裡面，但是這樣程式碼一複雜就會不好用，這時候就可以用 golang 的 embed 函式庫把檔案「嵌入」到原始碼裡面。但是問題又來了，嵌入了之後要怎麼把字串變成模板物件呢？
 Embed embed 套件是 1.16 新出的功能，所以如果想用的話記得要更新 go 到 1.16 以上
 embed 嵌入檔案的方式是透過特殊格式的註解宣告，直接看官方範例：

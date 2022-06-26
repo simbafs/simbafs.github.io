@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>linux on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/categories/linux/</link>
+    <link>https://blog.simbafs.cc/categories/linux/</link>
     <description>Recent content in linux on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simba-fs.dev/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.simbafs.cc/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ssh on gitea with docker</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/ssh-on-gitea-with-docker/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/ssh-on-gitea-with-docker/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/ssh-on-gitea-with-docker/</guid>
       <description>Gitea 是一個開源的 git 伺服器，他的界面幾乎和 GitHub 一模一樣，但是完全開源而且非常輕，甚至一片樹梅派就可以開伺服器了。Gitea 因為是使用 Golang 編寫的，所以提供各種平台的執行檔。我選擇透過 docker 裝 Gitea 伺服器，但是這樣有一個問題，gitea 伺服器開在 container 內，沒辦法使用標準的 22 port，所以 git clone 就必須加上一個醜醜的數字，像是這樣
 git clone git@domain:10022:user/repo.git 這個問題 Gitea 官方已經有提供完整的教學了，但是是英文版，我這篇文章是我讀完消化過後的中文版教學
 容器 ssh 穿透 因為 Gitea 的 ssh 是跑在容器裡，我沒辦法讓他和 host 共用 22 port，所以要透過 host 「轉發」連線。
@@ -26,10 +26,10 @@ git:x:1002:1002:,,,:/home/git:/bin/bash ------^^^^ ^^^^ ------GID UID 2.</descri
     
     <item>
       <title>Cast Phone Screen to Computer</title>
-      <link>https://blog.simba-fs.dev/posts/linux/cast-phone-screen-to-computer/</link>
+      <link>https://blog.simbafs.cc/posts/linux/cast-phone-screen-to-computer/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/cast-phone-screen-to-computer/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/cast-phone-screen-to-computer/</guid>
       <description>有沒有一種經驗是某的應用程式手機板操作勉強算順暢，但是一電腦上就炸開，反應慢到靠北、界面又很難用（沒錯 messenger 我正在看著你）。這個時候相信你會和我一樣想把手機畫面投影到電腦上的一個視窗裡面，最好可以互動、可以打字。有人第一個想法是在手機開 VNC 伺服器，但是這個方法有點麻煩，這篇文章介紹的是目前我覺得最佳解決方案。
 SCRCPY 這個軟體支援有線（ USB debug ）、無線（ WIFI ）的連接，還支援螢幕錄影和傳檔案。最重要的是，開在電腦上的視窗可以調整大小，不需要侷限在一個小小的視窗內，你最大可以放大到全螢幕！在某種意義上你獲得了一台和電腦一樣大的手機。
 Installation 安裝流程意外的簡單，只需要用 apt 就可以安裝了，或是你可以自己 build，稍微看了一下 說明 ，看起來不困難，但是既然 apt 就可以安裝了我們就省一點時間
@@ -44,10 +44,10 @@ USB 如果不介意有一條線插著~~（順便充電）~~的話，投影畫面
     
     <item>
       <title>mxlinux boot with systemd</title>
-      <link>https://blog.simba-fs.dev/posts/linux/mxlinux-boot-with-systemd/</link>
+      <link>https://blog.simbafs.cc/posts/linux/mxlinux-boot-with-systemd/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/mxlinux-boot-with-systemd/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/mxlinux-boot-with-systemd/</guid>
       <description>問題 在 mxlinux 裡面，預設的 init 不是 systmed，這導致如果想用 systemctl 的時候就會跳出錯誤說
 System has not been booted with systemd as init system 像是在安裝 mongodb-org 的時候他就要用到 systemctl 然後就會出錯。
 解法 其實 mxlinux 已經幫我們想好解法了，在開機選項時選 Advence &amp;gt; Systemd 就會以 systemd 開機</description>
@@ -55,20 +55,20 @@ System has not been booted with systemd as init system 像是在安裝 mongodb-o
     
     <item>
       <title>mxlinux-change-workspace</title>
-      <link>https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/</link>
+      <link>https://blog.simbafs.cc/posts/linux/mxlinux-change-workspace/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/mxlinux-change-workspace/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/mxlinux-change-workspace/</guid>
       <description>切換工作區 今天想要在 mxlinux 中快速的切換工作區 我看到可以用滑鼠滾輪切換 可是我想要的是鍵盤快捷鍵 上網查了一下 發現可以透過 Ctrl+Alt+up/down/home/end 來切換
 參考資料 https://unix.stackexchange.com/questions/270334/how-to-move-a-window-to-another-workspace-in-xfce</description>
     </item>
     
     <item>
       <title>gpg</title>
-      <link>https://blog.simba-fs.dev/posts/linux/gpg/</link>
+      <link>https://blog.simbafs.cc/posts/linux/gpg/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/gpg/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/gpg/</guid>
       <description>今天心血來潮想設定 GPG，網路上查了一個教學，無疑的又遇到一個坑
 坑 &amp;amp; 解法 我按照他的作法弄完後就是沒辦法 commit 他說 GPG 無法簽章 後來我發現是我的 name 填錯（應該啦，我猜的） 總而言之就重新產生 GPG key 就好了 name 和 git 設定的一樣
 指令 $ gpg --full-gen-key $ gpg --list-secret-keys $ gpg --armor --export &amp;lt;secret key&amp;gt; 刪除金鑰 在刪除的時候分成兩步驟，刪除私鑰、刪除公鑰。在刪除之前要先知道要刪除的金鑰的 ID
@@ -79,30 +79,30 @@ gpg --delete-secret-key &amp;lt;ID&amp;gt; gpg --delete-key &amp;lt;ID&amp;gt; <
     
     <item>
       <title>isolate</title>
-      <link>https://blog.simba-fs.dev/posts/linux/isolate/</link>
+      <link>https://blog.simbafs.cc/posts/linux/isolate/</link>
       <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/isolate/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/isolate/</guid>
       <description>我有一個放了很久的計畫，就是自己寫一個 OJ，因為我覺得現在的那個太難用了。 我很快的建立 repo 但是卻完全沒有進展，我寫了一個 shell script 幫忙編譯執行程式之後我就在也沒有動過他了 我沒有繼續動工的原因是我不知道如何隔離使用者提交的程式碼 我想過 docker 可是據說還是不安全 還有 chroot 但是我不知道有沒有比 docker 安全而且設定好麻煩
 昨天去考 TOI　入營考（當然沒進）的時候，我終於看到大名鼎鼎的 CMS 了！ 出來之後我發現他是用一個叫 isolate 的程式來做沙箱測試 而且這好像是 IOI 自己寫的，應該是蠻安全的（吧？） 今天成功編譯過後把心得寫下來</description>
     </item>
     
     <item>
       <title>youtube-dl</title>
-      <link>https://blog.simba-fs.dev/posts/linux/youtube-dl/</link>
+      <link>https://blog.simbafs.cc/posts/linux/youtube-dl/</link>
       <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/youtube-dl/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/youtube-dl/</guid>
       <description>最近在下載 youtube 音樂，每次下載都要把檔案重新改名，很麻煩。所以就想要寫一個 shell script 來幫我解決。 首先改名字我相信 youtube-dl 一定有提供這個選項，於是開始查文件。 看到 -o ，接下來講遇到的坑
 -o 坑 -o 後面接的是一個 template string ，不是檔名，而且就算指定副檔名是 .mp3 了還是要寫成 %(ext)s</description>
     </item>
     
     <item>
       <title>ssh-tunnel</title>
-      <link>https://blog.simba-fs.dev/posts/linux/ssh-tunnel/</link>
+      <link>https://blog.simbafs.cc/posts/linux/ssh-tunnel/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/ssh-tunnel/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/ssh-tunnel/</guid>
       <description>昨天架好了 reverse ssh 讓我可以連回學校 server 今天來研究 ssh tunnel
 簡介 ssh tunnel 分正反向 其實他們的差別只有在方向不一樣 連語法參數都一樣
 正向 tunnel 正向的 tunnel 參數是 -L 語法：
@@ -113,10 +113,10 @@ ssh -R &amp;lt;remote port&amp;gt;:localhost:&amp;lt;local port&amp;gt; &amp;lt;
     
     <item>
       <title>reverse-ssh</title>
-      <link>https://blog.simba-fs.dev/posts/linux/reverse-ssh/</link>
+      <link>https://blog.simbafs.cc/posts/linux/reverse-ssh/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/reverse-ssh/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/reverse-ssh/</guid>
       <description>一直以來連線回社辦的電腦都要走 webtty 再開 tmate 但是今天發現了一個新的方法可以透過反向的 ssh 連回社辦
 reverse ssh 在社辦電腦
 $ ssh -NfR 2222:localhost:22 simba@simba-vps 這可以建立一個連線 這時候到 simba-vps
@@ -135,10 +135,10 @@ https://yu-jack.github.io/2019/01/08/ssh-tunnel/</description>
     
     <item>
       <title>server-tool</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/server-tool/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/server-tool/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/server-tool/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/server-tool/</guid>
       <description>用 bash 寫 log 分析工具 因為我們的 server 不知道是為什麼一直受到 DDoS 攻擊
 我想知道是什麼時段容易受到攻擊和每次多久、來自那個 ip
 於是我花了一點時間寫了幾個簡單的 script</description>
@@ -146,10 +146,10 @@ https://yu-jack.github.io/2019/01/08/ssh-tunnel/</description>
     
     <item>
       <title>ddos</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/ddos/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/ddos/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/ddos/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/ddos/</guid>
       <description>伺服器被 DDoS 惹 今天早上把社團的 reverse proxy server 換成 nginx
 下午心血來潮看看 log 檔 因為沒有寫好的工具
 首先把 log 檔 cp 到我的電腦再來處理</description>
@@ -157,10 +157,10 @@ https://yu-jack.github.io/2019/01/08/ssh-tunnel/</description>
     
     <item>
       <title>nginx-reverse-proxy-setup</title>
-      <link>https://blog.simba-fs.dev/posts/linux/server/nginx-reverse-proxy-setup/</link>
+      <link>https://blog.simbafs.cc/posts/linux/server/nginx-reverse-proxy-setup/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/linux/server/nginx-reverse-proxy-setup/</guid>
+      <guid>https://blog.simbafs.cc/posts/linux/server/nginx-reverse-proxy-setup/</guid>
       <description>nginx 反向代理伺服器 (reverse proxy) 之前社網 server 因為學校防火牆限制只能對外開 80 443 兩個 port
 而且我們只有一個 ip (203.64.138.177)
 所以要用 reverse proxy 來代理我們的多項服務

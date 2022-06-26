@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>github on Simba&#39;s Blog</title>
-    <link>https://blog.simba-fs.dev/tags/github/</link>
+    <link>https://blog.simbafs.cc/tags/github/</link>
     <description>Recent content in github on Simba&#39;s Blog</description>
     <image>
-      <url>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.simba-fs.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.simbafs.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 27 Mar 2022 11:00:18 +0800</lastBuildDate><atom:link href="https://blog.simba-fs.dev/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Mar 2022 11:00:18 +0800</lastBuildDate><atom:link href="https://blog.simbafs.cc/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用 Github Action 編譯並發 Release</title>
-      <link>https://blog.simba-fs.dev/posts/golang/github-action-release/</link>
+      <link>https://blog.simbafs.cc/posts/golang/github-action-release/</link>
       <pubDate>Sun, 27 Mar 2022 11:00:18 +0800</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/golang/github-action-release/</guid>
+      <guid>https://blog.simbafs.cc/posts/golang/github-action-release/</guid>
       <description>如果自己寫的小工具的 GitHub 頁面右邊 Release 那欄有個什麼東西，一定很酷對吧！如果裡面已經提供了不同作業系統編譯好的程式，一定更酷！
 想要建立 Release，你可以在新版本發布時自己手動 crose compile 再手動設定 Release，這個方法可行，但是聽起來全手動就很 low，我們要用一個全自動的方式發 Release！
 Github Actioin 既然我們程式碼都託管在 GitHub 了，直接用 Gtithub Action 是很合理的吧！
@@ -28,10 +28,10 @@ on: push: tags: - &amp;#34;v[0-9]+.[0-9]+.[0-9]+&amp;#34; 意思是只有像是 
     
     <item>
       <title>GitHub Action 自動部署 hexo</title>
-      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
+      <link>https://blog.simbafs.cc/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
+      <guid>https://blog.simbafs.cc/posts/nodejs/hexo/github-action-%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2-hexo/</guid>
       <description>前言 本來部署 hexo 都是手動下指令，但是這樣在手機上因為沒辦法裝 hexo ,所以一直不能在手機上寫文章。剛好想到 GitHub Action 可以滿足我的需求，上網查了一下資料發現蠻多人有和我一樣的需求，這次參考的是 owlran 大大的文章。
 ssh key 因為要部署到 GitHub repo，最方便的方法當然是 ssh key 啦。
 ssh-keygen 首先隨便找個資料夾產生一組 ssh key
@@ -45,10 +45,10 @@ secret key secret key 要放在你存放部落格檔案的 repo，owlran 大大�
     
     <item>
       <title>gitalk</title>
-      <link>https://blog.simba-fs.dev/posts/nodejs/hexo/gitalk/</link>
+      <link>https://blog.simbafs.cc/posts/nodejs/hexo/gitalk/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.simba-fs.dev/posts/nodejs/hexo/gitalk/</guid>
+      <guid>https://blog.simbafs.cc/posts/nodejs/hexo/gitalk/</guid>
       <description>啟用 gitalk 留言 到這個網址填資料 加入下面的片段到_config.yml disqus: enabled: false gitalk: enabled: true owner: &amp;lt;username&amp;gt; repo: &amp;lt;username&amp;gt;.github.io admin: [&amp;#39;&amp;lt;username&amp;gt;&amp;#39;] clientID: &amp;lt;clientID&amp;gt; clientSecret: &amp;lt;clientSecret&amp;gt; 加入下面的片段到themes/cactus/layout/_partial/comments.ejs &amp;lt;% if(page.comments &amp;amp;&amp;amp; theme.gitalk.enabled){ %&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;gitalk-container&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; var gitalk = new Gitalk({ clientID: &amp;#39;&amp;lt;%= theme.gitalk.clientID %&amp;gt;&amp;#39;, clientSecret: &amp;#39;&amp;lt;%= theme.gitalk.clientSecret %&amp;gt;&amp;#39;, id: md5(window.location.pathname), repo: &amp;#39;&amp;lt;%= theme.gitalk.repo %&amp;gt;&amp;#39;, owner: &amp;#39;&amp;lt;%= theme.gitalk.owner %&amp;gt;&amp;#39;, admin: &amp;#39;&amp;lt;%= theme.gitalk.admin %&amp;gt;&amp;#39;, distractionFreeMode: &amp;#39;&amp;lt;%= theme.gitalk.on %&amp;gt;&amp;#39; }) gitalk.</description>
     </item>
     
