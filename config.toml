@@ -6,7 +6,7 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
-googleAnalytics = "UA-175823992-1"
+googleAnalytics = "G-DTMEFY7DTF"
 defaultContentLanguage = 'zh-tw'
 
 [outputs]
