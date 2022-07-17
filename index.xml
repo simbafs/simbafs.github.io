@@ -1283,15 +1283,13 @@ $ git checkout -b hexo $ git add . $ git commit -m init $ git push -u origin hex
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.simbafs.cc/about/</guid>
-      <description>🖐️ 哈囉！問世界安好 我目前是大學生，讀書閒暇時間會開發一些小專案。
-成功高中電子計算機研習社 擔任 退休網管兼教學 本名: 陳宏彰 常用網名: simba-fs、simbafs Golang、NodeJS、HTML/CSS/JS 🛠 作品 telegrary Telegrary = Telegram + diary
+      <description>🖐️ 哈囉！問世界安好 本名: 陳宏彰 常用網名: simba-fs、SimbaFs 原 JS 愛好者 目前 Go 愛好者 vim is the best editor 前端好難 Golang、NodeJS、nextjs 五迷 目前最喜歡「成名在望」 成大物理系大二 成功高中電子計算機研習社 擔任 退休網管兼教學 🛠 作品 NCKU Extended
+成大系統瀏覽器擴充套件
+擴充成大系統的功能
+目前功能還不多，有其他想法歡迎發 Issue
+telegrary Telegrary = Telegram + diary
 Telegrary 是一個 Telegram 機器人，讓你可以在 Telegram 上管理日記。同時 Telegrary 提供了一個 CLI 界面，讓你可以在終端機管理日記。
-slides
-這個網站可以把 markdown 轉成線上簡報，還支援會議室模式，詳細可以參考 GitHub 或是 Help Page Demo
-AURL
-這本來是我練習資料庫存取的一個專案，結果就越長越大，最後變成一個完整的專案了。
-目前正在做第二版，程式碼會更具易讀性、可維護性，也會導入權限系統 第二版胎死腹中
-📬 聯絡方式 Discord id: simba-fs#2030 telegram: @simbafs twitter: @simbafs </description>
+📬 聯絡方式 Discord id: SimbaFs#2030 telegram: @simbafs twitter: @simbafs </description>
     </item>
     
     
