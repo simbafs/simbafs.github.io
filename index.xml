@@ -1289,7 +1289,7 @@ $ git checkout -b hexo $ git add . $ git commit -m init $ git push -u origin hex
 目前功能還不多，有其他想法歡迎發 Issue
 telegrary Telegrary = Telegram + diary
 Telegrary 是一個 Telegram 機器人，讓你可以在 Telegram 上管理日記。同時 Telegrary 提供了一個 CLI 界面，讓你可以在終端機管理日記。
-📬 聯絡方式 Discord id: SimbaFs#2030 telegram: @simbafs twitter: @simbafs </description>
+📬 聯絡方式 mail: me@simbafs.cc Discord id: SimbaFs#2030 telegram: @simbafs twitter: @simbafs </description>
     </item>
     
     
