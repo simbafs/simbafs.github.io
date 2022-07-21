@@ -24,6 +24,12 @@ Bitbucket 的 repo 的 Jira issue 頁面，點擊要處理的 Jira issue 最右�
 ![6](./6.png)
 
 # 將遠端 Git brench 拉到本地
+![7](7.png)
+![8](8.png)
+![9](9.png)
+![10](10.png)
+![11](11.png)
+![12](12.png)
 
 # 合併 brench
 
